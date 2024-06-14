@@ -64,7 +64,7 @@
 
                 <section>
                     <button>
-                        <a href="#">Reservar viaje</a>
+                        <a href="#">Cotiza y Reserva</a>
                     </button>
                     
                     <button>
@@ -74,6 +74,15 @@
             </section>
 
             <section class="section__paquetes">
+                <div>
+                    <h2>Conoce nuestros paquetes vacacionales</h2>
+                    <p>Descubre las mejores opciones de viajes que ofrecemos en Panamá</p>
+                </div>
+
+                <section class="paquetes__img">
+
+                </section>
+            </section>
         </main>
     </div>
 </body>
