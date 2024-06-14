@@ -8,13 +8,15 @@
     <title>Conoce Panamá</title>
 </head>
 <body>
-    <h1>Conoce Panamá</h1>
-    <p>Este es un sitio web que te permitirá conocer Panamá.</p>
-    <p>Para comenzar, selecciona una de las siguientes opciones:</p>
-    <ul>
-        <li><a href="provincias.php">Provincias</a></li>
-        <li><a href="distritos.php">Distritos</a></li>
-        <li><a href="corregimientos.php">Corregimientos</a></li>
-    </ul>
+    <div class="container">
+        <h1>Conoce Panamá</h1>
+        <p>Este es un sitio web que te permitirá conocer Panamá.</p>
+        <p>Para comenzar, selecciona una de las siguientes opciones:</p>
+        <ul>
+            <li><a href="provincias.php">Provincias</a></li>
+            <li><a href="distritos.php">Distritos</a></li>
+            <li><a href="corregimientos.php">Corregimientos</a></li>
+        </ul>
+    </div>
 </body>
 </html>
