@@ -9,14 +9,47 @@
 </head>
 <body>
     <div class="container">
-        <h1>Conoce Panamá</h1>
-        <p>Este es un sitio web que te permitirá conocer Panamá.</p>
-        <p>Para comenzar, selecciona una de las siguientes opciones:</p>
-        <ul>
-            <li><a href="provincias.php">Provincias</a></li>
-            <li><a href="distritos.php">Distritos</a></li>
-            <li><a href="corregimientos.php">Corregimientos</a></li>
-        </ul>
+        <header>
+            <div>
+                <div>
+                    <img src="./assets/img/logo.png" alt="Logo">
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#">Paquetes</a>
+                    </li>
+                    <li>
+                        <a href="#">Cruceros</a>
+                    </li>
+                    <li>
+                        <a href="#">Planes</a>
+                    </li>
+                    <li>
+                        <a href="#">Contacto</a>
+                    </li>
+                    <li>
+                        <a href="#">Inicio</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div>
+                <div>
+                    <button>
+                        <a href="#">Iniciar sesión</a>
+                    </button>
+                    <button>
+                        <a href="#">Registrarse</a>
+                    </button>
+                </div>
+            </div>
+        </header>
     </div>
 </body>
 </html>

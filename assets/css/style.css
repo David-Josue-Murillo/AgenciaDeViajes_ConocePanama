@@ -1,0 +1,14 @@
+@font-face{
+    font-family: "Lato";
+    src: url(../fonts/Lato-Black.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Generales */
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
