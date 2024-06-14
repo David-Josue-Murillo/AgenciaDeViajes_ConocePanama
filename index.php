@@ -8,11 +8,14 @@
     <title>Conoce Panamá</title>
 </head>
 <body>
-    <div class="container">
+    <div class="">
         <header>
             <div>
                 <div>
                     <img src="./assets/img/logo.png" alt="Logo">
+                </div>
+                <div>
+                    <h2>Conoce Panamá</h2>
                 </div>
             </div>
 
@@ -50,6 +53,28 @@
                 </div>
             </div>
         </header>
+
+        <main>
+            <section class="section__content">
+                <div>
+                    <p>Agencia de viajes en Panamá</p>
+                    <h1>¿Listo para conocer a Panamá?</h1>
+                    <p>Que esperas, reserva un paseo YAA!</p>
+                </div>
+
+                <section>
+                    <button>
+                        <a href="#">Reservar viaje</a>
+                    </button>
+                    
+                    <button>
+                        <a href="#">Cruceros</a>
+                    </button>
+                </section>
+            </section>
+
+            <section class="section__paquetes">
+        </main>
     </div>
 </body>
 </html>
