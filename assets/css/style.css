@@ -28,6 +28,14 @@
     background-size: cover;
 }
 
+.section__content__cruceros{
+    background: url(../img/bg_crucero.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 footer {
     background-color: #b9b6b6;
     padding: 20px;

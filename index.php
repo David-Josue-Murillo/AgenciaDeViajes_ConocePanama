@@ -30,10 +30,10 @@
                         <a href="./paquetes.php">Paquetes</a>
                     </li>
                     <li>
-                        <a href="./transporte.php">Transporte</a>
+                        <a href="./transporte.php">Cruceros</a>
                     </li>
                     <li>
-                        <a href="#">Lugares</a>
+                        <a href="./destinos.php">Destinos</a>
                     </li>
                     <li>
                         <a href="#">Contacto</a>

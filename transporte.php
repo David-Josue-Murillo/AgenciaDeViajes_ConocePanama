@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Conoce Panamá - Transporte</title>
+    <title>Conoce Panamá - Cruceros</title>
 </head>
 
 <body>
@@ -30,10 +30,10 @@
                         <a href="./paquetes.php">Paquetes</a>
                     </li>
                     <li>
-                        <a href="./transporte.php">Transporte</a>
+                        <a href="./transporte.php">Cruceros</a>
                     </li>
                     <li>
-                        <a href="#">Lugares</a>
+                        <a href="./destinos.php">Destinos</a>
                     </li>
                     <li>
                         <a href="#">Contacto</a>
@@ -72,9 +72,9 @@
         </header>
 
         <main>
-            <section class="section__content__paquetes">
+            <section class="section__content__cruceros">
                 <div>
-                    <h1>Todos los paquetes de viajes que ofrecemos en Panamá</h1>
+                    <h1>Descubre el mundo a abordo de nuestros increibles cruceros</h1>
                 </div>
             </section>
 
@@ -83,31 +83,13 @@
                 <section class="paquetes__img">
                     <div>
                         <div>
-                            <img src="./assets/img/paquete_1.webp" alt="Vuelo a Bocas del Toro">
+                            <img src="./assets/img/crucero_1.png" alt="Icon of the Seas">
                         </div>
                         <div>
-                            <img src="./assets/img/paquete_2.webp" alt="vuelo a isla Contadora">
+                            <img src="./assets/img/crucero_2.png" alt="Oceania Cruise Line">
                         </div>
                         <div>
-                            <img src="./assets/img/paquete_3.webp" alt="vuelo a isla Taboga">
-                        </div>
-                        <div>
-                            <img src="./assets/img/paquete_4.webp" alt="vuelo a isla Taboga">
-                        </div>
-                        <div>
-                            <img src="./assets/img/paquete_5.webp" alt="vuelo a isla Taboga">
-                        </div>
-                        <div>
-                            <img src="./assets/img/paquete_6.webp" alt="vuelo a isla Taboga">
-                        </div>
-                        <div>
-                            <img src="./assets/img/paquete_7.webp" alt="vuelo a isla Taboga">
-                        </div>
-                        <div>
-                            <img src="./assets/img/paquete_8.webp" alt="vuelo a isla Taboga">
-                        </div>
-                        <div>
-                            <img src="./assets/img/paquete_9.webp" alt="vuelo a isla Taboga">
+                            <img src="./assets/img/crucero_3.png" alt="Mega Crucero Utopia of the Seas">
                         </div>
                     </div>
                 </section>
