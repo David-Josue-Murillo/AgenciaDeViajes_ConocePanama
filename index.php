@@ -61,7 +61,7 @@
                     </button>
 
                     <button>
-                        <a href="./register.php">Iniciar sesión / Registrarse</a>
+                        <a href="./usuario.php">Iniciar sesión / Registrarse</a>
                     </button>
                 </div>
             </div>
