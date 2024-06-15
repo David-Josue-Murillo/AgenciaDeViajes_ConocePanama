@@ -12,6 +12,7 @@
     text-decoration: none;
 }
 
+/* Fondos de las distintas secciones */
 .section__content {
     background: url(../img/bg.png) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -21,7 +22,7 @@
 }
 
 .section__content__paquetes {
-    background: url(../img/bg_paquetes.jpg);
+    background: url(../img/bg_paquetes.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -29,7 +30,7 @@
 }
 
 .section__content__cruceros{
-    background: url(../img/bg_crucero.jpg);
+    background: url(../img/bg_crucero.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -37,9 +38,23 @@
 }
 
 .section__content__destinos{
-
+    background: url(../img/bg_destino.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
+.section__content__contacto{
+    background: url(../img/bg_contacto.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* Pie de pagina */
 footer {
     background-color: #b9b6b6;
     padding: 20px;

@@ -36,7 +36,7 @@
                         <a href="./destinos.php">Destinos</a>
                     </li>
                     <li>
-                        <a href="#">Contacto</a>
+                        <a href="./contacto.php">Contacto</a>
                     </li>
                 </ul>
             </nav>
