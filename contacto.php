@@ -61,11 +61,7 @@
                     </button>
 
                     <button>
-                        <a href="#">Iniciar sesión</a>
-                    </button>
-
-                    <button>
-                        <a href="#">Registrarse</a>
+                        <a href="./register.php">Iniciar sesión / Registrarse</a>
                     </button>
                 </div>
             </div>
