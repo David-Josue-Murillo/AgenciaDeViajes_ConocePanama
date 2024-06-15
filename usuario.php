@@ -47,6 +47,15 @@
                         <input type="password" name="password" placeholder="Eliga una contraseña (minimo 6 caracteres)">
                     </div>
 
+                    <div>
+                        <label for="tipoUsuaio">Tipo de usuario</label>
+                        <select name="tipoUsuaio">
+                            <option value="none">Ninguno</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Cliente</option>
+                        </select>
+                    </div>
+
                     <input type="submit" value="Registrarse">
                 </form>
             </div>
