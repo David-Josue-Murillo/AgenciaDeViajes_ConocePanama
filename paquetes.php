@@ -3,9 +3,10 @@
 ?>
 
         <main>
-            <section class="section__content__paquetes">
-                <div>
-                    <h1>Todos los paquetes de viajes que ofrecemos en Panamá</h1>
+            <section class="section__content__paquetes section__main">
+                <div class="section__main__info section__content__info">
+                    <h1 class="info__textPrim info__textPrim__content">Todos los paquetes de viajes que ofrecemos en Panamá</h1>
+                    <p class="info__textTerc infox_textSecond">Descubre las mejores opciones de viajes que ofrecemos en Panamá</p>
                 </div>
             </section>
 
