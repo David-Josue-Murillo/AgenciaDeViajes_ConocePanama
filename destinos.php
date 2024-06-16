@@ -3,18 +3,18 @@
 ?>
 
         <main>
-            <section class="section__content__destinos">
-                <div>
-                    <h1>Explorando Panamá a través de nuestros atractivos destinos turisticos</h1>
-                    <p>Beneficiate de nuestras ofertas especiales para descubrir los mejores sitios atractivos de Panamá</p>
+            <section class="section__content__destinos section__main">
+                <div class="section__main__info section__destinos__info">
+                    <h1 class="info__textPrim info__textPrim__content">Explorando Panamá a través de nuestros atractivos destinos turisticos</h1>
+                    <p class="info__textTerc">Beneficiate de nuestras ofertas especiales para descubrir los mejores sitios atractivos de Panamá</p>
                 </div>
 
-                <div>
-                    <button>
+                <div class="section__destinos__btn">
+                    <button class="info__btn">
                         <a href="#">Lugares turísticos</a>
                     </button>
 
-                    <button>
+                    <button class="info__btn">
                         <a href="#">Acerca de Panamá</a>
                     </button>
                 </div>

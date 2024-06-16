@@ -2,16 +2,23 @@
     include_once 'includes/header.php';
 ?>
         <main>
-            <section class="section__content__contacto">
-                <div>
-                    <h1>Contacto</h1>
+            <section class="section__content__contacto section__main">
+                <div class="section__main__info section__contacto__info">
+                    <h1 class="info__textPrim">Escribenos a través de nuestro email</h1>
+                    <p class="info__textTerc">Llena el formulario y te responderemos en breve o escribenos por cualquiera de nuestros medios</p>
+                </div>
+
+                <div class="section__destinos__btn">
+                    <button class="info__btn">
+                        <a href="#formularioContacto">Ir al formulario de contacto</a>
+                    </button>
                 </div>
             </section>
 
             <section>
                 <!-- Información de contacto -->
                 <div>
-                    <div>
+                    <div id="formularioContacto">
                         <h3>Escribenos a través de nuestro email</h3>
                         <p>Llena el formulario y te responderemos en breve o escribenos por cualquiera de nuestros medios</p>
                     </div>

@@ -202,8 +202,15 @@
     line-height: 1.0px;
 }
 
-.section__content__info{
-    margin-top: -5rem;
+.section__content__info,
+.section__cruceros__info,
+.section__contacto__info{
+    margin-top: -3rem;
+}
+
+.section__destinos__info,
+.section__contacto__info{
+    margin-top: 2rem;
 }
 
 .info__textPrim {
@@ -234,7 +241,8 @@
     /* Sombra doble para mayor profundidad */
 }
 
-.section__main__btn{
+.section__main__btn,
+.section__destinos__btn{
     display: flex;
     justify-content: center;
     align-items: center;

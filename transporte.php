@@ -2,9 +2,10 @@
     include_once 'includes/header.php';
 ?>
         <main>
-            <section class="section__content__cruceros">
-                <div>
-                    <h1>Descubre el mundo a abordo de nuestros increibles cruceros</h1>
+            <section class="section__content__cruceros section__main">
+                <div class="section__main__info section__cruceros__info">
+                    <h1 class="info__textPrim info__textPrim__content">Descubre el mundo a abordo de nuestros increibles cruceros</h1>
+                    <p class="info__textTerc infox_textSecond">Descubre los mejores cruceros de Panamá</p>
                 </div>
             </section>
 
