@@ -5,12 +5,12 @@
         <p class="info__textTerc">Que esperas, reserva tu viaje YAA!</p>
     </div>
 
-    <section>
-        <button>
+    <section class="section__main__btn">
+        <butto class="info__btn">
             <a href="#">Cotizar</a>
-        </button>
+        </butto>
 
-        <button>
+        <button class="info__btn">
             <a href="#">Reservar</a>
         </button>
     </section>

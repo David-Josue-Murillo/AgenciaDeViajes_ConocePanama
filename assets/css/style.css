@@ -10,6 +10,8 @@
     margin: 0px;
     padding: 0px;
     text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Lato";
 }
 
 /* Fondos de las distintas secciones */
@@ -65,9 +67,9 @@
 }
 
 /* NAVBAR */
-.navbar{
+.navbar {
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 90%);
     z-index: 2;
 }
 
@@ -94,7 +96,8 @@
 
 .nav-item a:hover {
     color: #5ee347;
-    color: #ffcc00; /* Un color más brillante para mayor contraste */
+    color: #ffcc00;
+    /* Un color más brillante para mayor contraste */
     border-bottom: 4px solid #ffcc00;
 
 }
@@ -117,7 +120,8 @@
 
 .text-prim {
     font-family: "Lato";
-    color: #ffcc00; /* Un color más brillante para mayor contraste */
+    color: #ffcc00;
+    /* Un color más brillante para mayor contraste */
 }
 
 .text-second {
@@ -188,6 +192,7 @@
 }
 
 .section__main__info {
+    margin-top: 7rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -200,25 +205,61 @@
 .info__textPrim {
     font-size: 3.5rem;
     font-weight: bold;
-    color: #ffcc00; /* Un color más brillante para mayor contraste */
-    text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(255, 255, 255, 0.2); /* Sombra doble para mayor efecto */
+    color: #ffcc00;
+    /* Un color más brillante para mayor contraste */
+    text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(255, 255, 255, 0.2);
+    /* Sombra doble para mayor efecto */
 }
 
 .info__textSecond {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ffffff; /* Mantén el blanco para un buen contraste */
-    text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(0, 0, 0, 0.5); /* Sombra doble para mayor profundidad */
+    color: #ffffff;
+    /* Mantén el blanco para un buen contraste */
+    text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(0, 0, 0, 0.5);
+    /* Sombra doble para mayor profundidad */
 }
 
 .info__textTerc {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ffffff; /* Mantén el blanco para legibilidad */
-    text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(0, 0, 0, 0.5); /* Sombra doble para mayor profundidad */
+    color: #ffffff;
+    /* Mantén el blanco para legibilidad */
+    text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(0, 0, 0, 0.5);
+    /* Sombra doble para mayor profundidad */
 }
 
+.section__main__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
 
+.info__btn {
+    background: #fbca1f;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+}
+
+.info__btn:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.info__btn a {
+    color: black;
+    text-decoration: none;
+}
+  
 
 /* Pie de pagina */
 footer {
