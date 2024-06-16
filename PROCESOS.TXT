@@ -1,0 +1,88 @@
+Perfecto, dado que el tema de tu proyecto es una Agencia de Viajes llamada "Conoce Panamá", podemos ajustar la propuesta de funcionalidad para que se adapte específicamente a las necesidades y características de este tipo de negocio. Aquí tienes una propuesta detallada:
+
+### Funcionalidad del Proyecto Final para Agencia de Viajes "Conoce Panamá"
+
+#### Datos a Almacenar
+1. **Usuarios:**
+   - Datos de usuario (nombre, correo electrónico, contraseña encriptada, rol).
+   - Información adicional según el tipo de usuario.
+
+2. **Paquetes de Viaje:**
+   - Nombre del paquete.
+   - Destino(s) incluido(s).
+   - Descripción del paquete.
+   - Precio por persona.
+   - Fechas disponibles.
+   - Opciones adicionales (tours adicionales, traslados, etc.).
+
+3. **Clientes Registrados en Viajes:**
+   - Información del cliente (nombre, correo electrónico, teléfono).
+   - Detalles del viaje contratado (paquete seleccionado, fechas, detalles de pago).
+
+#### Consultas Disponibles
+1. **Consulta de Paquetes de Viaje:**
+   - Todos los usuarios pueden ver la lista de paquetes disponibles.
+   - Filtrar por destino, precio, fechas disponibles, etc.
+   - Implementación de DataTables para manejar grandes volúmenes de datos.
+
+2. **Detalles de Clientes Registrados en Viajes:**
+   - Información específica de clientes registrados en cada viaje.
+   - Descarga de información en PDF para administradores.
+
+#### Funcionalidades Específicas
+1. **Administración de Paquetes de Viaje:**
+   - CRUD completo para paquetes de viaje.
+   - Incluir imágenes y descripciones detalladas de cada destino.
+
+2. **Gestión de Clientes y Reservas:**
+   - Registro de clientes interesados en los paquetes.
+   - Seguimiento de reservas confirmadas.
+   - Modificación y cancelación de reservas por parte de los administradores.
+
+3. **Generación de Reportes y Documentos:**
+   - Generar itinerarios y detalles de viaje en PDF.
+   - Diseño profesional con logo de la agencia, detalles de contacto y fechas de viaje.
+
+4. **Envío de Correos Electrónicos:**
+   - Confirmación de reserva.
+   - Recordatorios de pago y fechas límite.
+   - Notificaciones de cambios en itinerarios.
+
+#### Seguridad y Otros Aspectos
+1. **Seguridad:**
+   - Encriptación de datos personales y de pago.
+   - Acceso seguro a través de inicio de sesión con roles definidos (administrador, consultor).
+
+2. **Interfaz de Usuario:**
+   - Diseño responsivo y atractivo usando CSS.
+   - Uso de JavaScript para mejorar la experiencia del usuario en la navegación y la interactividad.
+
+### Propuesta de Funcionalidad Detallada
+
+1. **Inicio de Sesión y Gestión de Usuarios:**
+   - Roles de usuario: administrador (acceso total) y consultor (acceso limitado a consultas).
+   - Gestión de cuentas de usuario y contraseñas encriptadas.
+
+2. **Módulo de Instalación y Configuración Inicial:**
+   - Scripts SQL para crear la base de datos y configurar la estructura inicial.
+   - Personalización inicial del sistema con datos de la agencia y de contacto.
+
+3. **Paquetes de Viaje:**
+   - CRUD para administrar paquetes de viaje (crear, leer, actualizar, eliminar).
+   - Subir imágenes y descripciones detalladas de cada destino.
+
+4. **Consultas Avanzadas:**
+   - Implementación de filtros avanzados para los paquetes de viaje.
+   - Descarga en PDF para itinerarios y detalles de viaje (administradores).
+
+5. **Envío de Correos Electrónicos Automatizados:**
+   - Confirmación de reservas.
+   - Recordatorios de pagos pendientes.
+   - Notificaciones de cambios en el itinerario del viaje.
+
+### Documentos a Enviar por Correo
+- **Confirmación de Reserva:** Detalles del paquete reservado, fechas, detalles de contacto.
+- **Itinerario de Viaje en PDF:** Información detallada del itinerario, incluyendo destinos, fechas y actividades planificadas.
+- **Recordatorios de Pago:** Fechas límite para pagos pendientes y métodos de pago aceptados.
+
+Esta propuesta cubre los requisitos específicos para desarrollar una aplicación de gestión para una agencia de viajes, adaptada al contexto de "Conoce Panamá". A medida que avances en el desarrollo, podrás ajustar y detallar más cada una de estas funcionalidades según las necesidades específicas de la agencia y los usuarios finales.
