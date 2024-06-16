@@ -19,6 +19,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    border: 1px solid #000000;
 }
 
 .section__content__paquetes {
@@ -64,22 +65,21 @@
 }
 
 /* NAVBAR */
+.navbar{
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    z-index: 2;
+}
+
 .bg-nav {
     background-image: linear-gradient(to right, #1a5fb4, #b9b6b6, #81cfe3);
-    max-height: 120px;
+    max-height: 140px;
 }
 
-.nav__img{
-    max-height: 7.8rem;
-    max-width: 7.8rem;
- 
+.nav__img {
+    max-height: 7.5rem;
+    max-width: 7.5rem;
 }
-
-.nav__img:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
-}
-
 
 .nav-item {
     font-size: 1.2rem;
@@ -94,11 +94,12 @@
 
 .nav-item a:hover {
     color: #5ee347;
-    border-bottom: 4px solid #5ee347;
+    color: #ffcc00; /* Un color más brillante para mayor contraste */
+    border-bottom: 4px solid #ffcc00;
 
 }
 
-.nav__text{
+.nav__text {
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -107,21 +108,21 @@
     margin-right: 5rem;
 }
 
-.text-nav{
+.text-nav {
     font-size: 1.5rem;
     font-family: "Lato";
     font-weight: bold;
-    color: white;
     text-shadow: 1px 1px 1px #000;
 }
 
-.text-prim{
+.text-prim {
     font-family: "Lato";
-
+    color: #ffcc00; /* Un color más brillante para mayor contraste */
 }
 
-.text-second{
+.text-second {
     font-size: 0.7rem;
+    color: #ffffff;
 }
 
 .btn_admin {
@@ -148,8 +149,8 @@
     border-radius: 10px;
     position: relative;
     cursor: pointer;
-    background: -webkit-gradient(linear, left top, right top, color-stop(-12.74%, rgba(34, 235, 27, 0.641)), color-stop(56.76%, rgba(106, 255, 116, 0.271)));
-    background: linear-gradient(90deg, rgb(47, 245, 21) -12.74%, rgba(73, 255, 49, 0.691) 56.76%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(-12.74%, rgba(221, 235, 27, 0.641)), color-stop(56.76%, rgba(106, 255, 141, 0.271)));
+    background: linear-gradient(90deg, rgb(241, 245, 21) -12.74%, rgba(73, 255, 49, 0.691) 56.76%);
     border: 2px solid #acffd0;
     color: #FFFFFF;
     font-size: 1.5rem;
@@ -167,6 +168,56 @@
     border-radius: 0.5rem;
     color: #000;
 }
+
+
+/* Navbar Active */
+
+
+
+/* Main Content */
+.section__main {
+    position: relative;
+    top: -4vh;
+    width: 100%;
+    height: 84vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.section__main__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.0px;
+}
+
+.info__textPrim {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffcc00; /* Un color más brillante para mayor contraste */
+    text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(255, 255, 255, 0.2); /* Sombra doble para mayor efecto */
+}
+
+.info__textSecond {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff; /* Mantén el blanco para un buen contraste */
+    text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(0, 0, 0, 0.5); /* Sombra doble para mayor profundidad */
+}
+
+.info__textTerc {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff; /* Mantén el blanco para legibilidad */
+    text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(0, 0, 0, 0.5); /* Sombra doble para mayor profundidad */
+}
+
 
 
 /* Pie de pagina */

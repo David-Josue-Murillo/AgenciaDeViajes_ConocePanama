@@ -1,24 +1,6 @@
-<?php
-    include_once 'includes/header.php';
-?>
+<?php include_once 'includes/header.php'; ?>
     <main>
-        <section class="section__content">
-            <div>
-                <p>Agencia de viajes en Panamá</p>
-                <h1>¿Listo para conocer a Panamá?</h1>
-                <p>Que esperas, reserva tu viaje YAA!</p>
-            </div>
-
-            <section>
-                <button>
-                    <a href="#">Cotizar</a>
-                </button>
-
-                <button>
-                    <a href="#">Reservar</a>
-                </button>
-            </section>
-        </section>
+        <?php include_once 'includes/main_content.php'; ?>
 
         <section class="section__paquetes">
             <div>
