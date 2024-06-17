@@ -88,7 +88,7 @@
   min-width: 35ch;
   min-height: 65vh;
   text-align: start;
-  background: url(../img/paquete_2.webp);
+  background: url(../img/paquete_1.jpg);
   background-size: cover;
   margin-top: 1rem;
   padding: 1.5em;
@@ -104,26 +104,6 @@
   gap: 1em;
 }
 
-.card__paquetes__other {
-  --hover-bg: #b5a422;
-  --hover-text: #ffffff;
-  min-width: 35ch;
-  min-height: 65vh;
-  text-align: start;
-  background-size: cover;
-  margin-top: 1rem;
-  padding: 1.5em;
-  padding-block: 1.8em;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-  transition: .3s cubic-bezier(.6, .4, 0, 1), transform .15s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-}
 
 .card__body {
   text-align: start;

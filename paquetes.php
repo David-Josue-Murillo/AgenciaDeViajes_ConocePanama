@@ -2,7 +2,7 @@
 include_once 'includes/header.php';
 ?>
 
-<main class="">
+<main>
     <section class="section__content__paquetes section__main container-fluid">
         <div class="section__main__info section__content__info">
             <h1 class="info__textPrim info__textPrim__content">Todos los paquetes de viajes que ofrecemos en Panamá</h1>
@@ -11,35 +11,39 @@ include_once 'includes/header.php';
     </section>
 
     <section class="section__paquetes container-fluid">
+        <section class="text-center mb-5">
+            <h2 class="text-4xl text-prim">Todos los paquetes de viajes que ofrecemos en Panamá</h2>
+            <p class="fs-5 text-second">Descubre las mejores opciones de viajes que ofrecemos en Panamá</p>
+        </section>
         <!-- Todos los paquetes de viajes  -->
-        <section class="paquetes__img">
-            <div>
-                <div class="">
-                    <img src="./assets/img/paquete_1.webp" class="img-fluid" alt="Vuelo a Bocas del Toro">
+        <section class="paquetes__img container-fluid">
+            <div class="d-flex justify-content-between gap-2 flex-wrap w-100">
+                <div class="card__paquetes__img">
+                    <img src="./assets/img/paquete_1.jpg" class="img-fluid border rounded w-100 h-100 object-cover" alt="Vuelo a Bocas del Toro">
                 </div>
-                <div class="">
-                    <img src="./assets/img/paquete_2.webp" class="img-fluid" alt="vuelo a isla Contadora">
+                <div class="card__paquetes__img">
+                    <img src="./assets/img/paquete_2.webp" class="img-fluid border rounded w-100 h-100 object-cover" alt="vuelo a isla Contadora">
                 </div>
-                <div class="">
-                    <img src="./assets/img/paquete_3.webp" class="img-fluid" alt="vuelo a isla Taboga">
+                <div class="card__paquetes__img">
+                    <img src="./assets/img/paquete_3.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
                 </div>
-                <div class="">
-                    <img src="./assets/img/paquete_4.webp" class="img-fluid" alt="vuelo a isla Taboga">
+                <div class="card__paquetes__img">
+                    <img src="./assets/img/paquete_4.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
                 </div>
-                <div class="">
-                    <img src="./assets/img/paquete_5.webp" class="img-fluid" alt="vuelo a isla Taboga">
+                <div class="card__paquetes__img">
+                    <img src="./assets/img/paquete_5.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
                 </div>
-                <div class="">
-                    <img src="./assets/img/paquete_6.webp" class="img-fluid" alt="vuelo a isla Taboga">
+                <div class="card__paquetes__img">
+                    <img src="./assets/img/paquete_6.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
                 </div>
-                <div class="">
-                    <img src="./assets/img/paquete_7.webp" class="img-fluid" alt="vuelo a isla Taboga">
+                <div class="card__paquetes__img">
+                    <img src="./assets/img/paquete_7.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
                 </div>
-                <div class="">
-                    <img src="./assets/img/paquete_8.webp" class="img-fluid" alt="vuelo a isla Taboga">
+                <div class="card__paquetes__img">
+                    <img src="./assets/img/paquete_8.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
                 </div>
-                <div class="">
-                    <img src="./assets/img/paquete_9.webp" class="img-fluid" alt="vuelo a isla Taboga">
+                <div class="card__paquetes__img">
+                    <img src="./assets/img/paquete_9.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
                 </div>
             </div>
         </section>
@@ -47,34 +51,7 @@ include_once 'includes/header.php';
 </main>
 
 <footer>
-    <div>
-        <div>
-            <img src="./assets/img/logo.png" alt="logoEmpresa">
-        </div>
-        <div>
-            &copy; 2024 Agencia de viajes - Conoce Panamá
-        </div>
-    </div>
-
-    <div>
-        <div>
-            <h3>Contáctanos</h3>
-            <p>Escribenos a través de nuestro email</p>
-            <form action="">
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email">
-                </div>
-
-                <div>
-                    <label for="mensaje">Mensaje</label>
-                    <textarea name="mensaje"></textarea>
-                </div>
-
-                <input type="submit" value="Enviar">
-            </form>
-        </div>
-    </div>
+    <?php include_once 'includes/footer_index.php'; ?>
 </footer>
 </div>
 </body>
