@@ -1,10 +1,10 @@
-<section class="d-flex justify-content-around py-5 align-items-center">
+<section class="d-flex justify-content-around py-5 align-items-center ">
     <div class="w-25 h-25">
         <img src="./assets/img/logo.png" class="img-fluid" alt="logoEmpresa">
     </div>
 
 
-    <div>
+    <di class="py-2">
         <div class="d-flex flex-column">
             <h3 class="text-2xl text-prim">Contáctanos</h3>
             <p class="fs-4 text-second">Escribenos a través de nuestro email</p>
@@ -28,8 +28,7 @@
 
             <input type="submit" value="Enviar" class="btn btn-success w-100 mt-4">
         </form>
-    </div>
-
+    </di>
 </section>
 
 <section class="text-center">

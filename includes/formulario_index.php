@@ -1,4 +1,4 @@
-<form action="">
+<form id="form_cotizar" action="">
     <div class="d-flex justify-content-between mb-2">
         <div class="d-flex flex-column gap-1">
             <label for="nombre">Nombre</label>
@@ -40,5 +40,5 @@
         <input type="date" class="border border-2 border-success rounded px-2 py-1" name="fecha">
     </div>
 
-    <input type="submit" value="Solicitar" class="btn btn-success w-100">
+    <input type="submit" value="Solicitar" class="btn btn-success w-100 mb-3">
 </form>

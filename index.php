@@ -18,7 +18,7 @@
 
     <!-- Cotización y reserva -->
     <section class="section__cotizacion bg__general container-fluid">
-        <div class="container-fluid bg-dark-subtle w-50 border border-warning-subtle rounded px-5 py-3 my-2 mb-5">
+        <div class="container-fluid bg-dark-subtle w-50 border border-warning-subtle rounded px-5 py-3 my-2 mb-5" id="area_cotizacion">
             <section class="d-flex justify-content-center">
                 <h3 class="text-4xl text-prim">Cotizar</h3>
             </section>
