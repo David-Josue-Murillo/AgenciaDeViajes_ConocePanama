@@ -3,7 +3,7 @@
     <?php include_once 'includes/main_index.php'; ?>
 
     <section class="section__paquetes bg__general container-fluid d-flex justify-content-center flex-column">
-        <div class="w-100 text-center mt-5 ">
+        <div class="w-100 text-center mt-2 ">
             <h2 class="text-4xl text-prim">Conoce nuestros paquetes de viajes</h2>
             <p class="text-2xl text-second">Descubre las mejores opciones de viajes que ofrecemos en Panamá</p>
         </div>
@@ -18,7 +18,7 @@
 
     <!-- Cotización y reserva -->
     <section class="section__cotizacion bg__general container-fluid">
-        <div class="container-fluid bg-dark-subtle w-50 border border-warning-subtle rounded px-5 py-3 my-5">
+        <div class="container-fluid bg-dark-subtle w-50 border border-warning-subtle rounded px-5 py-3 my-2 mb-5">
             <section class="d-flex justify-content-center">
                 <h3 class="text-4xl text-prim">Cotizar</h3>
             </section>
@@ -26,7 +26,7 @@
             <section class="d-flex justify-content-center flex-column w-100 m-auto px-5">
                 <div>
                     <h4 class="text-1xl text-dark">Buscar viaje</h4>
-                    <p class="fs-5 text-dark">Escoge tu destino y el día de tu viaje</p>
+                    <p class="fs-5 text-second">Escoge tu destino y el día de tu viaje</p>
                 </div>
 
                 <div>
@@ -37,35 +37,8 @@
     </section>
 </main>
 
-<footer>
-    <div>
-        <div>
-            <img src="./assets/img/logo.png" alt="logoEmpresa">
-        </div>
-        <div>
-            &copy; 2024 Agencia de viajes - Conoce Panamá
-        </div>
-    </div>
-
-    <div>
-        <div>
-            <h3>Contáctanos</h3>
-            <p>Escribenos a través de nuestro email</p>
-            <form action="">
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email">
-                </div>
-
-                <div>
-                    <label for="mensaje">Mensaje</label>
-                    <textarea name="mensaje"></textarea>
-                </div>
-
-                <input type="submit" value="Enviar">
-            </form>
-        </div>
-    </div>
+<footer class="container-fluid">
+    <?php include_once 'includes/footer_index.php'; ?>
 </footer>
 </body>
 
