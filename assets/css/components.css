@@ -146,5 +146,5 @@
 }
 
 .card__paquetes:hover>div,.card__paquetes:hover>strong {
-    opacity: 0.1;
+    opacity: 0.3;
   }

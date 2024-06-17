@@ -184,7 +184,8 @@
 
 /* Main Content */
 .section__main,
-.section__paquetes {
+.section__paquetes,
+.section__cotizacion {
     position: relative;
     top: -4vh;
     width: 100%;
