@@ -185,8 +185,6 @@
 
 
 /* Main Content */
-.section__main,
-.section__paquetes,
 .section__cotizacion {
     position: relative;
     top: -4vh;
@@ -199,8 +197,17 @@
     z-index: 1;
 }
 
-.section__paquetes {
-    margin-top: -5vh;
+.section__main{
+    position: relative;
+    top: -4vh;
+    width: 100%;
+    height: 90vh;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .section__main__info {
@@ -222,6 +229,10 @@
 .section__destinos__info,
 .section__contacto__info {
     margin-top: 2rem;
+}
+
+.info__textPrim__content {
+    margin-top: -15vh;
 }
 
 .info__textPrim {

@@ -3,7 +3,7 @@
     <?php include_once 'includes/main_index.php'; ?>
 
     <section class="section__paquetes bg__general container-fluid d-flex justify-content-center flex-column">
-        <div class="w-100 text-center mt-2 ">
+        <div class="w-100 text-center mt-5">
             <h2 class="text-4xl text-prim">Conoce nuestros paquetes de viajes</h2>
             <p class="text-2xl text-second">Descubre las mejores opciones de viajes que ofrecemos en Panamá</p>
         </div>
