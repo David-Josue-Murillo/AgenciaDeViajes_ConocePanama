@@ -28,34 +28,7 @@
         </main>
 
         <footer>
-            <div>
-                <div>
-                    <img src="./assets/img/logo.png" alt="logoEmpresa">
-                </div>
-                <div>
-                    &copy; 2024 Agencia de viajes - Conoce Panamá
-                </div>
-            </div>
-
-            <div>
-                <div>
-                    <h3>Contáctanos</h3>
-                    <p>Escribenos a través de nuestro email</p>
-                    <form action="">
-                        <div>
-                            <label for="email">Email</label>
-                            <input type="email" name="email">
-                        </div>
-
-                        <div>
-                            <label for="mensaje">Mensaje</label>
-                            <textarea name="mensaje"></textarea>
-                        </div>
-                        
-                        <input type="submit" value="Enviar">
-                    </form>
-                </div>
-            </div>
+            <?php include_once 'includes/footer.php'; ?>
         </footer>
     </div>
 </body>

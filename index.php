@@ -25,7 +25,7 @@
             </section>
 
             <div class="d-flex justify-content-around">
-                <section class="d-flex justify-content-center flex-column w-100 m-auto px-5 mb-2">
+                <section class="d-flex justify-content-center flex-column w-100 m-auto px-5 mb-2footer_index">
                     <div class="mx-4 px-3">
                         <h4 class="text-1xl text-dark">Buscar viaje</h4>
                         <p class="fs-5 text-second">Escoge tu destino y el día de tu viaje</p>
@@ -49,7 +49,7 @@
 </main>
 
 <footer class="container-fluid">
-    <?php include_once 'includes/footer_index.php'; ?>
+    <?php include_once 'includes/footer.php'; ?>
 </footer>
 </body>
 
