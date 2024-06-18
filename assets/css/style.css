@@ -410,12 +410,23 @@
 /* Contenido de la sección de contacto */
 .section__contact{
     background: linear-gradient(to right, #329e7a, #9ac549, #a8e381);
-    top: -4vh;
     margin-top: -4vh;
-    padding: 5rem 10rem;
-    
+    padding: 3rem 3rem;
+
 }
 
+.section__contact__form{
+    width: 60%;
+}
+
+.contact__input{
+    width: 49%;
+}
+
+.contact__textarea{
+    width: 100%;
+    height: 5.2rem;
+}
 
 /* Pie de pagina */
 footer {
