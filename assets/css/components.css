@@ -85,7 +85,7 @@
 .card__paquetes {
   --hover-bg: #b5a422;
   --hover-text: #ffffff;
-  min-width: 35ch;
+  min-width: 30ch;
   min-height: 65vh;
   text-align: start;
   background: url(../img/paquete_1.jpg);
