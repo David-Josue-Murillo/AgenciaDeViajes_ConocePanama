@@ -51,7 +51,7 @@ include_once 'includes/header.php';
 </main>
 
 <footer>
-    <?php include_once 'includes/footer_index.php'; ?>
+    <?php include_once 'includes/footer.php'; ?>
 </footer>
 </div>
 </body>
