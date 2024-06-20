@@ -48,9 +48,10 @@
     </section>
 </main>
 
-<footer class="container-fluid">
-    <?php include_once 'includes/footer.php'; ?>
-</footer>
+<!-- Footer Start -->
+<?php include_once 'includes/footer.php'; ?>
+<!-- Footer Start -->
+
 </body>
 
 </html>

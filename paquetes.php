@@ -50,9 +50,10 @@ include_once 'includes/header.php';
     </section>
 </main>
 
-<footer>
-    <?php include_once 'includes/footer.php'; ?>
-</footer>
+<!-- Footer Start -->
+<?php include_once 'includes/footer.php'; ?>
+<!-- Footer Start -->
+
 </div>
 </body>
 

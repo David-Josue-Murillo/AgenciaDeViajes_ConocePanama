@@ -428,6 +428,17 @@
     height: 5.2rem;
 }
 
+/* Estilos a la paginaa servicios - START */
+
+.section__service{
+    background: linear-gradient(to right, #329e7a, #9ac549, #a8e381);
+    top: -4vh;
+    margin-top: -6vh;
+    margin-bottom: 3rem;
+}
+
+/* Estilos a la paginaa servicios - END */
+
 /* Pie de pagina */
 footer {
     padding: 20px;
