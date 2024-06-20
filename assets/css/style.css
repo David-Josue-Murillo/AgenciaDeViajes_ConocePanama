@@ -25,14 +25,14 @@
 }
 
 .section__content__paquetes {
-    background: url(../img/bg_paquetes.jpg) no-repeat center center fixed;
+    background: url(../img/prueba_1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
-.section__content__cruceros {
+.section__content__servicios {
     background: url(../img/bg_crucero.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

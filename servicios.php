@@ -2,7 +2,7 @@
 include_once 'includes/header.php';
 ?>
 <main>
-    <section class="section__content__cruceros section__main">
+    <section class="section__content__servicios section__main">
         <div class="section__main__info section__cruceros__info">
             <h1 class="info__textPrim info__textPrim__content">Tours y servicios de viajes</h1>
             <p class="info__textTerc infox_textSecond">Te ofrecemos el servicio mas completo de Panamá</p>
