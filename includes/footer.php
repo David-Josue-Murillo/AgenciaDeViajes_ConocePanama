@@ -32,7 +32,7 @@
         </di>
     </section>
     
-    <section class="text-center">
+    <section class="text-center text-white">
         &copy; 2024 Agencia de viajes - Conoce Panamá
     </section>
 </footer>
