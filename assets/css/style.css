@@ -16,7 +16,7 @@
 
 /* Fondos de las distintas secciones */
 .section__content {
-    background: url(../img/bg.png) no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../img/bg.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -25,7 +25,7 @@
 }
 
 .section__content__paquetes {
-    background: url(../img/prueba_1.jpg) no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/prueba_1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -33,7 +33,7 @@
 }
 
 .section__content__servicios {
-    background: url(../img/bg_crucero.jpg) no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../img/bg_crucero.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -41,15 +41,7 @@
 }
 
 .section__content__destinos {
-    background: url(../img/bg_destino.png) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.section__content__contacto {
-    background: url(../img/bg_contacto.jpg) no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bg_destino.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -199,7 +191,7 @@
 
 .section__main {
     position: relative;
-    top: -4vh;
+    top: -7vh;
     width: 100%;
     height: 90vh;
     padding-top: 5rem;
@@ -338,10 +330,8 @@
 
 /* Contenido de la sección de contacto */
 .section__contacto {
-    background: linear-gradient(to right, #329e7a, #9ac549, #a8e381);
     top: -4vh;
     margin-top: -4vh;
-    padding: 5rem 10rem;
 }
 
 .section__contacto__info {
@@ -409,9 +399,7 @@
 
 /* Contenido de la sección de contacto */
 .section__contact{
-    background: linear-gradient(to right, #329e7a, #9ac549, #a8e381);
     margin-top: -4vh;
-    padding: 3rem 3rem;
 
 }
 
