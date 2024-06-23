@@ -10,44 +10,188 @@ include_once 'includes/header.php';
         </div>
     </section>
 
-    <section class="section__paquetes container-fluid">
-        <section class="text-center mb-5">
-            <h2 class="text-4xl text-prim">Todos los paquetes de viajes que ofrecemos en Panamá</h2>
-            <p class="fs-5 text-second">Descubre las mejores opciones de viajes que ofrecemos en Panamá</p>
-        </section>
-        <!-- Todos los paquetes de viajes  -->
-        <section class="paquetes__img container-fluid">
-            <div class="d-flex justify-content-between gap-2 flex-wrap w-100">
-                <div class="card__paquetes__img">
-                    <img src="./assets/img/paquete_1.jpg" class="img-fluid border rounded w-100 h-100 object-cover" alt="Vuelo a Bocas del Toro">
+    <!-- Destino - Inicio -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Lugares Turísticos</h6>
+                <h1>Explorando Top Destino</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="assets/img/destino-1.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Bocas del toro</h5>
+                            <span>100 Cities</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="card__paquetes__img">
-                    <img src="./assets/img/paquete_2.webp" class="img-fluid border rounded w-100 h-100 object-cover" alt="vuelo a isla Contadora">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="assets/img/destino-2.webp" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Colón</h5>
+                            <span>100 Cities</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="card__paquetes__img">
-                    <img src="./assets/img/paquete_3.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="assets/img/destino-3.webp" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Veraguas</h5>
+                            <span>100 Cities</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="card__paquetes__img">
-                    <img src="./assets/img/paquete_4.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="assets/img/destino-4.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Chiriquí</h5>
+                            <span>100 Cities</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="card__paquetes__img">
-                    <img src="./assets/img/paquete_5.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="assets/img/destino-5.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Coclé</h5>
+                            <span>100 Cities</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="card__paquetes__img">
-                    <img src="./assets/img/paquete_6.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
-                </div>
-                <div class="card__paquetes__img">
-                    <img src="./assets/img/paquete_7.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
-                </div>
-                <div class="card__paquetes__img">
-                    <img src="./assets/img/paquete_8.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
-                </div>
-                <div class="card__paquetes__img">
-                    <img src="./assets/img/paquete_9.webp" class="img-fluid border rounded" alt="vuelo a isla Taboga">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="assets/img/destino-6.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Panamá</h5>
+                            <span>100 Cities</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
-    </section>
+        </div>
+    </div>
+    <!-- Destino - Fin -->
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5 mb-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Guias</h6>
+                <h1>Nuestras guías de viaje</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Nombre del Guia</h5>
+                            <p class="m-0">Designación</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Nombre del Guia</h5>
+                            <p class="m-0">Designación</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Nombre del Guia</h5>
+                            <p class="m-0">Designación</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Nombre del Guia</h5>
+                            <p class="m-0">Designación</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Nombre del Guia</h5>
+                            <p class="m-0">Designación</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Nombre del Guia</h5>
+                            <p class="m-0">Designación</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+     
 </main>
 
 <!-- Footer Start -->
