@@ -11,7 +11,7 @@ include_once 'includes/header.php';
 
         <div class="section__destinos__btn">
             <button class="info__btn">
-                <a href="#">Lugares turísticos</a>
+                <a href="#paquetesTuristicos">Lugares turísticos</a>
             </button>
 
             <button class="info__btn">
@@ -25,7 +25,7 @@ include_once 'includes/header.php';
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
                 <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destinos</h6>
-                <h1>Paquetes turísticos perfectos</h1>
+                <h1 id="paquetesTuristicos">Paquetes turísticos perfectos</h1>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -37,7 +37,7 @@ include_once 'includes/header.php';
                                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 dias</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="">Descubre los lugares más increíbles de Panamá con nosotros.</a>
+                            <a class="h5 text-decoration-none" href="">Descubre los lugares más increíbles de Panamá.</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
@@ -87,14 +87,14 @@ include_once 'includes/header.php';
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/img/paquete_4.webp" alt="">
+                        <img class="img-fluid" src="assets/img/paquete_7.jpg" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Hotel Candy Rose</small>
                                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 dias</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>6 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="">Uso</a>
+                            <a class="h5 text-decoration-none" href="">Los mejores paisajes naturales de Panamá</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
@@ -106,14 +106,14 @@ include_once 'includes/header.php';
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/img/paquete_5.webp" alt="">
+                        <img class="img-fluid" src="assets/img/paquete_7.webp" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Playa Blanca</small>
                                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
+                            <a class="h5 text-decoration-none" href="">Town Centers, Beaches y más</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
@@ -128,11 +128,11 @@ include_once 'includes/header.php';
                         <img class="img-fluid" src="assets/img/paquete_6.webp" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Hotel Azul Paradise</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>4 dias</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
+                            <a class="h5 text-decoration-none" href="">Playa, paisaje y más ¿Que esperas?</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
