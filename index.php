@@ -247,9 +247,9 @@
     <!-- Registro de user - Fin -->
 </main>
 
-<!-- Footer Start -->
+<!-- Footer - Inicio -->
 <?php include_once 'includes/footer.php'; ?>
-<!-- Footer Start -->
+<!-- Footer - Fin -->
 
 </body>
 

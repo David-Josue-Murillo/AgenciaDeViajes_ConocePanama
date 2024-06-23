@@ -1,38 +1,57 @@
 <footer class="bg-dark">
-    <section class="d-flex justify-content-around py-5 align-items-center">
-        <div class="w-25 h-25">
-            <img src="./assets/img/logo.png" class="img-fluid bg-white rounded-circle" alt="logoEmpresa">
-        </div>
-    
-    
-        <di class="py-2">
-            <div class="d-flex flex-column">
-                <h3 class="text-2xl text-prim">Contáctanos</h3>
-                <p class="fs-4 text-second">Escribenos a través de nuestro email</p>
+    <section class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 50px;">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="text-primary"><span class="text-white">Conoce</span> Panamá</h1>
+                </a>
+                <p>Agencia de viajes en Panamá, ofrecemos viajes en Panamá y nos gustaría que te ayuden a conocer a Panamá</p>
+                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Siguenos en </h6>
+                <div class="d-flex justify-content-start">
+                    <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-    
-            <form action="">
-                <div class="d-flex flex-column">
-                    <label class="text-white" for="email">Email</label>
-                    <input type="email" name="email" placeholder="email@gmail.com" class="border border-2 border-success rounded px-2 py-1 mb-3">
+
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Nuestros Servicios</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Acerca de</a>
+                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
+                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
+                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Ofertas</a>
+                    <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Blog</a>
                 </div>
-    
-                <div class="d-flex flex-column">
-                    <label class="text-white" for="telefono">Telefono</label>
-                    <input type="tel" name="telefono" placeholder="+507 6666-6666" class="border border-2 border-success rounded px-2 py-1 mb-3">
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Contactanos</h5>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Panamá, Panamá</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+507 6776 6666</p>
+                <p><i class="fa fa-envelope mr-2"></i>agenciapanama@gmail.com</p>
+                <div class="w-100">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Tu Email">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary px-3">Inscribirse</button>
+                        </div>
+                    </div>
                 </div>
-    
-                <div class="d-flex flex-column">
-                    <label class="text-white" for="mensaje">Mensaje</label>
-                    <textarea name="mensaje" class="border border-2 border-success rounded px-2 py-1 mb-3"></textarea>
-                </div>
-    
-                <input type="submit" value="Enviar" class="btn btn-success w-100 mt-4">
-            </form>
-        </di>
+            </div>
+        </div>
     </section>
-    
-    <section class="text-center text-white">
-        &copy; 2024 Agencia de viajes - Conoce Panamá
-    </section>
+    <section class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white-50">Copyright &copy; <a href="#">Domain</a>. Todos los derechos reservados.</a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-center text-md-right">
+                <p class="m-0 text-white-50">Desarrollado por <a href="https://davidmurilloup.netlify.app/">David Murillo</a>
+                </p>
+            </div>
+        </div>
+    </>
 </footer>
