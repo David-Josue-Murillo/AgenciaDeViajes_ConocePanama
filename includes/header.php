@@ -52,10 +52,10 @@
                         <a class="nav-link" href="../paquetes.php">Paquetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../servicios.php">Servicios</a>
+                        <a class="nav-link" href="../destinos.php">Destinos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../destinos.php">Destinos</a>
+                        <a class="nav-link" href="../servicios.php">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../contacto.php">Contacto</a>

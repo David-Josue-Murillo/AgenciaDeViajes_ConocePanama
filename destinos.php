@@ -2,7 +2,7 @@
 include_once 'includes/header.php';
 ?>
 
-<main>
+<>
     <section class="section__content__destinos section__main">
         <div class="section__main__info section__destinos__info">
             <h1 class="info__textPrim info__textPrim__content">Explorando Panamá a través de nuestros atractivos destinos turisticos</h1>
@@ -20,8 +20,8 @@ include_once 'includes/header.php';
         </div>
     </section>
 
-    <!-- Packages Start -->
-    <div class="container-fluid py-5">
+    <!-- Area de destinos - incio -->
+    <section class="container-fluid py-5">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
                 <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destinos</h6>
@@ -144,8 +144,13 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Packages End -->
+    </section>
+    <!-- Area de destinos - fin -->
+
+    <!-- Area del blog panamá - incio -->
+     
+    <!-- Area del blog panamá - fin -->
+    </
 </main>
 
 <!-- Footer Start -->
