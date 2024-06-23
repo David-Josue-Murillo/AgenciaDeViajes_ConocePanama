@@ -2,9 +2,62 @@
 <main>
     <?php include_once 'includes/main_index.php'; ?>
 
+    <!-- Reserva - Inicio -->
+    <div class="container-fluid booking mt-5 pb-5">
+        <div class="container pb-5">
+            <div class="bg-light shadow" style="padding: 30px;">
+                <div class="row align-items-center" style="min-height: 60px;">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-3 mb-md-0">
+                                    <select class="custom-select px-4" style="height: 47px;">
+                                        <option selected>Destino</option>
+                                        <option value="1">Destination 1</option>
+                                        <option value="2">Destination 1</option>
+                                        <option value="3">Destination 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3 mb-md-0">
+                                    <div class="date py-1" id="date1" data-target-input="nearest">
+                                        <input type="date" class="form-control" placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3 mb-md-0">
+                                    <div class="date py-1" id="date2" data-target-input="nearest">
+                                        <input type="date" class="form-control" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3 mb-md-0">
+                                    <select class="custom-select px-4" style="height: 47px;">
+                                        <option selected>Duración</option>
+                                        <option value="1">Duration 1</option>
+                                        <option value="2">Duration 1</option>
+                                        <option value="3">Duration 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <button class="info__btn" style="height: 47px; margin-top: -2px;"><a href="#area_cotizacion">Cotizar</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reserva - Fin -->
+
     <!-- Acerca de - Inicio -->
     <section class="container-fluid py-5">
-        <div class="container pt-5">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -33,7 +86,7 @@
     <!-- Acerca de - Fin -->
 
     <!-- Servicios - Inicio -->
-    <div class="container-fluid pb-5">
+    <div class="container-fluid pb-5 mt-5">
         <div class="container pb-5">
             <div class="row">
                 <div class="col-md-4">
@@ -78,8 +131,8 @@
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Our Blog</h6>
-                <h1>Latest From Our Blog</h1>
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Blog de viajes</h6>
+                <h1>Lo último de nuestro blog</h1>
             </div>
             <div class="row pb-3">
                 <div class="col-lg-4 col-md-6 mb-4 pb-2">
@@ -97,7 +150,7 @@
                                 <span class="text-primary px-2">|</span>
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
+                            <a class="h5 m-0 text-decoration-none" href="">9 Planes de Agroturismo en Boquete</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +169,7 @@
                                 <span class="text-primary px-2">|</span>
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
+                            <a class="h5 m-0 text-decoration-none" href="">9 Museos Imperdibles en Ciudad de Panamá</a>
                         </div>
                     </div>
                 </div>
@@ -135,14 +188,65 @@
                                 <span class="text-primary px-2">|</span>
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
+                            <a class="h5 m-0 text-decoration-none" href="">Top Actividades Para Conocer la Cultura Congos</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Blog End -->
+    <!-- Blog - Fin -->
+
+    <!-- Resgistro de user - Inicio -->
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="mb-4">
+                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Mega Offer</h6>
+                        <h1 class="text-white"><span class="text-primary">30% OFF</span> For Honeymoon</h1>
+                    </div>
+                    <p class="text-white">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
+                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
+                        dolor</p>
+                    <ul class="list-inline text-white m-0">
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-primary text-center p-4">
+                            <h1 class="text-white m-0">Sign Up Now</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-white p-5">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="Your name" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control p-4" placeholder="Your email" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="custom-select px-4" style="height: 47px;">
+                                        <option selected>Select a destination</option>
+                                        <option value="1">destination 1</option>
+                                        <option value="2">destination 1</option>
+                                        <option value="3">destination 1</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary btn-block py-3" type="submit">Sign Up Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registro de user - Fin -->
 
     <!-- Cotización y reserva -->
     <section class="section__cotizacion bg__general container-fluid">

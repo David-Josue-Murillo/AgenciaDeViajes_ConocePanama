@@ -6,10 +6,6 @@
     </div>
 
     <section class="section__main__btn">
-        <butto class="info__btn">
-            <a href="#area_cotizacion">Cotizar</a>
-        </butto>
-
         <button class="info__btn">
             <a href="#">Reservar</a>
         </button>
