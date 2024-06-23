@@ -27,9 +27,9 @@
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
-                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
-                        <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
-                        <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Acerca de Panamá</h6>
+                        <h1 class="mb-3">Descubre Panamá: Tu Próxima Aventura Te Espera</h1>
+                        <p>¡Bienvenido a Panamá, el destino perfecto para tus próximas vacaciones! Nuestra historia, naturaleza y modernidad te sorprenderan. Explora la vibrante Ciudad de Panamá, relájate en las playas paradisíacas de Bocas del Toro y San Blas, o aventúrate en las selvas del Parque Nacional Coiba.</p>
                         <div class="row mb-4">
                             <div class="col-6">
                                 <img class="img-fluid" src="assets/img/about-1.jpg" alt="">
