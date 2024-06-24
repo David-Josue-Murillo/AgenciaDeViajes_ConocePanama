@@ -130,6 +130,12 @@ li {
   transition: all .5s ease;
 }
 
+.btn-signup:hover {
+  cursor: pointer; 
+  background-color: #133fa6;
+  transition: background-color .5s; 
+}
+
 .form-signup-left {
   transform: translateX(-399px);
   opacity: 1;
@@ -325,6 +331,13 @@ label {
 	border: none;
 	border-radius: 20px;
   margin-top: -8px;
+  background: #0F4FE6;
+}
+
+.btn-signin:hover {
+  cursor: pointer; 
+  background-color: #133fa6;
+  transition: background-color .5s; 
 }
 
 .btn-animate {
@@ -354,12 +367,6 @@ label {
   top: -420px;
   color: rgba(255,255,255,0);
   background-color: rgba(255,255,255,1);
-}
-
-a.btn-signup:hover, a.btn-signin:hover {
-    cursor: pointer; 
-    background-color: #0F4FE6;
-    transition: background-color .5s; 
 }
 
 .forgot {

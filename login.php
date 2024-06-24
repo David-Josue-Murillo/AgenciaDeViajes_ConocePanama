@@ -20,7 +20,7 @@
             </div>
 
             <div ng-app ng-init="checked = false">
-                <form class="form-signin" action="" method="post" name="form">
+                <form class="form-signin" action="php/inicio_session.php" method="post" name="form">
                     <label for="username">Correo electrónico</label>
                     <input class="form-styling" type="email" name="username" placeholder="" />
                     <label for="password">Contraseña</label>
@@ -28,11 +28,11 @@
                     <input type="checkbox" id="checkbox" />
                     <label for="checkbox"><span class="ui"></span>Mantener session iniciada</label>
                     <div class="btn-animate">
-                        <a class="btn-signin">Iniciar sesión</a>
+                        <input class="btn-signin" type="submit" value="Iniciar sesión">
                     </div>
                 </form>
 
-                <form class="form-signup" action="" method="post" name="form">
+                <form class="form-signup" action="php/register.php" method="post" name="form">
                     <label for="name">Nombre</label>
                     <input class="form-styling" type="text" name="fullname" placeholder="" />
                     <label for="lastname">Apellido</label>
@@ -45,7 +45,8 @@
                     <input class="form-styling" type="text" name="password" placeholder="" />
                     <label for="confirmpassword">Confirmar Contraseña</label>
                     <input class="form-styling" type="text" name="confirmpassword" placeholder="" />
-                    <a ng-click="checked = !checked" class="btn-signup">Registrarse</a>
+                    
+                    <input class="btn-signup" type="submit" value="Registrarse">
                 </form>
 
                 <div class="success">
@@ -63,13 +64,6 @@
 
             <div class="forgot">
                 <a href="#">Olviste tu contraseña?</a>
-            </div>
-
-            <div>
-                <div class="cover-photo"></div>
-                <div class="profile-photo"></div>
-                <h1 class="welcome">Bienvenido, User</h1>
-                <a class="btn-goback" value="Refresh" onClick="history.go()">Regresar</a>
             </div>
         </div>
 
