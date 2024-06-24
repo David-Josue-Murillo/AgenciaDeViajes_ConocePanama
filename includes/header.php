@@ -39,7 +39,7 @@
                 </a>
 
                 <div class="nav__text d-flex w-100">
-                    <p class="text-nav text-prim text-2xl">Conoce Panamá</p>
+                    <p class="text-nav text-prim">Conoce Panamá</p>
                     <p class="text-nav text-second">Agencia de viajes en Panamá</p>
                 </div>
             </div>

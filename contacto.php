@@ -1,5 +1,5 @@
 <?php
-include_once 'php/includes/header.php';
+include_once 'includes/header.php';
 ?>
 
 <main class="section__contact">

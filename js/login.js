@@ -10,14 +10,14 @@ $(function() {
 	});
 });
 
-$(function() {
+/*$(function() {
 	$(".btn-signup").click(function() {
   $(".nav").toggleClass("nav-up");
   $(".form-signup-left").toggleClass("form-signup-down");
   $(".success").toggleClass("success-left"); 
   $(".frame").toggleClass("frame-short");
 	});
-});
+});*/
 
 $(function() {
 	$(".btn-signin").click(function() {

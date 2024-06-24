@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/login.css" type="text/css">
     <title>Login</title>
 </head>
 
@@ -34,19 +34,19 @@
 
                 <form class="form-signup" action="php/register.php" method="post" name="form">
                     <label for="name">Nombre</label>
-                    <input class="form-styling" type="text" name="fullname" placeholder="" />
+                    <input class="form-styling" type="text" name="fullname" placeholder=""  />
                     <label for="lastname">Apellido</label>
-                    <input class="form-styling" type="text" name="lastname" placeholder="" />
+                    <input class="form-styling" type="text" name="lastname" placeholder=""  />
                     <label for="phone">Teléfono</label>
-                    <input class="form-styling" type="text" name="phone" placeholder="" />
+                    <input class="form-styling" type="text" name="phone" placeholder=""  />
                     <label for="email">Correo electrónico</label>
-                    <input class="form-styling" type="text" name="email" placeholder="" />
+                    <input class="form-styling" type="text" name="email" placeholder=""  />
                     <label for="password">Contraseña</label>
-                    <input class="form-styling" type="text" name="password" placeholder="" />
+                    <input class="form-styling" type="text" name="password" placeholder=""  />
                     <label for="confirmpassword">Confirmar Contraseña</label>
-                    <input class="form-styling" type="text" name="confirmpassword" placeholder="" />
+                    <input class="form-styling" type="text" name="confirmpassword" placeholder=""  />
                     
-                    <input class="btn-signup" type="submit" value="Registrarse">
+                    <input class="btn-signup" type="submit" name="submit_register" value="Registrarse">
                 </form>
 
                 <div class="success">

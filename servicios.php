@@ -13,7 +13,7 @@ include_once 'includes/header.php';
     <div class="container-fluid py-5 section__service">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
-                <h6 class="fs-5 text-second text-uppercase" style="letter-spacing: 5px;">Servicios</h6>
+                <h6 class="fs-5 text-uppercase" style="letter-spacing: 5px;">Servicios</h6>
                 <h1 class="text-4xl text-prim">Servicios que ofrecemos</h1>
             </div>
             <div class="row">
