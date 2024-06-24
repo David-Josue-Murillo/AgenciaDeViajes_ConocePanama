@@ -3,13 +3,12 @@
 include_once 'conexion.php';
 include_once 'funciones.php';
 
-echo "<h1>Area de consultas</h1>";
-$name_table = 'usuarios';
+// Consulta la creación y verificación de la tabla (si existen)
 $name_db = 'conoce_panama';
 
-$query = "SHOW TABLES FROM $name_db LIKE '$name_table'";
+// Crear la tabla usuarios
+$query = "SHOW TABLES FROM `$name_db` LIKE 'usuarios'";
 $resultado = $conexion->query($query);
-$existe = $resultado->num_rows > 0;
 
 if(!$resultado->num_rows){
     $campos_user = "id_usuario INT NOT NULL AUTO_INCREMENT, 
@@ -23,3 +22,22 @@ if(!$resultado->num_rows){
         echo "Error al crear la tabla";
     }
 }
+
+// Crear la tabla destinos
+$query = "SHOW TABLES FROM `$name_db` LIKE 'destinos'";
+$resultado = $conexion->query($query);
+
+if(!$resultado->num_rows){
+    $campos_user = "id_destino INT NOT NULL AUTO_INCREMENT, 
+    nombre_destino VARCHAR(30) NOT NULL, ciudad VARCHAR(50) NOT NULL, 
+    descripcion TEXT, PRIMARY KEY (id_destino)";
+    
+    if(!crear_tabla('destinos', $campos_user, $conexion)) {
+        echo "Tabla creada con éxito";
+    } else {
+        echo "Error al crear la tabla";
+    }
+}
+
+
+
