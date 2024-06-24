@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agencia de viajes en Panamá, ofrecemos viajes en Panamá y nos gustaría que te ayuden a conocer a Panamá">
+    <meta name="keywords" content="Agencia de viajes en Panamá, ofrecemos viajes en Panamá, Panamá, viajes, turismo, turismo en Panamá">
+    <meta name="author" content="David Murillo">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -34,7 +39,7 @@
                 </a>
 
                 <div class="nav__text d-flex w-100">
-                    <p class="text-nav text-prim">Conoce Panamá</p>
+                    <p class="text-nav text-prim text-2xl">Conoce Panamá</p>
                     <p class="text-nav text-second">Agencia de viajes en Panamá</p>
                 </div>
             </div>
