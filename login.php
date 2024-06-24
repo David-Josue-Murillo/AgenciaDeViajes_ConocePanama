@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/css/login.css">
-    <title>Registrarse</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -33,8 +33,12 @@
                 </form>
 
                 <form class="form-signup" action="" method="post" name="form">
-                    <label for="fullname">Nombre completo</label>
+                    <label for="name">Nombre</label>
                     <input class="form-styling" type="text" name="fullname" placeholder="" />
+                    <label for="lastname">Apellido</label>
+                    <input class="form-styling" type="text" name="lastname" placeholder="" />
+                    <label for="phone">Teléfono</label>
+                    <input class="form-styling" type="text" name="phone" placeholder="" />
                     <label for="email">Correo electrónico</label>
                     <input class="form-styling" type="text" name="email" placeholder="" />
                     <label for="password">Contraseña</label>
