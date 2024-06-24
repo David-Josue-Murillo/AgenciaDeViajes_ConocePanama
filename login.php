@@ -10,6 +10,14 @@
 </head>
 
 <body>
+    <?php  
+        if(!isset($_SESSION)){
+            session_start();
+        } 
+
+        include './php/helpers.php'
+    ?>
+
     <div class="container">
         <div class="frame">
             <div class="nav">
@@ -21,6 +29,17 @@
 
             <div ng-app ng-init="checked = false">
                 <form class="form-signin" action="php/inicio_session.php" method="post" name="form">
+
+                    <?php if(isset($_SESSION['completado'])): ?>
+                        <?php unset($_SESSION['incompleto']); ?>
+                        <h1><?= $_SESSION['completado'] ?></h1>
+                    <?php endif; ?>
+
+                    <?php if(isset($_SESSION['incompleto'])): ?>
+                        <?php unset($_SESSION['completado']); ?>
+                        <h1><?= $_SESSION['incompleto'] ?></h1>
+                    <?php endif; ?>
+
                     <label for="username">Correo electrónico</label>
                     <input class="form-styling" type="email" name="username" placeholder="" />
                     <label for="password">Contraseña</label>
@@ -33,18 +52,35 @@
                 </form>
 
                 <form class="form-signup" action="php/register.php" method="post" name="form">
+                    <?php echo borrarError(); ?>
+                    
+                    <?php if(isset($_SESSION['errores'])): ?>
+                        <h1><?= $_SESSION['errores']['general'] ?></h1>
+                    <?php endif; ?>
+
                     <label for="name">Nombre</label>
-                    <input class="form-styling" type="text" name="fullname" placeholder=""  />
+                    <input class="form-styling" type="text" name="name" placeholder=""  />
+                    <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'name') : ''; ?>
+
                     <label for="lastname">Apellido</label>
                     <input class="form-styling" type="text" name="lastname" placeholder=""  />
+                    <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'lastname') : ''; ?>
+
                     <label for="phone">Teléfono</label>
-                    <input class="form-styling" type="text" name="phone" placeholder=""  />
+                    <input class="form-styling" type="tel" name="phone" placeholder=""  />
+                    <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'phone') : ''; ?>
+                    
                     <label for="email">Correo electrónico</label>
                     <input class="form-styling" type="text" name="email" placeholder=""  />
+                    <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'email') : ''; ?>
+                    
                     <label for="password">Contraseña</label>
-                    <input class="form-styling" type="text" name="password" placeholder=""  />
+                    <input class="form-styling" type="password" name="password" placeholder=""  />
+                    <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'password') : ''; ?>
+
                     <label for="confirmpassword">Confirmar Contraseña</label>
-                    <input class="form-styling" type="text" name="confirmpassword" placeholder=""  />
+                    <input class="form-styling" type="password" name="confirmpassword" placeholder=""  />
+                    <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'confirmpassword') : ''; ?>
                     
                     <input class="btn-signup" type="submit" name="submit_register" value="Registrarse">
                 </form>

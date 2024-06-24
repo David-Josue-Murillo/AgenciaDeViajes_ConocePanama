@@ -35,7 +35,7 @@ body {
 }
 
 .frame-long {
-  height: 755px;
+  height: 955px;
 }
 
 .frame-short {
@@ -106,7 +106,6 @@ li {
 	font-weight: 300;
   padding-left: 37px;
   padding-right: 37px;
-  padding-top: 55px;
   transition: opacity .5s ease, transform .5s ease;
 }
 
@@ -122,7 +121,6 @@ li {
 	font-weight: 300;
   padding-left: 37px;
   padding-right: 37px;
-  padding-top: 55px;
   position: relative;
   top: -375px;
   left: 400px;
@@ -516,3 +514,19 @@ a.btn-goback:hover {
   fill: #1059FF;
   transform: rotate(180deg);
 }
+
+/* Errores de formulario */
+.alerta{
+  padding: 5px;
+  font-size: 14px;
+  color: white;
+  background: green;
+  box-shadow: 0px 1px 3px #ccc;
+  margin-bottom: 15px;
+  border-radius: 2px;
+}
+
+.alerta-error{
+  background: rgba(255, 0, 0, 0.171);
+}
+/* Errores de formulario */
