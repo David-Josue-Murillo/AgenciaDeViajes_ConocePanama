@@ -40,4 +40,76 @@ if(!$resultado->num_rows){
 }
 
 
+// Crear la tabla viajes
+$query = "SHOW TABLES FROM `$name_db` LIKE 'viajes'";
+$resultado = $conexion->query($query);
+
+if(!$resultado->num_rows){
+    $campos_user = "id_viaje INT NOT NULL AUTO_INCREMENT,
+    nombre_viaje VARCHAR(30) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(10,2) NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_fin DATE NOT NULL,
+    id_destino INT NOT NULL,
+    PRIMARY KEY (id_viaje)";
+    
+    if(!crear_tabla('viajes', $campos_user, $conexion)) {
+        echo "Tabla creada con éxito";
+    } else {
+        echo "Error al crear la tabla";
+    }
+}
+
+// Crear la tabla paquetes
+$query = "SHOW TABLES FROM `$name_db` LIKE 'paquetes'";
+$resultado = $conexion->query($query);
+
+if(!$resultado->num_rows){
+    $campos_user = "id_paquete INT NOT NULL AUTO_INCREMENT,
+    nombre_paquete VARCHAR(30) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(10,2) NOT NULL,
+    id_destino INT NOT NULL,
+    PRIMARY KEY (id_paquete)";
+    
+    if(!crear_tabla('paquetes', $campos_user, $conexion)) {
+        echo "Tabla creada con éxito";
+    } else {
+        echo "Error al crear la tabla";
+    }
+}
+
+// Crear la tabla reservas
+$query = "SHOW TABLES FROM `$name_db` LIKE 'reservas'";
+$resultado = $conexion->query($query);
+
+if(!$resultado->num_rows){
+    $campos_user = "id_reserva INT NOT NULL AUTO_INCREMENT,
+    id_usuario INT NOT NULL,
+    id_viaje INT NOT NULL,
+    fecha_reserva DATE NOT NULL,
+    estado VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id_reserva)";
+    if(!crear_tabla('reservas', $campos_user, $conexion)) {
+        echo "Tabla creada con éxito";
+    } else {
+        echo "Error al crear la tabla";
+    }
+}
+
+//Crear la tabla estamento
+$query = "SHOW TABLES FROM `$name_db` LIKE 'estamento'";
+$resultado = $conexion->query($query);
+
+if(!$resultado->num_rows){
+    $campos_user = "id_estamento INT NOT NULL AUTO_INCREMENT,
+    id_tipo_usuario INT NOT NULL,
+    PRIMARY KEY (id_estamento)";
+    if(!crear_tabla('estamento', $campos_user, $conexion)) {
+        echo "Tabla creada con éxito";
+    } else {
+        echo "Error al crear la tabla";
+    }
+}
 
