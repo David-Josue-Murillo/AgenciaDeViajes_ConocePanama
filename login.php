@@ -21,8 +21,8 @@
 
             <div ng-app ng-init="checked = false">
                 <form class="form-signin" action="" method="post" name="form">
-                    <label for="username">Nombre de usuario</label>
-                    <input class="form-styling" type="text" name="username" placeholder="" />
+                    <label for="username">Correo electrónico</label>
+                    <input class="form-styling" type="email" name="username" placeholder="" />
                     <label for="password">Contraseña</label>
                     <input class="form-styling" type="text" name="password" placeholder="" />
                     <input type="checkbox" id="checkbox" />
