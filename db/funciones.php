@@ -1,16 +1,5 @@
 <?php 
 
-// Conexión a la base de datos
-include_once 'conexion.php';
-
-// Función para verificar si la tabla existe
-function tabla_existe($tabla, $db) {
-    $query = "SHOW TABLES FROM $db LIKE '$tabla'";
-    $resultado = $db->query($query);
-    $existe = $resultado->num_rows > 0;
-    return $existe;
-}
-
 // Función para crear la tabla
 function crear_tabla($tabla, $campos, $db) {
     $query = "CREATE TABLE $tabla ($campos)";
