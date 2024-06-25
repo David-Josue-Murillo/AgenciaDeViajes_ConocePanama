@@ -3,12 +3,24 @@ include_once 'includes/header.php';
 ?>
 
 <main>
-    <section class="section__content__paquetes section__main container-fluid">
-        <div class="section__main__info section__content__info">
-            <h1 class="info__textPrim info__textPrim__content">Explorando Panamá a través de nuestras atractivas ofertas turísticas</h1>
-            <p class="info__textTerc infox_textSecond">Benefíciate de nuestras ofertas especiales y descuentos exclusivos para descubrir lo mejor de Panamá.</p>
+    <!-- Carousel - Inicio -->
+   <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="assets/img/prueba_1.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">Conoce Panamá</h4>
+                            <h1 class="display-3 text-white mb-md-4">Explora todo Panamá</h1>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+    <!-- Carousel - Fin -->
 
     <!-- Destino - Inicio -->
     <div class="container-fluid py-5">

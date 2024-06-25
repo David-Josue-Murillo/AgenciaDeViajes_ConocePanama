@@ -1,21 +1,24 @@
 <?php include_once 'includes/header.php'; ?>
 <main>
     
-    <!-- Main Content - Inicio -->
-    <section class=" container-fluid section__content section__main">
-        <div class="section__main__info">
-            <p class="info__textSecond">Agencia de viajes en Panamá</p>
-            <h1 class="info__textPrim">¿Listo para conocer a Panamá?</h1>
-            <p class="info__textTerc">Que esperas, reserva tu viaje YAA!</p>
+    <!-- Carousel - Inicio -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="assets/img/bg.png" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">Tours & Viajes</h4>
+                            <h1 class="display-3 text-white mb-md-4">Descubramos el mundo juntos</h1>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <section class="section__main__btn">
-            <button class="info__btn">
-                <a href="#">Reservar</a>
-            </button>
-        </section>
-    </section>
-    <!-- Main Content - Fin -->
+    </div>
+    <!-- Carousel - Fin -->
 
     <!-- Reserva - Inicio -->
     <div class="container-fluid booking mt-5 pb-5">
@@ -265,6 +268,7 @@
 <!-- Footer - Inicio -->
 <?php include_once 'includes/footer.php'; ?>
 <!-- Footer - Fin -->
+
 
 </body>
 

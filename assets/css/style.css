@@ -453,6 +453,8 @@ footer {
 }
 
 @media (max-width: 640px) {
+
+    /* Index - Inicio */
     .nav__img{
         max-height: 4.5rem;
         max-width: 4.5rem;
@@ -497,6 +499,42 @@ footer {
         margin-top: 10px;
         text-wrap: nowrap;
     }
+    /* Index - Inicio */
+
+
+    /* Paquetes - Inicio */
+    .section__main__info {
+        width: 100%;
+        margin-top: -75px;
+        display: flex;
+        flex-wrap: inherit;
+        text-align: center;
+        line-height: 1.0px;
+    }
+
+    .info__textPrim__content {
+        margin-top: -5vh;
+    }
+
+    .info__textPrim {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffcc00;
+        text-shadow: 2px 3px 1px #000, -1px -1px 1px rgba(255, 255, 255, 0.2);
+    }
+
+    .text__info-main{
+        display: flex;
+        position: relative;
+        top: 1.5rem;
+
+    }
+    
+
+
+
+    /* Paquetes - Fin */
+
 }
 
 

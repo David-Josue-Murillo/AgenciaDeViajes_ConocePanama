@@ -2,12 +2,24 @@
 include_once 'includes/header.php';
 ?>
 <main>
-    <section class="section__content__servicios section__main">
-        <div class="section__main__info section__cruceros__info">
-            <h1 class="info__textPrim info__textPrim__content">Tours y servicios de viajes</h1>
-            <p class="info__textTerc infox_textSecond">Te ofrecemos el servicio mas completo de Panamá</p>
+    <!-- Carousel - Inicio -->
+   <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="assets/img/bg_crucero.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">Servicios</h4>
+                            <h1 class="display-3 text-white mb-md-4">Los mejores servicios de viajes</h1>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+    <!-- Carousel - Fin -->
 
     <!-- Service Start -->
     <div class="container-fluid py-5 section__service">

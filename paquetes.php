@@ -2,23 +2,24 @@
 include_once 'includes/header.php';
 ?>
 
-<>
-    <section class="section__content__destinos section__main">
-        <div class="section__main__info section__destinos__info">
-            <h1 class="info__textPrim info__textPrim__content">Explorando Panamá a través de nuestros atractivos destinos turisticos</h1>
-            <p class="info__textTerc">Beneficiate de nuestras ofertas especiales para descubrir los mejores sitios atractivos de Panamá</p>
+   <!-- Carousel - Inicio -->
+   <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="assets/img/bg_destino.png" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">Explorando Panamá</h4>
+                            <h1 class="display-3 text-white mb-md-4">Los mejores destinos turísticos</h1>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="section__destinos__btn">
-            <button class="info__btn">
-                <a href="#paquetesTuristicos">Lugares turísticos</a>
-            </button>
-
-            <button class="info__btn">
-                <a href="#">Acerca de Panamá</a>
-            </button>
-        </div>
-    </section>
+    </div>
+    <!-- Carousel - Fin -->
 
     <!-- Area de destinos - incio -->
     <section class="container-fluid py-5">
