@@ -105,7 +105,7 @@
             </div>
 
             <div class="forgot">
-                <a href="#">Olviste tu contraseña?</a>
+                <a href="recover-pass.php">Olviste tu contraseña?</a>
             </div>
         </div>
 
