@@ -2,7 +2,7 @@
 <main>
     
     <!-- Main Content - Inicio -->
-    <section class="section__content section__main">
+    <section class=" container-fluid section__content section__main">
         <div class="section__main__info">
             <p class="info__textSecond">Agencia de viajes en Panamá</p>
             <h1 class="info__textPrim">¿Listo para conocer a Panamá?</h1>

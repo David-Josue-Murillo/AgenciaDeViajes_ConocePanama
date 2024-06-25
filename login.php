@@ -29,7 +29,6 @@
 
             <div ng-app ng-init="checked = false">
                 <form class="form-signin" action="php/inicio_session.php" method="post" name="form">
-
                     <?php if(isset($_SESSION['completado'])): ?>
                         <?php unset($_SESSION['incompleto']); ?>
                         <?php unset($_SESSION['error_login']); ?>
@@ -46,10 +45,11 @@
                         <h1><?= $_SESSION['error_login'] ?></h1>
                     <?php endif; ?>
 
+                    <?php borrarError(); ?>
                     <label for="email">Correo electrónico</label>
                     <input class="form-styling" type="email" name="email" placeholder="" />
                     <label for="password">Contraseña</label>
-                    <input class="form-styling" type="text" name="password" placeholder="" />
+                    <input class="form-styling" type="password" name="password" placeholder="" />
                     <input type="checkbox" id="checkbox" />
                     <label for="checkbox"><span class="ui"></span>Mantener session iniciada</label>
                     <div class="btn-animate">
@@ -58,7 +58,7 @@
                 </form>
 
                 <form class="form-signup" action="php/register.php" method="post" name="form">
-                    <?php echo borrarError(); ?>
+                    <?php borrarError(); ?>
                     
                     <?php if(isset($_SESSION['errores'])): ?>
                         <h1><?= $_SESSION['errores']['general'] ?></h1>

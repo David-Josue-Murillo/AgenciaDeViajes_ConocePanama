@@ -33,6 +33,12 @@ function borrarError() {
         $borrado = true;
     }
 
+    if (isset($_SESSION['error_login'])) {
+        $_SESSION['error_login'] = null;
+        unset($_SESSION['error_login']);
+        $borrado = true;
+    }
+
     return $borrado;
 }
 

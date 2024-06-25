@@ -31,9 +31,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-nav">
-        <div class="container-fluid px-5">
-            <div class="d-flex align-items-center">
+    <nav class="container-fluid navbar navbar-expand-lg bg-nav">
+        <div class="container-fluid lg-px-lg-5 ">
+            <div class="d-flex align-items-center w-50">
                 <a class="navbar-brand" href="#">
                     <img class="nav__img" src="./assets/img/logo.png" alt="Administrador">
                 </a>
