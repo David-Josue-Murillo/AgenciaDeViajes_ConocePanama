@@ -32,22 +32,28 @@
 
                     <?php if(isset($_SESSION['completado'])): ?>
                         <?php unset($_SESSION['incompleto']); ?>
+                        <?php unset($_SESSION['error_login']); ?>
                         <h1><?= $_SESSION['completado'] ?></h1>
                     <?php endif; ?>
 
                     <?php if(isset($_SESSION['incompleto'])): ?>
                         <?php unset($_SESSION['completado']); ?>
+                        <?php unset($_SESSION['error_login']); ?>
                         <h1><?= $_SESSION['incompleto'] ?></h1>
                     <?php endif; ?>
 
-                    <label for="username">Correo electrónico</label>
-                    <input class="form-styling" type="email" name="username" placeholder="" />
+                    <?php if(isset($_SESSION['error_login'])): ?>
+                        <h1><?= $_SESSION['error_login'] ?></h1>
+                    <?php endif; ?>
+
+                    <label for="email">Correo electrónico</label>
+                    <input class="form-styling" type="email" name="email" placeholder="" />
                     <label for="password">Contraseña</label>
                     <input class="form-styling" type="text" name="password" placeholder="" />
                     <input type="checkbox" id="checkbox" />
                     <label for="checkbox"><span class="ui"></span>Mantener session iniciada</label>
                     <div class="btn-animate">
-                        <input class="btn-signin" type="submit" value="Iniciar sesión">
+                        <input class="btn-signin" name="submit_login" type="submit" value="Iniciar sesión">
                     </div>
                 </form>
 
