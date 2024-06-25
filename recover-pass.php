@@ -27,7 +27,7 @@
             </div>
 
             <div ng-app ng-init="checked = false">
-                <form class="form-signin" action="php/inicio_session.php" method="post" name="form">
+                <form class="form-signin" action="php/recuperar_contraseña.php" method="post" name="form">
                     <label for="email">Correo electrónico</label>
                     <input class="form-styling" type="email" name="email" placeholder="" />
                     
@@ -36,7 +36,7 @@
                     <input type="checkbox" id="checkbox" />
                     
                     <div class="btn-animate">
-                        <input class="btn-signin" name="submit_login" type="submit" value="Iniciar sesión">
+                        <input class="btn-signin" name="submit_recover-pass" type="submit" value="Iniciar sesión">
                     </div>
                 </form>
             </div>
