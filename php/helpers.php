@@ -39,6 +39,12 @@ function borrarError() {
         $borrado = true;
     }
 
+    if (isset($_SESSION['error_recover'])) {
+        $_SESSION['error_recover'] = null;
+        unset($_SESSION['error_recover']);
+        $borrado = true;
+    }
+
     return $borrado;
 }
 

@@ -28,12 +28,21 @@
 
             <div ng-app ng-init="checked = false">
                 <form class="form-signin" action="php/recuperar_contraseña.php" method="post" name="form">
+
+                    <?php if(isset($_SESSION['error_recover'])): ?>
+                        <?php unset($_SESSION['errores']); ?>
+                        <p class="alerta alerta-error"><?= $_SESSION['error_recover'] ?></p>
+                    <?php endif; ?>
+
+
                     <label for="email">Correo electrónico</label>
                     <input class="form-styling" type="email" name="email" placeholder="" />
+                    <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'email') : ''; ?>
                     
                     <label for="phone">Telefono</label>
                     <input class="form-styling" type="phone" name="phone" placeholder="" />
                     <input type="checkbox" id="checkbox" />
+                    <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'phone') : ''; ?>
                     
                     <div class="btn-animate">
                         <input class="btn-signin" name="submit_recover-pass" type="submit" value="Iniciar sesión">
