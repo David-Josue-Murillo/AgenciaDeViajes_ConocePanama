@@ -542,6 +542,7 @@ a.btn-goback:hover {
   box-shadow: 0px 1px 3px #ccc;
   margin-bottom: 15px;
   border-radius: 2px;
+  text-align: center;
 }
 
 .alerta-error{

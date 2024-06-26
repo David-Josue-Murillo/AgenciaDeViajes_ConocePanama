@@ -32,17 +32,17 @@
                     <?php if(isset($_SESSION['completado'])): ?>
                         <?php unset($_SESSION['incompleto']); ?>
                         <?php unset($_SESSION['error_login']); ?>
-                        <h1><?= $_SESSION['completado'] ?></h1>
+                        <p class="alerta alerta-error"><?= $_SESSION['completado'] ?></p>
                     <?php endif; ?>
 
                     <?php if(isset($_SESSION['incompleto'])): ?>
                         <?php unset($_SESSION['completado']); ?>
                         <?php unset($_SESSION['error_login']); ?>
-                        <h1><?= $_SESSION['incompleto'] ?></h1>
+                        <p class="alerta alerta-error"><?= $_SESSION['incompleto'] ?></p>
                     <?php endif; ?>
 
                     <?php if(isset($_SESSION['error_login'])): ?>
-                        <h1><?= $_SESSION['error_login'] ?></h1>
+                        <p class="alerta alerta-error"><?= $_SESSION['error_login'] ?></p>
                     <?php endif; ?>
 
                     <?php borrarError(); ?>
@@ -61,7 +61,7 @@
                     <?php borrarError(); ?>
                     
                     <?php if(isset($_SESSION['errores'])): ?>
-                        <h1><?= $_SESSION['errores']['general'] ?></h1>
+                        <p class="alerta alerta-error"><?= $_SESSION['errores']['general'] ?></p>
                     <?php endif; ?>
 
                     <label for="name">Nombre</label>

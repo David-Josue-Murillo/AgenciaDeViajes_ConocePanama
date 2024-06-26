@@ -20,7 +20,6 @@ function borrarError() {
         $borrado = true;
     }
 
-
     if (isset($_SESSION['completado'])) {
         $_SESSION['completado'] = null;
         unset($_SESSION['completado']);
