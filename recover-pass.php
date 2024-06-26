@@ -43,11 +43,11 @@
                     <?php endif; ?>
 
                     <label for="email">Correo electrónico</label>
-                    <input class="form-styling" type="email" name="email" placeholder="" value="" />
+                    <input class="form-styling" type="email" name="email" placeholder="" value="" required/>
                     <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'email') : ''; ?>
                     
                     <label for="phone">Telefono</label>
-                    <input class="form-styling" type="phone" name="phone" placeholder="" value="" />
+                    <input class="form-styling" type="phone" name="phone" placeholder="" value="" required/>
                     <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'phone') : ''; ?>
                     
                     <div class="btn-animate">
