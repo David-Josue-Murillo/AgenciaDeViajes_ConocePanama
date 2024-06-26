@@ -11,16 +11,11 @@ if(isset($_POST['submit_recover-pass'])) {
         session_start();
     }
 
-    // Validando que todos los datos del formulario esten completos y sean correctos
-    if(!isset($_POST['email']) && !isset($_POST['phone'])) {
-        // Verificando que los datos del formulario sean correctos
-        echo '<script>alert("Por favor, rellena todos los campos")</script>';
-        die();
-    } 
 
-    $email = $_POST['email'] ? mysqli_real_escape_string($conexion, trim($_POST['email'])) : false;
-    $phone = $_POST['phone'] ? mysqli_real_escape_string($conexion, trim($_POST['phone'])) : false;
-    
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+
+
     $errores = array();
     // Validación de los campos del formulario
     // Validación del campo "email"
@@ -39,22 +34,22 @@ if(isset($_POST['submit_recover-pass'])) {
         $errores['phone'] = 'El número de teléfono no es válido';
     }
 
-    $guardarUsuario = false;
     if(count($errores) == 0){
-        $guardarUsuario = true;
-
         // Verificar si el usuario existe
         $sql = "SELECT * FROM usuarios WHERE email = '$email'";
         $resultado = $conexion->query($sql);
 
         if($resultado->num_rows > 0) {
-            $usuario = $resultado->fetch_assoc();
+            $user = $resultado->fetch_assoc();
 
             // Verificar si el telefono del usuario coincide con el telefono del formulario
-            if($usuario['telefono'] == $phone) {
-                header('Location: ../index.php');
+            if($user['telefono'] == $phone) {
+                // Si el usuario existe, redirigir al formulario de inicio de sesión
+                $_SESSION['user-email'] = $user['email'];
+                $_SESSION['phone'] = $user['telefono'];
+                $_SESSION['completado'] = true;
             } else {
-                $_SESSION['error_recover'] = 'El correo electrónico y el número de teléfono no coinciden';
+                $_SESSION['error_recover'] = 'El número de teléfono no coinciden';
             }
         } else {
             $_SESSION['error_recover'] = 'El correo electrónico no existe';
@@ -64,3 +59,5 @@ if(isset($_POST['submit_recover-pass'])) {
     $_SESSION['errores'] = $errores;
     header('Location: ../recover-pass.php');
 }
+
+

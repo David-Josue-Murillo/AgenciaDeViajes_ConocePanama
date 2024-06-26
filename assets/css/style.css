@@ -452,7 +452,7 @@ footer {
     color: #000000;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 840px) {
 
     /* Index - Inicio */
     .nav__img{

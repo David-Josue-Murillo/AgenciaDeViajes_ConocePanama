@@ -39,7 +39,7 @@ body {
 }
 
 .frame-recover {
-  height: 475px;
+  height: 545px;
   width: 430px;
   background:
     linear-gradient(
@@ -244,14 +244,6 @@ label {
   display: none;
 }
 
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
-  position: relative;
-  padding-left: 85px;
-  padding-top: 2px;
-  cursor: pointer;
-  margin-top: 8px;
-}
 
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before,

@@ -11,7 +11,7 @@ if(isset($_POST['submit_login'])){
     }
 
     // Verificando que los datos del formulario sean correctos
-    if(empty($_POST['username']) && empty($_POST['password'])) {
+    if(empty($_POST['email']) && empty($_POST['password'])) {
         $_SESSION['error_login'] = "Por favor, rellena todos los campos";
         header('Location: ../loginn.php');
     }

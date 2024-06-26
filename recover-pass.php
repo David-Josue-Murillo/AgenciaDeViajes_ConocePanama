@@ -14,7 +14,6 @@
         if(!isset($_SESSION)){
             session_start();
         } 
-
         include './php/helpers.php'
     ?>
 
@@ -29,6 +28,12 @@
             <div ng-app ng-init="checked = false">
                 <form class="form-signin" action="php/recuperar_contraseña.php" method="post" name="form">
                     
+                    <?php if(isset($_SESSION['completado'])): ?>
+                        <?php unset($_SESSION['error_recover']); ?>
+                        <?php unset($_SESSION['errores']); ?>
+                        <?= header('Location: index.php'); ?>
+                    <?php endif; ?>
+
                     <?php if(isset($_SESSION['error_recover'])): ?>
                         <p class="alerta alerta-error"><?= $_SESSION['error_recover'] ?></p>
                     <?php endif; ?>
@@ -38,12 +43,11 @@
                     <?php endif; ?>
 
                     <label for="email">Correo electrónico</label>
-                    <input class="form-styling" type="email" name="email" placeholder="" />
+                    <input class="form-styling" type="email" name="email" placeholder="" value="" />
                     <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'email') : ''; ?>
                     
                     <label for="phone">Telefono</label>
-                    <input class="form-styling" type="phone" name="phone" placeholder="" />
-                    <input type="checkbox" id="checkbox" />
+                    <input class="form-styling" type="phone" name="phone" placeholder="" value="" />
                     <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'phone') : ''; ?>
                     
                     <div class="btn-animate">
