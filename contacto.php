@@ -114,6 +114,11 @@ include_once 'includes/header.php';
     </div>
     <!-- Contacto - Fin -->
 </main>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/envio-email.js"></script>
+
 </body>
 
 </html>

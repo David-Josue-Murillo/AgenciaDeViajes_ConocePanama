@@ -50,8 +50,7 @@
                     <input class="form-styling" type="email" name="email" placeholder="" required/>
                     <label for="password">Contraseña</label>
 
-                    <input class="form-styling" type="password" name="password" placeholder="" />
-                    <input type="checkbox" id="checkbox" required/>
+                    <input class="form-styling" type="password" name="password" placeholder="" required/>
                     
                     <div class="btn-animate">
                         <input class="btn-signin" name="submit_login" type="submit" value="Iniciar sesión">
