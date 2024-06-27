@@ -33,9 +33,9 @@
                 <p><i class="fa fa-envelope mr-2"></i>agenciapanama@gmail.com</p>
                 <div class="w-100">
                     <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Tu Email">
+                        <input type="text" class="form-control border-light" id="emailSuscribe" style="padding: 25px;" placeholder="Tu Email">
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-3">Inscribirse</button>
+                            <button class="btn btn-primary px-3" id="sendEmailSuscribeBtn">Inscribirse</button>
                         </div>
                     </div>
                 </div>
@@ -55,3 +55,6 @@
         </div>
     </>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="js/envio-email.js"></script>
