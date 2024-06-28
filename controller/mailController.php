@@ -1,6 +1,5 @@
 <?php
 
-
 require '../vendor/phpmailer/phpmailer/src/Exception.php';
 require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require '../vendor/phpmailer/phpmailer/src/SMTP.php';
@@ -56,7 +55,7 @@ class MailController
             $mail->Port       = 587;                               // Puerto TCP para conectarse a Gmail
 
             // Destinatario
-            $mail->setFrom($email, 'Nuevo Suscriptor');   // Remitente
+            $mail->setFrom($email, $email);   // Remitente
             $mail->addAddress("dm514821@gmail.com");   // Añadir un destinatario
             //$mail->addAddress('david.murillo01@up.ac.pa', 'Daviddddd');
             // Contenido del correo
