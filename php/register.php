@@ -24,6 +24,7 @@ if(isset($_POST['submit_register'])) {
     $email = $_POST['email'] ? mysqli_real_escape_string($conexion, trim($_POST['email'])) : false;
     $password = $_POST['password'] ? mysqli_real_escape_string($conexion, $_POST['password']) : false;
     $confirmpassword = $_POST['confirmpassword'] ? mysqli_real_escape_string($conexion, $_POST['confirmpassword']) : false;
+    $type_user = $_POST['type_user'] ? mysqli_real_escape_string($conexion, $_POST['type_user']) : false;
       
     $errores = array();
 
@@ -73,6 +74,13 @@ if(isset($_POST['submit_register'])) {
         $errores['password'] = 'La contraseña no es válida';
     }
 
+    // Verificación del tipo de usuario
+    if($type_user == '1') {
+        $type = 'User';
+    } else {
+        $type = 'Admin';
+    }
+
     $guardarUsuario = false;
     if(count($errores) == 0){
         $guardarUsuario = true;
@@ -81,7 +89,7 @@ if(isset($_POST['submit_register'])) {
         $passwordSegura = password_hash($password, PASSWORD_BCRYPT, ['cost' => 4]);
 
         // Insertar usuario en la tabla usuarios en la base de datos
-        $sql = "INSERT INTO usuarios VALUES (null, '$name', '$lastname', '$phone', '$email', '$passwordSegura');";
+        $sql = "INSERT INTO usuarios VALUES (null, '$name', '$lastname', '$phone', '$email', '$passwordSegura', '$type');";
 
         if($conexion->query($sql) === TRUE) {
             // Redireccionar al formulario de login
