@@ -19,6 +19,7 @@
 
     
     <!-- Customized Bootstrap Stylesheet -->
+     <link rel="stylesheet" href="../assets/css/normalize.css">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
