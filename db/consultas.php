@@ -12,11 +12,15 @@ $resultado = $conexion->query($query);
 
 if(!$resultado->num_rows){
     $campos_user = "id_usuario INT NOT NULL AUTO_INCREMENT, 
-    nombre VARCHAR(20) NOT NULL, apellido VARCHAR(20) NOT NULL, 
-    telefono INT NOT NULL, email VARCHAR(35) NOT NULL UNIQUE, 
-    password VARCHAR(255) NOT NULL, PRIMARY KEY (id_usuario)";
+    nombre VARCHAR(20) NOT NULL, 
+    apellido VARCHAR(20) NOT NULL, 
+    telefono INT NOT NULL, 
+    email VARCHAR(35) NOT NULL UNIQUE, 
+    password VARCHAR(255) NOT NULL,
+    tipo_usuario VARCHAR(7) NOT NULL,
+    PRIMARY KEY (id_usuario)";
     
-    if(!crear_tabla($name_table, $campos_user, $conexion)) {
+    if(!crear_tabla('usuarios', $campos_user, $conexion)) {
         echo "Tabla creada con éxito";
     } else {
         echo "Error al crear la tabla";
