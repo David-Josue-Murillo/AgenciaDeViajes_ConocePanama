@@ -154,3 +154,24 @@
 .card__paquetes:hover>strong {
   opacity: 0.3;
 }
+
+@media (max-width: 1430px) {
+  .socialContainer {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 1290px) {
+  .socialContainer {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .socialContainer {
+    width: 32px;
+    height: 32px;
+  }
+}

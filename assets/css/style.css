@@ -204,6 +204,11 @@
     scale: 1.1;
 }
 
+.icon-tabler-user-cog {
+    width: 1.7rem;
+    height: 1.7rem;
+}
+
 
 
 
@@ -451,9 +456,34 @@ footer {
     color: #000000;
 }
 
-@media (max-width: 840px) {
+
+
+@media (max-width: 1430px) {
+    * {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1290px) {
+    * {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 1150px) {
+    * {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1050px) {
 
     /* Index - Inicio */
+    * {
+        font-size: 15px;
+    }
+    
     .nav__img{
         max-height: 4.5rem;
         max-width: 4.5rem;
@@ -463,6 +493,10 @@ footer {
         position: relative;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
         z-index: 2;
+    }
+
+    .text-nav {
+        font-size: 1.5rem;
     }
 
     .bg-nav{
@@ -535,6 +569,5 @@ footer {
     /* Paquetes - Fin */
 
 }
-
 
 
