@@ -95,7 +95,7 @@
                                 <img class="img-fluid" src="assets/img/about-2.webp" alt="">
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary mt-1">Book Now</a>
+                        <a href="" class="btn btn-primary mt-1">Reservar ahora</a>
                     </div>
                 </div>
             </div>
@@ -239,14 +239,14 @@
                         <div class="card-body rounded-bottom bg-white p-5">
                             <form>
                                 <div class="form-group">
-                                    <input type="text" class="form-control p-4" placeholder="Your name" required="required" />
+                                    <input type="text" class="form-control p-4" placeholder="Su nombre" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control p-4" placeholder="Your email" required="required" />
+                                    <input type="email" class="form-control p-4" placeholder="Su email" required="required" />
                                 </div>
                                 <div class="form-group">
                                     <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Select a destination</option>
+                                        <option selected>Seleccione un destino</option>
                                         <option value="1">destination 1</option>
                                         <option value="2">destination 1</option>
                                         <option value="3">destination 1</option>

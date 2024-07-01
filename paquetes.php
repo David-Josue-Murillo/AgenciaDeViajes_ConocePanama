@@ -111,8 +111,8 @@ include_once 'includes/header.php';
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Playa Blanca</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 dias</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
                             </div>
                             <a class="h5 text-decoration-none" href="">Town Centers, Beaches y más</a>
                             <div class="border-top mt-4 pt-4">
@@ -129,7 +129,7 @@ include_once 'includes/header.php';
                         <img class="img-fluid" src="assets/img/paquete_6.webp" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Hotel Azul Paradise</small>
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Hotel Azul</small>
                                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>4 dias</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
                             </div>
