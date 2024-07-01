@@ -1,4 +1,7 @@
-<?php include_once 'includes/header.php'; ?>
+<?php 
+    include 'includes/header.php'; 
+    include 'db/conexion.php';
+?>
 <main>
     
     <!-- Carousel - Inicio -->
@@ -31,9 +34,16 @@
                                 <div class="mb-3 mb-md-0">
                                     <select class="custom-select px-4" style="height: 47px;">
                                         <option selected>Destino</option>
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 1</option>
-                                        <option value="3">Destination 1</option>
+                                        <?php 
+                                            $sql = "SELECT id_destino, nombre_destino FROM destinos";
+                                            $result = $conexion->query($sql);
+
+                                            if($result->num_rows > 0){
+                                                while($row = $result->fetch_assoc()){
+                                                    echo '<option value="'.$row['id_destino'].'">'.$row['nombre_destino'].'</option>';
+                                                }
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -45,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
+                                <div class="mb-3 mb-md-0">  
                                     <div class="date py-1" id="date2" data-target-input="nearest">
                                         <input type="date" class="form-control" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
                                     </div>
