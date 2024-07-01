@@ -41,7 +41,7 @@
 
     <nav class="container-fluid navbar navbar-expand-lg bg-nav">
         <div class="container-fluid">
-            <div class="d-flex align-items-center w-50">
+            <div class="d-flex align-items-center">
                 <a class="navbar-brand" href="#">
                     <img class="nav__img" src="./assets/img/logo.png" alt="Administrador">
                 </a>
