@@ -32,6 +32,13 @@
 </head>
 
 <body>
+
+    <?php 
+        if(!isset($_SESSION)){
+            session_start(); 
+        }
+    ?>
+
     <nav class="container-fluid navbar navbar-expand-lg bg-nav">
         <div class="container-fluid">
             <div class="d-flex align-items-center w-50">
@@ -100,6 +107,13 @@
 
                 <div class="d-flex align-items-center ms-auto">
                     <div class="d-flex align-items-center">
+                
+                        <?php if(isset($_SESSION['login_existe'])): ?>  
+
+                        <div class="mt-2">
+                            <p><?php echo $_SESSION['nombre_user']. ' '; echo $_SESSION['apellido_user']; ?></p>
+                        </div>
+
                         <button class="btn_admin mx-md-4">
                             <a class="" href="admin.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-cog" viewBox="0 0 26 26" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -118,8 +132,16 @@
                         </button>
 
                         <button class="info__btn">
+                            <a class="" href="./php/exit.php">Salir</a>
+                        </button>
+
+                        <?php endif; ?>
+
+                        <?php if(!isset($_SESSION['login_existe'])): ?>
+                        <button class="info__btn">
                             <a class="" href="./login.php">Login</a>
                         </button>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

@@ -25,12 +25,13 @@ if(isset($_POST['submit_login'])){
         if(password_verify($password, $user['password'])) {
             // Si la contraseña es correcta, iniciamos una sesión
             $_SESSION['id_usuario'] = $user['id_usuario'];
-            $_SESSION['nombre'] = $user['nombre'];
-            $_SESSION['apellido'] = $user['apellido'];
-            $_SESSION['telefono'] = $user['telefono'];
-            $_SESSION['email'] = $user['email'];
+            $_SESSION['nombre_user'] = $user['nombre'];
+            $_SESSION['apellido_user'] = $user['apellido'];
+            $_SESSION['telefono_user'] = $user['telefono'];
+            $_SESSION['email_user'] = $user['email'];
 
             // Redireccionamos al formulario de inicio de sesión
+            $_SESSION['login_existe'] = true;
             header('Location: ../index.php');
         } else {
             $_SESSION['error_login'] = "Contraseña incorrecta";
