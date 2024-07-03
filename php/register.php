@@ -93,6 +93,6 @@ if(isset($_POST['submit_register'])) {
     }    
 
     $_SESSION['errores'] = $errores;
-    $_SESSION['incompleto'] = "Registro fallido";
+    $_SESSION['incompleto'] = "Registro fallido";   
     header('Location: ../login.php');
 }

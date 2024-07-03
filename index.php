@@ -239,7 +239,7 @@ include 'db/conexion.php';
 <?php include_once 'includes/footer.php'; ?>
 <!-- Footer - Fin -->
 
-<script src="js/prueba.js"></script>
+<script src="js/cotizacion.js"></script>
 
 </body>
 
