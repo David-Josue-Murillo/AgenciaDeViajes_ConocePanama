@@ -87,13 +87,6 @@
                     <label for="confirmpassword">Confirmar Contraseña</label>
                     <input class="form-styling" type="password" name="confirmpassword" placeholder=""  required/>
                     <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'confirmpassword') : ''; ?>
-
-                    <label for="type_user">Tipo de Usuario</label>
-                    <select class="form-styling" name="type_user" required>
-                        <option value="1">Usuario</option>
-                        <option value="2">Administrador</option>
-                    </select>
-                    <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'type_user') : ''; ?>
                     
                     <input class="btn-signup" type="submit" name="submit_register" value="Registrarse">
                 </form>
