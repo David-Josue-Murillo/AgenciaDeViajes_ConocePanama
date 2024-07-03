@@ -9,7 +9,7 @@
                                 <div class="col-md-3">
                                     <div class="mb-3 mb-md-0">
                                         <select class="custom-select px-4" name="destino" style="height: 45px;" required>
-                                            <option selected>Destino</option>
+                                            <option selected disabled>Destino</option>
                                             <?php
                                                 $sql = "SELECT id_destino, nombre_destino FROM destinos";
                                                 $result = $conexion->query($sql);

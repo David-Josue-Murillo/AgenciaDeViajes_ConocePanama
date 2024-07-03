@@ -1,9 +1,9 @@
-<?php 
-    include 'includes/header.php'; 
-    include 'db/conexion.php';
+<?php
+include 'includes/header.php';
+include 'db/conexion.php';
 ?>
 <main>
-    
+
     <!-- Carousel - Inicio -->
     <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
@@ -188,26 +188,42 @@
                 <div class="col-lg-5">
                     <div class="card border-0">
                         <div class="card-header bg-primary text-center p-4">
-                            <h1 class="text-white m-0">Sign Up Now</h1>
+                            <h1 class="text-white m-0">Reserva Ahora</h1>
                         </div>
                         <div class="card-body rounded-bottom bg-white p-5">
-                            <form>
+                            <form action="tu_script_de_procesamiento.php" method="post">
                                 <div class="form-group">
-                                    <input type="text" class="form-control p-4" placeholder="Su nombre" required="required" />
+                                    <select name="destino" class="custom-select px-4" style="height: 47px;" required="required">
+                                        <option selected disabled>Destino</option>
+                                        <?php
+                                        $sql = "SELECT id_destino, nombre_destino FROM destinos";
+                                        $result = $conexion->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo '<option value="' . $row['id_destino'] . '">' . $row['nombre_destino'] . '</option>';
+                                            }
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control p-4" placeholder="Su email" required="required" />
+                                    <select name="destino" class="custom-select px-4" style="height: 47px;" required="required">
+                                        <option selected disabled>Fecha de estadia</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Seleccione un destino</option>
-                                        <option value="1">destination 1</option>
-                                        <option value="2">destination 1</option>
-                                        <option value="3">destination 1</option>
+                                    <select name="destino" class="custom-select px-4" style="height: 47px;" required="required">
+                                        <option selected disabled>Cantidad de personas</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary btn-block py-3" type="submit">Sign Up Now</button>
+                                    <button class="btn btn-primary btn-block py-2" type="submit">Reservar Ahora</button>
                                 </div>
                             </form>
                         </div>
