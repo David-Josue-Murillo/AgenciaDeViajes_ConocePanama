@@ -12,4 +12,3 @@ if (isset($_POST['destino'])) {
     $stmt->close();
     echo $precio;
 }
-
