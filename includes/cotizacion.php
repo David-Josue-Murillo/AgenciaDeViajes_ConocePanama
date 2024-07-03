@@ -1,3 +1,9 @@
+<?php 
+if(!isset($_SESSION)){
+    session_start();    
+}
+?>.
+
 <!-- Reserva - Inicio -->
 <div class="container-fluid booking mt-5 pb-5">
         <div class="container pb-5">
@@ -52,7 +58,11 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button class="info__btn" style="height: 47px; margin-top: -2px;" type="submit" name="submit_cotizacion">Cotizar</button>
+                            <?php if(isset($_SESSION['id_usuario'])): ?>
+                                <button class="info__btn" style="height: 47px; margin-top: -2px;" type="submit" name="submit_cotizacion">Reservar</button>
+                            <?php else: ?>
+                                <button class="info__btn" style="height: 47px; margin-top: -2px;" type="submit" name="submit_cotizacion">Cotizar</button>
+                            <?php endif; ?>
                         </div>
                     </form>
                 </div>
