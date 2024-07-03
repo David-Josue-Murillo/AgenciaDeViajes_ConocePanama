@@ -2,42 +2,86 @@
 
 define('FPDF_FONTPATH', '../lib/fpdf/font/');
 require('../lib/fpdf/fpdf.php');
+include '../db/conexion.php';
 
 if (isset($_POST['submit_cotizacion'])) {
-    $destino = $_POST['destino'] . "<br>";
-    $fecha_inicio = $_POST['fecha_inicio'] . "<br>";
-    $fecha_fin = $_POST['fecha_fin'] . "<br>";
-    $caantidad_personas = $_POST['cantidad_personas'] . "<br>";
-    echo "Funciona";
+    $destino = intval($_POST['destino']); // Obtener el id de destino
+    $fecha_inicio = $_POST['fecha_inicio']; // Obtener la fecha de inicio
+    $fecha_fin = $_POST['fecha_fin']; // Obtener la fecha de fin
+    $cantidad_personas = intval($_POST['cantidad_personas']); // Obtener la cantidad de personas
 
-    $pdf = new FPDF('P', 'mm', 'A4');
+    // Variables para almacenar datos
+    $nombre_destino = ''; // Variable para almacenar el nombre del destino
+    $precio_destino = 0; // Variable para almacenar el precio del destino
+    $precio_total = 0; // Variable para almacenar el precio total
 
-    $pdf->AddPage(); // Agregar una página
+    // Consulta para obtener el nombre del destino
+    $sql = "SELECT * FROM destinos WHERE id_destino = '$destino'";
+    $resultado = $conexion->query($sql); // Ejecutar la consulta
 
-    // Agregar una imagen en el centro de la página
-    $pdf->Cell(0, 10, $pdf->Image('../assets/img/logo.png', 93, 10, 22, 25), 0, 0, 'C');
-    $pdf->Ln(25);
-    $pdf->SetFont('Courier', 'BIU', 14);
+    if($resultado->num_rows > 0) { // Verificar si hay resultados
+        $datos_destino = $resultado->fetch_assoc(); // Obtener el resultado
+        $nombre_destino = $datos_destino['nombre_destino']; // Obtener el nombre del destino
+    }
 
-    // Crear una celda, se especifica el ancho, alto, texto, borde, salto de línea y alineación del texto
-    $pdf->Cell(190, 20, 'LISTADO DE CEDULAS', 0, 1, 'C');
+    // Consulta para obtener el precio del destino
+    $sql = "SELECT * FROM paquetes WHERE id_destino = '$destino'";
+    $resultado = $conexion->query($sql); // Ejecutar la consulta    
 
-    // Salto de linea
-    //$pdf->Ln(1);
-    $pdf->SetFont('Times', 'B', 12);
-    $pdf->Cell(62, 20, 'No', 0, 0, 'C');
-    $pdf->Cell(62, 20, 'Cedula', 0, 0, 'C');
-    $pdf->Cell(62, 20, 'Nombre', 0, 0, 'C');
+    if($resultado->num_rows > 0) { // Verificar si hay resultados
+        $destino = $resultado->fetch_assoc(); // Obtener el resultado
+        $precio_destino = $destino['precio']; // Obtener el precio del destino
+    }
 
+    $precio_total = $precio_destino * $cantidad_personas; // Calcular el precio total
 
-    // Establecer el tamaño de la fuente
-    $pdf->SetFont('Times', '', 12);
+    class PDF extends FPDF {
+        // Header
+        function Header() {
+            $this->SetFont('Arial', 'B', 23);
+            $this->Cell(0, 10, utf8_decode('Agencia de viajes'), 0, 1, 'C');
+            $this->Cell(0, 10, utf8_decode('Conoce Panamá'), 0, 1, 'C');
+            $this->Ln(10);
 
-
-    // Un pie de página con el número de página y la fecha en que se genera
-    $pdf->SetFont('Times', '', 8);
-    $pdf->Cell(0, 10, 'Pagina ' .   $pdf->PageNo() . '   ' . date('d-m-Y H:i:s'), 0, 0, 'C');
-
-    // Descargar el documento  
-    $pdf->Output('cedulas.pdf', 'D');
+            $this->SetFont('Arial', 'U', 16);
+            $this->Cell(0, 10, utf8_decode('Cotización de Viajes'), 0, 1, 'L');
+        }
+    
+        // Footer
+        function Footer() {
+            $this->SetY(-15);
+            $this->SetFont('Arial', 'I', 8);
+            $this->Cell(0, 10, 'Pagina ' . $this->PageNo(), 0, 0, 'C');
+        }
+    
+        // Table
+        function Table($header, $data) {
+            // Header
+            $this->SetFont('Arial', 'B', 12);
+            foreach($header as $col) {
+                $this->Cell(36, 7, $col, 1);
+            }
+            $this->Ln();
+            
+            // Data
+            foreach($data as $row) {
+                $this->SetFont('Arial', '', 10);
+                foreach($row as $col) {
+                    $this->Cell(36, 6, $col, 1);
+                }
+                $this->Ln();
+            }
+        }
+    }
+    
+    // Data
+    $header = array('Destino', 'Cant. Persona', 'Fecha inicio', 'Fecha fin', 'Precio');
+    $data = array(
+        array(utf8_encode($nombre_destino), $cantidad_personas, $fecha_inicio, $fecha_fin, 'B/. '. $precio_total),
+    );
+    
+    $pdf = new PDF();
+    $pdf->AddPage();
+    $pdf->Table($header, $data);
+    $pdf->Output();
 }

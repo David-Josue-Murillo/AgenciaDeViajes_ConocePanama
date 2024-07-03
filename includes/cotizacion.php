@@ -8,7 +8,7 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="mb-3 mb-md-0">
-                                        <select class="custom-select px-4" name="destino" style="height: 45px;">
+                                        <select class="custom-select px-4" name="destino" style="height: 45px;" required>
                                             <option selected>Destino</option>
                                             <?php
                                                 $sql = "SELECT id_destino, nombre_destino FROM destinos";
@@ -25,20 +25,20 @@
                                 <div class="col-md-3">
                                     <div class="mb-3 mb-md-0">
                                         <div class="date py-1" id="date1" data-target-input="nearest">
-                                            <input type="date" class="form-control" name="fecha_inicio" placeholder="Fecha de inicio" data-target="#date1" data-toggle="datetimepicker"/>
+                                            <input type="date" class="form-control" name="fecha_inicio" placeholder="Fecha de inicio" data-target="#date1" data-toggle="datetimepicker" required/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="mb-3 mb-md-0">
                                         <div class="date py-1" id="date2" data-target-input="nearest">
-                                            <input type="date" class="form-control" name="fecha_fin" placeholder="Fecha de fin" data-target="#date2" data-toggle="datetimepicker"/>
+                                            <input type="date" class="form-control" name="fecha_fin" placeholder="Fecha de fin" data-target="#date2" data-toggle="datetimepicker" required/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="mb-3 mb-md-0">
-                                        <select class="custom-select px-4" name="cantidad_personas" style="height: 47px;">
+                                        <select class="custom-select px-4" name="cantidad_personas" style="height: 47px;" required>
                                             <option selected>Personas</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
