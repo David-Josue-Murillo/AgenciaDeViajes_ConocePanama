@@ -29,7 +29,7 @@ class MailController
             //$mail->addAddress('david.murillo01@up.ac.pa', 'Daviddddd');
             // Contenido del correo
             $mail->isHTML(true);        // Establecer el formato del correo a HTML
-            $mail->Subject = $subject;  // Asunto
+            $mail->Subject = utf8_decode($subject);  // Asunto
             $mail->Body    = $message;  // Cuerpo del correo en HTML
 
             // Enviar el correo
@@ -60,7 +60,7 @@ class MailController
             //$mail->addAddress('david.murillo01@up.ac.pa', 'Daviddddd');
             // Contenido del correo
             $mail->isHTML(true);        // Establecer el formato del correo a HTML
-            $mail->Subject = "Suscripción";  // Asunto
+            $mail->Subject = utf8_decode("Suscripción");  // Asunto
             $mail->Body    =  $message;  // Cuerpo del correo en HTML
 
             // Enviar el correo

@@ -1,4 +1,5 @@
-$('#sendMessageButton').click(function() {
+$('#sendMessageButton').click(function(e) {
+    e.preventDefault();
     const name = $('#name').val();
     const email = $('#email').val();
     const subject = $('#subject').val();
@@ -11,7 +12,7 @@ $('#sendMessageButton').click(function() {
     datos.append("message", message);
 
     $.ajax({
-        url: "/controller/procesar.php",
+        url: "../controller/procesar.php",
         method: "POST",
         data: datos,
         cache: false,
