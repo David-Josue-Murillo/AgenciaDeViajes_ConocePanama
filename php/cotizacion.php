@@ -10,6 +10,11 @@ if (isset($_POST['submit_cotizacion'])) {
     $cantidad_personas = intval($_POST['cantidad_personas']); // Obtener la fecha de fin
     $precio = $_POST['precio']; // Obtener la cantidad de personas
 
+    // Validar que todos los datos del formulario esten completos y sean correctos
+    if(empty($fechas) || empty($cantidad_personas) || empty($precio)){
+        header('Location: ../index.php');
+    }
+
     // Variables para almacenar datos
     $nombre_destino = ''; // Variable para almacenar el nombre del destino
     $precio_total = 0; // Variable para almacenar el precio total
@@ -75,3 +80,5 @@ if (isset($_POST['submit_cotizacion'])) {
     $pdf->Table($header, $data);
     $pdf->Output();
 }
+
+header('Location: ../index.php');
