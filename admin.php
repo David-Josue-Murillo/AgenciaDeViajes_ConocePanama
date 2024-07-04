@@ -67,13 +67,12 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;TWO PAGE</a>
+                        <a class="navbar-brand" href="#">CONOCE PANAMÁ</a>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">See Website</a></li>
-                            <li><a href="#">Open Ticket</a></li>
-                            <li><a href="#">Report Bug</a></li>
+                        <ul class="nav navbar-nav navbar-right text-center" style="margin-right: 30px;">
+                            <li><a href=""><?php echo $_SESSION['nombre_user'] . ' ' . $_SESSION['apellido_user']; ?></a></li>
+                            <li><a href="#">Salir</a></li>
                         </ul>
                     </div>
 
