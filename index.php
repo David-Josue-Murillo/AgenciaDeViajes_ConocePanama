@@ -14,7 +14,7 @@ include 'db/conexion.php';
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours & Viajes</h4>
                             <h1 class="display-3 text-white mb-md-4">Descubramos el mundo juntos</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservar Ahora</a>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Ver Paquetes</a>
                         </div>
                     </div>
                 </div>

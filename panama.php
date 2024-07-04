@@ -1,5 +1,6 @@
 <?php
 include_once 'includes/header.php';
+include 'db/conexion.php';
 ?>
 
 <main>
@@ -13,7 +14,7 @@ include_once 'includes/header.php';
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Conoce Panamá</h4>
                             <h1 class="display-3 text-white mb-md-4">Explora todo Panamá</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservar Ahora</a>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Ver Paquetes</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +90,7 @@ include_once 'includes/header.php';
     </div>
     <!-- Destino - Fin -->
 
-    <!-- Team Start -->
+    <!-- Guias - Inicio -->
     <div class="container-fluid py-5 mb-5">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
@@ -99,8 +100,16 @@ include_once 'includes/header.php';
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
+                    <?php
+                    $sql = "SELECT * FROM guias";
+                    $result = $conexion->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        $guia = $result->fetch_assoc();
+                    } 
+                    ?>
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -117,7 +126,7 @@ include_once 'includes/header.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -134,7 +143,7 @@ include_once 'includes/header.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -151,7 +160,7 @@ include_once 'includes/header.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -168,7 +177,7 @@ include_once 'includes/header.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -185,7 +194,7 @@ include_once 'includes/header.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="assets/img/team-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -202,7 +211,7 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
-    <!-- Team End -->
+    <!-- Guias - Fin -->
      
 </main>
 

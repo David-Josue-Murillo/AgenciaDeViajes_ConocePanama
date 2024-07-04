@@ -166,7 +166,7 @@
                     <!-- /. ROW  -->
                     <hr />
                     <div class="row">
-                        <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-6" id="chart__container">
                             <h5>Widget Box One</h5>
                             <div class="panel panel-primary text-center no-boder bg-color-blue">
                                 <div class="panel-body">
