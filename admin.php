@@ -14,11 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-
     <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/admin.css">
@@ -61,11 +58,24 @@
     <?php endif; ?>
 
     <?php if(isset($_SESSION['login'])): ?>
-    <div class="container login-container">
-        <div class="container-fluid bg-success-subtle rounded-3 p-4">
-            <h2 class="text-center font-weight-bold">Administrador</h2>
+    <div class="container-fluid bg-success-subtle p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center font-weight-bold">Panel de administración</h1>
+                </div>
+            </div>
         </div>
-    </div>  
+    </div>
+    
+    <div class="container-fluid bg-warning-subtle p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 border bg-info">
+                    <h1 class="text-center font-weight-bold">Administrador</h1>
+                </div>
+            </div>
+    </div>
     <?php endif; ?>
 
     <!-- Scripts -->
