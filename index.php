@@ -239,7 +239,9 @@ include 'db/conexion.php';
 <?php include_once 'includes/footer.php'; ?>
 <!-- Footer - Fin -->
 
+<!-- Scripts -->
 <script src="js/cotizacion.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -1,0 +1,13 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding-top: 100px;
+  }
+
+.form__submit {
+    margin-top: 1rem;
+}
