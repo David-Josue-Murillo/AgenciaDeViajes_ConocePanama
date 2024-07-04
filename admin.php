@@ -87,57 +87,23 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-edit "></i>UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="#">Elements</a>
-                                </li>
-                                <li>
-                                    <a href="#">Free Link</a>
-                                </li>
-                            </ul>
+                            <a href="#"><i class="fa fa-table "></i>Usuarios</a>
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-table "></i>Table Examples</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-edit "></i>Forms </a>
+                            <a href="#"><i class="fa fa-edit "></i>Destinos</a>
                         </li>
 
-
                         <li>
-                            <a href="#"><i class="fa fa-sitemap "></i>Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Link</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Link</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-
-                                    </ul>
-
-                                </li>
-                            </ul>
+                            <a href="#"><i class="fa fa-sitemap"></i>Reservas</a>  
                         </li>
+
                         <li>
-                            <a href="#"><i class="fa fa-qrcode "></i>Tabs & Panels</a>
+                            <a href="#"><i class="fa fa-qrcode "></i>Guias</a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-edit "></i>Nueva Tabla</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o"></i>Mettis Charts</a>
