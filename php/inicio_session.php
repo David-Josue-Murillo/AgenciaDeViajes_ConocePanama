@@ -18,10 +18,10 @@ if(isset($_POST['submit_login'])){
     $resultado = $conexion->query($sql);
 
     if($resultado->num_rows > 0) {
-        // Obtenemos el regirstro del usuario obtennido de la consulta
+        // Se obtiene el regirstro del usuario obtennido de la consulta
         $user = $resultado->fetch_assoc();
 
-        // Verificamos si la contraseña del usuario coincide con la contraseña introducida
+        // Se verifica si la contraseña del usuario coincide con la contraseña introducida
         if(password_verify($password, $user['password'])) {
             // Si la contraseña es correcta, iniciamos una sesión
             $_SESSION['id_usuario'] = $user['id_usuario'];

@@ -6,8 +6,19 @@
     max-width: 400px;
     margin: auto;
     padding-top: 100px;
-  }
+}
 
-.form__submit {
-    margin-top: 1rem;
+.alerta {
+    padding: 5px;
+    font-size: 14px;
+    color: white;
+    background: green;
+    box-shadow: 0px 1px 3px #ccc;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.alerta-error {
+    background: rgba(255, 0, 0, 0.676);
 }

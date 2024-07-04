@@ -27,24 +27,46 @@
 </head>
 
 <body>
+    <?php
+        if(!isset($_SESSION)){
+            session_start();
+        }
+    ?>
+
+    <?php if(!isset($_SESSION['login'])): ?>
     <div class="container login-container">
         <div class="container-fluid bg-success-subtle rounded-3 p-4">
             <h2 class="text-center font-weight-bold">Administrador</h2>
             <form id="loginForm" action="/admin/php/login.php" method="post">
                 <div class="form-group mb-2">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Su email" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Su email" required>
                 </div>
-                <div class="form-group mb-2">
+
+                <div class="form-group mb-3">
                     <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" placeholder="Su contraseña" required>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Su contraseña" required>
                 </div>
-                <div class="form-group form__submit">
-                    <button type="submit" class="btn btn-primary btn-block w-100">Login</button>
+
+                <?php if(isset($_SESSION['error_login'])): ?>
+                    <p class="alerta alerta-error"><?= $_SESSION['error_login'] ?></p>
+                <?php endif; ?>
+
+                <div class="form-group">
+                    <input type="submit" name="submit_login" class="btn btn-primary btn-block w-100" value="Login"/>
                 </div>
             </form>
         </div>
     </div>
+    <?php endif; ?>
+
+    <?php if(isset($_SESSION['login'])): ?>
+    <div class="container login-container">
+        <div class="container-fluid bg-success-subtle rounded-3 p-4">
+            <h2 class="text-center font-weight-bold">Administrador</h2>
+        </div>
+    </div>  
+    <?php endif; ?>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
