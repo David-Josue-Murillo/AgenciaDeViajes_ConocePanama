@@ -1,3 +1,8 @@
+document.querySelector('form').addEventListener('submit', function() {
+    var spanText = document.getElementById('fechas').textContent;
+    document.getElementById('fechaText').value = spanText;
+});
+
 document.getElementById('destino').addEventListener('change', function() {
     var destinoId = this.value;
     var xhr = new XMLHttpRequest();

@@ -32,7 +32,7 @@ class MailController
             $mail->Subject = utf8_decode($subject);  // Asunto
             $mail->Body    = $message;  // Cuerpo del correo en HTML
 
-            // Enviar el correo
+            // Enviar el correo 
             $mail->send();
             echo 'El correo se ha enviado correctamente.';
         } catch (Exception $e) {

@@ -6,13 +6,12 @@ include '../db/conexion.php';
 
 if (isset($_POST['submit_cotizacion'])) {
     $destino = intval($_POST['destino']); // Obtener el id de destino
-    $fecha_inicio = $_POST['fecha_inicio']; // Obtener la fecha de inicio
-    $fecha_fin = $_POST['fecha_fin']; // Obtener la fecha de fin
-    $cantidad_personas = intval($_POST['cantidad_personas']); // Obtener la cantidad de personas
+    $fechas = $_POST['fechaText']; // Obtener la fecha de inicio
+    $cantidad_personas = intval($_POST['cantidad_personas']); // Obtener la fecha de fin
+    $precio = $_POST['precio']; // Obtener la cantidad de personas
 
     // Variables para almacenar datos
     $nombre_destino = ''; // Variable para almacenar el nombre del destino
-    $precio_destino = 0; // Variable para almacenar el precio del destino
     $precio_total = 0; // Variable para almacenar el precio total
 
     // Consulta para obtener el nombre del destino
@@ -24,16 +23,7 @@ if (isset($_POST['submit_cotizacion'])) {
         $nombre_destino = $datos_destino['nombre_destino']; // Obtener el nombre del destino
     }
 
-    // Consulta para obtener el precio del destino
-    $sql = "SELECT * FROM paquetes WHERE id_destino = '$destino'";
-    $resultado = $conexion->query($sql); // Ejecutar la consulta    
-
-    if($resultado->num_rows > 0) { // Verificar si hay resultados
-        $destino = $resultado->fetch_assoc(); // Obtener el resultado
-        $precio_destino = $destino['precio']; // Obtener el precio del destino
-    }
-
-    $precio_total = $precio_destino * $cantidad_personas; // Calcular el precio total
+    $precio_total = $precio * $cantidad_personas; // Calcular el precio total
 
     class PDF extends FPDF {
         // Header
@@ -59,7 +49,7 @@ if (isset($_POST['submit_cotizacion'])) {
             // Header
             $this->SetFont('Arial', 'B', 12);
             foreach($header as $col) {
-                $this->Cell(36, 7, $col, 1);
+                $this->Cell(44, 7, $col, 1);
             }
             $this->Ln();
             
@@ -67,7 +57,7 @@ if (isset($_POST['submit_cotizacion'])) {
             foreach($data as $row) {
                 $this->SetFont('Arial', '', 10);
                 foreach($row as $col) {
-                    $this->Cell(36, 6, $col, 1);
+                    $this->Cell(44, 6, $col, 1);
                 }
                 $this->Ln();
             }
@@ -75,9 +65,9 @@ if (isset($_POST['submit_cotizacion'])) {
     }
     
     // Data
-    $header = array('Destino', 'Cant. Persona', 'Fecha inicio', 'Fecha fin', 'Precio');
+    $header = array('Destino', 'Cant. Persona', utf8_decode('Estadía'), 'Precio');
     $data = array(
-        array(utf8_encode($nombre_destino), $cantidad_personas, $fecha_inicio, $fecha_fin, 'B/. '. $precio_total),
+        array(utf8_decode($nombre_destino), $cantidad_personas, $fechas, 'B/. '. $precio_total),
     );
     
     $pdf = new PDF();

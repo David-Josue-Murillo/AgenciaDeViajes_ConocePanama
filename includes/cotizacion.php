@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
     <div class="container pb-5">
         <div class="bg-light shadow" style="padding: 30px;">
             <div class="row align-items-center" style="min-height: 60px;">
-                <form action="php/area_cotizacion.php" method="post" class="d-md-flex">
+                <form action="php/cotizacion.php" method="post" class="d-md-flex">
                     <div class="col-md-10">
                         <div class="row">
                             <div class="col-md-3">
@@ -32,7 +32,8 @@ if (!isset($_SESSION)) {
                                 <div class="mb-3 mb-md-0">
                                     <div class="mb-3 mb-md-0">
                                         <div class="form-control" style="height: 44px; padding: 10px 0px; text-align: center; background: none; cursor: pointer;" onclick="document.getElementById('date1').focus();" required>
-                                            <span id="fechas" style="font-size:15px;">Selecciona una estadía</span>
+                                            <span id="fechas" name="fechas" style="font-size:15px;">Selecciona una estadía</span>
+                                            <input type="hidden" id="fechaText" name="fechaText" value="">
                                         </div>
                                     </div>
                                 </div>
