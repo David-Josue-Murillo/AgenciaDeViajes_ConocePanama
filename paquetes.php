@@ -1,5 +1,16 @@
 <?php
 include_once 'includes/header.php';
+include 'db/conexion.php';
+
+$sql = "SELECT * FROM destinos";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    $destinos = array();
+    while ($row = $result->fetch_assoc()) {
+        $destinos[] = $row;
+    }
+}
 ?>
 
    <!-- Carousel - Inicio -->
@@ -21,7 +32,7 @@ include_once 'includes/header.php';
     </div>
     <!-- Carousel - Fin -->
 
-    <!-- Area de destinos - incio -->
+    <!-- Area de destinos  - incio -->
     <section class="container-fluid py-5">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
@@ -41,7 +52,7 @@ include_once 'includes/header.php';
                             <a class="h5 text-decoration-none" href="">Descubre los lugares más increíbles de Panamá.</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <button class="btn btn-primary">Comprar</button>
                                     <h5 class="m-0">$350</h5>
                                 </div>
                             </div>
@@ -60,7 +71,7 @@ include_once 'includes/header.php';
                             <a class="h5 text-decoration-none" href="">Descubre las maravillas de la isla de Isla Contadora.</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <button class="btn btn-primary">Comprar</button>
                                     <h5 class="m-0">$350</h5>
                                 </div>
                             </div>
@@ -79,7 +90,7 @@ include_once 'includes/header.php';
                             <a class="h5 text-decoration-none" href="">Conoce los bellas aguas de las isla Taboga</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <button class="btn btn-primary">Comprar</button>
                                     <h5 class="m-0">$350</h5>
                                 </div>
                             </div>
@@ -98,7 +109,7 @@ include_once 'includes/header.php';
                             <a class="h5 text-decoration-none" href="">Los mejores paisajes naturales de Panamá</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <button class="btn btn-primary">Comprar</button>
                                     <h5 class="m-0">$350</h5>
                                 </div>
                             </div>
@@ -114,10 +125,10 @@ include_once 'includes/header.php';
                                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 dias</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="">Town Centers, Beaches y más</a>
+                            <a class="h5 text-decoration-none" href="">Town Centers, Playas, Restaurantes y más</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <button class="btn btn-primary">Comprar</button>
                                     <h5 class="m-0">$350</h5>
                                 </div>
                             </div>
@@ -136,7 +147,7 @@ include_once 'includes/header.php';
                             <a class="h5 text-decoration-none" href="">Playa, paisaje y más ¿Que esperas?</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <button class="btn btn-primary">Comprar</button>
                                     <h5 class="m-0">$350</h5>
                                 </div>
                             </div>
@@ -146,7 +157,7 @@ include_once 'includes/header.php';
             </div>
         </div>
     </section>
-    <!-- Area de destinos - fin -->
+    <!-- Area de destinos - fin --> 
 
     <!-- Area del blog panamá - incio -->
      
