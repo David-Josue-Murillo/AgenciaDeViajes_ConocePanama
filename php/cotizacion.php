@@ -4,7 +4,9 @@ define('FPDF_FONTPATH', '../lib/fpdf/font/');
 require('../lib/fpdf/fpdf.php');
 include '../db/conexion.php';
 
+
 if (isset($_POST['submit_cotizacion'])) {
+
     $destino = intval($_POST['destino']); // Obtener el id de destino
     $fechas = $_POST['fechaText']; // Obtener la fecha de inicio
     $cantidad_personas = intval($_POST['cantidad_personas']); // Obtener la fecha de fin
@@ -80,5 +82,3 @@ if (isset($_POST['submit_cotizacion'])) {
     $pdf->Table($header, $data);
     $pdf->Output();
 }
-
-header('Location: ../index.php');

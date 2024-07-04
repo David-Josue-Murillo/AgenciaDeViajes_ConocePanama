@@ -32,7 +32,7 @@
 
     <?php if (!isset($_SESSION['login'])) : ?>
         <div class="container login-container">
-            <div class="container-fluid bg-success-subtle rounded-3 p-4">
+            <div class="container-fluid bg-success">
                 <h2 class="text-center font-weight-bold">Administrador</h2>
                 <form id="loginForm" action="/admin/php/login.php" method="post">
                     <div class="form-group mb-2">
@@ -72,7 +72,7 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right text-center" style="margin-right: 30px;">
                             <li><a href=""><?php echo $_SESSION['nombre_user'] . ' ' . $_SESSION['apellido_user']; ?></a></li>
-                            <li><a href="#">Salir</a></li>
+                            <li><a href="php/exit.php">Salir</a></li>
                         </ul>
                     </div>
 
@@ -86,10 +86,6 @@
                             <img src="assets/img/logo.png" class="img-responsive" />
                         </li>
 
-
-                        <li>
-                            <a href="index.html"><i class="fa fa-desktop "></i>Dashboard</a>
-                        </li>
                         <li>
                             <a href="#"><i class="fa fa-edit "></i>UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -159,11 +155,12 @@
 
             </nav>
             <!-- /. NAV SIDE  -->
+
             <div id="page-wrapper">
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2>Admin Dashboard</h2>
+                            <h2>Panel de Administrador</h2>
                         </div>
                     </div>
                     <!-- /. ROW  -->
@@ -451,6 +448,7 @@
     <script src="admin/js/custom.js"></script>
     <script src="admin/js/jquery.metisMenu.js"></script>
     <script src="admin/js/jquery-1.10.2.js"></script>
+    <script src="admin/js/charts.js"></script>
 
 </body>
 
