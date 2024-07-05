@@ -18,6 +18,7 @@ window.onload = function() {
 const contenido = document.getElementById('page-inner');
 const contenidoInmutable = contenido.innerHTML;
 const contenedorUsuarios = document.getElementById('contenedor_usuarios').innerHTML;
+const contenedorDestinos = document.getElementById('contenedor_destinos').innerHTML;
 
 // Logo
 document.getElementById('logo').addEventListener('click', function() {
@@ -27,6 +28,11 @@ document.getElementById('logo').addEventListener('click', function() {
 // Area de usuarios
 document.getElementById('usuarios').addEventListener('click', function() {
     contenido.innerHTML = contenedorUsuarios;
+});
+
+// Area de destinos
+document.getElementById('destinos').addEventListener('click', function() {
+    contenido.innerHTML = contenedorDestinos;
 });
 
 

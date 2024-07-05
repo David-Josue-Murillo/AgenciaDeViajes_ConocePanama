@@ -10,6 +10,16 @@ if ($result->num_rows > 0) {
         $usuarios[] = $row;
     }
 }
+
+$sql = "SELECT * FROM destinos";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    $destinos = array();
+    while ($row = $result->fetch_assoc()) {
+        $destinos[] = $row;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -106,7 +116,7 @@ if ($result->num_rows > 0) {
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-edit "></i>Destinos</a>
+                            <a href="#" id="destinos"><i class="fa fa-edit "></i>Destinos</a>
                         </li>
 
                         <li>
@@ -463,6 +473,50 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </div>
+
+    <!-- HTML Oculto para cargar los datos de destinos -->
+     <div id="contenedor_destinos" style="display: none;">
+        <div class="container-fluid py-5">
+            <div class="col-lg-12 pt-5 pb-3">
+                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Destinos</h6>
+                    <h1>Lista de Destinos</h1>
+                    <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Destino</button>
+                </div>
+                <div class="row" id="tabla-destinos">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Direccion</th>
+                                    <th>Descripcion</th>
+                                    <th>url imagen</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($destinos as $destino) : ?>
+                                <tr>
+                                    <td><?= $destino['id_destino'] ?></td>
+                                    <td><?= $destino['nombre_destino'] ?></td>
+                                    <td><?= $destino['direccion'] ?></td>
+                                    <td><?= $destino['descripcion'] ?></td>
+                                    <td><?= $destino['url_imagen'] ?></td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary">Editar</a>
+                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+                
 
 
     <!-- Scripts -->
