@@ -20,11 +20,17 @@ const contenidoInmutable = contenido.innerHTML;
 const contenedorUsuarios = document.getElementById('contenedor_usuarios').innerHTML;
 const contenedorDestinos = document.getElementById('contenedor_destinos').innerHTML;
 const contenedorReservas = document.getElementById('contenedor_reservas').innerHTML;
+const contenedorGuias = document.getElementById('contenedor_guias').innerHTML;
 
 // Logo
 document.getElementById('logo').addEventListener('click', function() {
     contenido.innerHTML = contenidoInmutable;
 });
+
+document.getElementById('logo_img').addEventListener('click', function() {
+    contenido.innerHTML = contenidoInmutable;
+});
+
 
 // Area de usuarios
 document.getElementById('usuarios').addEventListener('click', function() {
@@ -39,6 +45,11 @@ document.getElementById('destinos').addEventListener('click', function() {
 // Area de reservas
 document.getElementById('reservas').addEventListener('click', function() {
     contenido.innerHTML = contenedorReservas;
+});
+
+// Area de guias
+document.getElementById('guias').addEventListener('click', function() {
+    contenido.innerHTML = contenedorGuias;
 });
 
 

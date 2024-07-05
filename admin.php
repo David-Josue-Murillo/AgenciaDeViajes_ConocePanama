@@ -1,7 +1,7 @@
 <?php
 include_once 'db/conexion.php';
 
-// Consulta para obtener los daros de la tabla usuarios
+// Consulta para obtener los datos de la tabla usuarios
 $sql = "SELECT * FROM usuarios";
 $result = $conexion->query($sql);
 
@@ -12,7 +12,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Consulta para obtener los daros de la tabla detinos
+// Consulta para obtener los datos de la tabla detinos
 $sql = "SELECT * FROM destinos";
 $result = $conexion->query($sql);
 
@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Consulta para obtener los daros de la tabla reservas
+// Consulta para obtener los datos de la tabla reservas
 $sql = "SELECT * FROM reservas";
 $result = $conexion->query($sql);
 
@@ -31,6 +31,17 @@ if ($result->num_rows > 0) {
     $reservas = array();
     while ($row = $result->fetch_assoc()) {
         $reservas[] = $row;
+    }
+}
+
+// Consulta para obtener los datos de los guias
+$sql = "SELECT * FROM guias";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    $guias = array();
+    while ($row = $result->fetch_assoc()) {
+        $guias[] = $row;
     }
 }
 
@@ -123,7 +134,7 @@ if ($result->num_rows > 0) {
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                         <li class="text-center user-image-back">
-                            <img src="assets/img/logo.png" class="img-responsive" />
+                            <img id="logo_img" src="assets/img/logo.png" class="img-responsive" />
                         </li>
 
                         <li>
@@ -139,7 +150,7 @@ if ($result->num_rows > 0) {
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-qrcode "></i>Guias</a>
+                            <a href="#" id="guias"><i class="fa fa-qrcode "></i>Guias</a>
                         </li>
 
                         <li>
@@ -572,6 +583,57 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- HTML Oculto para cargar los datos de los guias -->
+     <div id="contenedor_guias" style="display: none;">
+        <div class="container-fluid py-5">
+            <div class="col-lg-12 pt-5 pb-3">
+                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Guias</h6>
+                    <h1>Lista de Guias</h1>
+                    <button id="btn-crear-guia" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Guia</button>
+                </div>
+                <div class="row" id="tabla-guias">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Destino designado</th>
+                                    <th>url imagen</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($guias as $guia) : ?>
+                                <tr>
+                                    <td><?= $guia['guia_id'] ?></td>
+                                    <td><?= $guia['nombre_completo'] ?></td>
+                                    <td>
+                                    <?php 
+                                        $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$guia[designacion]'";
+                                        $result = $conexion->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            $destino = $result->fetch_assoc();
+                                        }
+
+                                        echo $destino['nombre_destino'];
+                                    ?>
+                                    </td>
+                                    <td><?= $guia['url_perfil'] ?></td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary">Editar</a>
+                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+        
     </div>
 
 
