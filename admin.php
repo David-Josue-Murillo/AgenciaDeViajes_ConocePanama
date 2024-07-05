@@ -602,7 +602,6 @@ if ($result->num_rows > 0) {
         </div>
     </div>
 
-   
     <!-- HTML Oculto para cargar los datos de las reservas de viajes -->
      <div id="contenedor_reservas" style="display: none;">
         <div class="container-fluid py-5">
@@ -695,6 +694,75 @@ if ($result->num_rows > 0) {
             </div>
         </div>
         
+    </div>
+
+    <!-- HTML Oculto del formulario que crea una nueva tabla -->
+     <div id="contenedor_nueva_tabla" style="display: none;">
+        <div class="container-fluid py-5">
+            <div class="col-lg-12 pt-5 pb-3">
+                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Nueva Tabla</h6>
+                    <h1>Crear una nueva tabla</h1>
+                </div>
+                <div class="row" id="formTablaNueva">
+                    <form action="admin/php/crear_nueva_tabla.php" method="post" class="form-group">
+                        <div class="form-group row" id="nombre_tabla">
+                            <div class="form-group col-md-4">
+                                <label for="nombre_tabla">Nombre de la tabla</label>
+                                <input type="text" class="form-control" id="nombre_tabla" name="nombre_tabla" placeholder="Nombre de la tabla">
+                            </div>
+                            
+                            <div class="form-group col-md-3">
+                                <label for="campos_tabla">Agregar</label>
+                                
+                                <div class="row">
+                                    <div class="form-group col-md-5">
+                                        <input type="number" class="form-control" id="campos_tabla" name="campos_tabla" placeholder="Campos de la tabla" value="1">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <button id="agregarCampos" class="btn btn-primary btn-block">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="campos_tabla">Nombre del campo</label>
+                                <input type="text" class="form-control" id="tipo_campo" name="tipo_campo" placeholder="Tipo de campo">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="tipo_dato">Tipo de dato</label><br>
+                                <select name="tipo_dato" class="custom-select px-5" required="required">
+                                    <option value="varchar">varchar</option>
+                                    <option value="int">int</option>
+                                    <option value="float">float</option>
+                                    <option value="date">date</option>
+                                    <option value="datetime">text</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="tipo_dato">Tamaño de dato</label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" id="tamaño_dato" name="tamaño_dato" placeholder="1">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-1 text-center">
+                                <label for="nullo">Nullo</label>
+                                <input type="checkbox" class="form-control" id="nullo" name="nullo" value="1">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100" value="Crear Tabla" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 

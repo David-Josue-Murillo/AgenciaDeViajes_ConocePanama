@@ -22,6 +22,7 @@ const contenedorDestinos = document.getElementById('contenedor_destinos').innerH
 const contenedorReservas = document.getElementById('contenedor_reservas').innerHTML;
 const contenedorPaquetes = document.getElementById('contenedor_paquetes').innerHTML;
 const contenedorGuias = document.getElementById('contenedor_guias').innerHTML;
+const contenedorNuevaTabla = document.getElementById('contenedor_nueva_tabla').innerHTML;
 
 
 // Logo
@@ -58,6 +59,10 @@ document.getElementById('guias').addEventListener('click', function() {
     contenido.innerHTML = contenedorGuias;
 });
 
+// Area de crear nueva tabla
+document.getElementById('nuevaTabla').addEventListener('click', function() {
+    contenido.innerHTML = contenedorNuevaTabla;
+});
 
 // Funciones
 
