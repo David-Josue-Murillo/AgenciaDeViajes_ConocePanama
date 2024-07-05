@@ -705,22 +705,22 @@ if ($result->num_rows > 0) {
                     <h1>Crear una nueva tabla</h1>
                 </div>
                 <div class="row" id="formTablaNueva">
-                    <form action="admin/php/crear_nueva_tabla.php" method="post" class="form-group">
-                        <div class="form-group row" id="nombre_tabla">
+                    <form action="admin/php/crear_nueva_tabla.php" method="post" class="form-group" id="formNuevaTabla">
+                        <div class="form-group row" id="agregarColumnas">
                             <div class="form-group col-md-4">
                                 <label for="nombre_tabla">Nombre de la tabla</label>
                                 <input type="text" class="form-control" id="nombre_tabla" name="nombre_tabla" placeholder="Nombre de la tabla">
                             </div>
                             
                             <div class="form-group col-md-3">
-                                <label for="campos_tabla">Agregar</label>
+                                <label for="agregarTabla">Agregar</label>
                                 
                                 <div class="row">
                                     <div class="form-group col-md-5">
-                                        <input type="number" class="form-control" id="campos_tabla" name="campos_tabla" placeholder="Campos de la tabla" value="1">
+                                        <input type="number" class="form-control" id="campoAgregarTabla" name="agregarTabla" value="1">
                                     </div>
                                     <div class="form-group col-md-5">
-                                        <button id="agregarCampos" class="btn btn-primary btn-block">Agregar</button>
+                                        <input type="button" id="agregarCampos" class="btn btn-primary btn-block" value="Agregar">
                                     </div>
                                 </div>
                             </div>
@@ -728,8 +728,8 @@ if ($result->num_rows > 0) {
 
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="campos_tabla">Nombre del campo</label>
-                                <input type="text" class="form-control" id="tipo_campo" name="tipo_campo" placeholder="Tipo de campo">
+                                <label for="nombre_campo">Nombre del campo</label>
+                                <input type="text" class="form-control" id="nombre_campo" name="nombre_campo" placeholder="Nombre del campo">
                             </div>
 
                             <div class="form-group col-md-3">
@@ -755,11 +755,11 @@ if ($result->num_rows > 0) {
                                 <input type="checkbox" class="form-control" id="nullo" name="nullo" value="1">
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100" value="Crear Tabla" />
-                        </div>
                     </form>
+                    
+                    <div class="form-group">
+                        <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100" form="formNuevaTabla" value="Crear Tabla"/>
+                    </div>
                 </div>
             </div>
         </div>
