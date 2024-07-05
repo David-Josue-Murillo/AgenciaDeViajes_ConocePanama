@@ -1,6 +1,3 @@
-// Conexión a la base de datos
-
-
 // Función que elimina el mensaje de error despues de 3 segundos
 window.onload = function() {
     const alerta = document.querySelector('.alerta');
@@ -14,6 +11,9 @@ window.onload = function() {
     
 }
 
+// Temporizador de session
+document.getElementById('wrapper') && cerrarSession();
+
 // Elementos del DOM
 const contenido = document.getElementById('page-inner');
 const contenidoInmutable = contenido.innerHTML;
@@ -23,8 +23,6 @@ const contenedorReservas = document.getElementById('contenedor_reservas').innerH
 const contenedorPaquetes = document.getElementById('contenedor_paquetes').innerHTML;
 const contenedorGuias = document.getElementById('contenedor_guias').innerHTML;
 
-// Temporizador de session
-document.getElementById('wrapper') && cerrarSession();
 
 // Logo
 document.getElementById('logo').addEventListener('click', function() {
@@ -63,6 +61,7 @@ document.getElementById('guias').addEventListener('click', function() {
 
 // Funciones
 
+// Funcion que limita el tiempo en que el usuario pueda navegar por la página
 function cerrarSession() {
     setTimeout(() => {
         alert('La sesión esta por expirar. Por favor, vuelva a iniciar sesión.');

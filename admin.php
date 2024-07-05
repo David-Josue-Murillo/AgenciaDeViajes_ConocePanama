@@ -153,30 +153,23 @@ if ($result->num_rows > 0) {
                         </li>
 
                         <li>
-                            <a href="#" id="destinos"><i class="fa fa-edit "></i>Destinos</a>
+                            <a href="#" id="destinos"><i class="fa fa-globe "></i>Destinos</a>
                         </li>
 
                         <li>
-                            <a href="#" id="paquetes"><i class="fa fa-edit "></i>Paquetes</a>
+                            <a href="#" id="paquetes"><i class="fa fa-briefcase "></i>Paquetes</a>
                         </li>
 
                         <li>
-                            <a href="#" id="reservas"><i class="fa fa-sitemap"></i>Reservas</a>  
+                            <a href="#" id="reservas"><i class="fa fa-check"></i>Reservas</a>  
                         </li>
 
                         <li>
-                            <a href="#" id="guias"><i class="fa fa-qrcode "></i>Guias</a>
+                            <a href="#" id="guias"><i class="fa fa-users"></i>Guias</a>
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o"></i>Mettis Charts</a>
-                        </li>
-
-                        <li>
-                            <a href="#"><i class="fa fa-edit "></i>Last Link </a>
-                        </li>
-                        <li>
-                            <a href="blank.html"><i class="fa fa-table "></i>Blank Page</a>
+                            <a href="#" id="nuevaTabla"><i class="fa fa-edit "></i>Crear Tabla</a>
                         </li>
                     </ul>
 
