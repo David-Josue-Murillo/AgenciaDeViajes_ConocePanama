@@ -1,6 +1,7 @@
 <?php
 include_once 'db/conexion.php';
 
+// Consulta para obtener los daros de la tabla usuarios
 $sql = "SELECT * FROM usuarios";
 $result = $conexion->query($sql);
 
@@ -11,6 +12,7 @@ if ($result->num_rows > 0) {
     }
 }
 
+// Consulta para obtener los daros de la tabla detinos
 $sql = "SELECT * FROM destinos";
 $result = $conexion->query($sql);
 
@@ -20,7 +22,20 @@ if ($result->num_rows > 0) {
         $destinos[] = $row;
     }
 }
+
+// Consulta para obtener los daros de la tabla reservas
+$sql = "SELECT * FROM reservas";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    $reservas = array();
+    while ($row = $result->fetch_assoc()) {
+        $reservas[] = $row;
+    }
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -120,7 +135,7 @@ if ($result->num_rows > 0) {
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-sitemap"></i>Reservas</a>  
+                            <a href="#" id="reservas"><i class="fa fa-sitemap"></i>Reservas</a>  
                         </li>
 
                         <li>
@@ -516,7 +531,48 @@ if ($result->num_rows > 0) {
         </div>
     </div>
    
-                
+    <!-- HTML Oculto para cargar los datos de las reservas de viajes -->
+     <div id="contenedor_reservas" style="display: none;">
+        <div class="container-fluid py-5">
+            <div class="col-lg-12 pt-5 pb-3">
+                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Reservas</h6>
+                    <h1>Lista de Reservas</h1>
+                    <button id="btn-crear-reserva" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Reserva</button>
+                </div>
+
+                <div class="row" id="tabla-reservas">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Destino</th>
+                                    <th>Fecha</th>
+                                    <th>Cant. Personas</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($reservas as $reserva) : ?>
+                                <tr>
+                                    <td><?= $reserva['id_reserva'] ?></td>
+                                    <td><?= $reserva['nombre_destino'] ?></td>
+                                    <td><?= $reserva['fecha_reserva'] ?></td>
+                                    <td><?= $reserva['hora_reserva'] ?></td>
+                                    <td><?= $reserva['tipo_reserva'] ?></td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary">Editar</a>
+                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Scripts -->
