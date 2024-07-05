@@ -425,36 +425,40 @@ if ($result->num_rows > 0) {
     <div id="contenedor_usuarios" style="display: none;">
         <div class="container-fluid py-5">
             <div class="col-lg-12 pt-5 pb-3">
-                <div class="row text-center mb-3 pb-3">
+                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Usuarios</h6>
                     <h1>Lista de Usuarios</h1>
-                    <a href="#" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Usuario</a>
+                    <button id="btn-crear-usuario" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Usuario</button>
                 </div>
 
-                <div class="row" id="usuarios">
-                    <?php foreach ($usuarios as $usuario) : ?>
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="package-item bg-white mb-2">
-                                <img class="img-fluid" src="../assets/img/usuarios/1.jpg" alt="">
-                                <div class="p-4">
-                                    <div class="d-flex justify-content-between mb-3">                          
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $usuario['nombre_usuario'] ?></small>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $usuario['apellido_usuario'] ?></small>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $usuario['email'] ?></small>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $usuario['telefono'] ?></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+                <div class="row" id="tabla-usuarios">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Telefono</th>
+                                    <th>Email</th>
+                                    <th>Tipo usuario</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($usuarios as $usuario) : ?>
+                                <tr>
+                                    <td><?= $usuario['id_usuario'] ?></td>
+                                    <td><?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?></td>
+                                    <td><?= $usuario['telefono'] ?></td>
+                                    <td><?= $usuario['email'] ?></td>
+                                    <td><?php if($usuario['tipo_usuario'] == 1) echo 'Administrador'; else echo 'Usuario'; ?></td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary">Editar</a>
+                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </div>
