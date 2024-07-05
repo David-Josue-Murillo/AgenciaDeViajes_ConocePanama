@@ -23,6 +23,17 @@ if ($result->num_rows > 0) {
     }
 }
 
+// Consulta para obtener los datos de la tabla paquetes
+$sql = "SELECT * FROM paquetes";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    $paquetes = array();
+    while ($row = $result->fetch_assoc()) {
+        $paquetes[] = $row;
+    }
+}
+
 // Consulta para obtener los datos de la tabla reservas
 $sql = "SELECT * FROM reservas";
 $result = $conexion->query($sql);
@@ -146,6 +157,10 @@ if ($result->num_rows > 0) {
                         </li>
 
                         <li>
+                            <a href="#" id="paquetes"><i class="fa fa-edit "></i>Paquetes</a>
+                        </li>
+
+                        <li>
                             <a href="#" id="reservas"><i class="fa fa-sitemap"></i>Reservas</a>  
                         </li>
 
@@ -153,9 +168,6 @@ if ($result->num_rows > 0) {
                             <a href="#" id="guias"><i class="fa fa-qrcode "></i>Guias</a>
                         </li>
 
-                        <li>
-                            <a href="#"><i class="fa fa-edit "></i>Nueva Tabla</a>
-                        </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o"></i>Mettis Charts</a>
                         </li>
@@ -541,6 +553,62 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </div>
+
+    <!-- HTML Oculto para cargar los datos de los paquetes -->
+    <div id="contenedor_paquetes" style="display: none;">
+        <div class="container-fluid py-5">
+            <div class="col-lg-12 pt-5 pb-3">
+                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Paquetes</h6>
+                    <h1>Lista de Paquetes</h1>
+                    <button id="btn-crear-paquete" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Paquete</button>
+                </div>
+                <div class="row" id="tabla-paquetes">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Destino</th>
+                                    <th>Nombre del paquete</th>
+                                    <th>Fecha de inicio</th>
+                                    <th>Fecha de fin</th>
+                                    <th>Descripcion</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($paquetes as $paquete) : ?>
+                                <tr>
+                                    <td><?= $paquete['id_paquete'] ?></td>
+                                    <td>
+                                        <?php 
+                                            $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$paquete[id_destino]'";
+                                            $result = $conexion->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                $destino = $result->fetch_assoc();
+                                            }
+                                            echo $destino['nombre_destino'];
+                                        ?>
+                                    </td>
+                                    <td><?= $paquete['nombre_paquete'] ?></td>
+                                    <td><?= $paquete['fecha_inicio'] ?></td>
+                                    <td><?= $paquete['fecha_fin'] ?></td>
+                                    <td><?= $paquete['descripcion'] ?></td>
+                                    <td><?= $paquete['precio'] ?></td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary">Editar</a>
+                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
    
     <!-- HTML Oculto para cargar los datos de las reservas de viajes -->
      <div id="contenedor_reservas" style="display: none;">
