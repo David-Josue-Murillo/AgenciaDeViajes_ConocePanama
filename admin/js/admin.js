@@ -63,15 +63,16 @@ document.getElementById('guias').addEventListener('click', function () {
 document.getElementById('nuevaTabla').addEventListener('click', function () {
     contenido.innerHTML = contenedorNuevaTabla;
 
+    // Evento para agregar campos a la tabla
     document.getElementById('agregarCampos').addEventListener('click', function () {
-        const formulario = document.getElementById('formNuevaTabla');
+        const formulario = document.getElementById('formNuevaTabla'); // Formulario de creación de tabla
 
-        const divCampo = document.createElement('div');
+        const divCampo = document.createElement('div'); // Elemento que contiene los campos de la tabla
         divCampo.className = 'row';
         divCampo.innerHTML = `
             <div class="form-group col-md-4">
                 <label for="campos_tabla">Nombre del campo</label>
-                <input type="text" class="form-control" id="tipo_campo" name="tipo_campo" placeholder="Tipo de campo">
+                <input type="text" class="form-control" id="tipo_campo" name="tipo_campo" placeholder="Nombre del campo">
             </div>
 
             <div class="form-group col-md-3">
@@ -98,7 +99,14 @@ document.getElementById('nuevaTabla').addEventListener('click', function () {
             </div>
         `;
 
-        formulario.appendChild(divCampo);
+        if ( parseInt(document.getElementById('agregarCantidad').value) > 1) {
+            for (let i = 1; i < parseInt(document.getElementById('agregarCantidad').value); i++) {
+                formulario.appendChild(divCampo.cloneNode(true)); // Clonar el elemento para agregarlos
+            }
+        }
+            
+        formulario.appendChild(divCampo); // Agregar el elemento al formulario
+        
     });
 });
 
@@ -108,11 +116,11 @@ document.getElementById('nuevaTabla').addEventListener('click', function () {
 // Funcion que limita el tiempo en que el usuario pueda navegar por la página
 function cerrarSession() {
     setTimeout(() => {
-        alert('La sesión esta por expirar. Por favor, vuelva a iniciar sesión.');
+        alert('La sesión esta por expirar. Por favor, vuelva a iniciar sesión.'); // Mensaje de alerta antes de que se cierre la sesión
 
         setTimeout(() => {
-            window.location.href = 'php/exit.php';
-        }, 600000);
-    }, 558000);
+            window.location.href = 'php/exit.php'; // Redireccionar al archivo de salida
+        }, 60000); // Tiempo de espera antes de que se cierre la sesión
+    }, 558000); 
 
 }
