@@ -67,7 +67,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">CONOCE PANAMÁ</a>
+                        <a class="navbar-brand" id="logo" href="#">CONOCE PANAMÁ</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right text-center" style="margin-right: 30px;">
@@ -87,7 +87,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-table "></i>Usuarios</a>
+                            <a href="#" id="usuarios"><i class="fa fa-table "></i>Usuarios</a>
                         </li>
 
                         <li>
@@ -414,7 +414,7 @@
     <script src="admin/js/custom.js"></script>
     <script src="admin/js/jquery.metisMenu.js"></script>
     <script src="admin/js/jquery-1.10.2.js"></script>
-    <script src="admin/js/charts.js"></script>
+    <script type="module" src="admin/js/charts.js"></script>
 
 </body>
 
