@@ -1,3 +1,6 @@
+// Conexión a la base de datos
+
+
 // Función que elimina el mensaje de error despues de 3 segundos
 window.onload = function() {
     const alerta = document.querySelector('.alerta');
@@ -11,8 +14,10 @@ window.onload = function() {
     
 }
 
+// Elementos del DOM
 const contenido = document.getElementById('page-inner');
 const contenidoInmutable = contenido.innerHTML;
+const contenedorUsuarios = document.getElementById('contenedor_usuarios').innerHTML;
 
 // Logo
 document.getElementById('logo').addEventListener('click', function() {
@@ -21,7 +26,7 @@ document.getElementById('logo').addEventListener('click', function() {
 
 // Area de usuarios
 document.getElementById('usuarios').addEventListener('click', function() {
-    contenido.innerHTML = '<div class="row"><div class="col-md-12"><h2>Panel de Administrador</h2></div></div>';
+    contenido.innerHTML = contenedorUsuarios;
 });
 
 

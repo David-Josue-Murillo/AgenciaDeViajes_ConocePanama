@@ -1,3 +1,17 @@
+<?php
+include_once 'db/conexion.php';
+
+$sql = "SELECT * FROM usuarios";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    $usuarios = array();
+    while ($row = $result->fetch_assoc()) {
+        $usuarios[] = $row;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +33,7 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/admin.css">
+    
 
     <title>Administrar</title>
 </head>
@@ -405,6 +420,46 @@
             <!-- /. PAGE WRAPPER  -->
         </div>
     <?php endif; ?>
+
+    <!-- HTML Oculto para cargar los datos de usuarios -->
+    <div id="contenedor_usuarios" style="display: none;">
+        <div class="container-fluid py-5">
+            <div class="col-lg-12 pt-5 pb-3">
+                <div class="row text-center mb-3 pb-3">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Usuarios</h6>
+                    <h1>Lista de Usuarios</h1>
+                    <a href="#" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Usuario</a>
+                </div>
+
+                <div class="row" id="usuarios">
+                    <?php foreach ($usuarios as $usuario) : ?>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="package-item bg-white mb-2">
+                                <img class="img-fluid" src="../assets/img/usuarios/1.jpg" alt="">
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between mb-3">                          
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $usuario['nombre_usuario'] ?></small>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $usuario['apellido_usuario'] ?></small>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $usuario['email'] ?></small>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $usuario['telefono'] ?></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
