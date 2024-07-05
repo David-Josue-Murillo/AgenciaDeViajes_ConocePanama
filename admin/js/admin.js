@@ -23,6 +23,9 @@ const contenedorReservas = document.getElementById('contenedor_reservas').innerH
 const contenedorPaquetes = document.getElementById('contenedor_paquetes').innerHTML;
 const contenedorGuias = document.getElementById('contenedor_guias').innerHTML;
 
+// Temporizador de session
+document.getElementById('wrapper') && cerrarSession();
+
 // Logo
 document.getElementById('logo').addEventListener('click', function() {
     contenido.innerHTML = contenidoInmutable;
@@ -31,7 +34,6 @@ document.getElementById('logo').addEventListener('click', function() {
 document.getElementById('logo_img').addEventListener('click', function() {
     contenido.innerHTML = contenidoInmutable;
 });
-
 
 // Area de usuarios
 document.getElementById('usuarios').addEventListener('click', function() {
@@ -59,4 +61,15 @@ document.getElementById('guias').addEventListener('click', function() {
 });
 
 
+// Funciones
 
+function cerrarSession() {
+    setTimeout(() => {
+        alert('La sesión esta por expirar. Por favor, vuelva a iniciar sesión.');
+        
+        setTimeout(() => {
+            window.location.href = 'php/exit.php';
+        }, 600000);
+    }, 558000);
+
+}
