@@ -80,7 +80,7 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/admin.css">
-    
+
 
     <title>Administrar</title>
 </head>
@@ -161,7 +161,7 @@ if ($result->num_rows > 0) {
                         </li>
 
                         <li>
-                            <a href="#" id="reservas"><i class="fa fa-check"></i>Reservas</a>  
+                            <a href="#" id="reservas"><i class="fa fa-check"></i>Reservas</a>
                         </li>
 
                         <li>
@@ -473,40 +473,92 @@ if ($result->num_rows > 0) {
                 </div>
 
                 <div class="row" id="tabla-usuarios">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nombre</th>
-                                    <th>Telefono</th>
-                                    <th>Email</th>
-                                    <th>Tipo usuario</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($usuarios as $usuario) : ?>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Telefono</th>
+                                <th>Email</th>
+                                <th>Tipo usuario</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($usuarios as $usuario) : ?>
                                 <tr>
                                     <td><?= $usuario['id_usuario'] ?></td>
                                     <td><?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?></td>
                                     <td><?= $usuario['telefono'] ?></td>
                                     <td><?= $usuario['email'] ?></td>
-                                    <td><?php if($usuario['tipo_usuario'] == 1) echo 'Administrador'; else echo 'Usuario'; ?></td>
+                                    <td><?php if ($usuario['tipo_usuario'] == 1) echo 'Administrador';
+                                        else echo 'Usuario'; ?></td>
                                     <td>
                                         <a href="#" class="btn btn-primary">Editar</a>
                                         <a href="#" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedor-modal">
+            <div class="modal-content col-md-6">
+                <div class="modal-header text-center">
+                    <h3>Crear Usuario</h3>
+                </div>
+                <div class="modal-body">
+                    <form action="php/crear_usuario.php" method="post" class="form-group">
+                        <div class="form-group row">
+                            <div class="form-group col-md-6">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="telefono">Telefono</label>
+                                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="form-group col-md-6">
+                                <label for="tipo_usuario">Tipo de usuario</label>
+                                <select name="tipo_usuario" class="custom-select px-5" required="required">
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Usuario</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="password">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-primary btn-block w-100" id="btn-cerrar-modal">Crear Usuario</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- HTML Oculto para cargar los datos de destinos -->
-     <div id="contenedor_destinos" style="display: none;">
+    <div id="contenedor_destinos" style="display: none;">
         <div class="container-fluid py-5">
             <div class="col-lg-12 pt-5 pb-3">
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
@@ -515,19 +567,19 @@ if ($result->num_rows > 0) {
                     <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Destino</button>
                 </div>
                 <div class="row" id="tabla-destinos">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nombre</th>
-                                    <th>Direccion</th>
-                                    <th>Descripcion</th>
-                                    <th>url imagen</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($destinos as $destino) : ?>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Direccion</th>
+                                <th>Descripcion</th>
+                                <th>url imagen</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($destinos as $destino) : ?>
                                 <tr>
                                     <td><?= $destino['id_destino'] ?></td>
                                     <td><?= $destino['nombre_destino'] ?></td>
@@ -539,9 +591,9 @@ if ($result->num_rows > 0) {
                                         <a href="#" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -557,31 +609,31 @@ if ($result->num_rows > 0) {
                     <button id="btn-crear-paquete" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Paquete</button>
                 </div>
                 <div class="row" id="tabla-paquetes">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Destino</th>
-                                    <th>Nombre del paquete</th>
-                                    <th>Fecha de inicio</th>
-                                    <th>Fecha de fin</th>
-                                    <th>Descripcion</th>
-                                    <th>Precio</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($paquetes as $paquete) : ?>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Destino</th>
+                                <th>Nombre del paquete</th>
+                                <th>Fecha de inicio</th>
+                                <th>Fecha de fin</th>
+                                <th>Descripcion</th>
+                                <th>Precio</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($paquetes as $paquete) : ?>
                                 <tr>
                                     <td><?= $paquete['id_paquete'] ?></td>
                                     <td>
-                                        <?php 
-                                            $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$paquete[id_destino]'";
-                                            $result = $conexion->query($sql);
-                                            if ($result->num_rows > 0) {
-                                                $destino = $result->fetch_assoc();
-                                            }
-                                            echo $destino['nombre_destino'];
+                                        <?php
+                                        $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$paquete[id_destino]'";
+                                        $result = $conexion->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            $destino = $result->fetch_assoc();
+                                        }
+                                        echo $destino['nombre_destino'];
                                         ?>
                                     </td>
                                     <td><?= $paquete['nombre_paquete'] ?></td>
@@ -594,16 +646,16 @@ if ($result->num_rows > 0) {
                                         <a href="#" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- HTML Oculto para cargar los datos de las reservas de viajes -->
-     <div id="contenedor_reservas" style="display: none;">
+    <div id="contenedor_reservas" style="display: none;">
         <div class="container-fluid py-5">
             <div class="col-lg-12 pt-5 pb-3">
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
@@ -613,19 +665,19 @@ if ($result->num_rows > 0) {
                 </div>
 
                 <div class="row" id="tabla-reservas">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Destino</th>
-                                    <th>Fecha</th>
-                                    <th>Cant. Personas</th>
-                                    <th>Estado</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($reservas as $reserva) : ?>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Destino</th>
+                                <th>Fecha</th>
+                                <th>Cant. Personas</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($reservas as $reserva) : ?>
                                 <tr>
                                     <td><?= $reserva['id_reserva'] ?></td>
                                     <td><?= $reserva['nombre_destino'] ?></td>
@@ -637,16 +689,16 @@ if ($result->num_rows > 0) {
                                         <a href="#" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- HTML Oculto para cargar los datos de los guias -->
-     <div id="contenedor_guias" style="display: none;">
+    <div id="contenedor_guias" style="display: none;">
         <div class="container-fluid py-5">
             <div class="col-lg-12 pt-5 pb-3">
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
@@ -655,23 +707,23 @@ if ($result->num_rows > 0) {
                     <button id="btn-crear-guia" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Guia</button>
                 </div>
                 <div class="row" id="tabla-guias">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nombre</th>
-                                    <th>Destino designado</th>
-                                    <th>url imagen</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($guias as $guia) : ?>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Destino designado</th>
+                                <th>url imagen</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($guias as $guia) : ?>
                                 <tr>
                                     <td><?= $guia['guia_id'] ?></td>
                                     <td><?= $guia['nombre_completo'] ?></td>
                                     <td>
-                                    <?php 
+                                        <?php
                                         $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$guia[designacion]'";
                                         $result = $conexion->query($sql);
                                         if ($result->num_rows > 0) {
@@ -679,7 +731,7 @@ if ($result->num_rows > 0) {
                                         }
 
                                         echo $destino['nombre_destino'];
-                                    ?>
+                                        ?>
                                     </td>
                                     <td><?= $guia['url_perfil'] ?></td>
                                     <td>
@@ -687,17 +739,17 @@ if ($result->num_rows > 0) {
                                         <a href="#" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        
+
     </div>
 
     <!-- HTML Oculto del formulario que crea una nueva tabla -->
-     <div id="contenedor_nueva_tabla" style="display: none;">
+    <div id="contenedor_nueva_tabla" style="display: none;">
         <div class="container-fluid py-5">
             <div class="col-lg-12 pt-5 pb-3">
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
@@ -709,12 +761,12 @@ if ($result->num_rows > 0) {
                         <div class="form-group row" id="agregarColumnas">
                             <div class="form-group col-md-4">
                                 <label for="nombre_tabla">Nombre de la tabla</label>
-                                <input type="text" class="form-control" id="nombre_tabla" name="nombre_tabla" placeholder="Nombre de la tabla">
+                                <input type="text" class="form-control" id="nombre_tabla" name="nombre_tabla" placeholder="Nombre de la tabla" required>
                             </div>
-                            
+
                             <div class="form-group col-md-3">
                                 <label for="agregarTabla">Agregar</label>
-                                
+
                                 <div class="row">
                                     <div class="form-group col-md-5">
                                         <input type="number" class="form-control" id="agregarCantidad" name="agregarTabla" value="1">
@@ -729,12 +781,12 @@ if ($result->num_rows > 0) {
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="nombre_campo">Nombre del campo</label>
-                                <input type="text" class="form-control" id="nombre_campo" name="nombre_campo" placeholder="Nombre del campo">
+                                <input type="text" class="form-control" id="nombre_campo" name="nombre_campo[]" placeholder="Nombre del campo" required>
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="tipo_dato">Tipo de dato</label><br>
-                                <select name="tipo_dato" class="custom-select px-5" required="required">
+                                <select name="tipo_dato[]" class="custom-select px-5" required="required">
                                     <option value="varchar">varchar</option>
                                     <option value="int">int</option>
                                     <option value="float">float</option>
@@ -744,21 +796,21 @@ if ($result->num_rows > 0) {
                             </div>
 
                             <div class="form-group col-md-3">
-                                <label for="tipo_dato">Tamaño de dato</label>
+                                <label for="tamaño_dato">Tamaño de dato</label>
                                 <div class="col-md-6">
-                                    <input type="number" class="form-control" id="tamaño_dato" name="tamaño_dato" placeholder="1">
+                                    <input type="number" class="form-control" id="tamaño_dato" name="tamaño_dato[]" placeholder="1">
                                 </div>
                             </div>
 
                             <div class="form-group col-md-1 text-center">
                                 <label for="nullo">Nullo</label>
-                                <input type="checkbox" class="form-control" id="nullo" name="nullo" value="1">
+                                <input type="checkbox" class="form-control" id="nullo" name="nullo[]">
                             </div>
                         </div>
                     </form>
-                    
+
                     <div class="form-group">
-                        <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100" form="formNuevaTabla" value="Crear Tabla"/>
+                        <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100" form="formNuevaTabla" value="Crear Tabla" />
                     </div>
                 </div>
             </div>

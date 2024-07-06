@@ -37,7 +37,16 @@ document.getElementById('logo_img').addEventListener('click', function () {
 // Area de usuarios
 document.getElementById('usuarios').addEventListener('click', function () {
     contenido.innerHTML = contenedorUsuarios;
+    
+    // ventana modal
+    document.getElementById('btn-crear-usuario').addEventListener('click', function () {
+        document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
+        document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+            document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
+        });
+    });
 });
+
 
 // Area de destinos
 document.getElementById('destinos').addEventListener('click', function () {
@@ -59,6 +68,7 @@ document.getElementById('guias').addEventListener('click', function () {
     contenido.innerHTML = contenedorGuias;
 });
 
+
 // Area de crear nueva tabla
 document.getElementById('nuevaTabla').addEventListener('click', function () {
     contenido.innerHTML = contenedorNuevaTabla;
@@ -71,8 +81,8 @@ document.getElementById('nuevaTabla').addEventListener('click', function () {
         divCampo.className = 'row';
         divCampo.innerHTML = `
             <div class="form-group col-md-4">
-                <label for="campos_tabla">Nombre del campo</label>
-                <input type="text" class="form-control" id="tipo_campo" name="tipo_campo" placeholder="Nombre del campo">
+                <label for="nombre_campo">Nombre del campo</label>
+                <input type="text" class="form-control" id="nombre_campo" name="nombre_campo" placeholder="Nombre del campo" required>
             </div>
 
             <div class="form-group col-md-3">
@@ -87,7 +97,7 @@ document.getElementById('nuevaTabla').addEventListener('click', function () {
             </div>
 
             <div class="form-group col-md-3">
-                <label for="tipo_dato">Tamaño de dato</label>
+                <label for="tamaño_dato">Tamaño de dato</label>
                 <div class="col-md-6">
                     <input type="number" class="form-control" id="tamaño_dato" name="tamaño_dato" placeholder="1">
                 </div>
@@ -95,7 +105,7 @@ document.getElementById('nuevaTabla').addEventListener('click', function () {
 
             <div class="form-group col-md-1 text-center">
                 <label for="nullo">Nullo</label>
-                <input type="checkbox" class="form-control" id="nullo" name="nullo" value="1">
+                <input type="checkbox" class="form-control" id="nullo" name="nullo">
             </div>
         `;
 
@@ -111,8 +121,8 @@ document.getElementById('nuevaTabla').addEventListener('click', function () {
 });
 
 
-// Funciones
 
+// Funciones
 // Funcion que limita el tiempo en que el usuario pueda navegar por la página
 function cerrarSession() {
     setTimeout(() => {
