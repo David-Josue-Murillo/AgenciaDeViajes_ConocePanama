@@ -44,7 +44,15 @@ document.getElementById('usuarios').addEventListener('click', function () {
         document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
             document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
         });
+
     });
+    
+    const alerta = document.querySelector('.alerta');
+    if (alerta) {
+        setTimeout(() => {
+            alerta.remove();
+        }, 3000);
+    }
 });
 
 
@@ -130,7 +138,7 @@ function cerrarSession() {
 
         setTimeout(() => {
             window.location.href = 'php/exit.php'; // Redireccionar al archivo de salida
-        }, 60000); // Tiempo de espera antes de que se cierre la sesión
+        }, 30000); // Tiempo de espera antes de que se cierre la sesión
     }, 558000); 
 
 }

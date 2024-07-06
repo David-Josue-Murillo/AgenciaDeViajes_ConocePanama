@@ -90,6 +90,8 @@ if ($result->num_rows > 0) {
     if (!isset($_SESSION)) {
         session_start();
     }
+
+    include_once 'php/helpers.php'
     ?>
 
     <?php if (!isset($_SESSION['login'])) : ?>
@@ -466,9 +468,20 @@ if ($result->num_rows > 0) {
     <div id="contenedor_usuarios" style="display: none;">
         <div class="container-fluid py-5">
             <div class="col-lg-12 pt-5 pb-3">
-                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
+                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;" id="header_usuarios">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Usuarios</h6>
                     <h1>Lista de Usuarios</h1>
+
+
+                    <?php if(isset($_POST['completado'])): ?>
+                        <?php unset($_SESSION['incompleto']) ?>
+                        <p class="alerta"><?= $_SESSION['completado'] ?></p>
+                    <?php endif ?>
+
+                    <?php if($_SESSION['incompleto']): ?>
+                        <p class="alerta"><?= $_SESSION['incompleto'] ?></p>
+                    <?php endif ?>
+
                     <button id="btn-crear-usuario" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Usuario</button>
                 </div>
 
@@ -511,19 +524,19 @@ if ($result->num_rows > 0) {
                     <h3>Crear Usuario</h3>
                 </div>
                 <div class="modal-body">
-                    <form action="php/crear_usuario.php" method="post" class="form-group">
+                    <form action="admin/php/crear_usuario.php" method="post" class="form-group" id="nuevo_usuario">
                         <div class="form-group row">
                             <div class="form-group col-md-6">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                                <label for="name">Nombre</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="apellido">Apellido</label>
-                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
+                                <label for="lastname">Apellido</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="telefono">Telefono</label>
-                                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required>
+                                <label for="phone">Telefono</label>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefono" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="email">Email</label>
@@ -549,7 +562,7 @@ if ($result->num_rows > 0) {
                             <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
                         </div>
                         <div class="col-md-6">
-                            <a href="#" class="btn btn-primary btn-block w-100" id="btn-cerrar-modal">Crear Usuario</a>
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-cerrar-modal" form="nuevo_usuario" value="Crear Usuario">
                         </div>
                     </div>
                 </div>
