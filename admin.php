@@ -652,7 +652,7 @@ if ($result->num_rows > 0) {
                             <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
                         </div>
                         <div class="col-md-6">
-                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-user-modal" form="nuevo_usuario" name="submit_nuevo_usuario" value="Crear Usuario">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-destino-modal" form="nuevo_destino" name="submit_nuevo_destino" value="Crear Destino">
                         </div>
                     </div>
                 </div>

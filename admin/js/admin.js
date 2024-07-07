@@ -112,7 +112,13 @@ document.getElementById('destinos').addEventListener('click', function () {
             document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
         });
     });
-    
+
+    // Evento para editar destino
+    document.querySelectorAll('#btn-editar-destino').forEach(function (btnEditar) {
+        btnEditar.addEventListener('click', function () {
+            console.log('destinoo');
+        });
+    });
 });
 
 // Area de reservas
