@@ -43,6 +43,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
         document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
         document.getElementById('modal-titulo').textContent = "Crear Usuario";
         document.getElementById('btn-guardar-user-modal').value = "Crear Usuario";
+        document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
         document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
             document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
         });
@@ -63,6 +64,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
             const modal = document.querySelector('.contenedor-modal'); 
             document.getElementById('modal-titulo').textContent = "Editar Usuario"; // Titulo de la ventana modal
             document.getElementById('btn-guardar-user-modal').value = "Guardar Usuario"; // Valor del boton guardar
+            document.querySelector('.campo_password_delete').classList.add('hidden'); // Ocultar campo password
             modal.classList.add('modal-show'); // mostrar ventana modal
             document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
                 document.getElementById('name').value = '';

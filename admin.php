@@ -553,7 +553,7 @@ if ($result->num_rows > 0) {
                                     <option value="2">Usuario</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 campo_password_delete">
                                 <label for="password">Contraseña</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
                             </div>
