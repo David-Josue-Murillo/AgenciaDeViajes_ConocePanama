@@ -38,7 +38,7 @@ document.getElementById('logo_img').addEventListener('click', function () {
 document.getElementById('usuarios').addEventListener('click', function () {
     contenido.innerHTML = contenedorUsuarios;
     
-    // ventana modal
+    // ventana modal para crear usuario
     document.getElementById('btn-crear-usuario').addEventListener('click', function () {
         document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
         document.getElementById('modal-titulo').textContent = "Crear Usuario";  // Titulo de la ventana modal
@@ -48,7 +48,6 @@ document.getElementById('usuarios').addEventListener('click', function () {
         document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
             document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
         });
-
     });
 
     // Evento para borrar usuario
@@ -64,6 +63,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
         });
     });
 
+    // Borrar advertencias
     const alerta = document.querySelector('.alerta');
     if (alerta) {
         setTimeout(() => {
@@ -100,6 +100,19 @@ document.getElementById('usuarios').addEventListener('click', function () {
 // Area de destinos
 document.getElementById('destinos').addEventListener('click', function () {
     contenido.innerHTML = contenedorDestinos;
+
+    // ventana modal para crear destino
+    document.getElementById('btn-crear-usuario').addEventListener('click', function () {
+        document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
+        document.getElementById('modal-titulo').textContent = "Crear Destino";  // Titulo de la ventana modal
+        document.getElementById('btn-guardar-user-modal').value = "Crear Destino"; // Texto del boton guardar
+        document.getElementById('btn-guardar-user-modal').name = "submit_nuevo_destino"; // Valor del boton guardar
+        document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
+        document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+            document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
+        });
+    });
+    
 });
 
 // Area de reservas

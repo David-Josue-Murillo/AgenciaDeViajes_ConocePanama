@@ -519,7 +519,105 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>
+        
+        <!-- HTML Oculto para cargar el modal de usuarios -->
+        <div class="contenedor-modal">
+            <div class="modal-content col-md-6">
+                <div class="modal-header text-center">
+                    <h3 id="modal-titulo"></h3>
+                </div>
+                <div class="modal-body">
+                    <form action="admin/php/usuario_crud.php" method="post" class="form-group" id="nuevo_usuario">
+                        <div class="form-group row">
+                            <div class="hidden">
+                                <input type="hidden" id="id_usuario" name="id_usuario" value="">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="name">Nombre</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lastname">Apellido</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="phone">Telefono</label>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefono" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="form-group col-md-6">
+                                <label for="tipo_usuario">Tipo de usuario</label>
+                                <select name="tipo_usuario" class="custom-select px-5" required="required">
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Usuario</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6 campo_password_delete">
+                                <label for="password">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-user-modal" form="nuevo_usuario" name="submit_nuevo_usuario" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- HTML Oculto para cargar los datos de destinos -->
+    <div id="contenedor_destinos" style="display: none;">
+        <div class="container-fluid py-5">
+            <div class="col-lg-12 pt-5 pb-3">
+                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Destinos</h6>
+                    <h1>Lista de Destinos</h1>
+                    <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Destino</button>
+                </div>
+                <div class="row" id="tabla-destinos">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Direccion</th>
+                                <th>Descripcion</th>
+                                <th>url imagen</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($destinos as $destino) : ?>
+                                <tr>
+                                    <td><?= $destino['id_destino'] ?></td>
+                                    <td id="destino_<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></td>
+                                    <td id="direccion_<?= $destino['id_destino'] ?>"><?= $destino['direccion'] ?></td>
+                                    <td id="descripcion_<?= $destino['id_destino'] ?>"><?= $destino['descripcion'] ?></td>
+                                    <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['url_imagen'] ?></td>
+                                    <td>
+                                        <a href="#" id="btn-editar-destino" class="btn btn-primary">Editar</a>
+                                        <a href="#" id="btn-eliminar-destino" class="btn btn-primary">Editar</a>danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- HTML Oculto para cargar el modal de destinos -->
         <div class="contenedor-modal">
             <div class="modal-content col-md-6">
                 <div class="modal-header text-center">
@@ -573,48 +671,7 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- HTML Oculto para cargar los datos de destinos -->
-    <div id="contenedor_destinos" style="display: none;">
-        <div class="container-fluid py-5">
-            <div class="col-lg-12 pt-5 pb-3">
-                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Destinos</h6>
-                    <h1>Lista de Destinos</h1>
-                    <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Destino</button>
-                </div>
-                <div class="row" id="tabla-destinos">
-                    <table class="table table-striped table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nombre</th>
-                                <th>Direccion</th>
-                                <th>Descripcion</th>
-                                <th>url imagen</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($destinos as $destino) : ?>
-                                <tr>
-                                    <td><?= $destino['id_destino'] ?></td>
-                                    <td id="destino_<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></td>
-                                    <td id="direccion_<?= $destino['id_destino'] ?>"><?= $destino['direccion'] ?></td>
-                                    <td id="descripcion_<?= $destino['id_destino'] ?>"><?= $destino['descripcion'] ?></td>
-                                    <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['url_imagen'] ?></td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary">Editar</a>
-                                        <a href="#" class="btn btn-danger">Eliminar</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- HTML Oculto para cargar los datos de los paquetes -->
