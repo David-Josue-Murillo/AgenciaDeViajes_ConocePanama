@@ -1,6 +1,8 @@
 <?php
 include_once 'db/conexion.php';
 
+$contador = 1;
+
 // Consulta para obtener los datos de la tabla usuarios
 $sql = "SELECT * FROM usuarios";
 $result = $conexion->query($sql);
@@ -500,14 +502,14 @@ if ($result->num_rows > 0) {
                         <tbody>
                             <?php foreach ($usuarios as $usuario) : ?>
                                 <tr>
-                                    <td><?= $usuario['id_usuario'] ?></td>
+                                    <td><?= $contador++ ?></td>
                                     <td><?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?></td>
                                     <td><?= $usuario['telefono'] ?></td>
                                     <td><?= $usuario['email'] ?></td>
                                     <td><?php if ($usuario['tipo_usuario'] == 1) echo 'Administrador';
                                         else echo 'Usuario'; ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">Editar</a>
+                                        <a href="#" id="<?= $usuario['id_usuario'] ?>" class="btn btn-primary btn-editar">Editar</a>
                                         <a href="#" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
