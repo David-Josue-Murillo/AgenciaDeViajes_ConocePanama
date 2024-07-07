@@ -606,7 +606,7 @@ if ($result->num_rows > 0) {
                                     <td id="descripcion_<?= $destino['id_destino'] ?>"><?= $destino['descripcion'] ?></td>
                                     <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['url_imagen'] ?></td>
                                     <td>
-                                        <a href="#" id="btn-editar-destino" class="btn btn-primary">Editar</a>
+                                        <a href="#" id="<?= $destino['id_destino'] ?>" class="btn btn-primary btn-editar">Editar</a>
                                         <a href="#" id="btn-eliminar-destino" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>

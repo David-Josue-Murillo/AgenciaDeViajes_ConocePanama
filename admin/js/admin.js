@@ -50,27 +50,6 @@ document.getElementById('usuarios').addEventListener('click', function () {
         });
     });
 
-    // Evento para borrar usuario
-    document.querySelectorAll('#btn-borrar-usuario').forEach(function (btnBorrar) {
-        btnBorrar.addEventListener('click', function (e) {
-            // Pedir confirmacion
-            if (confirm('¿Está seguro de borrar este usuario?')) {
-                // Redirigir a php
-                const id = parseInt(e.target.ariaLabel);
-                window.location.href = 'admin/php/usuario_crud.php?user=' + id;
-                
-            }
-        });
-    });
-
-    // Borrar advertencias
-    const alerta = document.querySelector('.alerta');
-    if (alerta) {
-        setTimeout(() => {
-            alerta.remove();
-        }, 3000);
-    }
-
     // Evento para editar usuario
     document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
@@ -94,6 +73,29 @@ document.getElementById('usuarios').addEventListener('click', function () {
             rellenarFormulario(id);
         });
     });
+
+    // Evento para borrar usuario
+    document.querySelectorAll('#btn-borrar-usuario').forEach(function (btnBorrar) {
+        btnBorrar.addEventListener('click', function (e) {
+            // Pedir confirmacion
+            if (confirm('¿Está seguro de borrar este usuario?')) {
+                // Redirigir a php
+                const id = parseInt(e.target.ariaLabel);
+                window.location.href = 'admin/php/usuario_crud.php?user=' + id;
+                
+            }
+        });
+    });
+
+    // Borrar advertencias
+    const alerta = document.querySelector('.alerta');
+    if (alerta) {
+        setTimeout(() => {
+            alerta.remove();
+        }, 3000);
+    }
+
+    
 });
 
 
@@ -114,9 +116,10 @@ document.getElementById('destinos').addEventListener('click', function () {
     });
 
     // Evento para editar destino
-    document.querySelectorAll('#btn-editar-destino').forEach(function (btnEditar) {
+    document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
-            console.log('destinoo');
+            const id = this.id; // Identificador unico del destino
+            console.log(id);
         });
     });
 });
