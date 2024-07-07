@@ -41,8 +41,9 @@ document.getElementById('usuarios').addEventListener('click', function () {
     // ventana modal
     document.getElementById('btn-crear-usuario').addEventListener('click', function () {
         document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
-        document.getElementById('modal-titulo').textContent = "Crear Usuario";
-        document.getElementById('btn-guardar-user-modal').value = "Crear Usuario";
+        document.getElementById('modal-titulo').textContent = "Crear Usuario";  // Titulo de la ventana modal
+        document.getElementById('btn-guardar-user-modal').value = "Crear Usuario"; // Texto del boton guardar
+        document.getElementById('btn-guardar-user-modal').name = "submit_nuevo_usuario"; // Valor del boton guardar
         document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
         document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
             document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
@@ -61,10 +62,12 @@ document.getElementById('usuarios').addEventListener('click', function () {
     document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
             const id = this.id; // Identificador unico del usuario
-            const modal = document.querySelector('.contenedor-modal'); 
+            const modal = document.querySelector('.contenedor-modal');
+            document.getElementById('id_usuario').value = id;
             document.getElementById('modal-titulo').textContent = "Editar Usuario"; // Titulo de la ventana modal
             document.getElementById('btn-guardar-user-modal').value = "Guardar Usuario"; // Valor del boton guardar
             document.querySelector('.campo_password_delete').classList.add('hidden'); // Ocultar campo password
+            document.getElementById('btn-guardar-user-modal').name = "submit_modificar_usuario"; // Valor del boton guardar
             modal.classList.add('modal-show'); // mostrar ventana modal
             document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
                 document.getElementById('name').value = '';

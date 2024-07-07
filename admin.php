@@ -526,8 +526,11 @@ if ($result->num_rows > 0) {
                     <h3 id="modal-titulo">Crear Usuario</h3>
                 </div>
                 <div class="modal-body">
-                    <form action="admin/php/crear_usuario.php" method="post" class="form-group" id="nuevo_usuario">
+                    <form action="admin/php/usuario_crud.php" method="post" class="form-group" id="nuevo_usuario">
                         <div class="form-group row">
+                            <div class="hidden">
+                                <input type="hidden" id="id_usuario" name="id_usuario" value="">
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="name">Nombre</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
@@ -555,7 +558,7 @@ if ($result->num_rows > 0) {
                             </div>
                             <div class="form-group col-md-6 campo_password_delete">
                                 <label for="password">Contraseña</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
                             </div>
                         </div>
                     </form>
@@ -564,7 +567,7 @@ if ($result->num_rows > 0) {
                             <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
                         </div>
                         <div class="col-md-6">
-                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-user-modal" form="nuevo_usuario" value="Crear Usuario">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-user-modal" form="nuevo_usuario" name="submit_nuevo_usuario" value="Crear Usuario">
                         </div>
                     </div>
                 </div>
