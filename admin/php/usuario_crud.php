@@ -102,3 +102,14 @@ if (isset($_POST['submit_modificar_usuario'])) {
         header('Location: ../../admin.php');
     }
 }
+
+// Eliminar usuario
+if(isset($_GET['user'])){
+    $id_usuario_delete = intval($_GET['user']);
+    $sql = "DELETE FROM usuarios WHERE id_usuario = '$id_usuario_delete'";
+    if ($conexion->query($sql) === TRUE) {
+        // Redireccionar al formulario de login
+        $_SESSION['completado'] = "Usuario eliminado exitosamente";
+        header('Location: ../../admin.php');
+    }
+}

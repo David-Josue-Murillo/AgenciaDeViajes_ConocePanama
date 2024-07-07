@@ -50,7 +50,20 @@ document.getElementById('usuarios').addEventListener('click', function () {
         });
 
     });
-    
+
+    // Evento para borrar usuario
+    document.querySelectorAll('#btn-borrar-usuario').forEach(function (btnBorrar) {
+        btnBorrar.addEventListener('click', function (e) {
+            // Pedir confirmacion
+            if (confirm('¿Está seguro de borrar este usuario?')) {
+                // Redirigir a php
+                const id = parseInt(e.target.ariaLabel);
+                window.location.href = 'admin/php/usuario_crud.php?user=' + id;
+                
+            }
+        });
+    });
+
     const alerta = document.querySelector('.alerta');
     if (alerta) {
         setTimeout(() => {

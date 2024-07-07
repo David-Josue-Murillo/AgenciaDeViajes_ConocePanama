@@ -510,7 +510,7 @@ if ($result->num_rows > 0) {
                                         else echo 'Usuario'; ?></td>
                                     <td>
                                         <a href="#" id="<?= $usuario['id_usuario'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" aria-label="<?= $usuario['id_usuario'] ?>" class="btn btn-danger" id="btn-borrar-usuario">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
