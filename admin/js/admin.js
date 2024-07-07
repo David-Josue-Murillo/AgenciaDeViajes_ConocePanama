@@ -136,6 +136,19 @@ document.getElementById('destinos').addEventListener('click', function () {
             rellenarFormularioDestino(id);
         });
     });
+
+    // Evento para borrar destino
+    document.querySelectorAll('#btn-borrar-destino').forEach(function (btnBorrar) {
+        btnBorrar.addEventListener('click', function (e) {
+            // Pedir confirmacion
+            if (confirm('¿Está seguro de borrar este destino?')) {
+                // Redirigir a php
+                const id = parseInt(e.target.ariaLabel);
+                window.location.href = 'admin/php/destino_crud.php?destino=' + id;
+                
+            }
+        });
+    });
 });
 
 // Area de reservas

@@ -607,7 +607,7 @@ if ($result->num_rows > 0) {
                                     <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['url_imagen'] ?></td>
                                     <td>
                                         <a href="#" id="<?= $destino['id_destino'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" id="btn-eliminar-destino" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" aria-label="<?= $destino['id_destino'] ?>" id="btn-borrar-destino" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
