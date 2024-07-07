@@ -502,11 +502,11 @@ if ($result->num_rows > 0) {
                         <tbody>
                             <?php foreach ($usuarios as $usuario) : ?>
                                 <tr>
-                                    <td><?= $contador++ ?></td>
-                                    <td><?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?></td>
-                                    <td><?= $usuario['telefono'] ?></td>
-                                    <td><?= $usuario['email'] ?></td>
-                                    <td><?php if ($usuario['tipo_usuario'] == 1) echo 'Administrador';
+                                    <td id="<?= $usuario['id_usuario'] ?>"><?= $contador++ ?></td>
+                                    <td id="nombre_<?= $usuario['id_usuario'] ?>"><?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?></td>
+                                    <td id="telefono_<?= $usuario['id_usuario'] ?>"><?= $usuario['telefono'] ?></td>
+                                    <td id="email_<?= $usuario['id_usuario'] ?>"><?= $usuario['email'] ?></td>
+                                    <td id="tipo_usuario_<?= $usuario['id_usuario'] ?>"><?php if ($usuario['tipo_usuario'] == 1) echo 'Administrador';
                                         else echo 'Usuario'; ?></td>
                                     <td>
                                         <a href="#" id="<?= $usuario['id_usuario'] ?>" class="btn btn-primary btn-editar">Editar</a>

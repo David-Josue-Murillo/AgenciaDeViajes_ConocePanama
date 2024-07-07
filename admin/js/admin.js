@@ -59,14 +59,21 @@ document.getElementById('usuarios').addEventListener('click', function () {
     // Evento para editar usuario
     document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
-            const id = this.id;
-            const modal = document.querySelector('.contenedor-modal');
-            document.getElementById('modal-titulo').textContent = "Editar Usuario";
-            document.getElementById('btn-guardar-user-modal').value = "Guardar Usuario";
+            const id = this.id; // Identificador unico del usuario
+            const modal = document.querySelector('.contenedor-modal'); 
+            document.getElementById('modal-titulo').textContent = "Editar Usuario"; // Titulo de la ventana modal
+            document.getElementById('btn-guardar-user-modal').value = "Guardar Usuario"; // Valor del boton guardar
             modal.classList.add('modal-show'); // mostrar ventana modal
             document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+                document.getElementById('name').value = '';
+                document.getElementById('lastname').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('email').value = '';
                 modal.classList.remove('modal-show'); // cerrar ventana modal
             });
+
+            // Rellenado el formulario con los datos del usuario
+            rellenarFormulario(id);
         });
     });
 });
@@ -157,4 +164,19 @@ function cerrarSession() {
         }, 30000); // Tiempo de espera antes de que se cierre la sesión
     }, 558000); 
 
+}
+
+function rellenarFormulario(id) {
+    const nombre_user = document.getElementById('nombre_' + id).textContent;
+    const telefono = document.getElementById('telefono_' + id).textContent;
+    const email = document.getElementById('email_' + id).textContent;
+    
+    // Desglosar el nombre del usuario
+    const nombre = nombre_user.split(' ')[0];
+    const apellido = nombre_user.split(' ')[1];
+
+    document.getElementById('name').value = nombre;
+    document.getElementById('lastname').value = apellido;
+    document.getElementById('phone').value = telefono;
+    document.getElementById('email').value = email;
 }
