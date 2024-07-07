@@ -523,7 +523,7 @@ if ($result->num_rows > 0) {
         <div class="contenedor-modal">
             <div class="modal-content col-md-6">
                 <div class="modal-header text-center">
-                    <h3>Crear Usuario</h3>
+                    <h3 id="modal-titulo">Crear Usuario</h3>
                 </div>
                 <div class="modal-body">
                     <form action="admin/php/crear_usuario.php" method="post" class="form-group" id="nuevo_usuario">
@@ -564,7 +564,7 @@ if ($result->num_rows > 0) {
                             <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
                         </div>
                         <div class="col-md-6">
-                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-cerrar-modal" form="nuevo_usuario" value="Crear Usuario">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-user-modal" form="nuevo_usuario" value="Crear Usuario">
                         </div>
                     </div>
                 </div>

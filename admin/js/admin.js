@@ -41,6 +41,8 @@ document.getElementById('usuarios').addEventListener('click', function () {
     // ventana modal
     document.getElementById('btn-crear-usuario').addEventListener('click', function () {
         document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
+        document.getElementById('modal-titulo').textContent = "Crear Usuario";
+        document.getElementById('btn-guardar-user-modal').value = "Crear Usuario";
         document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
             document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
         });
@@ -55,35 +57,16 @@ document.getElementById('usuarios').addEventListener('click', function () {
     }
 
     // Evento para editar usuario
-    document.querySelector('.btn-editar').addEventListener('click', function () {
-        const id = this.id;
-        const modal = document.querySelector('.contenedor-modal');
-        modal.classList.add('modal-show'); // mostrar ventana modal
-        document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
-            modal.classList.remove('modal-show'); // cerrar ventana modal
-        });
-
-        // Evento para guardar los cambios
-        document.getElementById('btn-guardar-modal').addEventListener('click', function () {
-            const nombre = document.getElementById('nombre').value;
-            const apellido = document.getElementById('apellido').value;
-            const telefono = document.getElementById('telefono').value;
-            const email = document.getElementById('email').value;
-            const tipo = document.getElementById('tipo').value;
-            const password = document.getElementById('password').value;
-
-            // Enviar datos a php
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'php/editar_usuario.php', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onload = function () {
-                if (this.status == 200) {
-                    modal.classList.remove('modal-show'); // cerrar ventana modal
-                    alert('Datos actualizados exitosamente');
-                    location.reload();
-                }
-            };
-            xhr.send('id=' + id + '&nombre=' + nombre + '&apellido=' + apellido + '&telefono=' + telefono + '&email=' + email + '&tipo=' + tipo + '&password=' + password);
+    document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
+        btnEditar.addEventListener('click', function () {
+            const id = this.id;
+            const modal = document.querySelector('.contenedor-modal');
+            document.getElementById('modal-titulo').textContent = "Editar Usuario";
+            document.getElementById('btn-guardar-user-modal').value = "Guardar Usuario";
+            modal.classList.add('modal-show'); // mostrar ventana modal
+            document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+                modal.classList.remove('modal-show'); // cerrar ventana modal
+            });
         });
     });
 });
