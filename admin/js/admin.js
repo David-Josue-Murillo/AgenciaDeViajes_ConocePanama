@@ -119,7 +119,18 @@ document.getElementById('destinos').addEventListener('click', function () {
     document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
             const id = this.id; // Identificador unico del destino
-            console.log(id);
+            const modal = document.querySelector('.contenedor-modal');
+            document.getElementById('id_destino').value = id;
+            document.getElementById('modal-titulo').textContent = "Editar Destino"; // Titulo de la ventana modal
+            document.getElementById('btn-guardar-destino-modal').value = "Guardar Destino"; // Valor del boton guardar
+            document.getElementById('btn-guardar-destino-modal').name = "submit_modificar_destino"; // Valor del boton guardar
+            modal.classList.add('modal-show'); // mostrar ventana modal
+            document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+                document.getElementById('name').value = '';
+                document.getElementById('direccion').value = '';
+                document.getElementById('descripcion').value = '';
+                modal.classList.remove('modal-show'); // cerrar ventana modal
+            });
         });
     });
 });
