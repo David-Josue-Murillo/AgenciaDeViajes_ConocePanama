@@ -607,7 +607,7 @@ if ($result->num_rows > 0) {
                                     <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['url_imagen'] ?></td>
                                     <td>
                                         <a href="#" id="btn-editar-destino" class="btn btn-primary">Editar</a>
-                                        <a href="#" id="btn-eliminar-destino" class="btn btn-primary">Editar</a>danger">Eliminar</a>
+                                        <a href="#" id="btn-eliminar-destino" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -624,39 +624,26 @@ if ($result->num_rows > 0) {
                     <h3 id="modal-titulo">Crear Usuario</h3>
                 </div>
                 <div class="modal-body">
-                    <form action="admin/php/usuario_crud.php" method="post" class="form-group" id="nuevo_usuario">
+                    <form action="admin/php/destino_crud.php" method="post" class="form-group" id="nuevo_destino">
                         <div class="form-group row">
                             <div class="hidden">
-                                <input type="hidden" id="id_usuario" name="id_usuario" value="">
+                                <input type="hidden" id="id_destino" name="id_destino" value="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="name">Nombre</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="lastname">Apellido</label>
-                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" required>
+                                <label for="direccion">Direccion</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="phone">Telefono</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefono" required>
+                                <label for="descripcion">Descripcion</label>
+                                <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="form-group col-md-6">
-                                <label for="tipo_usuario">Tipo de usuario</label>
-                                <select name="tipo_usuario" class="custom-select px-5" required="required">
-                                    <option value="1">Administrador</option>
-                                    <option value="2">Usuario</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-6 campo_password_delete">
-                                <label for="password">Contraseña</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                                <label for="img-url">URL imagen</label>
+                                <input type="file" class="form-control" id="img-url" name="img-url" required>
                             </div>
                         </div>
                     </form>
