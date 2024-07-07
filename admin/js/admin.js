@@ -102,7 +102,7 @@ document.getElementById('destinos').addEventListener('click', function () {
     contenido.innerHTML = contenedorDestinos;
 
     // ventana modal para crear destino
-    document.getElementById('btn-crear-usuario').addEventListener('click', function () {
+    document.getElementById('btn-crear-destino').addEventListener('click', function () {
         document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
         document.getElementById('modal-titulo').textContent = "Crear Destino";  // Titulo de la ventana modal
         document.getElementById('btn-guardar-user-modal').value = "Crear Destino"; // Texto del boton guardar
