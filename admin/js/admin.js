@@ -70,7 +70,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
             });
 
             // Rellenado el formulario con los datos del usuario
-            rellenarFormulario(id);
+            rellenarFormularioUsuario(id);
         });
     });
 
@@ -131,6 +131,9 @@ document.getElementById('destinos').addEventListener('click', function () {
                 document.getElementById('descripcion').value = '';
                 modal.classList.remove('modal-show'); // cerrar ventana modal
             });
+
+            // Rellenar el formulario con los datos del destino
+            rellenarFormularioDestino(id);
         });
     });
 });
@@ -217,7 +220,7 @@ function cerrarSession() {
 
 }
 
-function rellenarFormulario(id) {
+function rellenarFormularioUsuario(id) {
     const nombre_user = document.getElementById('nombre_' + id).textContent;
     const telefono = document.getElementById('telefono_' + id).textContent;
     const email = document.getElementById('email_' + id).textContent;
@@ -230,4 +233,16 @@ function rellenarFormulario(id) {
     document.getElementById('lastname').value = apellido;
     document.getElementById('phone').value = telefono;
     document.getElementById('email').value = email;
+}
+
+function rellenarFormularioDestino(id) {
+    const nombre_destino = document.getElementById('destino_' + id).textContent;
+    const direccion = document.getElementById('direccion_' + id).textContent;
+    const descripcion = document.getElementById('descripcion_' + id).textContent;
+    const url_imagen = document.getElementById('url_imagen_' + id).textContent;
+
+    document.getElementById('destino').value = nombre_destino;
+    document.getElementById('direccion').value = direccion;
+    document.getElementById('descripcion').value = descripcion;
+    document.getElementById('img-url').value = url_imagen;
 }

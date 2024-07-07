@@ -630,8 +630,8 @@ if ($result->num_rows > 0) {
                                 <input type="hidden" id="id_destino" name="id_destino" value="">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="name">Nombre</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
+                                <label for="destino">Nombre</label>
+                                <input type="text" class="form-control" id="destino" name="destino" placeholder="Nombre del Destino" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="direccion">Direccion</label>
