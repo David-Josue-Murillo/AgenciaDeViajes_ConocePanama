@@ -600,10 +600,10 @@ if ($result->num_rows > 0) {
                             <?php foreach ($destinos as $destino) : ?>
                                 <tr>
                                     <td><?= $destino['id_destino'] ?></td>
-                                    <td><?= $destino['nombre_destino'] ?></td>
-                                    <td><?= $destino['direccion'] ?></td>
-                                    <td><?= $destino['descripcion'] ?></td>
-                                    <td><?= $destino['url_imagen'] ?></td>
+                                    <td id="destino_<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></td>
+                                    <td id="direccion_<?= $destino['id_destino'] ?>"><?= $destino['direccion'] ?></td>
+                                    <td id="descripcion_<?= $destino['id_destino'] ?>"><?= $destino['descripcion'] ?></td>
+                                    <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['url_imagen'] ?></td>
                                     <td>
                                         <a href="#" class="btn btn-primary">Editar</a>
                                         <a href="#" class="btn btn-danger">Eliminar</a>
