@@ -1,15 +1,4 @@
-// Función que elimina el mensaje de error despues de 3 segundos
-window.onload = function () {
-    const alerta = document.querySelector('.alerta');
-
-    if (alerta) {
-        setTimeout(() => {
-            alerta.remove();
-        }, 3000);
-    }
-
-
-}
+window.onload = borrarAlertas();
 
 // Temporizador de session
 document.getElementById('wrapper') && cerrarSession();
@@ -107,8 +96,8 @@ document.getElementById('destinos').addEventListener('click', function () {
     document.getElementById('btn-crear-destino').addEventListener('click', function () {
         document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
         document.getElementById('modal-titulo').textContent = "Crear Destino";  // Titulo de la ventana modal
-        document.getElementById('btn-guardar-user-modal').value = "Crear Destino"; // Texto del boton guardar
-        document.getElementById('btn-guardar-user-modal').name = "submit_nuevo_destino"; // Valor del boton guardar
+        document.getElementById('btn-guardar-destino-modal').value = "Crear Destino"; // Valor del boton guardar
+        document.getElementById('btn-guardar-destino-modal').name = "submit_nuevo_destino"; // Valor del boton guardar
         document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
         document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
             document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
@@ -126,7 +115,7 @@ document.getElementById('destinos').addEventListener('click', function () {
             document.getElementById('btn-guardar-destino-modal').name = "submit_modificar_destino"; // Valor del boton guardar
             modal.classList.add('modal-show'); // mostrar ventana modal
             document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
-                document.getElementById('name').value = '';
+                document.getElementById('destino').value = '';
                 document.getElementById('direccion').value = '';
                 document.getElementById('descripcion').value = '';
                 modal.classList.remove('modal-show'); // cerrar ventana modal
@@ -150,7 +139,7 @@ document.getElementById('destinos').addEventListener('click', function () {
         });
     });
 
-    // Eliminar Alertas
+    // Eliminar alertas
     borrarAlertas();
 });
 
@@ -226,11 +215,11 @@ document.getElementById('nuevaTabla').addEventListener('click', function () {
 // Funciones
 // Eliminar Alertas
 function borrarAlertas() {
-    if (document.querySelector('.alerta-error')) {
+    if (document.querySelector('.alerta')) {
         setTimeout(() => {
-            document.querySelector('.alerta-error').remove();
+            document.querySelector('.alerta').remove();
         }, 3000);
-    }
+    } 
 }
 
 // Funcion que limita el tiempo en que el usuario pueda navegar por la página
@@ -242,7 +231,6 @@ function cerrarSession() {
             window.location.href = 'php/exit.php'; // Redireccionar al archivo de salida
         }, 30000); // Tiempo de espera antes de que se cierre la sesión
     }, 558000); 
-
 }
 
 function rellenarFormularioUsuario(id) {

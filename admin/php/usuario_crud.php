@@ -99,8 +99,8 @@ if (isset($_POST['submit_modificar_usuario'])) {
     if ($conexion->query($sql) === TRUE) {
         // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario actualizado exitosamente";
-        header('Location: ../../admin.php');
     }
+    header('Location: ../../admin.php');
 }
 
 // Eliminar usuario

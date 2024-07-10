@@ -584,11 +584,6 @@ if ($result->num_rows > 0) {
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Destinos</h6>
                     <h1>Lista de Destinos</h1>
                     <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2 mb-2">Crear Destino</button>
-                    
-                    <?php if(isset($_SESSION['error_archivo'])): ?>
-                        <p class="error alerta-error"><?= $_SESSION['error_archivo'] ?></p>
-                    <?php endif; ?>
-
                 </div>
                 <div class="row" id="tabla-destinos">
                     <table class="table table-striped table-bordered table-hover">
@@ -603,9 +598,10 @@ if ($result->num_rows > 0) {
                             </tr>
                         </thead>
                         <tbody>
+                            <?= $contador = 1 ?>
                             <?php foreach ($destinos as $destino) : ?>
                                 <tr>
-                                    <td><?= $destino['id_destino'] ?></td>
+                                    <td id="<?= $destino['id_destino'] ?>"><?= $contador++?></td>
                                     <td id="destino_<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></td>
                                     <td id="direccion_<?= $destino['id_destino'] ?>"><?= $destino['direccion'] ?></td>
                                     <td id="descripcion_<?= $destino['id_destino'] ?>"><?= $destino['descripcion'] ?></td>
@@ -648,7 +644,7 @@ if ($result->num_rows > 0) {
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="img-url">URL imagen</label>
-                                <input type="file" class="form-control" id="img-url" name="img-url" required>
+                                <input type="url" class="form-control" id="img-url" name="img-url" required>
                             </div>
                         </div>
                     </form>
@@ -657,7 +653,7 @@ if ($result->num_rows > 0) {
                             <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
                         </div>
                         <div class="col-md-6">
-                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-destino-modal" form="nuevo_destino" name="submit_nuevo_destino" value="Crear Destino">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-destino-modal" form="nuevo_destino" name="submit_nuevo_destino" value="">
                         </div>
                     </div>
                 </div>
