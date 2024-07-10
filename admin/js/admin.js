@@ -146,6 +146,8 @@ document.getElementById('destinos').addEventListener('click', function () {
 // Area de reservas
 document.getElementById('reservas').addEventListener('click', function () {
     contenido.innerHTML = contenedorReservas;
+
+    // Ventana modal para crear paquetes
 });
 
 // Area de paquetes

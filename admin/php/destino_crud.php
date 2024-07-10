@@ -50,3 +50,15 @@ if(isset($_POST['submit_modificar_destino'])){
         header('Location: ../../admin.php');
     }
 }
+
+
+// Eliminar destino
+if(isset($_GET['destino'])){
+    $id_usuario_delete = intval($_GET['destino']);
+    $sql = "DELETE FROM destinos WHERE id_destino = '$id_usuario_delete'";
+    if ($conexion->query($sql) === TRUE) {
+        // Redireccionar al formulario de login
+        $_SESSION['completado'] = "Usuario eliminado exitosamente";
+        header('Location: ../../admin.php');
+    }
+}

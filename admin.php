@@ -715,6 +715,48 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>
+
+         <!-- HTML Oculto para cargar el modal de paquetes -->
+         <div class="contenedor-modal">
+            <div class="modal-content col-md-6">
+                <div class="modal-header text-center">
+                    <h3 id="modal-titulo">Crear Paquete</h3>
+                </div>
+                <div class="modal-body">
+                    <form action="admin/php/destino_crud.php" method="post" class="form-group" id="nuevo_destino" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <div class="hidden">
+                                <input type="hidden" id="id_destino" name="id_destino" value="">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="destino">Nombre</label>
+                                <input type="text" class="form-control" id="destino" name="destino" placeholder="Nombre del Destino" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="direccion">Direccion</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="descripcion">Descripcion</label>
+                                <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="img-url">URL imagen</label>
+                                <input type="url" class="form-control" id="img-url" name="img-url" required>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-destino-modal" form="nuevo_destino" name="submit_nuevo_destino" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- HTML Oculto para cargar los datos de las reservas de viajes -->
