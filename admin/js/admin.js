@@ -149,6 +149,9 @@ document.getElementById('destinos').addEventListener('click', function () {
             }
         });
     });
+
+    // Eliminar Alertas
+    borrarAlertas();
 });
 
 // Area de reservas
@@ -221,6 +224,15 @@ document.getElementById('nuevaTabla').addEventListener('click', function () {
 
 
 // Funciones
+// Eliminar Alertas
+function borrarAlertas() {
+    if (document.querySelector('.alerta-error')) {
+        setTimeout(() => {
+            document.querySelector('.alerta-error').remove();
+        }, 3000);
+    }
+}
+
 // Funcion que limita el tiempo en que el usuario pueda navegar por la página
 function cerrarSession() {
     setTimeout(() => {

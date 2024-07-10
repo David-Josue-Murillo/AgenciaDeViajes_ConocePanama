@@ -583,7 +583,12 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Destinos</h6>
                     <h1>Lista de Destinos</h1>
-                    <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Destino</button>
+                    <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2 mb-2">Crear Destino</button>
+                    
+                    <?php if(isset($_SESSION['error_archivo'])): ?>
+                        <p class="error alerta-error"><?= $_SESSION['error_archivo'] ?></p>
+                    <?php endif; ?>
+
                 </div>
                 <div class="row" id="tabla-destinos">
                     <table class="table table-striped table-bordered table-hover">
@@ -624,7 +629,7 @@ if ($result->num_rows > 0) {
                     <h3 id="modal-titulo">Crear Usuario</h3>
                 </div>
                 <div class="modal-body">
-                    <form action="admin/php/destino_crud.php" method="post" class="form-group" id="nuevo_destino">
+                    <form action="admin/php/destino_crud.php" method="post" class="form-group" id="nuevo_destino" enctype="multipart/form-data">
                         <div class="form-group row">
                             <div class="hidden">
                                 <input type="hidden" id="id_destino" name="id_destino" value="">
