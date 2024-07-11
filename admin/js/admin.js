@@ -260,6 +260,18 @@ document.getElementById('reservas').addEventListener('click', function () {
 // Area de guias
 document.getElementById('guias').addEventListener('click', function () {
     contenido.innerHTML = contenedorGuias;
+   
+    // Ventana modal para crear guia
+    document.getElementById('btn-crear-guia').addEventListener('click', function () {
+        document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
+        document.getElementById('modal-titulo').textContent = "Crear Reserva";  // Titulo de la ventana modal
+        document.getElementById('btn-guardar-reserva-modal').value = "Crear Reserva"; // Valor del boton guardar
+        document.getElementById('btn-guardar-reserva-modal').name = "submit_nueva_reserva"; // Valor del boton guardar
+        document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
+        document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+            document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
+        });
+    });
 });
 
 
@@ -333,7 +345,7 @@ function cerrarSession() {
 
         setTimeout(() => {
             window.location.href = 'php/exit.php'; // Redireccionar al archivo de salida
-        }, 30000); // Tiempo de espera antes de que se cierre la sesión
+        }, 15000); // Tiempo de espera antes de que se cierre la sesión
     }, 558000); 
 }
 

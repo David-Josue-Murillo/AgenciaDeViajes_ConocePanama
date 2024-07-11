@@ -946,11 +946,12 @@ if ($result->num_rows > 0) {
                             </tr>
                         </thead>
                         <tbody>
+                            <?= $contador = 1 ?>
                             <?php foreach ($guias as $guia) : ?>
                                 <tr>
-                                    <td><?= $guia['guia_id'] ?></td>
-                                    <td><?= $guia['nombre_completo'] ?></td>
-                                    <td>
+                                    <td><?= $contador++ ?></td>
+                                    <td id="nombre_guia_<?= $guia['guia_id'] ?>"><?= $guia['nombre_completo'] ?></td>
+                                    <td id="designacion_<?= $guia['guia_id'] ?>">
                                         <?php
                                         $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$guia[designacion]'";
                                         $result = $conexion->query($sql);
@@ -961,7 +962,7 @@ if ($result->num_rows > 0) {
                                         echo $destino['nombre_destino'];
                                         ?>
                                     </td>
-                                    <td><?= $guia['url_perfil'] ?></td>
+                                    <td id="url_perfil_<?= $guia['guia_id'] ?>"><?= $guia['url_perfil'] ?></td>
                                     <td>
                                         <a href="#" class="btn btn-primary">Editar</a>
                                         <a href="#" class="btn btn-danger">Eliminar</a>
@@ -974,6 +975,50 @@ if ($result->num_rows > 0) {
             </div>
         </div>
 
+        <!-- HTML Oculto para cargar el modal de Guias -->
+        <div class="contenedor-modal">
+            <div class="modal-content col-md-6">
+                <div class="modal-header text-center">
+                    <h3 id="modal-titulo"></h3>
+                </div>
+                <div class="modal-body">
+                    <form action="admin/php/guia_crud.php" method="post" class="form-group" id="nuevo_guia">
+                        <div class="form-group row">
+                            <div class="hidden">
+                                <input type="hidden" id="idGuia" name="id_guia" value="">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="nombre_guia">Nombre de la guia</label>
+                                <input type="text" class="form-control" id="nombreGuia" name="nombre_guia" placeholder="Nombre de la guia" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="designacion">Destino designado</label>
+                                <select name="designacion" id="designacion" class="custom-select px-5"> 
+                                    <?php foreach ($destinos as $destino) : ?> 
+                                        <option value="<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></option> 
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6"> 
+                                <label for="url_perfil">URL de la imagen</label> 
+                                <input type="url" class="form-control" id="url_perfil" name="url_perfil" placeholder="URL de la imagen" required>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-guia-modal" form="nuevo_guia" name="submit_nuevo_guia" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- HTML Oculto del formulario que crea una nueva tabla -->
