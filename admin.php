@@ -83,8 +83,7 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/admin.css">
 
-
-    <title>Administrar</title>
+    <title>Administrador</title>
 </head>
 
 <body>
@@ -764,9 +763,9 @@ if ($result->num_rows > 0) {
                                     if ($result->num_rows > 0):
                                 ?>
 
-                                <select name="nombre_paquete" id="nombrePaquete">
+                                <select name="id_destino" id="idDestino">
                                     <?php while ($destino = $result->fetch_assoc()): ?>
-                                        <option value="<?php htmlspecialchars($destino['id_destino'])?>"><?= htmlspecialchars($destino['nombre_destino']) ?></option>
+                                        <option value="<?php echo $destino['id_destino']; ?>"><?= htmlspecialchars($destino['nombre_destino']) ?></option>
                                     <?php endwhile; ?>
                                 </select>
 
