@@ -1,6 +1,6 @@
 <?php
 include_once 'includes/header.php';
-include 'db/conexion.php';
+include 'admin/db/conexion.php';
 ?>
 
 <main>
@@ -109,7 +109,7 @@ include 'db/conexion.php';
                     } 
                     ?>
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["url_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -126,7 +126,7 @@ include 'db/conexion.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["url_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -143,7 +143,7 @@ include 'db/conexion.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["url_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -160,7 +160,7 @@ include 'db/conexion.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["url_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -177,7 +177,7 @@ include 'db/conexion.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["url_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -194,7 +194,7 @@ include 'db/conexion.php';
                 <div class="col-lg-4 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?php echo $guia["foto_perfil"]; ?>" alt="">
+                            <img class="img-fluid w-100" src="<?php echo $guia["url_perfil"]; ?>" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>

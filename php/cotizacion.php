@@ -2,7 +2,7 @@
 
 define('FPDF_FONTPATH', '../lib/fpdf/font/');
 require('../lib/fpdf/fpdf.php');
-include '../db/conexion.php';
+include '../admin/db/conexion.php';
 
 
 if (isset($_POST['submit_cotizacion'])) {

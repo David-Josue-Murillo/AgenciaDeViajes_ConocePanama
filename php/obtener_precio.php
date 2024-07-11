@@ -1,5 +1,5 @@
 <?php
-include '../db/conexion.php'; // Asegúrate de incluir tu archivo de conexión a la base de datos
+include '../admin/db/conexion.php'; // Asegúrate de incluir tu archivo de conexión a la base de datos
 
 if (isset($_POST['destino'])) {
     $destinoId = $_POST['destino'];

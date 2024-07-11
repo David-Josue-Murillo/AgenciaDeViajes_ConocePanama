@@ -1,7 +1,7 @@
 <?php
 // Estableciendo la conexión a la base de datos
-include_once '../../db/conexion.php';
-include_once '../../db/funciones.php';
+include_once '../db/conexion.php';
+include_once '../db/funciones.php';
 include_once '../../php/helpers.php';
 
 // Iniciando una sesión
@@ -20,7 +20,7 @@ if (isset($_POST['submit_nueva_reserva'])) {
 
     // Validando que los datos del formulario esten completos y sean correctos
     if(empty($id_usuario) || empty($id_destino) || empty($id_paquete) || empty($fecha_reserva) || empty($estado)){
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
         exit();
     }
 
@@ -35,7 +35,7 @@ if (isset($_POST['submit_nueva_reserva'])) {
     }
 
     // Redireccionando al panel de administración
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
     exit();
 }
 
@@ -51,7 +51,7 @@ if (isset($_POST['submit_modificar_reserva'])) {
 
     // Validando que los datos del formulario esten completos y sean correctos
     if(empty($id_usuario) || empty($id_destino) || empty($id_paquete) || empty($fecha_reserva) || empty($estado)){
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
         exit();
     }
 
@@ -65,7 +65,7 @@ if (isset($_POST['submit_modificar_reserva'])) {
     }
 
     // Redireccionando al panel de administración
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
     exit();
 }   
 
@@ -76,6 +76,6 @@ if (isset($_GET['id'])) {
     if ($conexion->query($sql) === TRUE) {
         // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario eliminado exitosamente";
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
     }
 }   

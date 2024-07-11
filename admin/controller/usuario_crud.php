@@ -1,6 +1,6 @@
 <?php
-include_once '../../db/conexion.php';
-include_once '../../db/funciones.php';
+include_once '../db/conexion.php';
+include_once '../db/funciones.php';
 include_once '../../php/helpers.php';
 
 borrarError();
@@ -73,15 +73,16 @@ if (isset($_POST['submit_nuevo_usuario'])) {
         if ($conexion->query($sql) === TRUE) {
             // Redireccionar al formulario de login
             $_SESSION['completado'] = "Registro completado exitosamente";
-            header('Location: ../../admin.php');
         } else {
             $_SESSION['errores']['general'] = "Fallo al guardar el usuario";
         }
+        
+        header('Location: ../admin.php');
     }
 
     $_SESSION['completado'] = $errores;
     $_SESSION['incompleto'] = "Registro completado exitosamente";
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
 }
 
 // Modificar usuario
@@ -100,7 +101,7 @@ if (isset($_POST['submit_modificar_usuario'])) {
         // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario actualizado exitosamente";
     }
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
 }
 
 // Eliminar usuario
@@ -110,6 +111,6 @@ if(isset($_GET['user'])){
     if ($conexion->query($sql) === TRUE) {
         // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario eliminado exitosamente";
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
     }
 }

@@ -1,5 +1,5 @@
 <?php
-include_once '../../db/conexion.php';
+include_once '../db/conexion.php';
 
 $sql = "SELECT * FROM usuarios";
 $result = $conexion->query($sql);

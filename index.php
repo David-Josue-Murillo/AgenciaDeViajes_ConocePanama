@@ -1,6 +1,6 @@
 <?php
 include 'includes/header.php';
-include 'db/conexion.php';
+include 'admin/db/conexion.php';
 ?>
 <main>
 
