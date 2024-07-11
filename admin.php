@@ -1002,7 +1002,7 @@ if ($result->num_rows > 0) {
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-6"> 
+                            <div class="form-group col-md-12"> 
                                 <label for="url_perfil">URL de la imagen</label> 
                                 <input type="url" class="form-control" id="url_perfil" name="url_perfil" placeholder="URL de la imagen" required>
                             </div>
