@@ -844,7 +844,7 @@ if ($result->num_rows > 0) {
                                         echo $paquete['nombre_paquete'];
                                         ?>
                                     </td>
-                                    <td id="fecha_reserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['fecha_reserva'] ?></td>
+                                    <td id="fechaReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['fecha_reserva'] ?></td>
                                     <td id="estado_<?= $reserva['id_reserva'] ?>"><?= $reserva['estado'] ?></td>
                                     <td>
                                         <a href="#" id="<?= $reserva['id_reserva'] ?>" class="btn btn-primary btn-editar">Editar</a>

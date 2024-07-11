@@ -220,7 +220,27 @@ document.getElementById('reservas').addEventListener('click', function () {
     });
 
     // Evento para editar paquete
+    document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
+        btnEditar.addEventListener('click', function () {
+            const id = this.id; // Identificador unico del destino
+            const modal = document.querySelector('.contenedor-modal');
+            document.getElementById('idReserva').value = id;
+            document.getElementById('modal-titulo').textContent = "Editar Reserva"; // Titulo de la ventana modal
+            document.getElementById('btn-guardar-reserva-modal').value = "Guardar Reserva"; // Valor del boton guardar
+            document.getElementById('btn-guardar-reserva-modal').name = "submit_modificar_reserva"; // Valor del boton guardar
+            modal.classList.add('modal-show'); // mostrar ventana modal
+            
+            // Vaciar campos al cerrar el modal
+            document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+                document.getElementById('fechaReserva').value = '';
+                document.getElementById('estado').value = '';
+                modal.classList.remove('modal-show'); // cerrar ventana modal
+            });
 
+            // Rellenar el formulario con los datos del destino
+            rellenarFormularioReserva(id);
+        });
+    });
 });
 
 
@@ -345,3 +365,10 @@ function rellenarFormularioPaquete(id) {
     document.getElementById('precio').value = precio;
 }
 
+function rellenarFormularioReserva(id) {
+    const fecha_reserva = document.getElementById('fechaReserva_' + id).textContent;
+    const estado = document.getElementById('estado_' + id).textContent;
+
+    document.getElementById('fechaReserva').value = fecha_reserva;
+    document.getElementById('estado').value = estado;
+}
