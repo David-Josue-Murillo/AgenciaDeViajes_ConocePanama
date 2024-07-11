@@ -172,9 +172,11 @@ document.getElementById('paquetes').addEventListener('click', function () {
             
             // Vaciar campos al cerrar el modal
             document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
-                document.getElementById('destino').value = '';
-                document.getElementById('direccion').value = '';
+                document.getElementById('paquete').value = '';
+                document.getElementById('fechaInicio').value = '';
+                document.getElementById('fechaFin').value = '';
                 document.getElementById('descripcion').value = '';
+                document.getElementById('precio').value = '';
                 modal.classList.remove('modal-show'); // cerrar ventana modal
             });
 
