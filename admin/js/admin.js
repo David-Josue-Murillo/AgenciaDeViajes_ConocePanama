@@ -219,7 +219,7 @@ document.getElementById('reservas').addEventListener('click', function () {
         });
     });
 
-    // Evento para editar paquete
+    // Evento para editar reserva
     document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
             const id = this.id; // Identificador unico del destino
@@ -239,6 +239,19 @@ document.getElementById('reservas').addEventListener('click', function () {
 
             // Rellenar el formulario con los datos del destino
             rellenarFormularioReserva(id);
+        });
+    });
+
+    // Evento para borrar reserva
+    document.querySelectorAll('#btn-borrar-reserva').forEach(function (btnBorrar) {
+        btnBorrar.addEventListener('click', function (e) {
+            // Pedir confirmacion
+            if (confirm('¿Está seguro de borrar esta reserva?')) {
+                // Redirigir a php
+                const id = parseInt(e.target.ariaLabel);
+                window.location.href = 'admin/php/reserva_crud.php?reserva=' + id;
+                
+            }
         });
     });
 });
