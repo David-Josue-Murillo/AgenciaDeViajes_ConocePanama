@@ -786,7 +786,7 @@ if ($result->num_rows > 0) {
         </div>
     </div>
 
-    <!-- HTML Oculto para cargar los datos de las reservas de viajes -->
+    <!-- HTML Oculto para cargar los datos de las Reservas -->
     <div id="contenedor_reservas" style="display: none;">
         <div class="container-fluid py-5">
             <div class="col-lg-12 pt-5 pb-3">
@@ -814,7 +814,7 @@ if ($result->num_rows > 0) {
                             <?php foreach ($reservas as $reserva) : ?>
                                 <tr>
                                     <td><?= $contador++ ?></td>
-                                    <td id="cliente_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_usuario'] ?>">
+                                    <td id="usuario_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_usuario'] ?>">
                                         <?php 
                                         $sql = "SELECT nombre, apellido FROM usuarios WHERE id_usuario = '$reserva[id_usuario]'";
                                         $result = $conexion->query($sql);
@@ -854,6 +854,68 @@ if ($result->num_rows > 0) {
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- HTML Oculto para cargar el modal de Reservas -->
+        <div class="contenedor-modal">
+            <div class="modal-content col-md-6">
+                <div class="modal-header text-center">
+                    <h3 id="modal-titulo"></h3>
+                </div>
+                <div class="modal-body">
+                    <form action="admin/php/reserva_crud.php" method="post" class="form-group" id="nueva_reserva">
+                        <div class="form-group row">
+                            <div class="hidden">
+                                <input type="hidden" id="idReserva" name="id_reserva" value="">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="usuario">Usuario</label>
+                                <select name="id_usuario" id="idUsuario">
+                                    <?php while ($usuario = $result->fetch_assoc()): ?>
+                                        <option value="<?php echo $usuario['id_usuario']; ?>"><?= htmlspecialchars($usuario['nombre']) ?> <?= htmlspecialchars($usuario['apellido']) ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="id_destino">Destino</label>
+                                <select name="id_destino" id="idDestino">
+                                    <?php while ($destino = $result->fetch_assoc()): ?>
+                                        <option value="<?php echo $destino['id_destino']; ?>"><?= htmlspecialchars($destino['nombre_destino']) ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="id_paquete">Paquete</label>
+                                <select name="id_paquete" id="idPaquete">
+                                    <?php while ($paquete = $result->fetch_assoc()): ?>
+                                        <option value="<?php echo $paquete['id_paquete']; ?>"><?= htmlspecialchars($paquete['nombre_paquete']) ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="fecha_reserva">Fecha de reserva</label>
+                                <input type="text" class="form-control" id="fechaReserva" name="fecha_reserva" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="estado">Estado</label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-reserva-modal" form="nueva_reserva" name="submit_nueva_reserva" value="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
