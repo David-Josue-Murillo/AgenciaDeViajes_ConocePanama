@@ -1,7 +1,7 @@
 <?php
 // Estableciendo la conexión a la base de datos
-include_once '../../db/conexion.php';
-include_once '../../db/funciones.php';
+include_once '../db/conexion.php';
+include_once '../db/funciones.php';
 include_once '../../php/helpers.php';
 
 // Iniciando una sesión
@@ -32,7 +32,7 @@ if (isset($_POST['submit_nuevo_paquete'])) {
     }
 
     // Redireccionando al panel de administración
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
     exit();
 }
 
@@ -60,7 +60,7 @@ if(isset($_POST['submit_modificar_paquete'])){
     }
 
     // Redireccionando al panel de administración
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
     exit();
 }
 
@@ -78,6 +78,6 @@ if(isset($_GET['paquete'])){
     }
 
     // Redireccionar al panel de administración
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
     exit();
 }

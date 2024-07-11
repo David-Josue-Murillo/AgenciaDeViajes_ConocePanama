@@ -3,8 +3,8 @@
 // Verificar si los datos del formulario llegan por POST
 if(isset($_POST['submit_recover-pass'])) {
     // Conexion a la base de datos y funciones de consultas
-    include '../db/conexion.php';
-    include '../db/funciones.php.php';
+    include '../admin/db/conexion.php';
+    include '../admin/db/funciones.php.php';
 
     // Iniciando una sesión
     if(!$_SESSION) {

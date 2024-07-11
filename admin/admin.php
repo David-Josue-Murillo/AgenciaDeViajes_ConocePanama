@@ -78,10 +78,10 @@ if ($result->num_rows > 0) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="assets/css/font-awesome.css">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.css">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
 
     <title>Administrador</title>
 </head>
@@ -99,7 +99,7 @@ if ($result->num_rows > 0) {
         <div class="container login-container">
             <div class="container-fluid bg-success">
                 <h2 class="text-center font-weight-bold">Administrador</h2>
-                <form id="loginForm" action="/admin/php/login.php" method="post">
+                <form id="loginForm" action="controller/login.php" method="post">
                     <div class="form-group mb-2">
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Su email" required>
@@ -137,7 +137,7 @@ if ($result->num_rows > 0) {
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right text-center" style="margin-right: 30px;">
                             <li><a href=""><?php echo $_SESSION['nombre_user'] . ' ' . $_SESSION['apellido_user']; ?></a></li>
-                            <li><a href="php/exit.php">Salir</a></li>
+                            <li><a href="../php/exit.php">Salir</a></li>
                         </ul>
                     </div>
 
@@ -148,7 +148,7 @@ if ($result->num_rows > 0) {
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                         <li class="text-center user-image-back">
-                            <img id="logo_img" src="assets/img/logo.png" class="img-responsive" />
+                            <img id="logo_img" src="../assets/img/logo.png" class="img-responsive" />
                         </li>
 
                         <li>
@@ -526,7 +526,7 @@ if ($result->num_rows > 0) {
                     <h3 id="modal-titulo"></h3>
                 </div>
                 <div class="modal-body">
-                    <form action="admin/php/usuario_crud.php" method="post" class="form-group" id="nuevo_usuario">
+                    <form action="controller/usuario_crud.php" method="post" class="form-group" id="nuevo_usuario">
                         <div class="form-group row">
                             <div class="hidden">
                                 <input type="hidden" id="id_usuario" name="id_usuario" value="">
@@ -624,7 +624,7 @@ if ($result->num_rows > 0) {
                     <h3 id="modal-titulo"></h3>
                 </div>
                 <div class="modal-body">
-                    <form action="admin/php/destino_crud.php" method="post" class="form-group" id="nuevo_destino" enctype="multipart/form-data">
+                    <form action="controller/destino_crud.php" method="post" class="form-group" id="nuevo_destino" enctype="multipart/form-data">
                         <div class="form-group row">
                             <div class="hidden">
                                 <input type="hidden" id="id_destino" name="id_destino" value="">
@@ -723,7 +723,7 @@ if ($result->num_rows > 0) {
                     <h3 id="modal-titulo"></h3>
                 </div>
                 <div class="modal-body">
-                    <form action="admin/php/paquete_crud.php" method="post" class="form-group" id="nuevo_paquete">
+                    <form action="controller/paquete_crud.php" method="post" class="form-group" id="nuevo_paquete">
                         <div class="form-group row">
                             <div class="hidden">
                                 <input type="hidden" id="idPaquete" name="id_paquete" value="">
@@ -865,7 +865,7 @@ if ($result->num_rows > 0) {
                     <h3 id="modal-titulo"></h3>
                 </div>
                 <div class="modal-body">
-                    <form action="admin/php/reserva_crud.php" method="post" class="form-group" id="nueva_reserva">
+                    <form action="controller/reserva_crud.php" method="post" class="form-group" id="nueva_reserva">
                         <div class="form-group row">
                             <div class="hidden">
                                 <input type="hidden" id="idReserva" name="id_reserva" value="">
@@ -982,7 +982,7 @@ if ($result->num_rows > 0) {
                     <h3 id="modal-titulo"></h3>
                 </div>
                 <div class="modal-body">
-                    <form action="admin/php/guia_crud.php" method="post" class="form-group" id="nuevo_guia">
+                    <form action="controller/guia_crud.php" method="post" class="form-group" id="nuevo_guia">
                         <div class="form-group row">
                             <div class="hidden">
                                 <input type="hidden" id="idGuia" name="id_guia" value="">
@@ -1030,7 +1030,7 @@ if ($result->num_rows > 0) {
                     <h1>Crear una nueva tabla</h1>
                 </div>
                 <div class="row" id="formTablaNueva">
-                    <form action="admin/php/crear_nueva_tabla.php" method="post" class="form-group" id="formNuevaTabla">
+                    <form action="controller/crear_nueva_tabla.php" method="post" class="form-group" id="formNuevaTabla">
                         <div class="form-group row" id="agregarColumnas">
                             <div class="form-group col-md-4">
                                 <label for="nombre_tabla">Nombre de la tabla</label>
@@ -1095,11 +1095,11 @@ if ($result->num_rows > 0) {
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="admin/js/admin.js"></script>
-    <script src="admin/js/custom.js"></script>
-    <script src="admin/js/jquery.metisMenu.js"></script>
-    <script src="admin/js/jquery-1.10.2.js"></script>
-    <script type="module" src="admin/js/charts.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.metisMenu.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script type="module" src="js/charts.js"></script>
 
 </body>
 

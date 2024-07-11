@@ -1,8 +1,8 @@
 <?php
 // Estableciendo la conexión a la base de datos
-include_once '../../db/conexion.php';
-include_once '../../db/funciones.php';
-include_once '../../php/helpers.php';
+include_once '../db/conexion.php';
+include_once '../db/funciones.php';
+include_once '../php/helpers.php';
 
 // Iniciando una sesión
 if(!$_SESSION) {
@@ -28,7 +28,7 @@ if (isset($_POST['submit_nuevo_destino'])) {
         $_SESSION['error'] = 'Error al crear el destino';
     }
 
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
     exit();
 }
 
@@ -47,7 +47,7 @@ if(isset($_POST['submit_modificar_destino'])){
     if ($conexion->query($sql) === TRUE) {
         // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario actualizado exitosamente";
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
     }
 }
 
@@ -59,6 +59,6 @@ if(isset($_GET['destino'])){
     if ($conexion->query($sql) === TRUE) {
         // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario eliminado exitosamente";
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
     }
 }

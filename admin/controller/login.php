@@ -2,8 +2,8 @@
 
 
 if (isset($_POST['submit_login'])) {
-    include '../../db/conexion.php'; // Incluyendo la conexión a la base de datos
-    include '../../db/funciones.php'; // Incluyendo las funciones de la base de datos
+    include '../db/conexion.php'; // Incluyendo la conexión a la base de datos
+    include '../db/funciones.php'; // Incluyendo las funciones de la base de datos
 
     if (!isset($_SESSION)) { // Verificando si no hay una sesión iniciada
         session_start(); // Iniciando la sesión
@@ -31,14 +31,14 @@ if (isset($_POST['submit_login'])) {
 
             // Redireccionamos al formulario de inicio de sesión
             $_SESSION['login'] = true;
-            header('Location: ../../admin.php');
+            header('Location: ../admin.php');
         } else {
             $_SESSION['error_login'] = "Contraseña incorrecta";
-            header('Location: ../../admin.php');
+            header('Location: ../admin.php');
         }
     } else {
         $_SESSION['error_login'] = "Usuario no encontrado";
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
     }
     
 }

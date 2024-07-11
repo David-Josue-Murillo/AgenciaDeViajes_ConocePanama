@@ -70,7 +70,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
             if (confirm('¿Está seguro de borrar este usuario?')) {
                 // Redirigir a php
                 const id = parseInt(e.target.ariaLabel);
-                window.location.href = 'admin/php/usuario_crud.php?user=' + id;
+                window.location.href = 'controller/usuario_crud.php?user=' + id;
                 
             }
         });
@@ -133,7 +133,7 @@ document.getElementById('destinos').addEventListener('click', function () {
             if (confirm('¿Está seguro de borrar este destino?')) {
                 // Redirigir a php
                 const id = parseInt(e.target.ariaLabel);
-                window.location.href = 'admin/php/destino_crud.php?destino=' + id;
+                window.location.href = 'controller/destino_crud.php?destino=' + id;
                 
             }
         });
@@ -192,7 +192,7 @@ document.getElementById('paquetes').addEventListener('click', function () {
             if (confirm('¿Está seguro de borrar este paquete?')) {
                 // Redirigir a php
                 const id = parseInt(e.target.ariaLabel);
-                window.location.href = 'admin/php/destino_crud.php?paquete=' + id;
+                window.location.href = 'controller/paquete_crud.php?paquete=' + id;
                 
             }
         });
@@ -249,7 +249,7 @@ document.getElementById('reservas').addEventListener('click', function () {
             if (confirm('¿Está seguro de borrar esta reserva?')) {
                 // Redirigir a php
                 const id = parseInt(e.target.ariaLabel);
-                window.location.href = 'admin/php/reserva_crud.php?id=' + id;
+                window.location.href = 'controller/reserva_crud.php?id=' + id;
                 
             }
         });
@@ -303,7 +303,7 @@ document.getElementById('guias').addEventListener('click', function () {
             if (confirm('¿Está seguro de borrar esta guia?')) {
                 // Redirigir a php
                 const id = parseInt(e.target.ariaLabel);
-                window.location.href = 'admin/php/guia_crud.php?id=' + id;
+                window.location.href = 'controller/guia_crud.php?id=' + id;
                 
             }
         });

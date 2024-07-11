@@ -1,9 +1,9 @@
 <?php
 
 // Estableciendo la conexión a la base de datos
-include_once '../../db/conexion.php';
-include_once '../../db/funciones.php';
-include_once '../../php/helpers.php';
+include_once '../db/conexion.php';
+include_once '../db/funciones.php';
+include_once '../php/helpers.php';
 
 // Iniciando una sesión
 if(!$_SESSION) {
@@ -18,7 +18,7 @@ if(isset($_POST['submit_nuevo_guia'])){
     
     // Validando que los datos del formulario esten completos y sean correctos
     if(empty($nombre_guia) || empty($id_designacion) || empty($url_perfil)){
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
         exit();
     }
 
@@ -33,7 +33,7 @@ if(isset($_POST['submit_nuevo_guia'])){
     }
 
     // Redireccionando al panel de administración
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
     exit();
 }
 
@@ -46,7 +46,7 @@ if(isset($_POST['submit_modificar_guia'])){
     
     // Validando que los datos del formulario esten completos y sean correctos
     if(empty($nombre_guia) || empty($id_designacion) || empty($url_perfil)){
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
         exit();
     }
 
@@ -61,7 +61,7 @@ if(isset($_POST['submit_modificar_guia'])){
     }
 
     // Redireccionando al panel de administración
-    header('Location: ../../admin.php');
+    header('Location: ../admin.php');
     exit();
 }
 
@@ -72,6 +72,6 @@ if (isset($_GET['id'])) {
     if ($conexion->query($sql) === TRUE) {
         // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario eliminado exitosamente";
-        header('Location: ../../admin.php');
+        header('Location: ../admin.php');
     }
 } 
