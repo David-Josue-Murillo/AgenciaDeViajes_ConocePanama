@@ -272,6 +272,29 @@ document.getElementById('guias').addEventListener('click', function () {
             document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
         });
     });
+
+    // Evento para editar guia
+    document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
+        btnEditar.addEventListener('click', function () {
+            const id = this.id; // Identificador unico del destino
+            const modal = document.querySelector('.contenedor-modal');
+            document.getElementById('idGuia').value = id;
+            document.getElementById('modal-titulo').textContent = "Editar Guia"; // Titulo de la ventana modal
+            document.getElementById('btn-guardar-guia-modal').value = "Guardar Guia"; // Valor del boton guardar
+            document.getElementById('btn-guardar-guia-modal').name = "submit_modificar_guia"; // Valor del boton guardar
+            modal.classList.add('modal-show'); // mostrar ventana modal
+            
+            // Vaciar campos al cerrar el modal
+            document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+                document.getElementById('nombreGuia').value = '';
+                document.getElementById('urlPerfil').value = '';
+                modal.classList.remove('modal-show'); // cerrar ventana modal
+            });
+
+            // Rellenar el formulario con los datos del destino
+            rellenarFormularioGuia(id);
+        });
+    });
 });
 
 
@@ -394,4 +417,12 @@ function rellenarFormularioReserva(id) {
     const fecha_reserva = document.getElementById('fechaReserva_' + id).textContent;
 
     document.getElementById('fechaReserva').value = fecha_reserva;
+}
+
+function rellenarFormularioGuia(id) {
+    const nombre_guia = document.getElementById('nombre_guia_' + id).textContent;
+    const url_perfil = document.getElementById('url_perfil_' + id).textContent;
+
+    document.getElementById('nombreGuia').value = nombre_guia;
+    document.getElementById('urlPerfil').value = url_perfil;
 }

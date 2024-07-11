@@ -964,8 +964,8 @@ if ($result->num_rows > 0) {
                                     </td>
                                     <td id="url_perfil_<?= $guia['guia_id'] ?>"><?= $guia['url_perfil'] ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">Editar</a>
-                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $guia['guia_id'] ?>" class="btn btn-primary btn-editar">Editar</a>
+                                        <a href="#" aria-label="<?= $guia['guia_id'] ?>" id="btn-borrar-guia" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -1004,7 +1004,7 @@ if ($result->num_rows > 0) {
 
                             <div class="form-group col-md-12"> 
                                 <label for="url_perfil">URL de la imagen</label> 
-                                <input type="url" class="form-control" id="url_perfil" name="url_perfil" placeholder="URL de la imagen" required>
+                                <input type="url" class="form-control" id="urlPerfil" name="url_perfil" placeholder="URL de la imagen" required>
                             </div>
                         </div>
                     </form>
