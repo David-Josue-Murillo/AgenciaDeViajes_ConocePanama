@@ -14,13 +14,18 @@ if(!$_SESSION) {
 if (isset($_POST['submit_nuevo_paquete'])) {
     echo "Recibiendo  datos para crear un nuevo destino";
     // Obteniendo los datos del formulario
-    /*$nombre_destino = isset($_POST['destino']) ? mysqli_real_escape_string($conexion, $_POST['destino']) : false;
-    $direccion = isset($_POST['direccion']) ? mysqli_real_escape_string($conexion, $_POST['direccion']) : false; 
+    $nombre_paquete = isset($_POST['paquete']) ? mysqli_real_escape_string($conexion, $_POST['paquete']) : false;
+    $fecha_inicio = isset($_POST['fecha_inicio']) ?  $_POST['fecha_inicio'] : false;
+    $fecha_fin = isset($_POST['fecha_fin']) ? $_POST['fecha_fin'] : false;
     $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($conexion, $_POST['descripcion']) : false;
-    $url_imagen = isset($_POST['img-url']) ? $_POST['img-url'] : false;
+    $precio = isset($_POST['precio']) ? mysqli_real_escape_string($conexion, $_POST['precio']) : false;
+    $id_destino = ($_POST['nombre_paquete']);
+
+    echo "La id del destino es $id_destino";
+
 
     // Insertando los datos en la tabla destinos
-    $sql = "INSERT INTO destinos (nombre_destino, direccion, descripcion, url_imagen) VALUES ('$nombre_destino', '$direccion', '$descripcion', '$url_imagen')";
+    /*$sql = "INSERT INTO destinos (nombre_destino, direccion, descripcion, url_imagen) VALUES ('$nombre_destino', '$direccion', '$descripcion', '$url_imagen')";
     $resultado = $conexion->query($sql);
 
     if ($conexion->affected_rows > 0) {
