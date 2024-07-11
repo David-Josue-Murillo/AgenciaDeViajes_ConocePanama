@@ -123,6 +123,15 @@ if ($result->num_rows > 0) {
     <?php endif; ?>
 
     <?php if (isset($_SESSION['login'])) : ?>
+        <?php
+        $rol = '';
+        if($_SESSION['tipo_usuario'] == 2){
+            $rol = 'ROOT';
+        } else {
+            $rol = 'Admin';
+        }
+        ?>
+
         <div id="wrapper">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="adjust-nav">
@@ -136,7 +145,7 @@ if ($result->num_rows > 0) {
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right text-center" style="margin-right: 30px;">
-                            <li><a href=""><?php echo $_SESSION['nombre_user'] . ' ' . $_SESSION['apellido_user']; ?> - </a></li>
+                            <li><a href=""><?php echo $_SESSION['nombre_user'] . ' ' . $_SESSION['apellido_user']; ?> - <?= $rol ?></a></li>
                             <li><a href="../php/exit.php">Salir</a></li>
                         </ul>
                     </div>
@@ -483,7 +492,7 @@ if ($result->num_rows > 0) {
                         <p class="alerta"><?= $_SESSION['incompleto'] ?></p>
                     <?php endif ?>
 
-                    <button id="btn-crear-usuario" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Usuario</button>
+                    <button id="btn-crear-usuario" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Crear Usuario</button>
                 </div>
 
                 <div class="row" id="tabla-usuarios">
@@ -516,8 +525,8 @@ if ($result->num_rows > 0) {
                                         ?>
                                     </td>
                                     <td>
-                                        <a href="#" id="<?= $usuario['id_usuario'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $usuario['id_usuario'] ?>" class="btn btn-danger" id="btn-borrar-usuario">Eliminar</a>
+                                        <a href="#" id="<?= $usuario['id_usuario'] ?>" class="btn btn-primary btn-editar <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $usuario['id_usuario'] ?>" class="btn btn-danger <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>" id="btn-borrar-usuario">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -591,7 +600,7 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Destinos</h6>
                     <h1>Lista de Destinos</h1>
-                    <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2 mb-2">Crear Destino</button>
+                    <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2 mb-2 <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Crear Destino</button>
                 </div>
                 <div class="row" id="tabla-destinos">
                     <table class="table table-striped table-bordered table-hover">
@@ -615,8 +624,8 @@ if ($result->num_rows > 0) {
                                     <td id="descripcion_<?= $destino['id_destino'] ?>"><?= $destino['descripcion'] ?></td>
                                     <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['url_imagen'] ?></td>
                                     <td>
-                                        <a href="#" id="<?= $destino['id_destino'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $destino['id_destino'] ?>" id="btn-borrar-destino" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $destino['id_destino'] ?>" class="btn btn-primary btn-editar <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $destino['id_destino'] ?>" id="btn-borrar-destino" class="btn btn-danger <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -677,7 +686,7 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Paquetes</h6>
                     <h1>Lista de Paquetes</h1>
-                    <button id="btn-crear-paquete" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Paquete</button>
+                    <button id="btn-crear-paquete" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Crear Paquete</button>
                 </div>
                 <div class="row" id="tabla-paquetes">
                     <table class="table table-striped table-bordered table-hover">
@@ -714,8 +723,8 @@ if ($result->num_rows > 0) {
                                     <td id="descripcion_<?= $paquete['id_paquete'] ?>"><?= $paquete['descripcion'] ?></td>
                                     <td id="precio_<?= $paquete['id_paquete'] ?>"><?= $paquete['precio'] ?></td>
                                     <td>
-                                        <a href="#" id="<?= $paquete['id_paquete'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $paquete['id_paquete'] ?>"  id="btn-borrar-paquete" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $paquete['id_paquete'] ?>" class="btn btn-primary btn-editar <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $paquete['id_paquete'] ?>"  id="btn-borrar-paquete" class="btn btn-danger <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -802,7 +811,7 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Reservas</h6>
                     <h1>Lista de Reservas</h1>
-                    <button id="btn-crear-reserva" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Reserva</button>
+                    <button id="btn-crear-reserva" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Crear Reserva</button>
                 </div>
 
                 <div class="row" id="tabla-reservas">
@@ -856,8 +865,8 @@ if ($result->num_rows > 0) {
                                     <td id="fechaReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['fecha_reserva'] ?></td>
                                     <td id="estado_<?= $reserva['id_reserva'] ?>"><?= $reserva['estado'] ?></td>
                                     <td>
-                                        <a href="#" id="<?= $reserva['id_reserva'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $reserva['id_reserva'] ?>" id="btn-borrar-reserva" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $reserva['id_reserva'] ?>" class="btn btn-primary btn-editar <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $reserva['id_reserva'] ?>" id="btn-borrar-reserva" class="btn btn-danger <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -941,7 +950,7 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Guias</h6>
                     <h1>Lista de Guias</h1>
-                    <button id="btn-crear-guia" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Guia</button>
+                    <button id="btn-crear-guia" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Crear Guia</button>
                 </div>
                 <div class="row" id="tabla-guias">
                     <table class="table table-striped table-bordered table-hover">
@@ -973,8 +982,8 @@ if ($result->num_rows > 0) {
                                     </td>
                                     <td id="url_perfil_<?= $guia['guia_id'] ?>"><?= $guia['url_perfil'] ?></td>
                                     <td>
-                                        <a href="#" id="<?= $guia['guia_id'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $guia['guia_id'] ?>" id="btn-borrar-guia" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $guia['guia_id'] ?>" class="btn btn-primary btn-editar <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $guia['guia_id'] ?>" id="btn-borrar-guia" class="btn btn-danger <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -1054,7 +1063,7 @@ if ($result->num_rows > 0) {
                                         <input type="number" class="form-control" id="agregarCantidad" name="agregarTabla" value="1">
                                     </div>
                                     <div class="form-group col-md-5">
-                                        <input type="button" id="agregarCampos" class="btn btn-primary btn-block" value="Agregar">
+                                        <input type="button" id="agregarCampos" class="btn btn-primary btn-block <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>" value="Agregar">
                                     </div>
                                 </div>
                             </div>
@@ -1092,7 +1101,7 @@ if ($result->num_rows > 0) {
                     </form>
 
                     <div class="form-group">
-                        <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100" form="formNuevaTabla" value="Crear Tabla" />
+                        <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100 <?php if($_SESSION['tipo_usuario'] == 1): ?> disabled <?php endif; ?>" form="formNuevaTabla" value="Crear Tabla" />
                     </div>
                 </div>
             </div>
