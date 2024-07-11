@@ -19,6 +19,13 @@ if (isset($_POST['submit_login'])) {
     if($resultado->num_rows > 0) { // Verificando si hubo resultados
         $user = $resultado->fetch_assoc(); // Se obtiene el regirstro del usuario obtennido de la consulta
         $email = $user['email']; // Obteniendo el email del usuario
+        $tipo_usuario = $user['tipo_usuario'];
+
+        if ($tipo_usuario == 0) {
+            $_SESSION['error_login'] = "El usuario no tiene permisos para acceder a esta página";
+            header('Location: ../admin.php');
+            exit();
+        }
 
         // Se verifica si la contraseña del usuario coincide con la contraseña introducida
         if(password_verify($password, $user['password'])) {
@@ -28,6 +35,7 @@ if (isset($_POST['submit_login'])) {
             $_SESSION['apellido_user'] = $user['apellido'];
             $_SESSION['telefono_user'] = $user['telefono'];
             $_SESSION['email_user'] = $user['email'];
+            $_SESSION['tipo_usuario'] = $user['tipo_usuario'];
 
             // Redireccionamos al formulario de inicio de sesión
             $_SESSION['login'] = true;
@@ -35,10 +43,12 @@ if (isset($_POST['submit_login'])) {
         } else {
             $_SESSION['error_login'] = "Contraseña incorrecta";
             header('Location: ../admin.php');
+            exit();
         }
     } else {
         $_SESSION['error_login'] = "Usuario no encontrado";
         header('Location: ../admin.php');
+        exit();
     }
     
 }

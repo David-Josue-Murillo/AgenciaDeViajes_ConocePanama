@@ -380,7 +380,7 @@ function cerrarSession() {
         alert('La sesión esta por expirar. Por favor, vuelva a iniciar sesión.'); // Mensaje de alerta antes de que se cierre la sesión
 
         setTimeout(() => {
-            window.location.href = 'php/exit.php'; // Redireccionar al archivo de salida
+            window.location.href = '../php/exit.php'; // Redireccionar al archivo de salida
         }, 15000); // Tiempo de espera antes de que se cierre la sesión
     }, 558000); 
 }

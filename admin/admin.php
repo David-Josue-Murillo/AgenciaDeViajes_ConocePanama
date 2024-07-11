@@ -136,7 +136,7 @@ if ($result->num_rows > 0) {
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right text-center" style="margin-right: 30px;">
-                            <li><a href=""><?php echo $_SESSION['nombre_user'] . ' ' . $_SESSION['apellido_user']; ?></a></li>
+                            <li><a href=""><?php echo $_SESSION['nombre_user'] . ' ' . $_SESSION['apellido_user']; ?> - </a></li>
                             <li><a href="../php/exit.php">Salir</a></li>
                         </ul>
                     </div>
@@ -505,8 +505,16 @@ if ($result->num_rows > 0) {
                                     <td id="nombre_<?= $usuario['id_usuario'] ?>"><?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?></td>
                                     <td id="telefono_<?= $usuario['id_usuario'] ?>"><?= $usuario['telefono'] ?></td>
                                     <td id="email_<?= $usuario['id_usuario'] ?>"><?= $usuario['email'] ?></td>
-                                    <td id="tipo_usuario_<?= $usuario['id_usuario'] ?>"><?php if ($usuario['tipo_usuario'] == 1) echo 'Administrador';
-                                        else echo 'Usuario'; ?></td>
+                                    <td id="tipo_usuario_<?= $usuario['id_usuario'] ?>">
+                                        <?php 
+                                        $sql = "SELECT tipo_usuario FROM tipo_usuarios WHERE usuario_id = '$usuario[tipo_usuario]'";
+                                        $result = $conexion->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            $tipo_usuario = $result->fetch_assoc();
+                                            echo $tipo_usuario['tipo_usuario'];
+                                        }
+                                        ?>
+                                    </td>
                                     <td>
                                         <a href="#" id="<?= $usuario['id_usuario'] ?>" class="btn btn-primary btn-editar">Editar</a>
                                         <a href="#" aria-label="<?= $usuario['id_usuario'] ?>" class="btn btn-danger" id="btn-borrar-usuario">Eliminar</a>
@@ -552,8 +560,9 @@ if ($result->num_rows > 0) {
                             <div class="form-group col-md-6">
                                 <label for="tipo_usuario">Tipo de usuario</label>
                                 <select name="tipo_usuario" class="custom-select px-5" required="required">
+                                    <option value="0">Usuario</option>
                                     <option value="1">Administrador</option>
-                                    <option value="2">Usuario</option>
+                                    <option value="2">ROOT</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6 campo_password_delete">
