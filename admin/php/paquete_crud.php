@@ -10,7 +10,7 @@ if(!$_SESSION) {
 }
 
 
-// Recibiendo  datos para crear un nuevo destino
+// Recibiendo  datos para crear un nuevo paquete
 if (isset($_POST['submit_nuevo_paquete'])) {
     // Obteniendo los datos del formulario para crear el paquete
     $nombre_paquete = isset($_POST['paquete']) ? mysqli_real_escape_string($conexion, $_POST['paquete']) : false;
@@ -37,7 +37,7 @@ if (isset($_POST['submit_nuevo_paquete'])) {
 }
 
 
-// Recibiendo  datos para modificar un destino existente
+// Recibiendo  datos para modificar un paquete existente
 if(isset($_POST['submit_modificar_paquete'])){
     // Obteniendo los datos del formulario para modificar el paquete
     $id_paquete = intval($_POST['id_paquete']);
@@ -65,13 +65,19 @@ if(isset($_POST['submit_modificar_paquete'])){
 }
 
 
-// Eliminar destino
-if(isset($_GET['destino'])){
-    $id_usuario_delete = intval($_GET['destino']);
-    $sql = "DELETE FROM destinos WHERE id_destino = '$id_usuario_delete'";
+// Eliminar paquete
+if(isset($_GET['paquete'])){
+    $id_usuario_delete = intval($_GET['paquete']); // Obtener el id de usuario
+    $sql = "DELETE FROM paquetes WHERE id_paquete = '$id_usuario_delete'"; // Consulta para eliminar el usuario
+    
+    // Ejecundo la consulta SQL
     if ($conexion->query($sql) === TRUE) {
-        // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario eliminado exitosamente";
-        header('Location: ../../admin.php');
+    } else {
+        $_SESSION['error'] = 'Error al eliminar el usuario';
     }
+
+    // Redireccionar al panel de administración
+    header('Location: ../../admin.php');
+    exit();
 }

@@ -801,9 +801,10 @@ if ($result->num_rows > 0) {
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Cliente</th>
                                 <th>Destino</th>
-                                <th>Fecha</th>
-                                <th>Cant. Personas</th>
+                                <th>Paquete</th>
+                                <th>Fecha de Reserva</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
@@ -812,7 +813,16 @@ if ($result->num_rows > 0) {
                             <?php foreach ($reservas as $reserva) : ?>
                                 <tr>
                                     <td><?= $reserva['id_reserva'] ?></td>
-                                    <td><?= $reserva['nombre_destino'] ?></td>
+                                    <td>
+                                        <?php 
+                                        $sql = "SELECT nombre, apellido FROM usuarios WHERE id_usuario = '$reserva[id_usuario]'";
+                                        $result = $conexion->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            $usuario = $result->fetch_assoc();
+                                        }
+                                        echo $usuario['nombre'] . ' ' . $usuario['apellido'];
+                                        ?>
+                                    </td>
                                     <td><?= $reserva['fecha_reserva'] ?></td>
                                     <td><?= $reserva['hora_reserva'] ?></td>
                                     <td><?= $reserva['tipo_reserva'] ?></td>

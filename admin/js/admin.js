@@ -185,14 +185,14 @@ document.getElementById('paquetes').addEventListener('click', function () {
         });
     });
 
-    // Evento para borrar destino
+    // Evento para borrar paquete
     document.querySelectorAll('#btn-borrar-paquete').forEach(function (btnBorrar) {
         btnBorrar.addEventListener('click', function (e) {
             // Pedir confirmacion
-            if (confirm('¿Está seguro de borrar este destino?')) {
+            if (confirm('¿Está seguro de borrar este paquete?')) {
                 // Redirigir a php
                 const id = parseInt(e.target.ariaLabel);
-                window.location.href = 'admin/php/destino_crud.php?destino=' + id;
+                window.location.href = 'admin/php/destino_crud.php?paquete=' + id;
                 
             }
         });
