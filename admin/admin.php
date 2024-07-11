@@ -533,6 +533,15 @@ if ($result->num_rows > 0) {
                         </tbody>
                     </table>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#" class="btn btn-warning btn-block w-100 fs" id="btn-crear-usuario">Crear PDF</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" class="btn btn-success btn-block w-100" id="btn-crear-destino">Crear EXCEL</a>
+                    </div>
+                </div>
             </div>
         </div>
         

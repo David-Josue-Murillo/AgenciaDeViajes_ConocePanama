@@ -1,7 +1,7 @@
 <?php
 
 require_once 'mailController.php';
-require_once '../vendor/autoload.php';
+require_once '../lib/vendor/autoload.php';
 
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])) {
     $name = $_POST['name'];

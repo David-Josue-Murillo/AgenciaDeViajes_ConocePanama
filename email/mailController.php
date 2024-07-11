@@ -1,8 +1,8 @@
 <?php
 
-require '../vendor/phpmailer/phpmailer/src/Exception.php';
-require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require '../vendor/phpmailer/phpmailer/src/SMTP.php';
+require '../lib/vendor/phpmailer/phpmailer/src/Exception.php';
+require '../lib/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require '../lib/vendor/phpmailer/phpmailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
