@@ -950,7 +950,7 @@ if ($result->num_rows > 0) {
                             <?php foreach ($guias as $guia) : ?>
                                 <tr>
                                     <td><?= $contador++ ?></td>
-                                    <td id="nombre_guia_<?= $guia['guia_id'] ?>"><?= $guia['nombre_completo'] ?></td>
+                                    <td id="nombre_guia_<?= $guia['guia_id'] ?>"><?= $guia['nombre_guia'] ?></td>
                                     <td id="designacion_<?= $guia['guia_id'] ?>">
                                         <?php
                                         $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$guia[designacion]'";

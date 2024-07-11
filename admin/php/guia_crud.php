@@ -23,7 +23,7 @@ if(isset($_POST['submit_nuevo_guia'])){
     }
 
     // Creando el nuevo guia
-    $sql = "INSERT INTO guias (nombre_completo, url_perfil, designacion) VALUES ('$nombre_guia', '$url_perfil', '$id_designacion')";
+    $sql = "INSERT INTO guias (nombre_guia, url_perfil, designacion) VALUES ('$nombre_guia', '$url_perfil', '$id_designacion')";
     $resultado = $conexion->query($sql);
 
     if ($conexion->affected_rows > 0) {
@@ -38,7 +38,31 @@ if(isset($_POST['submit_nuevo_guia'])){
 }
 
 if(isset($_POST['submit_modificar_guia'])){
-    echo 'Recibido modificar guia';
+    // Obteniendo los datos del formulario para modificar el guia
+    $id_guia = isset($_POST['id_guia']) ? intval($_POST['id_guia']) : false;
+    $nombre_guia = isset($_POST['nombre_guia']) ? mysqli_real_escape_string($conexion, $_POST['nombre_guia']) : false;
+    $id_designacion = $_POST['id_designacion'] ? intval($_POST['id_designacion']) : false;
+    $url_perfil = isset($_POST['url_perfil']) ? mysqli_real_escape_string($conexion, $_POST['url_perfil']) : false;
+    
+    // Validando que los datos del formulario esten completos y sean correctos
+    if(empty($nombre_guia) || empty($id_designacion) || empty($url_perfil)){
+        header('Location: ../../admin.php');
+        exit();
+    }
+
+    // Actualizando los datos en la tabla guias
+    $sql = "UPDATE guias SET nombre_guia = '$nombre_guia', designacion = '$id_designacion', url_perfil = '$url_perfil' WHERE guia_id = '$id_guia'";
+    $resultado = $conexion->query($sql);
+
+    if ($conexion->affected_rows > 0) {
+        $_SESSION['completado'] = 'Guia actualizado exitosamente';
+    } else {
+        $_SESSION['error'] = 'Error al actualizar la guia'; 
+    }
+
+    // Redireccionando al panel de administración
+    header('Location: ../../admin.php');
+    exit();
 }
 
 if(isset($_GET['id'])){
