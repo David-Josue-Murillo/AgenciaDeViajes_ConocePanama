@@ -380,8 +380,6 @@ function rellenarFormularioPaquete(id) {
 
 function rellenarFormularioReserva(id) {
     const fecha_reserva = document.getElementById('fechaReserva_' + id).textContent;
-    const estado = document.getElementById('estado_' + id).textContent;
 
     document.getElementById('fechaReserva').value = fecha_reserva;
-    document.getElementById('estado').value = estado;
 }

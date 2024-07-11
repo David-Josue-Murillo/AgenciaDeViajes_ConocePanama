@@ -873,7 +873,7 @@ if ($result->num_rows > 0) {
 
                             <div class="form-group col-md-6">
                                 <label for="usuario">Usuarios</label><br>
-                                <select name="id_usuario" id="idUsuario">
+                                <select name="id_usuario" id="idUsuario" class="custom-select px-5">
                                     <?php foreach ($usuarios as $usuario) : ?>
                                         <option value="<?= $usuario['id_usuario'] ?>"><?= $usuario['nombre'] . ' ' . $usuario['apellido'] ?></option>
                                     <?php endforeach; ?>
@@ -882,7 +882,7 @@ if ($result->num_rows > 0) {
 
                             <div class="form-group col-md-6">
                                 <label for="id_destino">Destino</label>
-                                <select name="id_destino" id="idDestino">
+                                <select name="id_destino" id="idDestino" class="custom-select px-5">
                                     <?php foreach ($destinos as $destino) : ?>
                                         <option value="<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></option>
                                     <?php endforeach; ?>
@@ -891,7 +891,7 @@ if ($result->num_rows > 0) {
 
                             <div class="form-group col-md-6">
                                 <label for="id_paquete">Paquete</label>
-                                <select name="id_paquete" id="idPaquete">
+                                <select name="id_paquete" id="idPaquete" class="custom-select px-5">
                                     <?php foreach ($paquetes as $paquete) : ?>
                                         <option value="<?= $paquete['id_paquete'] ?>"><?= $paquete['nombre_paquete'] ?></option>
                                     <?php endforeach; ?>
@@ -904,8 +904,11 @@ if ($result->num_rows > 0) {
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="estado">Estado</label>
-                                <input type="text" class="form-control" id="estado" name="estado" required>
+                                <label for="estado">Estado</label><br>
+                                <select name="estado" class="custom-select px-5" id="estado" required="required">
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="Finalizado">Finalizado</option>
+                                </select>
                             </div>
                         </div>
                     </form>

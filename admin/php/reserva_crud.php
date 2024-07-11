@@ -12,11 +12,11 @@ if(!$_SESSION) {
 // Recibiendo  datos para crear una nueva reserva
 if (isset($_POST['submit_nueva_reserva'])) {
     // Recibiendo los datos del formulario para crear la reserva
-    $id_usuario = isset($_POST['id_usuario']) ? mysqli_real_escape_string($conexion, $_POST['id_usuario']) : false;
-    $id_destino = isset($_POST['id_destino']) ? mysqli_real_escape_string($conexion, $_POST['id_destino']) : false;
-    $id_paquete = isset($_POST['id_paquete']) ? mysqli_real_escape_string($conexion, $_POST['id_paquete']) : false;
+    $id_usuario = isset($_POST['id_usuario']) ? intval($_POST['id_usuario']) : false;
+    $id_destino = isset($_POST['id_destino']) ? intval($_POST['id_destino']) : false;
+    $id_paquete = isset($_POST['id_paquete']) ? intval($_POST['id_paquete']) : false;
     $fecha_reserva = isset($_POST['fecha_reserva']) ? mysqli_real_escape_string($conexion, $_POST['fecha_reserva']) : false;
-    $estado = isset($_POST['estado']) ? mysqli_real_escape_string($conexion, $_POST['estado']) : false;
+    $estado = isset($_POST['estado']) ? $_POST['estado'] : false;
 
     // Validando que los datos del formulario esten completos y sean correctos
     if(empty($id_usuario) || empty($id_destino) || empty($id_paquete) || empty($fecha_reserva) || empty($estado)){
@@ -41,7 +41,32 @@ if (isset($_POST['submit_nueva_reserva'])) {
 
 // Recibiendo  datos para modificar una reserva existente
 if (isset($_POST['submit_modificar_reserva'])) {
-    echo 'Probando que los dats se hayan modificado';
+    // Recibiendo los datos del formulario para modificar la reserva
+    $id_reserva = isset($_POST['id_reserva']) ? intval($_POST['id_reserva']) : false;
+    $id_usuario = isset($_POST['id_usuario']) ? intval($_POST['id_usuario']) : false;
+    $id_destino = isset($_POST['id_destino']) ? intval($_POST['id_destino']) : false;
+    $id_paquete = isset($_POST['id_paquete']) ? intval($_POST['id_paquete']) : false;
+    $fecha_reserva = isset($_POST['fecha_reserva']) ? mysqli_real_escape_string($conexion, $_POST['fecha_reserva']) : false;
+    $estado = isset($_POST['estado']) ? $_POST['estado'] : false;
+
+    // Validando que los datos del formulario esten completos y sean correctos
+    if(empty($id_usuario) || empty($id_destino) || empty($id_paquete) || empty($fecha_reserva) || empty($estado)){
+        header('Location: ../../admin.php');
+        exit();
+    }
+
+    $sql = "UPDATE reservas SET id_usuario = '$id_usuario', id_destino = '$id_destino', id_paquete = '$id_paquete', fecha_reserva = '$fecha_reserva', estado = '$estado' WHERE id_reserva = '$id_reserva'";
+    $resultado = $conexion->query($sql);
+
+    if ($conexion->query($sql) === TRUE) {
+        $_SESSION['completado'] = "Reserva actualizada exitosamente";
+    } else {
+        $_SESSION['error'] = "Error al actualizar la reserva";
+    }
+
+    // Redireccionando al panel de administración
+    header('Location: ../../admin.php');
+    exit();
 }   
 
 // Eliminar reserva
