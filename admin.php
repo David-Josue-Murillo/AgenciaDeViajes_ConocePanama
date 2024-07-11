@@ -688,7 +688,7 @@ if ($result->num_rows > 0) {
                             <?= $contador = 1 ?>
                             <?php foreach ($paquetes as $paquete) : ?>
                                 <tr>
-                                    <td id="<?= $paquete['id_paquete'] ?>"><?= $contador++ ?></td>
+                                    <td><?= $contador++ ?></td>
                                     <td id="destino_<?=$paquete['id_paquete']?>" accesskey="<?= $paquete['id_destino'] ?>">
                                         <?php
                                         $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$paquete[id_destino]'";
@@ -810,10 +810,11 @@ if ($result->num_rows > 0) {
                             </tr>
                         </thead>
                         <tbody>
+                            <?= $contador = 1 ?>
                             <?php foreach ($reservas as $reserva) : ?>
                                 <tr>
-                                    <td><?= $reserva['id_reserva'] ?></td>
-                                    <td>
+                                    <td><?= $contador++ ?></td>
+                                    <td id="cliente_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_usuario'] ?>">
                                         <?php 
                                         $sql = "SELECT nombre, apellido FROM usuarios WHERE id_usuario = '$reserva[id_usuario]'";
                                         $result = $conexion->query($sql);
@@ -823,12 +824,31 @@ if ($result->num_rows > 0) {
                                         echo $usuario['nombre'] . ' ' . $usuario['apellido'];
                                         ?>
                                     </td>
-                                    <td><?= $reserva['fecha_reserva'] ?></td>
-                                    <td><?= $reserva['hora_reserva'] ?></td>
-                                    <td><?= $reserva['tipo_reserva'] ?></td>
+                                    <td id="destino_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_destino'] ?>">
+                                        <?php 
+                                        $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$reserva[id_destino]'";
+                                        $result = $conexion->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            $destino = $result->fetch_assoc();
+                                        }
+                                        echo $destino['nombre_destino'];
+                                        ?>
+                                    </td>
+                                    <td id="paquete_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_paquete'] ?>">
+                                        <?php 
+                                        $sql = "SELECT nombre_paquete FROM paquetes WHERE id_paquete = '$reserva[id_paquete]'";
+                                        $result = $conexion->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            $paquete = $result->fetch_assoc();
+                                        }
+                                        echo $paquete['nombre_paquete'];
+                                        ?>
+                                    </td>
+                                    <td id="fecha_reserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['fecha_reserva'] ?></td>
+                                    <td id="estado_<?= $reserva['id_reserva'] ?>"><?= $reserva['estado'] ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">Editar</a>
-                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $reserva['id_reserva'] ?>" class="btn btn-primary btn-editar">Editar</a>
+                                        <a href="#" aria-label="<?= $reserva['id_reserva'] ?>" id="btn-borrar-reserva" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
