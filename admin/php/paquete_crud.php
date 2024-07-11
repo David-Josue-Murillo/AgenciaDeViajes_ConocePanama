@@ -20,7 +20,7 @@ if (isset($_POST['submit_nuevo_paquete'])) {
     $precio = isset($_POST['precio']) ? mysqli_real_escape_string($conexion, $_POST['precio']) : false;
     $id_destino = intval($_POST['id_destino']);
 
-    /*$sql = "INSERT INTO destinos (nombre_destino, direccion, descripcion, url_imagen) VALUES ('$nombre_destino', '$direccion', '$descripcion', '$url_imagen')";
+    $sql = "INSERT INTO paquetes (nombre_paquete, fecha_inicio, fecha_fin, descripcion, precio, id_destino) VALUES ('$nombre_paquete', '$fecha_inicio', '$fecha_fin', '$descripcion', '$precio', '$id_destino')";
     $resultado = $conexion->query($sql);
 
     if ($conexion->affected_rows > 0) {
@@ -30,14 +30,14 @@ if (isset($_POST['submit_nuevo_paquete'])) {
     }
 
     header('Location: ../../admin.php');
-    exit();*/
+    exit();
 }
 
 
 // Recibiendo  datos para modificar un destino existente
 if(isset($_POST['submit_modificar_paquete'])){
     echo "Recibiendo  datos para modificar un destino existente";
-    /*$id_destino = intval($_POST['id_destino']);
+    $id_destino = intval($_POST['id_destino']);
     $nombre_destino = isset($_POST['destino']) ? mysqli_real_escape_string($conexion, $_POST['destino']) : false;
     $direccion = isset($_POST['direccion']) ? mysqli_real_escape_string($conexion, $_POST['direccion']) : false; 
     $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($conexion, $_POST['descripcion']) : false;
@@ -49,7 +49,7 @@ if(isset($_POST['submit_modificar_paquete'])){
         // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario actualizado exitosamente";
         header('Location: ../../admin.php');
-    }*/
+    }
 }
 
 
