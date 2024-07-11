@@ -11,9 +11,10 @@ if(!$_SESSION) {
 
 
 // Recibiendo  datos para crear un nuevo destino
-if (isset($_POST['submit_nuevo_destino'])) {
+if (isset($_POST['submit_nuevo_paquete'])) {
+    echo "Recibiendo  datos para crear un nuevo destino";
     // Obteniendo los datos del formulario
-    $nombre_destino = isset($_POST['destino']) ? mysqli_real_escape_string($conexion, $_POST['destino']) : false;
+    /*$nombre_destino = isset($_POST['destino']) ? mysqli_real_escape_string($conexion, $_POST['destino']) : false;
     $direccion = isset($_POST['direccion']) ? mysqli_real_escape_string($conexion, $_POST['direccion']) : false; 
     $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($conexion, $_POST['descripcion']) : false;
     $url_imagen = isset($_POST['img-url']) ? $_POST['img-url'] : false;
@@ -29,14 +30,14 @@ if (isset($_POST['submit_nuevo_destino'])) {
     }
 
     header('Location: ../../admin.php');
-    exit();
+    exit();*/
 }
 
 
 // Recibiendo  datos para modificar un destino existente
-if(isset($_POST['submit_modificar_destino'])){
-
-    $id_destino = intval($_POST['id_destino']);
+if(isset($_POST['submit_modificar_paquete'])){
+    echo "Recibiendo  datos para modificar un destino existente";
+    /*$id_destino = intval($_POST['id_destino']);
     $nombre_destino = isset($_POST['destino']) ? mysqli_real_escape_string($conexion, $_POST['destino']) : false;
     $direccion = isset($_POST['direccion']) ? mysqli_real_escape_string($conexion, $_POST['direccion']) : false; 
     $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($conexion, $_POST['descripcion']) : false;
@@ -48,7 +49,7 @@ if(isset($_POST['submit_modificar_destino'])){
         // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario actualizado exitosamente";
         header('Location: ../../admin.php');
-    }
+    }*/
 }
 
 

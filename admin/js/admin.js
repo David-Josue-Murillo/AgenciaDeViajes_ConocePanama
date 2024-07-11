@@ -184,7 +184,7 @@ document.getElementById('paquetes').addEventListener('click', function () {
     });
 
     // Evento para borrar destino
-    document.querySelectorAll('#btn-borrar-destino').forEach(function (btnBorrar) {
+    document.querySelectorAll('#btn-borrar-paquete').forEach(function (btnBorrar) {
         btnBorrar.addEventListener('click', function (e) {
             // Pedir confirmacion
             if (confirm('¿Está seguro de borrar este destino?')) {

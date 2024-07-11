@@ -707,7 +707,7 @@ if ($result->num_rows > 0) {
                                     <td id="precio_<?= $paquete['id_paquete'] ?>"><?= $paquete['precio'] ?></td>
                                     <td>
                                         <a href="#" id="<?= $paquete['id_paquete'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $paquete['id_paquete'] ?>"  id="btn-eliminar-paquete" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" aria-label="<?= $paquete['id_paquete'] ?>"  id="btn-borrar-paquete" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -779,7 +779,7 @@ if ($result->num_rows > 0) {
                             <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
                         </div>
                         <div class="col-md-6">
-                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-paquete-modal" form="nuevo_destino" name="submit_nuevo_destino" value="">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-paquete-modal" form="nuevo_paquete" name="submit_nuevo_destino" value="">
                         </div>
                     </div>
                 </div>
