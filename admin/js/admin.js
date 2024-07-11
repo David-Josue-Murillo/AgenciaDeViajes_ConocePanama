@@ -266,7 +266,7 @@ document.getElementById('guias').addEventListener('click', function () {
         document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
         document.getElementById('modal-titulo').textContent = "Crear Guia";  // Titulo de la ventana modal
         document.getElementById('btn-guardar-guia-modal').value = "Crear Guia"; // Valor del boton guardar
-        document.getElementById('btn-guardar-guia-modal').name = "submit_nueva_guia"; // Valor del boton guardar
+        document.getElementById('btn-guardar-guia-modal').name = "submit_nuevo_guia"; // Valor del boton guardar
         document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
         document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
             document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
@@ -293,6 +293,19 @@ document.getElementById('guias').addEventListener('click', function () {
 
             // Rellenar el formulario con los datos del destino
             rellenarFormularioGuia(id);
+        });
+    });
+
+    // Eliminar Guia
+    document.querySelectorAll('#btn-borrar-guia').forEach(function (btnBorrar) {
+        btnBorrar.addEventListener('click', function (e) {
+            // Pedir confirmacion
+            if (confirm('¿Está seguro de borrar esta guia?')) {
+                // Redirigir a php
+                const id = parseInt(e.target.ariaLabel);
+                window.location.href = 'admin/php/guia_crud.php?id=' + id;
+                
+            }
         });
     });
 });
