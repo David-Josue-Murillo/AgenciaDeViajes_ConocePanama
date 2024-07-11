@@ -65,6 +65,13 @@ if(isset($_POST['submit_modificar_guia'])){
     exit();
 }
 
-if(isset($_GET['id'])){
-    echo 'Recibido borrar guia';
-}
+// Eliminar guia
+if (isset($_GET['id'])) {
+    $id_guia_delete = intval($_GET['id']);
+    $sql = "DELETE FROM guias WHERE guia_id = '$id_guia_delete'";
+    if ($conexion->query($sql) === TRUE) {
+        // Redireccionar al formulario de login
+        $_SESSION['completado'] = "Usuario eliminado exitosamente";
+        header('Location: ../../admin.php');
+    }
+} 

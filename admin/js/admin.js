@@ -249,7 +249,7 @@ document.getElementById('reservas').addEventListener('click', function () {
             if (confirm('¿Está seguro de borrar esta reserva?')) {
                 // Redirigir a php
                 const id = parseInt(e.target.ariaLabel);
-                window.location.href = 'admin/php/reserva_crud.php?reserva=' + id;
+                window.location.href = 'admin/php/reserva_crud.php?id=' + id;
                 
             }
         });

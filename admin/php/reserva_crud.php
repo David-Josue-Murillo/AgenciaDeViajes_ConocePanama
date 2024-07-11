@@ -70,6 +70,12 @@ if (isset($_POST['submit_modificar_reserva'])) {
 }   
 
 // Eliminar reserva
-if (isset($_GET['reserva'])) {
-    echo 'Id de la reserva que se va a eliminar: ' . $_GET['reserva'];
+if (isset($_GET['id'])) {
+    $id_reserva_delete = intval($_GET['id']);
+    $sql = "DELETE FROM reservas WHERE id_reserva = '$id_reserva_delete'";
+    if ($conexion->query($sql) === TRUE) {
+        // Redireccionar al formulario de login
+        $_SESSION['completado'] = "Usuario eliminado exitosamente";
+        header('Location: ../../admin.php');
+    }
 }   
