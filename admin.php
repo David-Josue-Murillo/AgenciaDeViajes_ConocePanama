@@ -622,7 +622,7 @@ if ($result->num_rows > 0) {
         <div class="contenedor-modal">
             <div class="modal-content col-md-6">
                 <div class="modal-header text-center">
-                    <h3 id="modal-titulo">Crear Usuario</h3>
+                    <h3 id="modal-titulo"></h3>
                 </div>
                 <div class="modal-body">
                     <form action="admin/php/destino_crud.php" method="post" class="form-group" id="nuevo_destino" enctype="multipart/form-data">
@@ -686,10 +686,11 @@ if ($result->num_rows > 0) {
                             </tr>
                         </thead>
                         <tbody>
+                            <?= $contador = 1 ?>
                             <?php foreach ($paquetes as $paquete) : ?>
                                 <tr>
-                                    <td><?= $paquete['id_paquete'] ?></td>
-                                    <td>
+                                    <td id="<?= $paquete['id_paquete'] ?>"><?= $contador++ ?></td>
+                                    <td id="destino_<?=$paquete['id_destino']?>">
                                         <?php
                                         $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$paquete[id_destino]'";
                                         $result = $conexion->query($sql);
@@ -699,14 +700,14 @@ if ($result->num_rows > 0) {
                                         echo $destino['nombre_destino'];
                                         ?>
                                     </td>
-                                    <td><?= $paquete['nombre_paquete'] ?></td>
-                                    <td><?= $paquete['fecha_inicio'] ?></td>
-                                    <td><?= $paquete['fecha_fin'] ?></td>
-                                    <td><?= $paquete['descripcion'] ?></td>
-                                    <td><?= $paquete['precio'] ?></td>
+                                    <td id="id_paquete_<?= $paquete['id_paquete'] ?>"><?= $paquete['nombre_paquete'] ?></td>
+                                    <td id="fecha_inicio_<?= $paquete['id_paquete'] ?>"><?= $paquete['fecha_inicio'] ?></td>
+                                    <td id="fecha_fin<?= $paquete['id_paquete'] ?>"><?= $paquete['fecha_fin'] ?></td>
+                                    <td id="descripcion_<?= $paquete['id_paquete'] ?>"><?= $paquete['descripcion'] ?></td>
+                                    <td id="precio_<?= $paquete['id_paquete'] ?>"><?= $paquete['precio'] ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">Editar</a>
-                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $paquete['id_paquete'] ?>" class="btn btn-primary btn-editar">Editar</a>
+                                        <a href="#" aria-label="<?= $paquete['id_paquete'] ?>"  id="btn-eliminar-paquete" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -720,29 +721,56 @@ if ($result->num_rows > 0) {
          <div class="contenedor-modal">
             <div class="modal-content col-md-6">
                 <div class="modal-header text-center">
-                    <h3 id="modal-titulo">Crear Paquete</h3>
+                    <h3 id="modal-titulo"></h3>
                 </div>
                 <div class="modal-body">
-                    <form action="admin/php/destino_crud.php" method="post" class="form-group" id="nuevo_destino" enctype="multipart/form-data">
+                    <form action="admin/php/paquete_crud.php" method="post" class="form-group" id="nuevo_paquete">
                         <div class="form-group row">
                             <div class="hidden">
-                                <input type="hidden" id="id_destino" name="id_destino" value="">
+                                <input type="hidden" id="id_paquete" name="id_paquete" value="">
                             </div>
+
                             <div class="form-group col-md-6">
-                                <label for="destino">Nombre</label>
-                                <input type="text" class="form-control" id="destino" name="destino" placeholder="Nombre del Destino" required>
+                                <label for="paquete">Paquete</label>
+                                <input type="text" class="form-control" id="paquete" name="paquete" placeholder="Nombre del Destino" required>
                             </div>
+
                             <div class="form-group col-md-6">
-                                <label for="direccion">Direccion</label>
-                                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
+                                <label for="fecha_inicio">Fecha Inicio</label>
+                                <input type="date" class="form-control" id="fechaInicio" name="fecha_inicio" required>
                             </div>
+
                             <div class="form-group col-md-6">
-                                <label for="descripcion">Descripcion</label>
-                                <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
+                                <label for="fecha_fin">Fecha Fin</label>
+                                <input type="date" name="fecha_fin" id="fechaFin" class="form-control" required>
                             </div>
+
                             <div class="form-group col-md-6">
-                                <label for="img-url">URL imagen</label>
-                                <input type="url" class="form-control" id="img-url" name="img-url" required>
+                                <label for="descripcion">Descripción</label>
+                                <textarea name="descripcion" id="descripcion" class="form-control" required row="3"></textarea>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="precio">Precio</label>
+                                <input type="number" name="precio" id="precio" class="form-control" required placeholder="Precio del destino">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="destino">Nombre del paquete</label>
+                                
+                                <?php 
+                                    $sql = "SELECT * FROM destinos";
+                                    $result = $conexion->query($sql);
+                                    if ($result->num_rows > 0):
+                                ?>
+
+                                <select name="nombre_paquete" id="nombrePaquete">
+                                    <?php while ($destino = $result->fetch_assoc()): ?>
+                                        <option value="<?php htmlspecialchars($destino['id_destino'])?>"><?= htmlspecialchars($destino['nombre_destino']) ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+
+                                <?php endif; ?>
                             </div>
                         </div>
                     </form>
@@ -751,7 +779,7 @@ if ($result->num_rows > 0) {
                             <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
                         </div>
                         <div class="col-md-6">
-                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-destino-modal" form="nuevo_destino" name="submit_nuevo_destino" value="">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-paquete-modal" form="nuevo_destino" name="submit_nuevo_destino" value="">
                         </div>
                     </div>
                 </div>

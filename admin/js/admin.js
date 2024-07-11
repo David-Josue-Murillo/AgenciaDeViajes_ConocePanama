@@ -143,17 +143,68 @@ document.getElementById('destinos').addEventListener('click', function () {
     borrarAlertas();
 });
 
-// Area de reservas
-document.getElementById('reservas').addEventListener('click', function () {
-    contenido.innerHTML = contenedorReservas;
-
-    // Ventana modal para crear paquetes
-});
-
 // Area de paquetes
 document.getElementById('paquetes').addEventListener('click', function () {
     contenido.innerHTML = contenedorPaquetes;
+
+    // ventana modal para crear paquete
+    document.getElementById('btn-crear-paquete').addEventListener('click', function () {
+        document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
+        document.getElementById('modal-titulo').textContent = "Crear Paquete";  // Titulo de la ventana modal
+        document.getElementById('btn-guardar-paquete-modal').value = "Crear Paquete"; // Valor del boton guardar
+        document.getElementById('btn-guardar-paquete-modal').name = "submit_nuevo_paquete"; // Valor del boton guardar
+        document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
+        document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+            document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
+        });
+    });
+
+    // Evento para editar paquete
+    document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
+        btnEditar.addEventListener('click', function () {
+            const id = this.id; // Identificador unico del destino
+            console.log(id);
+            const modal = document.querySelector('.contenedor-modal');
+            document.getElementById('id_paquete').value = id;
+            document.getElementById('modal-titulo').textContent = "Editar Paquete"; // Titulo de la ventana modal
+            document.getElementById('btn-guardar-paquete-modal').value = "Guardar Paquete"; // Valor del boton guardar
+            document.getElementById('btn-guardar-paquete-modal').name = "submit_modificar_paquete"; // Valor del boton guardar
+            modal.classList.add('modal-show'); // mostrar ventana modal
+            document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+                document.getElementById('destino').value = '';
+                document.getElementById('direccion').value = '';
+                document.getElementById('descripcion').value = '';
+                modal.classList.remove('modal-show'); // cerrar ventana modal
+            });
+
+            // Rellenar el formulario con los datos del destino
+            //rellenarFormularioDestino(id);
+        });
+    });
+
+    // Evento para borrar destino
+    document.querySelectorAll('#btn-borrar-destino').forEach(function (btnBorrar) {
+        btnBorrar.addEventListener('click', function (e) {
+            // Pedir confirmacion
+            if (confirm('¿Está seguro de borrar este destino?')) {
+                // Redirigir a php
+                const id = parseInt(e.target.ariaLabel);
+                window.location.href = 'admin/php/destino_crud.php?destino=' + id;
+                
+            }
+        });
+    });
+
+    // Eliminar alertas
+    borrarAlertas();
 });
+
+
+// Area de reservas - paquetes
+document.getElementById('reservas').addEventListener('click', function () {
+    contenido.innerHTML = contenedorReservas;
+});
+
 
 // Area de guias
 document.getElementById('guias').addEventListener('click', function () {
@@ -261,3 +312,4 @@ function rellenarFormularioDestino(id) {
     document.getElementById('descripcion').value = descripcion;
     document.getElementById('img-url').value = url_imagen;
 }
+
