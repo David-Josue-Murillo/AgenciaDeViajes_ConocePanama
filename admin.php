@@ -690,7 +690,7 @@ if ($result->num_rows > 0) {
                             <?php foreach ($paquetes as $paquete) : ?>
                                 <tr>
                                     <td id="<?= $paquete['id_paquete'] ?>"><?= $contador++ ?></td>
-                                    <td id="destino_<?=$paquete['id_destino']?>">
+                                    <td id="destino_<?=$paquete['id_paquete']?>" accesskey="<?= $paquete['id_destino'] ?>">
                                         <?php
                                         $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$paquete[id_destino]'";
                                         $result = $conexion->query($sql);
@@ -700,9 +700,9 @@ if ($result->num_rows > 0) {
                                         echo $destino['nombre_destino'];
                                         ?>
                                     </td>
-                                    <td id="id_paquete_<?= $paquete['id_paquete'] ?>"><?= $paquete['nombre_paquete'] ?></td>
+                                    <td id="nombre_paquete_<?= $paquete['id_paquete'] ?>"><?= $paquete['nombre_paquete'] ?></td>
                                     <td id="fecha_inicio_<?= $paquete['id_paquete'] ?>"><?= $paquete['fecha_inicio'] ?></td>
-                                    <td id="fecha_fin<?= $paquete['id_paquete'] ?>"><?= $paquete['fecha_fin'] ?></td>
+                                    <td id="fecha_fin_<?= $paquete['id_paquete'] ?>"><?= $paquete['fecha_fin'] ?></td>
                                     <td id="descripcion_<?= $paquete['id_paquete'] ?>"><?= $paquete['descripcion'] ?></td>
                                     <td id="precio_<?= $paquete['id_paquete'] ?>"><?= $paquete['precio'] ?></td>
                                     <td>
@@ -747,7 +747,7 @@ if ($result->num_rows > 0) {
 
                             <div class="form-group col-md-6">
                                 <label for="descripcion">Descripción</label>
-                                <textarea name="descripcion" id="descripcion" class="form-control" required row="3"></textarea>
+                                <textarea name="descripcion" id="descripcion" class="form-control" required row="3" placeholder="Descripción del paquete"></textarea>
                             </div>
 
                             <div class="form-group col-md-6">
@@ -756,7 +756,7 @@ if ($result->num_rows > 0) {
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="destino">Nombre del paquete</label>
+                                <label for="destino">Nombre del Destino</label>
                                 
                                 <?php 
                                     $sql = "SELECT * FROM destinos";

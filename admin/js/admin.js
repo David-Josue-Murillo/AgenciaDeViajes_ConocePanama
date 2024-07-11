@@ -163,13 +163,14 @@ document.getElementById('paquetes').addEventListener('click', function () {
     document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
             const id = this.id; // Identificador unico del destino
-            console.log(id);
             const modal = document.querySelector('.contenedor-modal');
             document.getElementById('id_paquete').value = id;
             document.getElementById('modal-titulo').textContent = "Editar Paquete"; // Titulo de la ventana modal
             document.getElementById('btn-guardar-paquete-modal').value = "Guardar Paquete"; // Valor del boton guardar
             document.getElementById('btn-guardar-paquete-modal').name = "submit_modificar_paquete"; // Valor del boton guardar
             modal.classList.add('modal-show'); // mostrar ventana modal
+            
+            // Vaciar campos al cerrar el modal
             document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
                 document.getElementById('destino').value = '';
                 document.getElementById('direccion').value = '';
@@ -178,7 +179,7 @@ document.getElementById('paquetes').addEventListener('click', function () {
             });
 
             // Rellenar el formulario con los datos del destino
-            //rellenarFormularioDestino(id);
+            rellenarFormularioPaquete(id);
         });
     });
 
@@ -311,5 +312,19 @@ function rellenarFormularioDestino(id) {
     document.getElementById('direccion').value = direccion;
     document.getElementById('descripcion').value = descripcion;
     document.getElementById('img-url').value = url_imagen;
+}
+
+function rellenarFormularioPaquete(id) {
+    const nombre_paquete = document.getElementById('nombre_paquete_' + id).textContent;
+    const fecha_inicio = document.getElementById('fecha_inicio_' + id).textContent;
+    const fecha_fin = document.getElementById('fecha_fin_' + id).textContent;
+    const descripcion = document.getElementById('descripcion_' + id).textContent;
+    const precio = document.getElementById('precio_' + id).textContent;
+
+    document.getElementById('paquete').value = nombre_paquete;
+    document.getElementById('fechaInicio').value = fecha_inicio;
+    document.getElementById('fechaFin').value = fecha_fin;
+    document.getElementById('descripcion').value = descripcion;
+    document.getElementById('precio').value = precio;
 }
 
