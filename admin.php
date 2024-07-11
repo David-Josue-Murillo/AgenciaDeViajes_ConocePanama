@@ -872,29 +872,29 @@ if ($result->num_rows > 0) {
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="usuario">Usuario</label>
+                                <label for="usuario">Usuarios</label><br>
                                 <select name="id_usuario" id="idUsuario">
-                                    <?php while ($usuario = $result->fetch_assoc()): ?>
-                                        <option value="<?php echo $usuario['id_usuario']; ?>"><?= htmlspecialchars($usuario['nombre']) ?> <?= htmlspecialchars($usuario['apellido']) ?></option>
-                                    <?php endwhile; ?>
+                                    <?php foreach ($usuarios as $usuario) : ?>
+                                        <option value="<?= $usuario['id_usuario'] ?>"><?= $usuario['nombre'] . ' ' . $usuario['apellido'] ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="id_destino">Destino</label>
                                 <select name="id_destino" id="idDestino">
-                                    <?php while ($destino = $result->fetch_assoc()): ?>
-                                        <option value="<?php echo $destino['id_destino']; ?>"><?= htmlspecialchars($destino['nombre_destino']) ?></option>
-                                    <?php endwhile; ?>
+                                    <?php foreach ($destinos as $destino) : ?>
+                                        <option value="<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="id_paquete">Paquete</label>
                                 <select name="id_paquete" id="idPaquete">
-                                    <?php while ($paquete = $result->fetch_assoc()): ?>
-                                        <option value="<?php echo $paquete['id_paquete']; ?>"><?= htmlspecialchars($paquete['nombre_paquete']) ?></option>
-                                    <?php endwhile; ?>
+                                    <?php foreach ($paquetes as $paquete) : ?>
+                                        <option value="<?= $paquete['id_paquete'] ?>"><?= $paquete['nombre_paquete'] ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
 
@@ -905,6 +905,7 @@ if ($result->num_rows > 0) {
 
                             <div class="form-group col-md-6">
                                 <label for="estado">Estado</label>
+                                <input type="text" class="form-control" id="estado" name="estado" required>
                             </div>
                         </div>
                     </form>

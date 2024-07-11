@@ -203,9 +203,24 @@ document.getElementById('paquetes').addEventListener('click', function () {
 });
 
 
-// Area de reservas - paquetes
+// Area de reservas 
 document.getElementById('reservas').addEventListener('click', function () {
     contenido.innerHTML = contenedorReservas;
+
+    // ventana modal para crear reserva
+    document.getElementById('btn-crear-reserva').addEventListener('click', function () {
+        document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
+        document.getElementById('modal-titulo').textContent = "Crear Reserva";  // Titulo de la ventana modal
+        document.getElementById('btn-guardar-reserva-modal').value = "Crear Reserva"; // Valor del boton guardar
+        document.getElementById('btn-guardar-reserva-modal').name = "submit_nueva_reserva"; // Valor del boton guardar
+        document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
+        document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+            document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
+        });
+    });
+
+    // Evento para editar paquete
+
 });
 
 
