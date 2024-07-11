@@ -164,7 +164,7 @@ document.getElementById('paquetes').addEventListener('click', function () {
         btnEditar.addEventListener('click', function () {
             const id = this.id; // Identificador unico del destino
             const modal = document.querySelector('.contenedor-modal');
-            document.getElementById('id_paquete').value = id;
+            document.getElementById('idPaquete').value = id;
             document.getElementById('modal-titulo').textContent = "Editar Paquete"; // Titulo de la ventana modal
             document.getElementById('btn-guardar-paquete-modal').value = "Guardar Paquete"; // Valor del boton guardar
             document.getElementById('btn-guardar-paquete-modal').name = "submit_modificar_paquete"; // Valor del boton guardar

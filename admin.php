@@ -726,7 +726,7 @@ if ($result->num_rows > 0) {
                     <form action="admin/php/paquete_crud.php" method="post" class="form-group" id="nuevo_paquete">
                         <div class="form-group row">
                             <div class="hidden">
-                                <input type="hidden" id="id_paquete" name="id_paquete" value="">
+                                <input type="hidden" id="idPaquete" name="id_paquete" value="">
                             </div>
 
                             <div class="form-group col-md-6">

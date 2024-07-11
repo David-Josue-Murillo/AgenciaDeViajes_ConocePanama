@@ -12,7 +12,7 @@ if(!$_SESSION) {
 
 // Recibiendo  datos para crear un nuevo destino
 if (isset($_POST['submit_nuevo_paquete'])) {
-    // Obteniendo los datos del formulario
+    // Obteniendo los datos del formulario para crear el paquete
     $nombre_paquete = isset($_POST['paquete']) ? mysqli_real_escape_string($conexion, $_POST['paquete']) : false;
     $fecha_inicio = isset($_POST['fecha_inicio']) ?  $_POST['fecha_inicio'] : false;
     $fecha_fin = isset($_POST['fecha_fin']) ? $_POST['fecha_fin'] : false;
@@ -20,15 +20,18 @@ if (isset($_POST['submit_nuevo_paquete'])) {
     $precio = isset($_POST['precio']) ? mysqli_real_escape_string($conexion, $_POST['precio']) : false;
     $id_destino = intval($_POST['id_destino']);
 
+    // Insertando los datos en la tabla paquetes
     $sql = "INSERT INTO paquetes (nombre_paquete, fecha_inicio, fecha_fin, descripcion, precio, id_destino) VALUES ('$nombre_paquete', '$fecha_inicio', '$fecha_fin', '$descripcion', '$precio', '$id_destino')";
-    $resultado = $conexion->query($sql);
+    $resultado = $conexion->query($sql);    // Ejecutando la consulta SQL
 
+    // Verificando si se insertó correctamente
     if ($conexion->affected_rows > 0) {
         $_SESSION['completado'] = 'Destino creado correctamente';
     } else {
         $_SESSION['error'] = 'Error al crear el destino';
     }
 
+    // Redireccionando al panel de administración
     header('Location: ../../admin.php');
     exit();
 }
@@ -36,20 +39,29 @@ if (isset($_POST['submit_nuevo_paquete'])) {
 
 // Recibiendo  datos para modificar un destino existente
 if(isset($_POST['submit_modificar_paquete'])){
-    echo "Recibiendo  datos para modificar un destino existente";
-    $id_destino = intval($_POST['id_destino']);
-    $nombre_destino = isset($_POST['destino']) ? mysqli_real_escape_string($conexion, $_POST['destino']) : false;
-    $direccion = isset($_POST['direccion']) ? mysqli_real_escape_string($conexion, $_POST['direccion']) : false; 
+    // Obteniendo los datos del formulario para modificar el paquete
+    $id_paquete = intval($_POST['id_paquete']);
+    $nombre_paquete = isset($_POST['paquete']) ? mysqli_real_escape_string($conexion, $_POST['paquete']) : false;
+    $fecha_inicio = isset($_POST['fecha_inicio']) ?  $_POST['fecha_inicio'] : false;
+    $fecha_fin = isset($_POST['fecha_fin']) ? $_POST['fecha_fin'] : false;
     $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($conexion, $_POST['descripcion']) : false;
-    $url_imagen = isset($_POST['img-url']) ? $_POST['img-url'] : false;
+    $precio = isset($_POST['precio']) ? mysqli_real_escape_string($conexion, $_POST['precio']) : false;
+    $id_destino = intval($_POST['id_destino']);
 
-    $sql = "UPDATE destinos SET nombre_destino = '$nombre_destino', direccion = '$direccion', descripcion = '$descripcion', url_imagen = '$url_imagen' WHERE id_destino = '$id_destino'";
+    // Actualizando los datos en la tabla paquetes
+    $sql = "UPDATE paquetes SET nombre_paquete = '$nombre_paquete', fecha_inicio = '$fecha_inicio', fecha_fin = '$fecha_fin', descripcion = '$descripcion', precio = '$precio', id_destino = '$id_destino' WHERE id_paquete = '$id_paquete'";
+    $resultado = $conexion->query($sql);    // Ejecutando la consulta SQL
 
+    // Verificando si se actualizó correctamente
     if ($conexion->query($sql) === TRUE) {
-        // Redireccionar al formulario de login
         $_SESSION['completado'] = "Usuario actualizado exitosamente";
-        header('Location: ../../admin.php');
+    } else {
+        $_SESSION['error'] = 'Error al actualizar el paquete';
     }
+
+    // Redireccionando al panel de administración
+    header('Location: ../../admin.php');
+    exit();
 }
 
 
