@@ -995,9 +995,9 @@ if ($result->num_rows > 0) {
 
                             <div class="form-group col-md-6">
                                 <label for="designacion">Destino designado</label>
-                                <select name="designacion" id="designacion" class="custom-select px-5"> 
-                                    <?php foreach ($destinos as $destino) : ?> 
-                                        <option value="<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></option> 
+                                <select name="id_designacion" id="designacion" class="custom-select px-5">
+                                    <?php foreach ($destinos as $destino) : ?>
+                                        <option value="<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
