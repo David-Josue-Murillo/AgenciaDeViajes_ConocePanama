@@ -2,6 +2,7 @@ window.onload = borrarAlertas();
 
 // Temporizador de session
 document.getElementById('wrapper') && cerrarSession();
+mostrarModcelCorreo();
 
 // Elementos del DOM
 const contenido = document.getElementById('page-inner');
@@ -17,10 +18,9 @@ const contenedorNuevaTabla = document.getElementById('contenedor_nueva_tabla').i
 // Logo
 document.getElementById('logo').addEventListener('click', function () {
     contenido.innerHTML = contenidoInmutable;
-});
-
-document.getElementById('logo_img').addEventListener('click', function () {
-    contenido.innerHTML = contenidoInmutable;
+    
+    // Funcion que muestra un modal con los campos para enviar un correo
+    mostrarModcelCorreo();
 });
 
 // Area de usuarios
@@ -60,6 +60,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
                 modal.classList.remove('modal-show'); // cerrar ventana modal
             });
 
+        
             // Rellenado el formulario con los datos del usuario
             rellenarFormularioUsuario(id);
         });
@@ -397,6 +398,16 @@ function cerrarSession() {
             window.location.href = '../php/exit.php'; // Redireccionar al archivo de salida
         }, 15000); // Tiempo de espera antes de que se cierre la sesión
     }, 558000); 
+}
+
+// Funcion que muestra un modal con los campos para enviar un correo
+function mostrarModcelCorreo() {
+    document.getElementById('iconMail').addEventListener('click', function () {
+        // Crear elemento modal
+        //const modal = document.querySelector('.contenedor-modal');
+        //modal.classList.add('modal-show');
+        console.log("hola");
+    });
 }
 
 function rellenarFormularioUsuario(id) {

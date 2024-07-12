@@ -193,8 +193,11 @@ if ($result->num_rows > 0) {
             <div id="page-wrapper">
                 <div id="page-inner">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-10">
                             <h2>Panel de Administrador</h2>
+                        </div>
+                        <div class="col-md-2">
+                            <h2><i id="iconMail" class="fa fa-envelope-o"></i></h2>
                         </div>
                     </div>
                     <!-- /. ROW  -->
