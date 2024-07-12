@@ -139,7 +139,7 @@
 
                         <?php if(!isset($_SESSION['login_existe'])): ?>
                         <button class="info__btn">
-                            <a class="" href="./login.php">Login</a>
+                            <a class="" href="../pages/login.php">Login</a>
                         </button>
                         <?php endif; ?>
                     </div>
