@@ -1,7 +1,6 @@
 <?php
 
 echo "Pago exitoso";
-/*include_once '../includes/header.php';
 include_once '../admin/db/conexion.php';
 
 if(isset($_POST['submit_pago'])){
@@ -17,7 +16,7 @@ if(isset($_POST['submit_pago'])){
         exit;
     }
 
-    $sql = "INSERT INTO pagos (paquete, descripcion, precio, metodo_pago) VALUES ('$paquete', '$descripcion', '$precio', '$metodo_pago')";
+    $sql = "INSERT INTO pagos (nombr_paquete, descripcion, precio_venta, metodo_pago) VALUES ('$paquete', '$descripcion', '$precio', '$metodo_pago')";
     $resultado = $conexion->query($sql);    // Ejecutando la consulta SQL
 
     // Verificando si se insertó correctamente
@@ -30,4 +29,4 @@ if(isset($_POST['submit_pago'])){
     // Redireccionar al formulario de inicio
     header('Location: ../index.php');
     exit();
-}*/
+}

@@ -182,17 +182,20 @@ if ($result->num_rows > 0) {
                 <form action="../php/procesar_pago.php" method="POST">
                     <div class="modal-body">
                         <!-- Información del Paquete -->
+                         <div class="hidden">
+                            <input type="hidden" id="nombr_paquete" name="nombr_paquete" value="">
+                         </div>
                         <div class="form-group">
                             <label for="paquete">Paquete:</label>
-                            <input type="text" class="form-control" id="paquete" name="paquete" value="Paquete 1" readonly>
+                            <input type="text" class="form-control" id="paquete" name="paquete" value="" readonly>
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Descripción:</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" readonly>Descripción del Paquete 1</textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="" readonly>Descripción del Paquete 1</textarea>
                         </div>
                         <div class="form-group">
                             <label for="precio">Precio:</label>
-                            <input type="text" class="form-control" id="precios" name="precio" value="$100.00" readonly>
+                            <input type="text" class="form-control" id="precios" name="precio" value="" readonly>
                         </div>
 
                         <!-- Métodos de Pago -->
