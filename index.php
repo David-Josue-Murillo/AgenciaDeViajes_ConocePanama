@@ -28,7 +28,7 @@ include 'admin/db/conexion.php';
     <!-- Reserva - Fin -->
 
     <!-- Acerca de - Inicio -->
-    <section class="container-fluid py-5">
+    <section class="container-fluid py-5" id="acerca_de">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
@@ -104,7 +104,7 @@ include 'admin/db/conexion.php';
     <!-- Servicios - Fin -->
 
     <!-- Blog - Inicio -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="blog">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
                 <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Blog de viajes</h6>
@@ -173,8 +173,8 @@ include 'admin/db/conexion.php';
     </div>
     <!-- Blog - Fin -->
 
-    <!-- Resgistro de user - Inicio -->
-    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+    <!-- Oferta - Inicio -->
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;" id="oferta">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-7 mb-5 mb-lg-0">
@@ -236,7 +236,7 @@ include 'admin/db/conexion.php';
             </div>
         </div>
     </div>
-    <!-- Registro de user - Fin -->
+    <!-- Oferta - Fin -->
 </main>
 
 <!-- Footer - Inicio -->

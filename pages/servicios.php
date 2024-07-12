@@ -22,7 +22,7 @@ include_once '../includes/header.php';
     <!-- Carousel - Fin -->
 
     <!-- Service Start -->
-    <div class="container-fluid py-5 section__service">
+    <div class="container-fluid py-5 section__service" id="servicios">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
                 <h6 class="fs-5 text-uppercase" style="letter-spacing: 5px;">Servicios</h6>
