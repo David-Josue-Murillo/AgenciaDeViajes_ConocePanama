@@ -706,11 +706,11 @@ if ($result->num_rows > 0) {
                                 <label for="direccion">Direccion</label>
                                 <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="descripcion">Descripcion</label>
-                                <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
+                                <textarea name="descripcion" id="descripcion" class="form-control" rows="4"></textarea>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="img-url">URL imagen</label>
                                 <input type="url" class="form-control" id="img-url" name="img-url" required>
                             </div>
@@ -749,6 +749,7 @@ if ($result->num_rows > 0) {
                                 <th>Fecha de inicio</th>
                                 <th>Fecha de fin</th>
                                 <th>Descripcion</th>
+                                <th>Cant. personas</th>
                                 <th>Precio</th>
                                 <th>Acciones</th>
                             </tr>
@@ -772,6 +773,7 @@ if ($result->num_rows > 0) {
                                     <td id="fecha_inicio_<?= $paquete['id_paquete'] ?>"><?= $paquete['fecha_inicio'] ?></td>
                                     <td id="fecha_fin_<?= $paquete['id_paquete'] ?>"><?= $paquete['fecha_fin'] ?></td>
                                     <td id="descripcion_<?= $paquete['id_paquete'] ?>"><?= $paquete['descripcion'] ?></td>
+                                    <td id="cant_personas_<?= $paquete['id_paquete'] ?>"><?= $paquete['cantidad_personas'] ?></td>
                                     <td id="precio_<?= $paquete['id_paquete'] ?>"><?= $paquete['precio'] ?></td>
                                     <td>
                                         <a href="#" id="<?= $paquete['id_paquete'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
@@ -816,6 +818,11 @@ if ($result->num_rows > 0) {
                             <div class="form-group col-md-6">
                                 <label for="descripcion">Descripción</label>
                                 <textarea name="descripcion" id="descripcion" class="form-control" required row="3" placeholder="Descripción del paquete"></textarea>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="cant_personas">Cantidad de personas</label>
+                                <input type="number" name="cant_personas" id="cant_personas" class="form-control" required placeholder="Cantidad de personas">
                             </div>
 
                             <div class="form-group col-md-6">

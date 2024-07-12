@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
                             <a class="h5 text-decoration-none" href="">Descubre los lugares más increíbles de Panamá.</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary">Comprar</button>
+                                    <button class="btn btn-primary" accesskey="<?php ?>" id="btn_comprar_paquete">Comprar</button>
                                     <h5 class="m-0">$350</h5>
                                 </div>
                             </div>

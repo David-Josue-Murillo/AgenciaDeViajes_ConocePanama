@@ -191,6 +191,7 @@ document.getElementById('paquetes').addEventListener('click', function () {
                 document.getElementById('fechaInicio').value = '';
                 document.getElementById('fechaFin').value = '';
                 document.getElementById('descripcion').value = '';
+                document.getElementById('cant_personas').value = '';
                 document.getElementById('precio').value = '';
                 modal.classList.remove('modal-show'); // cerrar ventana modal
             });
@@ -446,12 +447,14 @@ function rellenarFormularioPaquete(id) {
     const fecha_inicio = document.getElementById('fecha_inicio_' + id).textContent;
     const fecha_fin = document.getElementById('fecha_fin_' + id).textContent;
     const descripcion = document.getElementById('descripcion_' + id).textContent;
+    const cant_personas = document.getElementById('cant_personas_' + id).textContent;
     const precio = document.getElementById('precio_' + id).textContent;
 
     document.getElementById('paquete').value = nombre_paquete;
     document.getElementById('fechaInicio').value = fecha_inicio;
     document.getElementById('fechaFin').value = fecha_fin;
     document.getElementById('descripcion').value = descripcion;
+    document.getElementById('cant_personas').value = cant_personas;
     document.getElementById('precio').value = precio;
 }
 
