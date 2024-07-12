@@ -484,14 +484,11 @@ if ($result->num_rows > 0) {
                     <div class="modal-body">
                         <form action="../email/procesar.php" method="post" class="form-group" id="send_email">
                             <div class="form-group row">
-                                <div class="hidden">
-                                    <input type="hidden" id="id_usuario" name="id_usuario" value="">
-                                </div>
                                 <div class="form-group col-md-12">
-                                    <label for="id_user_email">Para: </label><br>
-                                    <select name="id_user_email" id="idUserEmail" class="custom-select px-5">
+                                    <label for="user_email">Para: </label><br>
+                                    <select name="user_email" id="userEmail" class="custom-select px-5">
                                         <?php foreach ($usuarios as $usuario) : ?>
-                                            <option value="<?= $usuario['id_usuario'] ?>"><?= $usuario['email']?></option>
+                                            <option value="<?= $usuario['email'] ?>"><?= $usuario['email']?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
