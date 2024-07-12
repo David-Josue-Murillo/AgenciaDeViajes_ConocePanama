@@ -404,9 +404,14 @@ function cerrarSession() {
 function mostrarModcelCorreo() {
     document.getElementById('iconMail').addEventListener('click', function () {
         // Crear elemento modal
-        //const modal = document.querySelector('.contenedor-modal');
-        //modal.classList.add('modal-show');
-        console.log("hola");
+        document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
+        document.getElementById('modal-titulo').textContent = "Enviar Email";  // Titulo de la ventana modal
+        document.getElementById('btn-enviar_email').value = "Enviar Email"; // Valor del boton guardar
+        document.getElementById('btn-enviar_email').name = "submit_enviar_email"; // Valor del boton guardar
+        document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
+        document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+            document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
+        });
     });
 }
 
