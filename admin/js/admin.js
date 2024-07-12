@@ -2,6 +2,7 @@ window.onload = borrarAlertas();
 
 // Temporizador de session
 document.getElementById('wrapper') && cerrarSession();
+mostrarModcelCorreo();
 
 // Elementos del DOM
 const contenido = document.getElementById('page-inner');
@@ -17,15 +18,15 @@ const contenedorNuevaTabla = document.getElementById('contenedor_nueva_tabla').i
 // Logo
 document.getElementById('logo').addEventListener('click', function () {
     contenido.innerHTML = contenidoInmutable;
-});
-
-document.getElementById('logo_img').addEventListener('click', function () {
-    contenido.innerHTML = contenidoInmutable;
+    
+    // Funcion que muestra un modal con los campos para enviar un correo
+    mostrarModcelCorreo();
 });
 
 // Area de usuarios
 document.getElementById('usuarios').addEventListener('click', function () {
     contenido.innerHTML = contenedorUsuarios;
+    
     
     // ventana modal para crear usuario
     document.getElementById('btn-crear-usuario').addEventListener('click', function () {
@@ -39,6 +40,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
         });
     });
 
+    
     // Evento para editar usuario
     document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
@@ -58,11 +60,13 @@ document.getElementById('usuarios').addEventListener('click', function () {
                 modal.classList.remove('modal-show'); // cerrar ventana modal
             });
 
+        
             // Rellenado el formulario con los datos del usuario
             rellenarFormularioUsuario(id);
         });
     });
 
+    
     // Evento para borrar usuario
     document.querySelectorAll('#btn-borrar-usuario').forEach(function (btnBorrar) {
         btnBorrar.addEventListener('click', function (e) {
@@ -76,6 +80,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
         });
     });
 
+    
     // Borrar advertencias
     const alerta = document.querySelector('.alerta');
     if (alerta) {
@@ -85,6 +90,16 @@ document.getElementById('usuarios').addEventListener('click', function () {
     }
 
     
+    // Evento para crear PDF
+    document.getElementById('userPDF').addEventListener('click', function () {
+        window.open('doc/user_pdf.php', '_blank');
+    });
+    
+
+    // Evento para crear EXCEL
+    document.getElementById('userEXCEL').addEventListener('click', function () {
+        window.open('doc/user_excel.php', '_blank');
+    });
 });
 
 
@@ -176,6 +191,7 @@ document.getElementById('paquetes').addEventListener('click', function () {
                 document.getElementById('fechaInicio').value = '';
                 document.getElementById('fechaFin').value = '';
                 document.getElementById('descripcion').value = '';
+                document.getElementById('cant_personas').value = '';
                 document.getElementById('precio').value = '';
                 modal.classList.remove('modal-show'); // cerrar ventana modal
             });
@@ -380,9 +396,23 @@ function cerrarSession() {
         alert('La sesión esta por expirar. Por favor, vuelva a iniciar sesión.'); // Mensaje de alerta antes de que se cierre la sesión
 
         setTimeout(() => {
-            window.location.href = 'php/exit.php'; // Redireccionar al archivo de salida
+            window.location.href = '../php/exit.php'; // Redireccionar al archivo de salida
         }, 15000); // Tiempo de espera antes de que se cierre la sesión
     }, 558000); 
+}
+
+// Funcion que muestra un modal con los campos para enviar un correo
+function mostrarModcelCorreo() {
+    document.getElementById('iconMail').addEventListener('click', function () {
+        // Crear elemento modal
+        document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
+        document.getElementById('modal-titulo').textContent = "Mensaje nuevo";  // Titulo de la ventana modal
+        document.getElementById('btn-enviar_email').value = "Enviar Email"; // Valor del boton guardar
+        document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
+        document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
+            document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
+        });
+    });
 }
 
 function rellenarFormularioUsuario(id) {
@@ -417,12 +447,14 @@ function rellenarFormularioPaquete(id) {
     const fecha_inicio = document.getElementById('fecha_inicio_' + id).textContent;
     const fecha_fin = document.getElementById('fecha_fin_' + id).textContent;
     const descripcion = document.getElementById('descripcion_' + id).textContent;
+    const cant_personas = document.getElementById('cant_personas_' + id).textContent;
     const precio = document.getElementById('precio_' + id).textContent;
 
     document.getElementById('paquete').value = nombre_paquete;
     document.getElementById('fechaInicio').value = fecha_inicio;
     document.getElementById('fechaFin').value = fecha_fin;
     document.getElementById('descripcion').value = descripcion;
+    document.getElementById('cant_personas').value = cant_personas;
     document.getElementById('precio').value = precio;
 }
 

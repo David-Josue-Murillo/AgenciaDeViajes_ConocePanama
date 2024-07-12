@@ -17,11 +17,12 @@ if (isset($_POST['submit_nuevo_paquete'])) {
     $fecha_inicio = isset($_POST['fecha_inicio']) ?  $_POST['fecha_inicio'] : false;
     $fecha_fin = isset($_POST['fecha_fin']) ? $_POST['fecha_fin'] : false;
     $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($conexion, $_POST['descripcion']) : false;
+    $cant_personas = isset($_POST['cant_personas']) ? mysqli_real_escape_string($conexion, $_POST['cant_personas']) : false;
     $precio = isset($_POST['precio']) ? mysqli_real_escape_string($conexion, $_POST['precio']) : false;
     $id_destino = intval($_POST['id_destino']);
 
     // Insertando los datos en la tabla paquetes
-    $sql = "INSERT INTO paquetes (nombre_paquete, fecha_inicio, fecha_fin, descripcion, precio, id_destino) VALUES ('$nombre_paquete', '$fecha_inicio', '$fecha_fin', '$descripcion', '$precio', '$id_destino')";
+    $sql = "INSERT INTO paquetes (nombre_paquete, fecha_inicio, fecha_fin, descripcion, cantidad_personas, precio, id_destino) VALUES ('$nombre_paquete', '$fecha_inicio', '$fecha_fin', '$descripcion', '$cant_personas', '$precio', '$id_destino')";
     $resultado = $conexion->query($sql);    // Ejecutando la consulta SQL
 
     // Verificando si se insertó correctamente
@@ -45,11 +46,12 @@ if(isset($_POST['submit_modificar_paquete'])){
     $fecha_inicio = isset($_POST['fecha_inicio']) ?  $_POST['fecha_inicio'] : false;
     $fecha_fin = isset($_POST['fecha_fin']) ? $_POST['fecha_fin'] : false;
     $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($conexion, $_POST['descripcion']) : false;
+    $cant_personas = isset($_POST['cant_personas']) ? mysqli_real_escape_string($conexion, $_POST['cant_personas']) : false;
     $precio = isset($_POST['precio']) ? mysqli_real_escape_string($conexion, $_POST['precio']) : false;
     $id_destino = intval($_POST['id_destino']);
 
     // Actualizando los datos en la tabla paquetes
-    $sql = "UPDATE paquetes SET nombre_paquete = '$nombre_paquete', fecha_inicio = '$fecha_inicio', fecha_fin = '$fecha_fin', descripcion = '$descripcion', precio = '$precio', id_destino = '$id_destino' WHERE id_paquete = '$id_paquete'";
+    $sql = "UPDATE paquetes SET nombre_paquete = '$nombre_paquete', fecha_inicio = '$fecha_inicio', fecha_fin = '$fecha_fin', descripcion = '$descripcion', cantidad_personas = '$cant_personas', precio = '$precio', id_destino = '$id_destino' WHERE id_paquete = '$id_paquete'";
     $resultado = $conexion->query($sql);    // Ejecutando la consulta SQL
 
     // Verificando si se actualizó correctamente

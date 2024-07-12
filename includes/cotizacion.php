@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
     <div class="container pb-5">
         <div class="bg-light shadow" style="padding: 30px;">
             <div class="row align-items-center" style="min-height: 60px;">
-                <form action="php/cotizacion.php" method="post" class="d-md-flex">
+                <form action="../php/cotizacion.php" method="post" class="d-md-flex" id="crear_reservar">
                     <div class="col-md-10">
                         <div class="row">
                             <div class="col-md-3">
@@ -64,9 +64,9 @@ if (!isset($_SESSION)) {
                     </div>
                     <div class="col-md-2">
                         <?php if (isset($_SESSION['id_usuario'])) : ?>
-                            <button class="info__btn" style="height: 47px; margin-top: -2px;" type="submit" name="submit_cotizacion">Reservar</button>
+                            <button class="info__btn" style="height: 47px; margin-top: -2px;" form="crear_reservar" type="submit" name="submit_cotizacion">Reservar</button>
                         <?php else : ?>
-                            <button class="info__btn" style="height: 47px; margin-top: -2px;" type="submit" name="submit_cotizacion">Cotizar</button>
+                            <button class="info__btn" style="height: 47px; margin-top: -2px;" form="crear_reservar" type="submit" name="submit_cotizacion">Cotizar</button>
                         <?php endif; ?>
                     </div>
                 </form>

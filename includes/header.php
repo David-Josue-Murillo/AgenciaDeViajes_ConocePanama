@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <title>Conoce Panamá</title>
 </head>
 
@@ -43,7 +43,7 @@
         <div class="container-fluid">
             <div class="d-flex align-items-center">
                 <a class="navbar-brand" href="#">
-                    <img class="nav__img" src="./assets/img/logo.png" alt="Administrador">
+                    <img class="nav__img" src="../assets/img/logo.png" alt="Administrador">
                 </a>
 
                 <div class="nav__text d-flex w-100">
@@ -67,16 +67,16 @@
                         <a class="nav-link" aria-current="page" href="../index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../paquetes.php">Paquetes</a>
+                        <a class="nav-link" href="../pages/paquetes.php">Paquetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../panama.php">Panamá</a>
+                        <a class="nav-link" href="../pages/panama.php">Panamá</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../servicios.php">Servicios</a>
+                        <a class="nav-link" href="../pages/servicios.php">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../contacto.php">Contacto</a>
+                        <a class="nav-link" href="../pages/contacto.php">Contacto</a>
                     </li>
                 </ul>
 
@@ -139,7 +139,7 @@
 
                         <?php if(!isset($_SESSION['login_existe'])): ?>
                         <button class="info__btn">
-                            <a class="" href="./login.php">Login</a>
+                            <a class="" href="../pages/login.php">Login</a>
                         </button>
                         <?php endif; ?>
                     </div>

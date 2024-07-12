@@ -18,11 +18,11 @@
             <div class="col-lg-4 col-md-6 mb-5">
                 <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Nuestros Servicios</h5>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Acerca de</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Ofertas</a>
-                    <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Blog</a>
+                    <a class="text-white-50 mb-2" href="../index.php#acerca_de"><i class="fa fa-angle-right mr-2"></i>Acerca de</a>
+                    <a class="text-white-50 mb-2" href="../pages/panama.php#top_destinos"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
+                    <a class="text-white-50 mb-2" href="../pages/servicios.php#servicios"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
+                    <a class="text-white-50 mb-2" href="../index.php#oferta"><i class="fa fa-angle-right mr-2"></i>Ofertas</a>
+                    <a class="text-white-50" href="../index.php#blog"><i class="fa fa-angle-right mr-2"></i>Blog</a>
                 </div>
             </div>
             
@@ -57,4 +57,6 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="js/envio-email.js"></script>
+<script src="../js/envio-email.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/buy_paquete.js"></script>

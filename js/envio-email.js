@@ -12,7 +12,7 @@ $('#sendMessageButton').click(function(e) {
     datos.append("message", message);
 
     $.ajax({
-        url: "../controller/procesar.php",
+        url: "../email/procesar.php",
         method: "POST",
         data: datos,
         cache: false,
@@ -42,7 +42,7 @@ $('#sendEmailSuscribeBtn').click(function() {
     datosEmail.append("email", emailSuscribe);
 
     $.ajax({
-        url: "/controller/procesar.php",
+        url: "/email/procesar.php",
         method: "POST",
         data: datosEmail,
         cache: false,

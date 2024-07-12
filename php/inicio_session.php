@@ -33,13 +33,16 @@ if(isset($_POST['submit_login'])){
             // Redireccionamos al formulario de inicio de sesión
             $_SESSION['login_existe'] = true;
             header('Location: ../index.php');
+            exit();
         } else {
             $_SESSION['error_login'] = "Contraseña incorrecta";
-            header('Location: ../login.php');
+            header('Location: ../pages/login.php');
+            exit();
         }
     } else {
         $_SESSION['error_login'] = "Usuario no encontrado";
-        header('Location: ../login.php');
+        header('Location: ../pages/login.php');
+        exit();
     }
 }
 

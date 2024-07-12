@@ -123,6 +123,15 @@ if ($result->num_rows > 0) {
     <?php endif; ?>
 
     <?php if (isset($_SESSION['login'])) : ?>
+        <?php
+        $rol = '';
+        if ($_SESSION['tipo_usuario'] == 2) {
+            $rol = 'ROOT';
+        } else {
+            $rol = 'Admin';
+        }
+        ?>
+
         <div id="wrapper">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="adjust-nav">
@@ -136,7 +145,7 @@ if ($result->num_rows > 0) {
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right text-center" style="margin-right: 30px;">
-                            <li><a href=""><?php echo $_SESSION['nombre_user'] . ' ' . $_SESSION['apellido_user']; ?></a></li>
+                            <li><a href=""><?php echo $_SESSION['nombre_user'] . ' ' . $_SESSION['apellido_user']; ?> - <?= $rol ?></a></li>
                             <li><a href="../php/exit.php">Salir</a></li>
                         </ul>
                     </div>
@@ -184,8 +193,11 @@ if ($result->num_rows > 0) {
             <div id="page-wrapper">
                 <div id="page-inner">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-10">
                             <h2>Panel de Administrador</h2>
+                        </div>
+                        <div class="col-md-2">
+                            <h2><i id="iconMail" class="fa fa-envelope-o"></i></h2>
                         </div>
                     </div>
                     <!-- /. ROW  -->
@@ -462,6 +474,45 @@ if ($result->num_rows > 0) {
                 <!-- /. PAGE INNER  -->
             </div>
             <!-- /. PAGE WRAPPER  -->
+
+            <!-- HTML Oculto para cargar el modal para enviar email -->
+            <div class="contenedor-modal">
+                <div class="modal-content col-md-6">
+                    <div class="modal-header text-center">
+                        <h3 id="modal-titulo"></h3>
+                    </div>
+                    <div class="modal-body">
+                        <form action="../email/procesar.php" method="post" class="form-group" id="send_email">
+                            <div class="form-group row">
+                                <div class="form-group col-md-12">
+                                    <label for="user_email">Para: </label><br>
+                                    <select name="user_email" id="userEmail" class="custom-select px-5">
+                                        <?php foreach ($usuarios as $usuario) : ?>
+                                            <option value="<?= $usuario['email'] ?>"><?= $usuario['email']?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="asunto_email">Asunto</label>
+                                    <input type="text" class="form-control" id="asuntoEmail" name="asunto_email" placeholder="Asunto del mensaje" required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="mensaje_email">Mensaje</label>
+                                    <textarea name="mensaje_email" id="mensajeEmail" class="form-control" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary btn-block w-100" id="btn-enviar_email" form="send_email" name="send_email" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     <?php endif; ?>
 
@@ -474,16 +525,16 @@ if ($result->num_rows > 0) {
                     <h1>Lista de Usuarios</h1>
 
 
-                    <?php if(isset($_POST['completado'])): ?>
+                    <?php if (isset($_POST['completado'])) : ?>
                         <?php unset($_SESSION['incompleto']) ?>
                         <p class="alerta"><?= $_SESSION['completado'] ?></p>
                     <?php endif ?>
 
-                    <?php if($_SESSION['incompleto']): ?>
+                    <?php if ($_SESSION['incompleto']) : ?>
                         <p class="alerta"><?= $_SESSION['incompleto'] ?></p>
                     <?php endif ?>
 
-                    <button id="btn-crear-usuario" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Usuario</button>
+                    <button id="btn-crear-usuario" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Crear Usuario</button>
                 </div>
 
                 <div class="row" id="tabla-usuarios">
@@ -505,20 +556,37 @@ if ($result->num_rows > 0) {
                                     <td id="nombre_<?= $usuario['id_usuario'] ?>"><?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?></td>
                                     <td id="telefono_<?= $usuario['id_usuario'] ?>"><?= $usuario['telefono'] ?></td>
                                     <td id="email_<?= $usuario['id_usuario'] ?>"><?= $usuario['email'] ?></td>
-                                    <td id="tipo_usuario_<?= $usuario['id_usuario'] ?>"><?php if ($usuario['tipo_usuario'] == 1) echo 'Administrador';
-                                        else echo 'Usuario'; ?></td>
+                                    <td id="tipo_usuario_<?= $usuario['id_usuario'] ?>">
+                                        <?php
+                                        $sql = "SELECT tipo_usuario FROM tipo_usuarios WHERE usuario_id = '$usuario[tipo_usuario]'";
+                                        $result = $conexion->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            $tipo_usuario = $result->fetch_assoc();
+                                            echo $tipo_usuario['tipo_usuario'];
+                                        }
+                                        ?>
+                                    </td>
                                     <td>
-                                        <a href="#" id="<?= $usuario['id_usuario'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $usuario['id_usuario'] ?>" class="btn btn-danger" id="btn-borrar-usuario">Eliminar</a>
+                                        <a href="#" id="<?= $usuario['id_usuario'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $usuario['id_usuario'] ?>" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>" id="btn-borrar-usuario">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#" class="btn btn-warning btn-block w-100 fs" id="userPDF">Crear PDF</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" class="btn btn-success btn-block w-100" id="userEXCEL">Crear EXCEL</a>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!-- HTML Oculto para cargar el modal de usuarios -->
         <div class="contenedor-modal">
             <div class="modal-content col-md-6">
@@ -552,8 +620,9 @@ if ($result->num_rows > 0) {
                             <div class="form-group col-md-6">
                                 <label for="tipo_usuario">Tipo de usuario</label>
                                 <select name="tipo_usuario" class="custom-select px-5" required="required">
+                                    <option value="0">Usuario</option>
                                     <option value="1">Administrador</option>
-                                    <option value="2">Usuario</option>
+                                    <option value="2">ROOT</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6 campo_password_delete">
@@ -582,7 +651,7 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Destinos</h6>
                     <h1>Lista de Destinos</h1>
-                    <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2 mb-2">Crear Destino</button>
+                    <button id="btn-crear-destino" class="btn btn-primary py-md-3 px-md-5 mt-2 mb-2 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Crear Destino</button>
                 </div>
                 <div class="row" id="tabla-destinos">
                     <table class="table table-striped table-bordered table-hover">
@@ -600,14 +669,14 @@ if ($result->num_rows > 0) {
                             <?= $contador = 1 ?>
                             <?php foreach ($destinos as $destino) : ?>
                                 <tr>
-                                    <td id="<?= $destino['id_destino'] ?>"><?= $contador++?></td>
+                                    <td id="<?= $destino['id_destino'] ?>"><?= $contador++ ?></td>
                                     <td id="destino_<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></td>
                                     <td id="direccion_<?= $destino['id_destino'] ?>"><?= $destino['direccion'] ?></td>
                                     <td id="descripcion_<?= $destino['id_destino'] ?>"><?= $destino['descripcion'] ?></td>
                                     <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['url_imagen'] ?></td>
                                     <td>
-                                        <a href="#" id="<?= $destino['id_destino'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $destino['id_destino'] ?>" id="btn-borrar-destino" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $destino['id_destino'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $destino['id_destino'] ?>" id="btn-borrar-destino" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -637,11 +706,11 @@ if ($result->num_rows > 0) {
                                 <label for="direccion">Direccion</label>
                                 <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="descripcion">Descripcion</label>
-                                <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
+                                <textarea name="descripcion" id="descripcion" class="form-control" rows="4"></textarea>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="img-url">URL imagen</label>
                                 <input type="url" class="form-control" id="img-url" name="img-url" required>
                             </div>
@@ -668,7 +737,7 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Paquetes</h6>
                     <h1>Lista de Paquetes</h1>
-                    <button id="btn-crear-paquete" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Paquete</button>
+                    <button id="btn-crear-paquete" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Crear Paquete</button>
                 </div>
                 <div class="row" id="tabla-paquetes">
                     <table class="table table-striped table-bordered table-hover">
@@ -680,6 +749,7 @@ if ($result->num_rows > 0) {
                                 <th>Fecha de inicio</th>
                                 <th>Fecha de fin</th>
                                 <th>Descripcion</th>
+                                <th>Cant. personas</th>
                                 <th>Precio</th>
                                 <th>Acciones</th>
                             </tr>
@@ -689,7 +759,7 @@ if ($result->num_rows > 0) {
                             <?php foreach ($paquetes as $paquete) : ?>
                                 <tr>
                                     <td><?= $contador++ ?></td>
-                                    <td id="destino_<?=$paquete['id_paquete']?>" accesskey="<?= $paquete['id_destino'] ?>">
+                                    <td id="destino_<?= $paquete['id_paquete'] ?>" accesskey="<?= $paquete['id_destino'] ?>">
                                         <?php
                                         $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$paquete[id_destino]'";
                                         $result = $conexion->query($sql);
@@ -703,10 +773,11 @@ if ($result->num_rows > 0) {
                                     <td id="fecha_inicio_<?= $paquete['id_paquete'] ?>"><?= $paquete['fecha_inicio'] ?></td>
                                     <td id="fecha_fin_<?= $paquete['id_paquete'] ?>"><?= $paquete['fecha_fin'] ?></td>
                                     <td id="descripcion_<?= $paquete['id_paquete'] ?>"><?= $paquete['descripcion'] ?></td>
+                                    <td id="cant_personas_<?= $paquete['id_paquete'] ?>"><?= $paquete['cantidad_personas'] ?></td>
                                     <td id="precio_<?= $paquete['id_paquete'] ?>"><?= $paquete['precio'] ?></td>
                                     <td>
-                                        <a href="#" id="<?= $paquete['id_paquete'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $paquete['id_paquete'] ?>"  id="btn-borrar-paquete" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $paquete['id_paquete'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $paquete['id_paquete'] ?>" id="btn-borrar-paquete" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -716,8 +787,8 @@ if ($result->num_rows > 0) {
             </div>
         </div>
 
-         <!-- HTML Oculto para cargar el modal de paquetes -->
-         <div class="contenedor-modal">
+        <!-- HTML Oculto para cargar el modal de paquetes -->
+        <div class="contenedor-modal">
             <div class="modal-content col-md-6">
                 <div class="modal-header text-center">
                     <h3 id="modal-titulo"></h3>
@@ -750,24 +821,29 @@ if ($result->num_rows > 0) {
                             </div>
 
                             <div class="form-group col-md-6">
+                                <label for="cant_personas">Cantidad de personas</label>
+                                <input type="number" name="cant_personas" id="cant_personas" class="form-control" required placeholder="Cantidad de personas">
+                            </div>
+
+                            <div class="form-group col-md-6">
                                 <label for="precio">Precio</label>
                                 <input type="number" name="precio" id="precio" class="form-control" required placeholder="Precio del destino">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="destino">Nombre del Destino</label>
-                                
-                                <?php 
-                                    $sql = "SELECT * FROM destinos";
-                                    $result = $conexion->query($sql);
-                                    if ($result->num_rows > 0):
+
+                                <?php
+                                $sql = "SELECT * FROM destinos";
+                                $result = $conexion->query($sql);
+                                if ($result->num_rows > 0) :
                                 ?>
 
-                                <select name="id_destino" id="idDestino">
-                                    <?php while ($destino = $result->fetch_assoc()): ?>
-                                        <option value="<?php echo $destino['id_destino']; ?>"><?= htmlspecialchars($destino['nombre_destino']) ?></option>
-                                    <?php endwhile; ?>
-                                </select>
+                                    <select name="id_destino" id="idDestino">
+                                        <?php while ($destino = $result->fetch_assoc()) : ?>
+                                            <option value="<?php echo $destino['id_destino']; ?>"><?= htmlspecialchars($destino['nombre_destino']) ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
 
                                 <?php endif; ?>
                             </div>
@@ -793,7 +869,7 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Reservas</h6>
                     <h1>Lista de Reservas</h1>
-                    <button id="btn-crear-reserva" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Reserva</button>
+                    <button id="btn-crear-reserva" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Crear Reserva</button>
                 </div>
 
                 <div class="row" id="tabla-reservas">
@@ -815,7 +891,7 @@ if ($result->num_rows > 0) {
                                 <tr>
                                     <td><?= $contador++ ?></td>
                                     <td id="usuario_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_usuario'] ?>">
-                                        <?php 
+                                        <?php
                                         $sql = "SELECT nombre, apellido FROM usuarios WHERE id_usuario = '$reserva[id_usuario]'";
                                         $result = $conexion->query($sql);
                                         if ($result->num_rows > 0) {
@@ -825,7 +901,7 @@ if ($result->num_rows > 0) {
                                         ?>
                                     </td>
                                     <td id="destino_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_destino'] ?>">
-                                        <?php 
+                                        <?php
                                         $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$reserva[id_destino]'";
                                         $result = $conexion->query($sql);
                                         if ($result->num_rows > 0) {
@@ -835,7 +911,7 @@ if ($result->num_rows > 0) {
                                         ?>
                                     </td>
                                     <td id="paquete_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_paquete'] ?>">
-                                        <?php 
+                                        <?php
                                         $sql = "SELECT nombre_paquete FROM paquetes WHERE id_paquete = '$reserva[id_paquete]'";
                                         $result = $conexion->query($sql);
                                         if ($result->num_rows > 0) {
@@ -847,8 +923,8 @@ if ($result->num_rows > 0) {
                                     <td id="fechaReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['fecha_reserva'] ?></td>
                                     <td id="estado_<?= $reserva['id_reserva'] ?>"><?= $reserva['estado'] ?></td>
                                     <td>
-                                        <a href="#" id="<?= $reserva['id_reserva'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $reserva['id_reserva'] ?>" id="btn-borrar-reserva" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $reserva['id_reserva'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $reserva['id_reserva'] ?>" id="btn-borrar-reserva" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -932,7 +1008,7 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Guias</h6>
                     <h1>Lista de Guias</h1>
-                    <button id="btn-crear-guia" class="btn btn-primary py-md-3 px-md-5 mt-2">Crear Guia</button>
+                    <button id="btn-crear-guia" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Crear Guia</button>
                 </div>
                 <div class="row" id="tabla-guias">
                     <table class="table table-striped table-bordered table-hover">
@@ -964,8 +1040,8 @@ if ($result->num_rows > 0) {
                                     </td>
                                     <td id="url_perfil_<?= $guia['guia_id'] ?>"><?= $guia['url_perfil'] ?></td>
                                     <td>
-                                        <a href="#" id="<?= $guia['guia_id'] ?>" class="btn btn-primary btn-editar">Editar</a>
-                                        <a href="#" aria-label="<?= $guia['guia_id'] ?>" id="btn-borrar-guia" class="btn btn-danger">Eliminar</a>
+                                        <a href="#" id="<?= $guia['guia_id'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $guia['guia_id'] ?>" id="btn-borrar-guia" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -1002,8 +1078,8 @@ if ($result->num_rows > 0) {
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-12"> 
-                                <label for="url_perfil">URL de la imagen</label> 
+                            <div class="form-group col-md-12">
+                                <label for="url_perfil">URL de la imagen</label>
                                 <input type="url" class="form-control" id="urlPerfil" name="url_perfil" placeholder="URL de la imagen" required>
                             </div>
                         </div>
@@ -1045,7 +1121,7 @@ if ($result->num_rows > 0) {
                                         <input type="number" class="form-control" id="agregarCantidad" name="agregarTabla" value="1">
                                     </div>
                                     <div class="form-group col-md-5">
-                                        <input type="button" id="agregarCampos" class="btn btn-primary btn-block" value="Agregar">
+                                        <input type="button" id="agregarCampos" class="btn btn-primary btn-block <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>" value="Agregar">
                                     </div>
                                 </div>
                             </div>
@@ -1083,7 +1159,7 @@ if ($result->num_rows > 0) {
                     </form>
 
                     <div class="form-group">
-                        <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100" form="formNuevaTabla" value="Crear Tabla" />
+                        <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>" form="formNuevaTabla" value="Crear Tabla" />
                     </div>
                 </div>
             </div>
@@ -1094,7 +1170,7 @@ if ($result->num_rows > 0) {
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/jquery.metisMenu.js"></script>

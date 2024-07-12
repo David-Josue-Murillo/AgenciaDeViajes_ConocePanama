@@ -14,7 +14,7 @@ include 'admin/db/conexion.php';
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours & Viajes</h4>
                             <h1 class="display-3 text-white mb-md-4">Descubramos el mundo juntos</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Ver Paquetes</a>
+                            <a href="pages/paquetes.php#paquetes" class="btn btn-primary py-md-3 px-md-5 mt-2" id="ver_paquetes">Ver Paquetes</a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ include 'admin/db/conexion.php';
     <!-- Reserva - Fin -->
 
     <!-- Acerca de - Inicio -->
-    <section class="container-fluid py-5">
+    <section class="container-fluid py-5" id="acerca_de">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
@@ -49,7 +49,11 @@ include 'admin/db/conexion.php';
                                 <img class="img-fluid" src="assets/img/about-2.webp" alt="">
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary mt-1">Reservar ahora</a>
+                        <a href="<?php if(!isset($_SESSION['login_existe'])){
+                            echo "pages/login.php";
+                            }?>
+
+                            <?php if(isset($_SESSION['login_existe'])): ?>#ver_paquetes<?php endif; ?>" class="btn btn-primary mt-1">Reservar ahora</a>
                     </div>
                 </div>
             </div>
@@ -100,7 +104,7 @@ include 'admin/db/conexion.php';
     <!-- Servicios - Fin -->
 
     <!-- Blog - Inicio -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="blog">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
                 <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Blog de viajes</h6>
@@ -169,8 +173,8 @@ include 'admin/db/conexion.php';
     </div>
     <!-- Blog - Fin -->
 
-    <!-- Resgistro de user - Inicio -->
-    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+    <!-- Oferta - Inicio -->
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;" id="oferta">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-7 mb-5 mb-lg-0">
@@ -232,7 +236,7 @@ include 'admin/db/conexion.php';
             </div>
         </div>
     </div>
-    <!-- Registro de user - Fin -->
+    <!-- Oferta - Fin -->
 </main>
 
 <!-- Footer - Inicio -->
