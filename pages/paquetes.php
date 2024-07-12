@@ -11,6 +11,16 @@ if ($result->num_rows > 0) {
         $destinos[] = $row;
     }
 }
+
+$sql = "SELECT * FROM paquetes";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    $paquetes = array();
+    while ($row = $result->fetch_assoc()) {
+        $paquetes[] = $row;
+    }
+}
 ?>
 
    <!-- Carousel - Inicio -->
@@ -42,18 +52,18 @@ if ($result->num_rows > 0) {
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="../assets/img/paquete_4.webp " alt="">
+                        <img class="img-fluid" src="<?php echo $destinos[0]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Bocas del Toro</small>
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Arch de las Perlas</small>
                                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 dias</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="">Descubre los lugares más increíbles de Panamá.</a>
+                            <a class="h5 text-decoration-none" href="">Vistas al mar, jardín, terraza, restaurante, bar y instalaciones para deportes acuáticos</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <button class="btn btn-primary" accesskey="<?php ?>" id="btn_comprar_paquete">Comprar</button>
-                                    <h5 class="m-0">$350</h5>
+                                    <h5 class="m-0">$140</h5>
                                 </div>
                             </div>
                         </div>
@@ -61,18 +71,18 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="../assets/img/paquete_2.webp" alt="">
+                        <img class="img-fluid" src="<?php echo $destinos[1]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Contadora</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>6 dias</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>4 dias</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>3 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="">Descubre las maravillas de la isla de Isla Contadora.</a>
+                            <a class="h5 text-decoration-none" href="">Descubre las maravillas de la isla de Isla Contadora</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <button class="btn btn-primary">Comprar</button>
-                                    <h5 class="m-0">$350</h5>
+                                    <h5 class="m-0">$175</h5>
                                 </div>
                             </div>
                         </div>
@@ -80,18 +90,18 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="../assets/img/paquete_3.webp" alt="">
+                        <img class="img-fluid" src="<?php echo $destinos[2]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Taboga</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>4 dias</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>2 dias</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
                             </div>
                             <a class="h5 text-decoration-none" href="">Conoce los bellas aguas de las isla Taboga</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <button class="btn btn-primary">Comprar</button>
-                                    <h5 class="m-0">$350</h5>
+                                    <h5 class="m-0">$140</h5>
                                 </div>
                             </div>
                         </div>
@@ -99,18 +109,18 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="../assets/img/paquete_7.jpg" alt="">
+                        <img class="img-fluid" src="<?php echo $destinos[3]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Hotel Candy Rose</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 dias</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>6 Personas</small>
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Parque Soberania</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>1 dia</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="">Los mejores paisajes naturales de Panamá</a>
+                            <a class="h5 text-decoration-none" href="">Tours Actividades Tours a pie, Aventura y naturaleza</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <button class="btn btn-primary">Comprar</button>
-                                    <h5 class="m-0">$350</h5>
+                                    <h5 class="m-0">$45</h5>
                                 </div>
                             </div>
                         </div>
@@ -118,18 +128,18 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="../assets/img/paquete_7.webp" alt="">
+                        <img class="img-fluid" src="<?php echo $destinos[4]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Playa Blanca</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 dias</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>7 dias</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>3 Personas</small>
                             </div>
                             <a class="h5 text-decoration-none" href="">Town Centers, Playas, Restaurantes y más</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <button class="btn btn-primary">Comprar</button>
-                                    <h5 class="m-0">$350</h5>
+                                    <h5 class="m-0">$210</h5>
                                 </div>
                             </div>
                         </div>
@@ -137,18 +147,18 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="../assets/img/paquete_6.webp" alt="">
+                        <img class="img-fluid" src="<?php echo $destinos[5]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Hotel Azul</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>4 dias</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Azul Paradise</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>5 dias</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>3 Persona</small>
                             </div>
                             <a class="h5 text-decoration-none" href="">Playa, paisaje y más ¿Que esperas?</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <button class="btn btn-primary">Comprar</button>
-                                    <h5 class="m-0">$350</h5>
+                                    <h5 class="m-0">$250</h5>
                                 </div>
                             </div>
                         </div>
