@@ -1,6 +1,6 @@
 <?php
-include_once 'includes/header.php';
-include 'admin/db/conexion.php';
+include_once '../includes/header.php';
+include '../admin/db/conexion.php';
 
 $sql = "SELECT * FROM destinos";
 $result = $conexion->query($sql);
@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="assets/img/bg_destino.png" alt="Image">
+                    <img class="w-100" src="../assets/img/bg_destino.png" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Explorando Panamá</h4>
@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/img/paquete_4.webp " alt="">
+                        <img class="img-fluid" src="../assets/img/paquete_4.webp " alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Bocas del Toro</small>
@@ -61,7 +61,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/img/paquete_2.webp" alt="">
+                        <img class="img-fluid" src="../assets/img/paquete_2.webp" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Contadora</small>
@@ -80,7 +80,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/img/paquete_3.webp" alt="">
+                        <img class="img-fluid" src="../assets/img/paquete_3.webp" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Taboga</small>
@@ -99,7 +99,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/img/paquete_7.jpg" alt="">
+                        <img class="img-fluid" src="../assets/img/paquete_7.jpg" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Hotel Candy Rose</small>
@@ -118,7 +118,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/img/paquete_7.webp" alt="">
+                        <img class="img-fluid" src="../assets/img/paquete_7.webp" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Playa Blanca</small>
@@ -137,7 +137,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/img/paquete_6.webp" alt="">
+                        <img class="img-fluid" src="../assets/img/paquete_6.webp" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Hotel Azul</small>
@@ -166,7 +166,7 @@ if ($result->num_rows > 0) {
 </main>
 
 <!-- Footer Start -->
-<?php include_once 'includes/footer.php'; ?>
+<?php include_once '../includes/footer.php'; ?>
 <!-- Footer Start -->
 
 </div>

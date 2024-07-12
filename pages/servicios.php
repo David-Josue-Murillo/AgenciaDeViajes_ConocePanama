@@ -1,5 +1,5 @@
 <?php
-include_once 'includes/header.php';
+include_once '../includes/header.php';
 ?>
 <main>
     <!-- Carousel - Inicio -->
@@ -7,7 +7,7 @@ include_once 'includes/header.php';
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="assets/img/bg_crucero.jpg" alt="Image">
+                    <img class="w-100" src="../assets/img/bg_crucero.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Servicios</h4>
@@ -78,14 +78,14 @@ include_once 'includes/header.php';
 </main>
 
 <!-- Footer Start -->
-<?php include_once 'includes/footer.php'; ?>
+<?php include_once '../includes/footer.php'; ?>
 <!-- Footer Start -->
 
 
 </div>
 
 <!-- Template Javascript -->
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 
 </body>
 

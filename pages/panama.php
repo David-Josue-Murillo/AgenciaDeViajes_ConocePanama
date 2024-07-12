@@ -1,6 +1,6 @@
 <?php
-include_once 'includes/header.php';
-include 'admin/db/conexion.php';
+include_once '../includes/header.php';
+include '../admin/db/conexion.php';
 ?>
 
 <main>
@@ -9,7 +9,7 @@ include 'admin/db/conexion.php';
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="assets/img/prueba_1.jpg" alt="Image">
+                    <img class="w-100" src="../assets/img/prueba_1.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Conoce Panamá</h4>
@@ -33,7 +33,7 @@ include 'admin/db/conexion.php';
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destino-1.jpg" alt="">
+                        <img class="img-fluid" src="../assets/img/destino-1.jpg" alt="">
                         <a class="destination-overlay text-white text-decoration-none" href="">
                             <h5 class="text-white">Bocas del toro</h5>
                             <span>100 Cities</span>
@@ -42,7 +42,7 @@ include 'admin/db/conexion.php';
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destino-2.webp" alt="">
+                        <img class="img-fluid" src="../assets/img/destino-2.webp" alt="">
                         <a class="destination-overlay text-white text-decoration-none" href="">
                             <h5 class="text-white">Colón</h5>
                             <span>100 Cities</span>
@@ -51,7 +51,7 @@ include 'admin/db/conexion.php';
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destino-3.webp" alt="">
+                        <img class="img-fluid" src="../assets/img/destino-3.webp" alt="">
                         <a class="destination-overlay text-white text-decoration-none" href="">
                             <h5 class="text-white">Veraguas</h5>
                             <span>100 Cities</span>
@@ -60,7 +60,7 @@ include 'admin/db/conexion.php';
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destino-4.jpg" alt="">
+                        <img class="img-fluid" src="../assets/img/destino-4.jpg" alt="">
                         <a class="destination-overlay text-white text-decoration-none" href="">
                             <h5 class="text-white">Chiriquí</h5>
                             <span>100 Cities</span>
@@ -69,7 +69,7 @@ include 'admin/db/conexion.php';
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destino-5.jpg" alt="">
+                        <img class="img-fluid" src="../assets/img/destino-5.jpg" alt="">
                         <a class="destination-overlay text-white text-decoration-none" href="">
                             <h5 class="text-white">Coclé</h5>
                             <span>100 Cities</span>
@@ -78,7 +78,7 @@ include 'admin/db/conexion.php';
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/img/destino-6.jpg" alt="">
+                        <img class="img-fluid" src="../assets/img/destino-6.jpg" alt="">
                         <a class="destination-overlay text-white text-decoration-none" href="">
                             <h5 class="text-white">Panamá</h5>
                             <span>100 Cities</span>
@@ -216,7 +216,7 @@ include 'admin/db/conexion.php';
 </main>
 
 <!-- Footer Start -->
-<?php include_once 'includes/footer.php'; ?>
+<?php include_once '../includes/footer.php'; ?>
 <!-- Footer Start -->
 
 </div>
