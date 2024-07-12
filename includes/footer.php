@@ -57,4 +57,6 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="js/envio-email.js"></script>
+<script src="../js/envio-email.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/buy_paquete.js"></script>
