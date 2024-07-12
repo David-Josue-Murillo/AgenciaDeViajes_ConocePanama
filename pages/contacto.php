@@ -1,6 +1,6 @@
 <?php
-include_once 'includes/header.php';
-include 'admin/db/conexion.php';
+include_once '../includes/header.php';
+include '../admin/db/conexion.php';
 ?>
 
 <main class="section__contact">
@@ -10,14 +10,13 @@ include 'admin/db/conexion.php';
         <div class="container">
             <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
                 <h3 class="display-4 text-white text-uppercase">Contacto</h3>
-                
             </div>
         </div>
     </div>
     <!-- Header End -->
 
     <!-- Reserva - Inicio -->
-    <?php include 'includes/cotizacion.php'; ?>
+    <?php include '../includes/cotizacion.php'; ?>
     <!-- Reserva - Fin -->
 
     <!-- Contacto - Incio -->
@@ -69,8 +68,8 @@ include 'admin/db/conexion.php';
 
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="js/cotizacion.js"></script>
-<script src="js/envio-email.js"></script>
+<script src="../js/cotizacion.js"></script>
+<script src="../js/envio-email.js"></script>
 
 </body>
 

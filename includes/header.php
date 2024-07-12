@@ -76,7 +76,7 @@
                         <a class="nav-link" href="../pages/servicios.php">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../contacto.php">Contacto</a>
+                        <a class="nav-link" href="../pages/contacto.php">Contacto</a>
                     </li>
                 </ul>
 
