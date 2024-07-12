@@ -19,33 +19,6 @@ document.querySelectorAll('.btn_comprar_paquete').forEach(function (btn) {
                 const metodo_pago = this.value;
 
                 document.getElementById('btn_pagar').classList.remove('disabled');
-                document.getElementById('btn_pagar').addEventListener('click', function () {
-                    // Enviar datos al servidor
-                    $.ajax({
-                        url: 'procesar_pago.php',
-                        method: 'POST',
-                        data: {
-                            paquete: paquete,
-                            descripcion: descripcion,
-                            precio: precio,
-                            metodo_pago: metodo_pago
-                        },
-                        success: function (response) {
-                            // Mostrar mensaje de éxito
-                            alert('¡Pago exitoso!');
-    
-                            // Ocultar ventana modal de pago
-                            $('#paqueteModal').modal('hide');
-                        },
-                        error: function (xhr, status, error) {
-                            // Mostrar mensaje de error
-                            alert('¡Error al procesar el pago!');
-    
-                            // Ocultar ventana modal de pago
-                            $('#paqueteModal').modal('hide');
-                        }
-                    });
-                });
             });
         });
 

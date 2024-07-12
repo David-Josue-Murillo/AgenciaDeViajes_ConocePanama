@@ -179,7 +179,7 @@ if ($result->num_rows > 0) {
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="procesar_pago.php" method="POST">
+                <form action="../php/procesar_pago.php" method="POST">
                     <div class="modal-body">
                         <!-- Información del Paquete -->
                         <div class="form-group">
