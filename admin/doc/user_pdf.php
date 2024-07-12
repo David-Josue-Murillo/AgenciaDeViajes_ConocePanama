@@ -1,10 +1,8 @@
 <?php
 
 define('FPDF_FONTPATH', '../../lib/fpdf/font/');
-include_once '../../php/helpers.php';
 include_once '../../lib/fpdf/fpdf.php';
 include_once '../db/conexion.php';
-include_once '../db/funciones.php';
 
 // Consulta para obtener los datos de la tabla usuarios
 $sql = "SELECT * FROM usuarios";
