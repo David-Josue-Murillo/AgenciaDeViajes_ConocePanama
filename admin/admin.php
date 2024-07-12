@@ -482,40 +482,26 @@ if ($result->num_rows > 0) {
                         <h3 id="modal-titulo"></h3>
                     </div>
                     <div class="modal-body">
-                        <form action="controller/usuario_crud.php" method="post" class="form-group" id="nuevo_usuario">
+                        <form action="../email/procesar.php" method="post" class="form-group" id="send_email">
                             <div class="form-group row">
                                 <div class="hidden">
                                     <input type="hidden" id="id_usuario" name="id_usuario" value="">
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="name">Nombre</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="lastname">Apellido</label>
-                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" required>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="phone">Telefono</label>
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefono" required>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="form-group col-md-6">
-                                    <label for="tipo_usuario">Tipo de usuario</label>
-                                    <select name="tipo_usuario" class="custom-select px-5" required="required">
-                                        <option value="0">Usuario</option>
-                                        <option value="1">Administrador</option>
-                                        <option value="2">ROOT</option>
+                                <div class="form-group col-md-12">
+                                    <label for="id_user_email">Para: </label><br>
+                                    <select name="id_user_email" id="idUserEmail" class="custom-select px-5">
+                                        <?php foreach ($usuarios as $usuario) : ?>
+                                            <option value="<?= $usuario['id_usuario'] ?>"><?= $usuario['email']?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-6 campo_password_delete">
-                                    <label for="password">Contraseña</label>
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                                <div class="form-group col-md-12">
+                                    <label for="asunto_email">Asunto</label>
+                                    <input type="text" class="form-control" id="asuntoEmail" name="asunto_email" placeholder="Asunto del mensaje" required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="mensaje_email">Mensaje</label>
+                                    <textarea name="mensaje_email" id="mensajeEmail" class="form-control" rows="5"></textarea>
                                 </div>
                             </div>
                         </form>
@@ -524,7 +510,7 @@ if ($result->num_rows > 0) {
                                 <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
                             </div>
                             <div class="col-md-6">
-                                <input type="submit" class="btn btn-primary btn-block w-100" id="btn-enviar_email" form="nuevo_usuario" name="submit_nuevo_usuario" value="">
+                                <input type="submit" class="btn btn-primary btn-block w-100" id="btn-enviar_email" form="send_email" name="send_email" value="">
                             </div>
                         </div>
                     </div>
@@ -1180,7 +1166,7 @@ if ($result->num_rows > 0) {
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/jquery.metisMenu.js"></script>

@@ -23,3 +23,7 @@ if (isset($_POST['email'])){
 
     echo "ok";
 }
+
+if(isset($_POST['send_email'])){
+    
+}
