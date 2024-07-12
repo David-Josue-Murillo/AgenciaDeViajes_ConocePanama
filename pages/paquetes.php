@@ -62,7 +62,7 @@ if ($result->num_rows > 0) {
                             <a class="h5 text-decoration-none" href="" id="descripcion_paquete_1">Vistas al mar, jardín, terraza, restaurante, bar y instalaciones para deportes acuáticos</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn_comprar_paquete" accesskey="<?php ?>" id="btn_comprar_paquete" value="1">Comprar</button>
+                                    <button class="btn btn-primary btn_comprar_paquete" value="1">Comprar</button>
                                     <h5 class="m-0" id="precio_paquete_1">$140</h5>
                                 </div>
                             </div>
@@ -74,15 +74,15 @@ if ($result->num_rows > 0) {
                         <img class="img-fluid" src="<?php echo $destinos[1]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0" id="nombre_paquete_1"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Contadora</small>
-                                <small class="m-0" id="dias_paquete_1"><i class="fa fa-calendar-alt text-primary mr-2"></i>4 dias</small>
-                                <small class="m-0" id="cant_personas_paquete_1"><i class="fa fa-user text-primary mr-2"></i>3 Personas</small>
+                                <small class="m-0" id="nombre_paquete_2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Contadora</small>
+                                <small class="m-0" id="dias_paquete_2"><i class="fa fa-calendar-alt text-primary mr-2"></i>4 dias</small>
+                                <small class="m-0" id="cant_personas_paquete_2"><i class="fa fa-user text-primary mr-2"></i>3 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" id="descripcion_paquete_1" href="">Descubre las maravillas de la isla de Isla Contadora</a>
+                            <a class="h5 text-decoration-none" id="descripcion_paquete_2" href="">Descubre las maravillas de la isla de Isla Contadora</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn_comprar_paquete">Comprar</button>
-                                    <h5 class="m-0" id="precio_paquete_1">$175</h5>
+                                    <button class="btn btn-primary btn_comprar_paquete" value="2">Comprar</button>
+                                    <h5 class="m-0" id="precio_paquete_2">$175</h5>
                                 </div>
                             </div>
                         </div>
@@ -93,15 +93,15 @@ if ($result->num_rows > 0) {
                         <img class="img-fluid" src="<?php echo $destinos[2]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0" id="nombre_paquete_1"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Taboga</small>
-                                <small class="m-0" id="dias_paquete_1"><i class="fa fa-calendar-alt text-primary mr-2"></i>2 dias</small>
-                                <small class="m-0" id="cant_personas_paquete_1"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
+                                <small class="m-0" id="nombre_paquete_3"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Taboga</small>
+                                <small class="m-0" id="dias_paquete_3"><i class="fa fa-calendar-alt text-primary mr-2"></i>2 dias</small>
+                                <small class="m-0" id="cant_personas_paquete_3"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" id="descripcion_paquete_1" href="">Conoce los bellas aguas de las isla Taboga</a>
+                            <a class="h5 text-decoration-none" id="descripcion_paquete_3" href="">Conoce los bellas aguas de las isla Taboga</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn_comprar_paquete">Comprar</button>
-                                    <h5 class="m-0" id="precio_paquete_1">$140</h5>
+                                    <button class="btn btn-primary btn_comprar_paquete" value="3">Comprar</button>
+                                    <h5 class="m-0" id="precio_paquete_3">$140</h5>
                                 </div>
                             </div>
                         </div>
@@ -112,15 +112,15 @@ if ($result->num_rows > 0) {
                         <img class="img-fluid" src="<?php echo $destinos[3]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0" id="nombre_paquete_1"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Parque Soberania</small>
-                                <small class="m-0" id="dias_paquete_1"><i class="fa fa-calendar-alt text-primary mr-2"></i>1 dia</small>
-                                <small class="m-0" id="cant_personas_paquete_1"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
+                                <small class="m-0" id="nombre_paquete_4"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Parque Soberania</small>
+                                <small class="m-0" id="dias_paquete_4"><i class="fa fa-calendar-alt text-primary mr-2"></i>1 dia</small>
+                                <small class="m-0" id="cant_personas_paquete_4"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" id="descripcion_paquete_1" href="">Tours Actividades Tours a pie, Aventura y naturaleza</a>
+                            <a class="h5 text-decoration-none" id="descripcion_paquete_4" href="">Tours Actividades Tours a pie, Aventura y naturaleza</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn_comprar_paquete">Comprar</button>
-                                    <h5 class="m-0" id="precio_paquete_1">$45</h5>
+                                    <button class="btn btn-primary btn_comprar_paquete" value="4">Comprar</button>
+                                    <h5 class="m-0" id="precio_paquete_4">$45</h5>
                                 </div>
                             </div>
                         </div>
@@ -131,15 +131,15 @@ if ($result->num_rows > 0) {
                         <img class="img-fluid" src="<?php echo $destinos[4]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0" id="nombre_paquete_1"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Playa Blanca</small>
-                                <small class="m-0" id="dias_paquete_1"><i class="fa fa-calendar-alt text-primary mr-2"></i>7 dias</small>
-                                <small class="m-0" id="cant_personas_paquete_1"><i class="fa fa-user text-primary mr-2"></i>3 Personas</small>
+                                <small class="m-0" id="nombre_paquete_5"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Playa Blanca</small>
+                                <small class="m-0" id="dias_paquete_5"><i class="fa fa-calendar-alt text-primary mr-2"></i>7 dias</small>
+                                <small class="m-0" id="cant_personas_paquete_5"><i class="fa fa-user text-primary mr-2"></i>3 Personas</small>
                             </div>
-                            <a class="h5 text-decoration-none" id="descripcion_paquete_1" href="">Town Centers, Playas, Restaurantes y más</a>
+                            <a class="h5 text-decoration-none" id="descripcion_paquete_5" href="">Town Centers, Playas, Restaurantes y más</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn_comprar_paquete">Comprar</button>
-                                    <h5 class="m-0" id="precio_paquete_1">$210</h5>
+                                    <button class="btn btn-primary btn_comprar_paquete" value="5">Comprar</button>
+                                    <h5 class="m-0" id="precio_paquete_5">$210</h5>
                                 </div>
                             </div>
                         </div>
@@ -150,15 +150,15 @@ if ($result->num_rows > 0) {
                         <img class="img-fluid" src="<?php echo $destinos[5]['url_imagen']; ?>" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0" id="nombre_paquete_1"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Azul Paradise</small>
-                                <small class="m-0" id="dias_paquete_1"><i class="fa fa-calendar-alt text-primary mr-2"></i>5 dias</small>
-                                <small class="m-0" id="cant_personas_paquete_1"><i class="fa fa-user text-primary mr-2"></i>3 Persona</small>
+                                <small class="m-0" id="nombre_paquete_6"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Azul Paradise</small>
+                                <small class="m-0" id="dias_paquete_6"><i class="fa fa-calendar-alt text-primary mr-2"></i>5 dias</small>
+                                <small class="m-0" id="cant_personas_paquete_6"><i class="fa fa-user text-primary mr-2"></i>3 Persona</small>
                             </div>
-                            <a class="h5 text-decoration-none" id="descripcion_paquete_1" href="">Playa, paisaje y más ¿Que esperas?</a>
+                            <a class="h5 text-decoration-none" id="descripcion_paquete_6" href="">Playa, paisaje y más ¿Que esperas?</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn_comprar_paquete">Comprar</button>
-                                    <h5 class="m-0" id="precio_paquete_1">$250</h5>
+                                    <button class="btn btn-primary btn_comprar_paquete" value="6">Comprar</button>
+                                    <h5 class="m-0" id="precio_paquete_6">$250</h5>
                                 </div>
                             </div>
                         </div>
@@ -192,15 +192,15 @@ if ($result->num_rows > 0) {
                         </div>
                         <div class="form-group">
                             <label for="precio">Precio:</label>
-                            <input type="text" class="form-control" id="precio" name="precio" value="$100.00" readonly>
+                            <input type="text" class="form-control" id="precios" name="precio" value="$100.00" readonly>
                         </div>
 
                         <!-- Métodos de Pago -->
                         <h5>Métodos de Pago</h5>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="metodo_pago" id="tarjeta_credito" value="Tarjeta de Crédito" required>
+                            <input class="form-check-input" type="radio" name="metodo_pago" id="visa" value="Visa" required>
                             <label class="form-check-label" for="tarjeta_credito">
-                                Tarjeta de Crédito
+                                Visa
                             </label>
                         </div>
                         <div class="form-check">
@@ -210,9 +210,9 @@ if ($result->num_rows > 0) {
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="metodo_pago" id="transferencia_bancaria" value="Transferencia Bancaria" required>
+                            <input class="form-check-input" type="radio" name="metodo_pago" id="yappy" value="Yappy" required>
                             <label class="form-check-label" for="transferencia_bancaria">
-                                Transferencia Bancaria
+                                Yappy
                             </label>
                         </div>
                     </div>
