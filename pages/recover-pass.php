@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/css/login.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/login.css" type="text/css">
     <title>Login</title>
 </head>
 
@@ -14,7 +14,7 @@
         if(!isset($_SESSION)){
             session_start();
         } 
-        include './php/helpers.php'
+        include '../php/helpers.php'
     ?>
 
     <div class="container">
@@ -26,7 +26,7 @@
             </div>
 
             <div ng-app ng-init="checked = false">
-                <form class="form-signin" action="php/recuperar_contraseña.php" method="post" name="form">
+                <form class="form-signin" action="../php/recuperar_contraseña.php" method="post" name="form">
                     
                     <?php if(isset($_SESSION['completado'])): ?>
                         <?php unset($_SESSION['error_recover']); ?>
