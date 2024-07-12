@@ -18,14 +18,14 @@ class MailController
             $mail->isSMTP();                                       // Usar SMTP
             $mail->Host       = 'smtp.gmail.com';                  // Servidor SMTP de Gmail
             $mail->SMTPAuth   = true;                              // Habilitar autenticación SMTP
-            $mail->Username   = 'dm514821@gmail.com';       // Nombre de usuario SMTP (tu dirección de correo electrónico)
-            $mail->Password   = 'olkk ddpk ztvd rjmq';              // Contraseña SMTP de tu cuenta de Gmail
+            $mail->Username   = 'dm514821@gmail.com';              // Nombre de usuario SMTP (tu dirección de correo electrónico)
+            $mail->Password   = 'olkk ddpk ztvd rjmq';             // Contraseña SMTP de tu cuenta de Gmail
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;    // Habilitar cifrado TLS/STARTTLS
             $mail->Port       = 587;                               // Puerto TCP para conectarse a Gmail
 
             // Destinatario
-            $mail->setFrom('dm514821@gmail.com', 'Conoce Panama');   // Remitente
-            $mail->addAddress($to, $name);   // Añadir un destinatario
+            $mail->setFrom($to, $name);   // Remitente
+            $mail->addAddress('dm514821@gmail.com', 'Conoce Panama');   // Añadir un destinatario
             //$mail->addAddress('david.murillo01@up.ac.pa', 'Daviddddd');
             // Contenido del correo
             $mail->isHTML(true);        // Establecer el formato del correo a HTML

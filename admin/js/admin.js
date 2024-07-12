@@ -27,6 +27,7 @@ document.getElementById('logo_img').addEventListener('click', function () {
 document.getElementById('usuarios').addEventListener('click', function () {
     contenido.innerHTML = contenedorUsuarios;
     
+    
     // ventana modal para crear usuario
     document.getElementById('btn-crear-usuario').addEventListener('click', function () {
         document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
@@ -39,6 +40,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
         });
     });
 
+    
     // Evento para editar usuario
     document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
@@ -63,6 +65,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
         });
     });
 
+    
     // Evento para borrar usuario
     document.querySelectorAll('#btn-borrar-usuario').forEach(function (btnBorrar) {
         btnBorrar.addEventListener('click', function (e) {
@@ -76,6 +79,7 @@ document.getElementById('usuarios').addEventListener('click', function () {
         });
     });
 
+    
     // Borrar advertencias
     const alerta = document.querySelector('.alerta');
     if (alerta) {
@@ -85,6 +89,16 @@ document.getElementById('usuarios').addEventListener('click', function () {
     }
 
     
+    // Evento para crear PDF
+    document.getElementById('userPDF').addEventListener('click', function () {
+        window.open('doc/user_pdf.php', '_blank');
+    });
+    
+
+    // Evento para crear EXCEL
+    document.getElementById('userEXCEL').addEventListener('click', function () {
+        window.open('doc/user_excel.php', '_blank');
+    });
 });
 
 
