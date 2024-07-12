@@ -90,14 +90,14 @@ if ($result->num_rows > 0) {
                         <div class="border-top mt-4 pt-4">
                             <div class="d-flex justify-content-between">
                                 <?php
-                                $id_destino = $destinos[0]['id_destino'];
+                                $id_destino = $destinos[1]['id_destino'];
                                 $sql = "SELECT * FROM paquetes WHERE id_destino = '$id_destino'";
                                 $resultado = $conexion->query($sql);
                                 if ($resultado->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" value="2">Comprar</button>
+                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="2">Comprar</button>
                                 <h5 class="m-0" id="precio_paquete_2">$175</h5>
                             </div>
                         </div>
@@ -117,14 +117,14 @@ if ($result->num_rows > 0) {
                         <div class="border-top mt-4 pt-4">
                             <div class="d-flex justify-content-between">
                                 <?php
-                                $id_destino = $destinos[0]['id_destino'];
+                                $id_destino = $destinos[2]['id_destino'];
                                 $sql = "SELECT * FROM paquetes WHERE id_destino = '$id_destino'";
                                 $resultado = $conexion->query($sql);
                                 if ($resultado->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" value="3">Comprar</button>
+                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="3">Comprar</button>
                                 <h5 class="m-0" id="precio_paquete_3">$140</h5>
                             </div>
                         </div>
@@ -144,14 +144,14 @@ if ($result->num_rows > 0) {
                         <div class="border-top mt-4 pt-4">
                             <div class="d-flex justify-content-between">
                                 <?php
-                                $id_destino = $destinos[0]['id_destino'];
+                                $id_destino = $destinos[3]['id_destino'];
                                 $sql = "SELECT * FROM paquetes WHERE id_destino = '$id_destino'";
                                 $resultado = $conexion->query($sql);
                                 if ($resultado->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" value="4">Comprar</button>
+                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="4">Comprar</button>
                                 <h5 class="m-0" id="precio_paquete_4">$45</h5>
                             </div>
                         </div>
@@ -171,14 +171,14 @@ if ($result->num_rows > 0) {
                         <div class="border-top mt-4 pt-4">
                             <div class="d-flex justify-content-between">
                                 <?php
-                                $id_destino = $destinos[0]['id_destino'];
+                                $id_destino = $destinos[4]['id_destino'];
                                 $sql = "SELECT * FROM paquetes WHERE id_destino = '$id_destino'";
                                 $resultado = $conexion->query($sql);
                                 if ($resultado->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" value="5">Comprar</button>
+                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="5">Comprar</button>
                                 <h5 class="m-0" id="precio_paquete_5">$210</h5>
                             </div>
                         </div>
@@ -198,14 +198,14 @@ if ($result->num_rows > 0) {
                         <div class="border-top mt-4 pt-4">
                             <div class="d-flex justify-content-between">
                                 <?php
-                                $id_destino = $destinos[0]['id_destino'];
+                                $id_destino = $destinos[5]['id_destino'];
                                 $sql = "SELECT * FROM paquetes WHERE id_destino = '$id_destino'";
                                 $resultado = $conexion->query($sql);
                                 if ($resultado->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" value="6">Comprar</button>
+                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="6">Comprar</button>
                                 <h5 class="m-0" id="precio_paquete_6">$250</h5>
                             </div>
                         </div>
@@ -269,7 +269,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary disabled" id="btn_pagar">Pagar</button>
+                    <button type="submit" class="btn btn-primary disabled" name="submit_pago" id="btn_pagar">Pagar</button>
                 </div>
             </form>
         </div>
