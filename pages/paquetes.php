@@ -218,7 +218,7 @@ if ($result->num_rows > 0) {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Pagar</button>
+                        <button type="submit" class="btn btn-primary disabled" id="btn_pagar">Pagar</button>
                     </div>
                 </form>
             </div>
