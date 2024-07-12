@@ -2,6 +2,8 @@ document.querySelectorAll('.btn_comprar_paquete').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
         e.preventDefault();
         const id = this.value; // Identificador unico del paquete
+        const id_paquete = this.accessKey; // Identificador unico del paquete   
+        console.log(id_paquete);
         showDatosVenta(id); // Mostrar los datos de la compra
 
         // Obtener datos del formulario
