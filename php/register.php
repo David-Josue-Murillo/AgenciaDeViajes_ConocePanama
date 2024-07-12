@@ -87,6 +87,7 @@ if(isset($_POST['submit_register'])) {
             // Redireccionar al formulario de login
             $_SESSION['completado'] = "Registro completado exitosamente";    
             header('Location: ../index.php');
+            exit();
         } else {
             $_SESSION['errores']['general'] = "Fallo al guardar el usuario";
         }
@@ -94,5 +95,6 @@ if(isset($_POST['submit_register'])) {
 
     $_SESSION['errores'] = $errores;
     $_SESSION['incompleto'] = "Registro fallido";   
-    header('Location: ../login.php');
+    header('Location: ../pages/login.php');
+    exit();
 }

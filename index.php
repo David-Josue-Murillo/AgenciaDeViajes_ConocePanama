@@ -14,7 +14,7 @@ include 'admin/db/conexion.php';
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours & Viajes</h4>
                             <h1 class="display-3 text-white mb-md-4">Descubramos el mundo juntos</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Ver Paquetes</a>
+                            <a href="pages/paquetes.php#paquetes" class="btn btn-primary py-md-3 px-md-5 mt-2" id="ver_paquetes">Ver Paquetes</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,11 @@ include 'admin/db/conexion.php';
                                 <img class="img-fluid" src="assets/img/about-2.webp" alt="">
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary mt-1">Reservar ahora</a>
+                        <a href="<?php if(!isset($_SESSION['login_existe'])){
+                            echo "pages/login.php";
+                            }?>
+
+                            <?php if(isset($_SESSION['login_existe'])): ?>#ver_paquetes<?php endif; ?>" class="btn btn-primary mt-1">Reservar ahora</a>
                     </div>
                 </div>
             </div>
