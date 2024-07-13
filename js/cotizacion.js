@@ -1,8 +1,10 @@
+// Obtener fecha de la reserva
 document.querySelector('form').addEventListener('submit', function() {
     var spanText = document.getElementById('fechas').textContent;
     document.getElementById('fechaText').value = spanText;
 });
 
+// Obtener precio de la reserva
 document.getElementById('destino').addEventListener('change', function() {
     var destinoId = this.value;
     var xhr = new XMLHttpRequest();
@@ -16,6 +18,7 @@ document.getElementById('destino').addEventListener('change', function() {
     xhr.send('destino=' + destinoId);
 });
 
+// Obtener fecha formateada de la reserva
 document.getElementById('destino').addEventListener('change', function() {
     var destinoId = this.value;
     var xhr = new XMLHttpRequest();

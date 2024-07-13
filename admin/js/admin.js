@@ -12,7 +12,6 @@ const contenedorDestinos = document.getElementById('contenedor_destinos').innerH
 const contenedorReservas = document.getElementById('contenedor_reservas').innerHTML;
 const contenedorPaquetes = document.getElementById('contenedor_paquetes').innerHTML;
 const contenedorGuias = document.getElementById('contenedor_guias').innerHTML;
-const contenedorNuevaTabla = document.getElementById('contenedor_nueva_tabla').innerHTML;
 
 
 // Logo
@@ -223,18 +222,6 @@ document.getElementById('paquetes').addEventListener('click', function () {
 document.getElementById('reservas').addEventListener('click', function () {
     contenido.innerHTML = contenedorReservas;
 
-    // ventana modal para crear reserva
-    document.getElementById('btn-crear-reserva').addEventListener('click', function () {
-        document.querySelector('.contenedor-modal').classList.add('modal-show'); // mostrar ventana modal
-        document.getElementById('modal-titulo').textContent = "Crear Reserva";  // Titulo de la ventana modal
-        document.getElementById('btn-guardar-reserva-modal').value = "Crear Reserva"; // Valor del boton guardar
-        document.getElementById('btn-guardar-reserva-modal').name = "submit_nueva_reserva"; // Valor del boton guardar
-        document.querySelector('.campo_password_delete').classList.remove('hidden'); // Mostrar campo password
-        document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
-            document.querySelector('.contenedor-modal').classList.remove('modal-show'); // cerrar ventana modal
-        });
-    });
-
     // Evento para editar reserva
     document.querySelectorAll('.btn-editar').forEach(function (btnEditar) {
         btnEditar.addEventListener('click', function () {
@@ -248,8 +235,10 @@ document.getElementById('reservas').addEventListener('click', function () {
             
             // Vaciar campos al cerrar el modal
             document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
-                document.getElementById('fechaReserva').value = '';
-                document.getElementById('estado').value = '';
+                document.getElementById('usuarioName').value = '';
+                document.getElementById('nombrePaquete').value = '';
+                document.getElementById('descripcionReservaForm').value = '';
+                document.getElementById('precioReserva').value = '';
                 modal.classList.remove('modal-show'); // cerrar ventana modal
             });
 
@@ -325,59 +314,6 @@ document.getElementById('guias').addEventListener('click', function () {
         });
     });
 });
-
-
-// Area de crear nueva tabla
-document.getElementById('nuevaTabla').addEventListener('click', function () {
-    contenido.innerHTML = contenedorNuevaTabla;
-
-    // Evento para agregar campos a la tabla
-    document.getElementById('agregarCampos').addEventListener('click', function () {
-        const formulario = document.getElementById('formNuevaTabla'); // Formulario de creación de tabla
-
-        const divCampo = document.createElement('div'); // Elemento que contiene los campos de la tabla
-        divCampo.className = 'row';
-        divCampo.innerHTML = `
-            <div class="form-group col-md-4">
-                <label for="nombre_campo">Nombre del campo</label>
-                <input type="text" class="form-control" id="nombre_campo" name="nombre_campo" placeholder="Nombre del campo" required>
-            </div>
-
-            <div class="form-group col-md-3">
-                <label for="tipo_dato">Tipo de dato</label><br>
-                <select name="tipo_dato" class="custom-select px-5" required="required">
-                    <option value="varchar">varchar</option>
-                    <option value="int">int</option>
-                    <option value="float">float</option>
-                    <option value="date">date</option>
-                    <option value="datetime">text</option>
-                </select>
-            </div>
-
-            <div class="form-group col-md-3">
-                <label for="tamaño_dato">Tamaño de dato</label>
-                <div class="col-md-6">
-                    <input type="number" class="form-control" id="tamaño_dato" name="tamaño_dato" placeholder="1">
-                </div>
-            </div>
-
-            <div class="form-group col-md-1 text-center">
-                <label for="nullo">Nullo</label>
-                <input type="checkbox" class="form-control" id="nullo" name="nullo">
-            </div>
-        `;
-
-        if ( parseInt(document.getElementById('agregarCantidad').value) > 1) {
-            for (let i = 1; i < parseInt(document.getElementById('agregarCantidad').value); i++) {
-                formulario.appendChild(divCampo.cloneNode(true)); // Clonar el elemento para agregarlos
-            }
-        }
-            
-        formulario.appendChild(divCampo); // Agregar el elemento al formulario
-        
-    });
-});
-
 
 
 // Funciones
@@ -459,9 +395,17 @@ function rellenarFormularioPaquete(id) {
 }
 
 function rellenarFormularioReserva(id) {
-    const fecha_reserva = document.getElementById('fechaReserva_' + id).textContent;
+    // Ovteniendo los datos que se van a mostrar en el formulario
+    const usuario = document.getElementById('usuario_' + id).innerText;
+    const nombre_paquete = document.getElementById('paquete_' + id).innerText;
+    const descripcion_reserva = document.getElementById('descripcionReserva_' + id).textContent;
+    const precio = document.getElementById('precio_' + id).textContent;
 
-    document.getElementById('fechaReserva').value = fecha_reserva;
+    // Rellenando los campos del formulario
+    document.getElementById('usuarioName').value = usuario;
+    document.getElementById('nombrePaquete').value = nombre_paquete;
+    document.getElementById('descripcionReservaForm').value = descripcion_reserva;
+    document.getElementById('precioReserva').value = precio;
 }
 
 function rellenarFormularioGuia(id) {

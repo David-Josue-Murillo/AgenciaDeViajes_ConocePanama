@@ -58,6 +58,7 @@ if ($result->num_rows > 0) {
     }
 }
 
+
 ?>
 
 
@@ -178,10 +179,6 @@ if ($result->num_rows > 0) {
 
                         <li>
                             <a href="#" id="guias"><i class="fa fa-users"></i>Guias</a>
-                        </li>
-
-                        <li>
-                            <a href="#" id="nuevaTabla"><i class="fa fa-edit "></i>Crear Tabla</a>
                         </li>
                     </ul>
 
@@ -869,24 +866,22 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Reservas</h6>
                     <h1>Lista de Reservas</h1>
-                    <button id="btn-crear-reserva" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Crear Reserva</button>
                 </div>
-
                 <div class="row" id="tabla-reservas">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Cliente</th>
-                                <th>Destino</th>
                                 <th>Paquete</th>
-                                <th>Fecha de Reserva</th>
-                                <th>Estado</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Metodo de Pago</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?= $contador = 1 ?>
+                            <?php $contador = 1 ?>
                             <?php foreach ($reservas as $reserva) : ?>
                                 <tr>
                                     <td><?= $contador++ ?></td>
@@ -896,19 +891,7 @@ if ($result->num_rows > 0) {
                                         $result = $conexion->query($sql);
                                         if ($result->num_rows > 0) {
                                             $usuario = $result->fetch_assoc();
-                                        }
-                                        echo $usuario['nombre'] . ' ' . $usuario['apellido'];
-                                        ?>
-                                    </td>
-                                    <td id="destino_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_destino'] ?>">
-                                        <?php
-                                        $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$reserva[id_destino]'";
-                                        $result = $conexion->query($sql);
-                                        if ($result->num_rows > 0) {
-                                            $destino = $result->fetch_assoc();
-                                        }
-                                        echo $destino['nombre_destino'];
-                                        ?>
+                                        }echo $usuario['nombre'] . ' ' . $usuario['apellido'];?>
                                     </td>
                                     <td id="paquete_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_paquete'] ?>">
                                         <?php
@@ -920,8 +903,9 @@ if ($result->num_rows > 0) {
                                         echo $paquete['nombre_paquete'];
                                         ?>
                                     </td>
-                                    <td id="fechaReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['fecha_reserva'] ?></td>
-                                    <td id="estado_<?= $reserva['id_reserva'] ?>"><?= $reserva['estado'] ?></td>
+                                    <td id="descripcionReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['descripcion'] ?></td>
+                                    <td id="precio_<?= $reserva['id_reserva'] ?>"><?= $reserva['precio_venta'] ?></td>
+                                    <td id="metodo_<?= $reserva['id_reserva'] ?>"><?= $reserva['metodo_pago'] ?></td>
                                     <td>
                                         <a href="#" id="<?= $reserva['id_reserva'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
                                         <a href="#" aria-label="<?= $reserva['id_reserva'] ?>" id="btn-borrar-reserva" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Eliminar</a>
@@ -949,41 +933,30 @@ if ($result->num_rows > 0) {
 
                             <div class="form-group col-md-6">
                                 <label for="usuario">Usuarios</label><br>
-                                <select name="id_usuario" id="idUsuario" class="custom-select px-5">
-                                    <?php foreach ($usuarios as $usuario) : ?>
-                                        <option value="<?= $usuario['id_usuario'] ?>"><?= $usuario['nombre'] . ' ' . $usuario['apellido'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <input type="text" name="nombre_usuario" id="usuarioName" class="form-control" placeholder="Usuario" required>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="id_destino">Destino</label>
-                                <select name="id_destino" id="idDestino" class="custom-select px-5">
-                                    <?php foreach ($destinos as $destino) : ?>
-                                        <option value="<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <label for="id_paquete">Nombre del Paquete</label>
+                                <input type="text " name="nombre_paquete" id="nombrePaquete" class="form-control" placeholder="Nombre del Paquete" required>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label for="descripcion_reserva">Descripcion</label>
+                                <textarea name="descripcion_reserva" id="descripcionReservaForm" class="form-control" rows="4"></textarea>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="id_paquete">Paquete</label>
-                                <select name="id_paquete" id="idPaquete" class="custom-select px-5">
-                                    <?php foreach ($paquetes as $paquete) : ?>
-                                        <option value="<?= $paquete['id_paquete'] ?>"><?= $paquete['nombre_paquete'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <label for="precio_reserva">Precio</label>
+                                <input type="number" class="form-control" id="precioReserva" name="precio_reserva" required>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="fecha_reserva">Fecha de reserva</label>
-                                <input type="text" class="form-control" id="fechaReserva" name="fecha_reserva" required>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label for="estado">Estado</label><br>
-                                <select name="estado" class="custom-select px-5" id="estado" required="required">
-                                    <option value="Pendiente">Pendiente</option>
-                                    <option value="Finalizado">Finalizado</option>
+                                <label for="metodo_pago">Metodo de Pago</label><br>
+                                <select class="custom-select px-5" id="metodoPago" name="metodo_pago" required="required">
+                                    <option value="Visa">Visa</option>
+                                    <option value="PayPal">PayPal</option>
+                                    <option value="Yappy">Yappy</option>
                                 </select>
                             </div>
                         </div>
@@ -1091,75 +1064,6 @@ if ($result->num_rows > 0) {
                         <div class="col-md-6">
                             <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-guia-modal" form="nuevo_guia" name="submit_nuevo_guia" value="">
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- HTML Oculto del formulario que crea una nueva tabla -->
-    <div id="contenedor_nueva_tabla" style="display: none;">
-        <div class="container-fluid py-5">
-            <div class="col-lg-12 pt-5 pb-3">
-                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Nueva Tabla</h6>
-                    <h1>Crear una nueva tabla</h1>
-                </div>
-                <div class="row" id="formTablaNueva">
-                    <form action="controller/crear_nueva_tabla.php" method="post" class="form-group" id="formNuevaTabla">
-                        <div class="form-group row" id="agregarColumnas">
-                            <div class="form-group col-md-4">
-                                <label for="nombre_tabla">Nombre de la tabla</label>
-                                <input type="text" class="form-control" id="nombre_tabla" name="nombre_tabla" placeholder="Nombre de la tabla" required>
-                            </div>
-
-                            <div class="form-group col-md-3">
-                                <label for="agregarTabla">Agregar</label>
-
-                                <div class="row">
-                                    <div class="form-group col-md-5">
-                                        <input type="number" class="form-control" id="agregarCantidad" name="agregarTabla" value="1">
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <input type="button" id="agregarCampos" class="btn btn-primary btn-block <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>" value="Agregar">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-md-4">
-                                <label for="nombre_campo">Nombre del campo</label>
-                                <input type="text" class="form-control" id="nombre_campo" name="nombre_campo[]" placeholder="Nombre del campo" required>
-                            </div>
-
-                            <div class="form-group col-md-3">
-                                <label for="tipo_dato">Tipo de dato</label><br>
-                                <select name="tipo_dato[]" class="custom-select px-5" required="required">
-                                    <option value="varchar">varchar</option>
-                                    <option value="int">int</option>
-                                    <option value="float">float</option>
-                                    <option value="date">date</option>
-                                    <option value="datetime">text</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group col-md-3">
-                                <label for="tamaño_dato">Tamaño de dato</label>
-                                <div class="col-md-6">
-                                    <input type="number" class="form-control" id="tamaño_dato" name="tamaño_dato[]" placeholder="1">
-                                </div>
-                            </div>
-
-                            <div class="form-group col-md-1 text-center">
-                                <label for="nullo">Nullo</label>
-                                <input type="checkbox" class="form-control" id="nullo" name="nullo[]">
-                            </div>
-                        </div>
-                    </form>
-
-                    <div class="form-group">
-                        <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>" form="formNuevaTabla" value="Crear Tabla" />
                     </div>
                 </div>
             </div>
