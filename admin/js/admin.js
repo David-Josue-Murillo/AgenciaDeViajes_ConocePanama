@@ -235,8 +235,10 @@ document.getElementById('reservas').addEventListener('click', function () {
             
             // Vaciar campos al cerrar el modal
             document.getElementById('btn-cerrar-modal').addEventListener('click', function () {
-                document.getElementById('fechaReserva').value = '';
-                document.getElementById('estado').value = '';
+                document.getElementById('usuarioName').value = '';
+                document.getElementById('nombrePaquete').value = '';
+                document.getElementById('descripcionReservaForm').value = '';
+                document.getElementById('precioReserva').value = '';
                 modal.classList.remove('modal-show'); // cerrar ventana modal
             });
 
@@ -393,13 +395,17 @@ function rellenarFormularioPaquete(id) {
 }
 
 function rellenarFormularioReserva(id) {
-    const fecha_reserva = document.getElementById('fechaReserva_' + id).textContent;
+    // Ovteniendo los datos que se van a mostrar en el formulario
     const usuario = document.getElementById('usuario_' + id).innerText;
+    const nombre_paquete = document.getElementById('paquete_' + id).innerText;
+    const descripcion_reserva = document.getElementById('descripcionReserva_' + id).textContent;
+    const precio = document.getElementById('precio_' + id).textContent;
 
-    console.log(usuario);
-
+    // Rellenando los campos del formulario
     document.getElementById('usuarioName').value = usuario;
-    document.getElementById('fechaReserva').value = fecha_reserva;
+    document.getElementById('nombrePaquete').value = nombre_paquete;
+    document.getElementById('descripcionReservaForm').value = descripcion_reserva;
+    document.getElementById('precioReserva').value = precio;
 }
 
 function rellenarFormularioGuia(id) {

@@ -903,7 +903,7 @@ if ($result->num_rows > 0) {
                                         echo $paquete['nombre_paquete'];
                                         ?>
                                     </td>
-                                    <td id="fechaReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['descripcion'] ?></td>
+                                    <td id="descripcionReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['descripcion'] ?></td>
                                     <td id="precio_<?= $reserva['id_reserva'] ?>"><?= $reserva['precio_venta'] ?></td>
                                     <td id="metodo_<?= $reserva['id_reserva'] ?>"><?= $reserva['metodo_pago'] ?></td>
                                     <td>
@@ -937,33 +937,26 @@ if ($result->num_rows > 0) {
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="id_destino">Destino</label>
-                                <select name="id_destino" id="idDestino" class="custom-select px-5">
-                                    <?php foreach ($destinos as $destino) : ?>
-                                        <option value="<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <label for="id_paquete">Nombre del Paquete</label>
+                                <input type="text " name="nombre_paquete" id="nombrePaquete" class="form-control" placeholder="Nombre del Paquete" required>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label for="descripcion_reserva">Descripcion</label>
+                                <textarea name="descripcion_reserva" id="descripcionReservaForm" class="form-control" rows="4"></textarea>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="id_paquete">Paquete</label>
-                                <select name="id_paquete" id="idPaquete" class="custom-select px-5">
-                                    <?php foreach ($paquetes as $paquete) : ?>
-                                        <option value="<?= $paquete['id_paquete'] ?>"><?= $paquete['nombre_paquete'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <label for="precio_reserva">Precio</label>
+                                <input type="number" class="form-control" id="precioReserva" name="precio_reserva" required>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="fecha_reserva">Fecha de reserva</label>
-                                <input type="text" class="form-control" id="fechaReserva" name="fecha_reserva" required>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label for="estado">Estado</label><br>
-                                <select name="estado" class="custom-select px-5" id="estado" required="required">
-                                    <option value="Pendiente">Pendiente</option>
-                                    <option value="Finalizado">Finalizado</option>
+                                <label for="metodo_pago">Metodo de Pago</label><br>
+                                <select class="custom-select px-5" id="metodoPago" name="metodo_pago" required="required">
+                                    <option value="Visa">Visa</option>
+                                    <option value="PayPal">PayPal</option>
+                                    <option value="Yappy">Yappy</option>
                                 </select>
                             </div>
                         </div>
