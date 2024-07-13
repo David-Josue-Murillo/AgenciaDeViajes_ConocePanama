@@ -58,6 +58,16 @@ if ($result->num_rows > 0) {
     }
 }
 
+$sql = "SELECT * FROM pagos";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    $pagos = array();
+    while ($row = $result->fetch_assoc()) {
+        $pagos[] = $row;
+    }
+}
+
 ?>
 
 
@@ -1102,11 +1112,10 @@ if ($result->num_rows > 0) {
         <div class="container-fluid py-5">
             <div class="col-lg-12 pt-5 pb-3">
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Guias</h6>
-                    <h1>Lista de Guias</h1>
-                    <button id="btn-crear-guia" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Crear Guia</button>
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Ventas</h6>
+                    <h1>Lista de Ventas</h1>
                 </div>
-                <div class="row" id="tabla-guias">
+                <div class="row" id="tabla-ventas">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
@@ -1147,7 +1156,7 @@ if ($result->num_rows > 0) {
             </div>
         </div>
 
-        <!-- HTML Oculto para cargar el modal de Guias -->
+        <!-- HTML Oculto cargar el modal de ventas -->
         <div class="contenedor-modal">
             <div class="modal-content col-md-6">
                 <div class="modal-header text-center">
