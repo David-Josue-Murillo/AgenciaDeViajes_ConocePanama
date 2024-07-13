@@ -6,20 +6,12 @@ document.querySelectorAll('.btn_comprar_paquete').forEach(function (btn) {
         const id_usuario = document.getElementById('id_usuario_unique').accessKey;
         showDatosVenta(id, id_paquete, id_usuario); // Mostrar los datos de la compra
 
-        // Obtener datos del formulario
-        const paquete = document.getElementById('paquete').value;
-        const descripcion = document.getElementById('descripcion').value;
-        const precio = document.getElementById('precios').value;
-
-
         // Mostrar ventana modal de pago
         $('#paqueteModal').modal('show');
 
         //Obtener el metodo de pago
         document.querySelectorAll('input[name="metodo_pago"]').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                const metodo_pago = this.value;
-
                 document.getElementById('btn_pagar').classList.remove('disabled');
             });
         });
