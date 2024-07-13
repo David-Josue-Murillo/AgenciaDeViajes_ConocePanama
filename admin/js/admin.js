@@ -12,7 +12,6 @@ const contenedorDestinos = document.getElementById('contenedor_destinos').innerH
 const contenedorReservas = document.getElementById('contenedor_reservas').innerHTML;
 const contenedorPaquetes = document.getElementById('contenedor_paquetes').innerHTML;
 const contenedorGuias = document.getElementById('contenedor_guias').innerHTML;
-const contenedorPagos = document.getElementById('contenedor_pagos').innerHTML;
 
 
 // Logo
@@ -326,11 +325,6 @@ document.getElementById('guias').addEventListener('click', function () {
     });
 });
 
-
-// Area de vista de pagos
-document.getElementById('pagos').addEventListener('click', function() {
-    contenido.innerHTML = contenedorPagos;
-})
 
 // Funciones
 // Eliminar Alertas

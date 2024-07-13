@@ -19,7 +19,7 @@ if(isset($_POST['submit_pago'])){
         exit();
     }
 
-    $sql = "INSERT INTO pagos (id_usuario, id_paquete, nombre_paquete, descripcion, precio_venta, metodo_pago) VALUES ( '$id_usuario', '$id_paquete', '$paquete', '$descripcion', '$precio', '$metodo_pago')";
+    $sql = "INSERT INTO reservas (id_usuario, id_paquete, nombre_paquete, descripcion, precio_venta, metodo_pago) VALUES ( '$id_usuario', '$id_paquete', '$paquete', '$descripcion', '$precio', '$metodo_pago')";
     $resultado = $conexion->query($sql);    // Ejecutando la consulta SQL
     
     // Verificando si se insertó correctamente

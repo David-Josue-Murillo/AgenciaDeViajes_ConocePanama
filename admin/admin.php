@@ -58,15 +58,6 @@ if ($result->num_rows > 0) {
     }
 }
 
-$sql = "SELECT * FROM pagos";
-$result = $conexion->query($sql);
-
-if ($result->num_rows > 0) {
-    $pagos = array();
-    while ($row = $result->fetch_assoc()) {
-        $pagos[] = $row;
-    }
-}
 
 ?>
 
@@ -188,10 +179,6 @@ if ($result->num_rows > 0) {
 
                         <li>
                             <a href="#" id="guias"><i class="fa fa-users"></i>Guias</a>
-                        </li>
-
-                        <li>
-                            <a href="#" id="pagos"><i class="fa fa-edit "></i>Pagos</a>
                         </li>
                     </ul>
 
@@ -888,10 +875,10 @@ if ($result->num_rows > 0) {
                             <tr>
                                 <th>#</th>
                                 <th>Cliente</th>
-                                <th>Destino</th>
                                 <th>Paquete</th>
-                                <th>Fecha de Reserva</th>
-                                <th>Estado</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Metodo de Pago</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -910,16 +897,6 @@ if ($result->num_rows > 0) {
                                         echo $usuario['nombre'] . ' ' . $usuario['apellido'];
                                         ?>
                                     </td>
-                                    <td id="destino_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_destino'] ?>">
-                                        <?php
-                                        $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$reserva[id_destino]'";
-                                        $result = $conexion->query($sql);
-                                        if ($result->num_rows > 0) {
-                                            $destino = $result->fetch_assoc();
-                                        }
-                                        echo $destino['nombre_destino'];
-                                        ?>
-                                    </td>
                                     <td id="paquete_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_paquete'] ?>">
                                         <?php
                                         $sql = "SELECT nombre_paquete FROM paquetes WHERE id_paquete = '$reserva[id_paquete]'";
@@ -930,8 +907,9 @@ if ($result->num_rows > 0) {
                                         echo $paquete['nombre_paquete'];
                                         ?>
                                     </td>
-                                    <td id="fechaReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['fecha_reserva'] ?></td>
-                                    <td id="estado_<?= $reserva['id_reserva'] ?>"><?= $reserva['estado'] ?></td>
+                                    <td id="fechaReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['descripcion'] ?></td>
+                                    <td id="precio_<?= $reserva['id_reserva'] ?>"><?= $reserva['precio_venta'] ?></td>
+                                    <td id="metodo_<?= $reserva['id_reserva'] ?>"><?= $reserva['metodo_pago'] ?></td>
                                     <td>
                                         <a href="#" id="<?= $reserva['id_reserva'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
                                         <a href="#" aria-label="<?= $reserva['id_reserva'] ?>" id="btn-borrar-reserva" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Eliminar</a>
@@ -1062,101 +1040,6 @@ if ($result->num_rows > 0) {
         </div>
 
         <!-- HTML Oculto para cargar el modal de Guias -->
-        <div class="contenedor-modal">
-            <div class="modal-content col-md-6">
-                <div class="modal-header text-center">
-                    <h3 id="modal-titulo"></h3>
-                </div>
-                <div class="modal-body">
-                    <form action="controller/guia_crud.php" method="post" class="form-group" id="nuevo_guia">
-                        <div class="form-group row">
-                            <div class="hidden">
-                                <input type="hidden" id="idGuia" name="id_guia" value="">
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label for="nombre_guia">Nombre de la guia</label>
-                                <input type="text" class="form-control" id="nombreGuia" name="nombre_guia" placeholder="Nombre de la guia" required>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label for="designacion">Destino designado</label>
-                                <select name="id_designacion" id="designacion" class="custom-select px-5">
-                                    <?php foreach ($destinos as $destino) : ?>
-                                        <option value="<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-
-                            <div class="form-group col-md-12">
-                                <label for="url_perfil">URL de la imagen</label>
-                                <input type="url" class="form-control" id="urlPerfil" name="url_perfil" placeholder="URL de la imagen" required>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="form-group row">
-                        <div class="col-md-6">
-                            <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-guia-modal" form="nuevo_guia" name="submit_nuevo_guia" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- HTML Oculto cargar los datos de las ventas -->
-    <div id="contenedor_pagos" style="display: none;">
-        <div class="container-fluid py-5">
-            <div class="col-lg-12 pt-5 pb-3">
-                <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Ventas</h6>
-                    <h1>Lista de Ventas</h1>
-                </div>
-                <div class="row" id="tabla-ventas">
-                    <table class="table table-striped table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nombre</th>
-                                <th>Destino designado</th>
-                                <th>url imagen</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?= $contador = 1 ?>
-                            <?php foreach ($guias as $guia) : ?>
-                                <tr>
-                                    <td><?= $contador++ ?></td>
-                                    <td id="nombre_guia_<?= $guia['guia_id'] ?>"><?= $guia['nombre_guia'] ?></td>
-                                    <td id="designacion_<?= $guia['guia_id'] ?>">
-                                        <?php
-                                        $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$guia[designacion]'";
-                                        $result = $conexion->query($sql);
-                                        if ($result->num_rows > 0) {
-                                            $destino = $result->fetch_assoc();
-                                        }
-
-                                        echo $destino['nombre_destino'];
-                                        ?>
-                                    </td>
-                                    <td id="url_perfil_<?= $guia['guia_id'] ?>"><?= $guia['url_perfil'] ?></td>
-                                    <td>
-                                        <a href="#" id="<?= $guia['guia_id'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
-                                        <a href="#" aria-label="<?= $guia['guia_id'] ?>" id="btn-borrar-guia" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Eliminar</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- HTML Oculto cargar el modal de ventas -->
         <div class="contenedor-modal">
             <div class="modal-content col-md-6">
                 <div class="modal-header text-center">
