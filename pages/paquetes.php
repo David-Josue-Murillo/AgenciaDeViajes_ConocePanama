@@ -267,6 +267,9 @@ if ($result->num_rows > 0) {
                 <div class="modal-body">
                     <!-- Información del Paquete -->
                     <div class="hidden">
+                        <input type="hidden" id="id_usuario_logueado" name="id_usuario" value="">
+                    </div>
+                    <div class="hidden">
                         <input type="hidden" id="id_paquete" name="id_paquete" value="">
                     </div>
                     <div class="form-group">

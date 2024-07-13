@@ -3,7 +3,8 @@ document.querySelectorAll('.btn_comprar_paquete').forEach(function (btn) {
         e.preventDefault();
         const id = this.value; // Identificador unico del paquete
         const id_paquete = this.accessKey; // Identificador unico del paquete   
-        showDatosVenta(id, id_paquete); // Mostrar los datos de la compra
+        const id_usuario = document.getElementById('id_usuario_unique').accessKey;
+        showDatosVenta(id, id_paquete, id_usuario); // Mostrar los datos de la compra
 
         // Obtener datos del formulario
         const paquete = document.getElementById('paquete').value;
@@ -42,7 +43,7 @@ document.querySelectorAll('.btn_login').forEach(function (btn) {
     });
 });
 
-function showDatosVenta(id, id_paquete) {
+function showDatosVenta(id, id_paq, id_user) {
     // Obtener datos del formulario
     const paquete = document.getElementById('nombre_paquete_' + id).textContent;
     const estadia = document.getElementById('dias_paquete_' + id).textContent;
@@ -53,7 +54,8 @@ function showDatosVenta(id, id_paquete) {
     const descrip = "Estadia: " + estadia + "\n" + "Cantidad de Personas: " + cant_personas + "\n" + "Descripción: " + descripcion;
 
     // Mostrar los datos de la compra 
-    document.getElementById('id_paquete').value = id_paquete;
+    document.getElementById('id_usuario_logueado').value = id_user;
+    document.getElementById('id_paquete').value = id_paq;
     document.getElementById('paquete').value = paquete;
     document.getElementById('descripcion').innerHTML = descrip;
     document.getElementById('precios').value = precio;

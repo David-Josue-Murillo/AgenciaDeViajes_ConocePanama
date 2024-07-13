@@ -111,7 +111,7 @@
                         <?php if(isset($_SESSION['login_existe'])): ?>  
 
                         <div class="mt-2">
-                            <p><?php echo $_SESSION['nombre_user']. ' '; echo $_SESSION['apellido_user']; ?></p>
+                            <p accesskey="<?= $_SESSION['id_usuario'] ?>" id="id_usuario_unique"><?php echo $_SESSION['nombre_user']. ' '; echo $_SESSION['apellido_user']; ?></p>
                         </div>
 
                         <button class="btn_admin mx-md-4">
