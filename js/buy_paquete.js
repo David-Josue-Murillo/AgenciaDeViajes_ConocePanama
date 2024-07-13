@@ -36,6 +36,12 @@ document.querySelectorAll('.btn_comprar_paquete').forEach(function (btn) {
     });
 });
 
+document.querySelectorAll('.btn_login').forEach(function (btn) {
+    btn.addEventListener('click', function(e) {
+        window.location.href = '../pages/login.php';
+    });
+});
+
 function showDatosVenta(id, id_paquete) {
     // Obtener datos del formulario
     const paquete = document.getElementById('nombre_paquete_' + id).textContent;
