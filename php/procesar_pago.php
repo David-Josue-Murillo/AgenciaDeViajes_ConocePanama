@@ -7,25 +7,20 @@ if(isset($_POST['submit_pago'])){
     $id_paquete = isset($_POST['id_paquete']) ? mysqli_real_escape_string($conexion, $_POST['id_paquete']) : false;
     $paquete = isset($_POST['paquete']) ? mysqli_real_escape_string($conexion, $_POST['paquete']) : false;
     $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($conexion, $_POST['descripcion']) : false;
-    $precio = isset($_POST['precio']) ? mysqli_real_escape_string($conexion, $_POST['precio']) : false;
+    $precio = isset($_POST['precio']) ?  $_POST['precio'] : false;
     $metodo_pago = isset($_POST['metodo_pago']) ? mysqli_real_escape_string($conexion, $_POST['metodo_pago']) : false;
 
-    // Verificando datos en pantalla
-    echo "La id del paquete es: ". $id_paquete."<br>";
-    echo "El nombre del paquete es: ". $paquete."<br>";
-    echo "La descripcion del paquete es: ". $descripcion."<br>";
-    echo "El precio del paquete es: ". $precio."<br>";
-    echo "El metodo de pago es: ". $metodo_pago."<br>";
+    echo $precio;
 
     // Validar datos
-    /*if(!$paquete || !$descripcion || !$precio || !$metodo_pago){
+    if(!$id_paquete || !$paquete || !$descripcion || !$precio || !$metodo_pago){
         echo "Error: Faltan datos";
-        exit;
+        exit();
     }
 
-    $sql = "INSERT INTO pagos (nombr_paquete, descripcion, precio_venta, metodo_pago) VALUES ('$paquete', '$descripcion', '$precio', '$metodo_pago')";
+    $sql = "INSERT INTO pagos (id_paquete, nombre_paquete, descripcion, precio_venta, metodo_pago) VALUES ( '$id_paquete', '$paquete', '$descripcion', '$precio', '$metodo_pago')";
     $resultado = $conexion->query($sql);    // Ejecutando la consulta SQL
-
+    
     // Verificando si se insertó correctamente
     if ($conexion->affected_rows > 0) {
         $_SESSION['completado'] = "Pago exitoso";
@@ -35,5 +30,5 @@ if(isset($_POST['submit_pago'])){
 
     // Redireccionar al formulario de inicio
     header('Location: ../index.php');
-    exit();*/
+    exit();
 }

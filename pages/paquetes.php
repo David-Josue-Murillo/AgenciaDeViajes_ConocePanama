@@ -70,8 +70,14 @@ if ($result->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="1">Comprar</button>
-                                <h5 class="m-0" id="precio_paquete_1">$140</h5>
+                                <button class="btn btn-primary
+                                <?php if(!isset($_SESSION['login_existe'])){
+                                    echo 'btn_login';
+                                } else {
+                                    echo 'btn_comprar_paquete';
+                                }
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="1">Comprar</button>
+                                <h5 class="m-0">$<span id="precio_paquete_1">140</span></h5>
                             </div>
                         </div>
                     </div>
@@ -97,8 +103,14 @@ if ($result->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="2">Comprar</button>
-                                <h5 class="m-0" id="precio_paquete_2">$175</h5>
+                                <button class="btn btn-primary
+                                <?php if(!isset($_SESSION['login_existe'])){
+                                    echo 'btn_login';
+                                } else {
+                                    echo 'btn_comprar_paquete';
+                                }
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="2">Comprar</button>
+                                <h5 class="m-0">$<span id="precio_paquete_2">175</span></h5>
                             </div>
                         </div>
                     </div>
@@ -124,8 +136,14 @@ if ($result->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="3">Comprar</button>
-                                <h5 class="m-0" id="precio_paquete_3">$140</h5>
+                                <button class="btn btn-primary
+                                <?php if(!isset($_SESSION['login_existe'])){
+                                    echo 'btn_login';
+                                } else {
+                                    echo 'btn_comprar_paquete';
+                                }
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="3">Comprar</button>
+                                <h5 class="m-0">$<span id="precio_paquete_3">140</span></h5>
                             </div>
                         </div>
                     </div>
@@ -151,8 +169,14 @@ if ($result->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="4">Comprar</button>
-                                <h5 class="m-0" id="precio_paquete_4">$45</h5>
+                                <button class="btn btn-primary
+                                <?php if(!isset($_SESSION['login_existe'])){
+                                    echo 'btn_login';
+                                } else {
+                                    echo 'btn_comprar_paquete';
+                                }
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="4">Comprar</button>
+                                <h5 class="m-0">$<span id="precio_paquete_4">45</span></h5>
                             </div>
                         </div>
                     </div>
@@ -178,8 +202,14 @@ if ($result->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="5">Comprar</button>
-                                <h5 class="m-0" id="precio_paquete_5">$210</h5>
+                                <button class="btn btn-primary
+                                <?php if(!isset($_SESSION['login_existe'])){
+                                    echo 'btn_login';
+                                } else {
+                                    echo 'btn_comprar_paquete';
+                                }
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="5">Comprar</button>
+                                <h5 class="m-0">$<span id="precio_paquete_5">210</span></h5>
                             </div>
                         </div>
                     </div>
@@ -205,8 +235,14 @@ if ($result->num_rows > 0) {
                                     $id_paquete = $resultado->fetch_assoc();
                                 }
                                 ?>
-                                <button class="btn btn-primary btn_comprar_paquete" accesskey="<?= $id_paquete['id_paquete'] ?>" value="6">Comprar</button>
-                                <h5 class="m-0" id="precio_paquete_6">$250</h5>
+                                <button class="btn btn-primary
+                                <?php if(!isset($_SESSION['login_existe'])){
+                                    echo 'btn_login';
+                                } else {
+                                    echo 'btn_comprar_paquete';
+                                }
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="6">Comprar</button>
+                                <h5 class="m-0">$<span id="precio_paquete_6">250</span></h5>
                             </div>
                         </div>
                     </div>
