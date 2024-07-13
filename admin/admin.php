@@ -866,9 +866,7 @@ if ($result->num_rows > 0) {
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Reservas</h6>
                     <h1>Lista de Reservas</h1>
-                    <button id="btn-crear-reserva" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Crear Reserva</button>
                 </div>
-
                 <div class="row" id="tabla-reservas">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
@@ -883,7 +881,7 @@ if ($result->num_rows > 0) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?= $contador = 1 ?>
+                            <?php $contador = 1 ?>
                             <?php foreach ($reservas as $reserva) : ?>
                                 <tr>
                                     <td><?= $contador++ ?></td>
@@ -893,9 +891,7 @@ if ($result->num_rows > 0) {
                                         $result = $conexion->query($sql);
                                         if ($result->num_rows > 0) {
                                             $usuario = $result->fetch_assoc();
-                                        }
-                                        echo $usuario['nombre'] . ' ' . $usuario['apellido'];
-                                        ?>
+                                        }echo $usuario['nombre'] . ' ' . $usuario['apellido'];?>
                                     </td>
                                     <td id="paquete_<?= $reserva['id_reserva'] ?>" accesskey="<?= $reserva['id_paquete'] ?>">
                                         <?php
@@ -937,11 +933,7 @@ if ($result->num_rows > 0) {
 
                             <div class="form-group col-md-6">
                                 <label for="usuario">Usuarios</label><br>
-                                <select name="id_usuario" id="idUsuario" class="custom-select px-5">
-                                    <?php foreach ($usuarios as $usuario) : ?>
-                                        <option value="<?= $usuario['id_usuario'] ?>"><?= $usuario['nombre'] . ' ' . $usuario['apellido'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <input type="text" name="nombre_usuario" id="usuarioName" class="form-control" placeholder="Usuario" required>
                             </div>
 
                             <div class="form-group col-md-6">
