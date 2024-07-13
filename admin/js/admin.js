@@ -12,7 +12,7 @@ const contenedorDestinos = document.getElementById('contenedor_destinos').innerH
 const contenedorReservas = document.getElementById('contenedor_reservas').innerHTML;
 const contenedorPaquetes = document.getElementById('contenedor_paquetes').innerHTML;
 const contenedorGuias = document.getElementById('contenedor_guias').innerHTML;
-const contenedorNuevaTabla = document.getElementById('contenedor_nueva_tabla').innerHTML;
+const contenedorPagos = document.getElementById('contenedor_pagos').innerHTML;
 
 
 // Logo
@@ -327,58 +327,10 @@ document.getElementById('guias').addEventListener('click', function () {
 });
 
 
-// Area de crear nueva tabla
-document.getElementById('nuevaTabla').addEventListener('click', function () {
-    contenido.innerHTML = contenedorNuevaTabla;
-
-    // Evento para agregar campos a la tabla
-    document.getElementById('agregarCampos').addEventListener('click', function () {
-        const formulario = document.getElementById('formNuevaTabla'); // Formulario de creación de tabla
-
-        const divCampo = document.createElement('div'); // Elemento que contiene los campos de la tabla
-        divCampo.className = 'row';
-        divCampo.innerHTML = `
-            <div class="form-group col-md-4">
-                <label for="nombre_campo">Nombre del campo</label>
-                <input type="text" class="form-control" id="nombre_campo" name="nombre_campo" placeholder="Nombre del campo" required>
-            </div>
-
-            <div class="form-group col-md-3">
-                <label for="tipo_dato">Tipo de dato</label><br>
-                <select name="tipo_dato" class="custom-select px-5" required="required">
-                    <option value="varchar">varchar</option>
-                    <option value="int">int</option>
-                    <option value="float">float</option>
-                    <option value="date">date</option>
-                    <option value="datetime">text</option>
-                </select>
-            </div>
-
-            <div class="form-group col-md-3">
-                <label for="tamaño_dato">Tamaño de dato</label>
-                <div class="col-md-6">
-                    <input type="number" class="form-control" id="tamaño_dato" name="tamaño_dato" placeholder="1">
-                </div>
-            </div>
-
-            <div class="form-group col-md-1 text-center">
-                <label for="nullo">Nullo</label>
-                <input type="checkbox" class="form-control" id="nullo" name="nullo">
-            </div>
-        `;
-
-        if ( parseInt(document.getElementById('agregarCantidad').value) > 1) {
-            for (let i = 1; i < parseInt(document.getElementById('agregarCantidad').value); i++) {
-                formulario.appendChild(divCampo.cloneNode(true)); // Clonar el elemento para agregarlos
-            }
-        }
-            
-        formulario.appendChild(divCampo); // Agregar el elemento al formulario
-        
-    });
-});
-
-
+// Area de vista de pagos
+document.getElementById('pagos').addEventListener('click', function() {
+    contenido.innerHTML = contenedorPagos;
+})
 
 // Funciones
 // Eliminar Alertas

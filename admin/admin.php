@@ -181,7 +181,7 @@ if ($result->num_rows > 0) {
                         </li>
 
                         <li>
-                            <a href="#" id="nuevaTabla"><i class="fa fa-edit "></i>Crear Tabla</a>
+                            <a href="#" id="pagos"><i class="fa fa-edit "></i>Pagos</a>
                         </li>
                     </ul>
 
@@ -1097,69 +1097,96 @@ if ($result->num_rows > 0) {
         </div>
     </div>
 
-    <!-- HTML Oculto del formulario que crea una nueva tabla -->
-    <div id="contenedor_nueva_tabla" style="display: none;">
+    <!-- HTML Oculto cargar los datos de las ventas -->
+    <div id="contenedor_pagos" style="display: none;">
         <div class="container-fluid py-5">
             <div class="col-lg-12 pt-5 pb-3">
                 <div class="row text-center mb-3 pb-3" style="margin-bottom: 25px;">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Nueva Tabla</h6>
-                    <h1>Crear una nueva tabla</h1>
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 3px;">Guias</h6>
+                    <h1>Lista de Guias</h1>
+                    <button id="btn-crear-guia" class="btn btn-primary py-md-3 px-md-5 mt-2 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Crear Guia</button>
                 </div>
-                <div class="row" id="formTablaNueva">
-                    <form action="controller/crear_nueva_tabla.php" method="post" class="form-group" id="formNuevaTabla">
-                        <div class="form-group row" id="agregarColumnas">
-                            <div class="form-group col-md-4">
-                                <label for="nombre_tabla">Nombre de la tabla</label>
-                                <input type="text" class="form-control" id="nombre_tabla" name="nombre_tabla" placeholder="Nombre de la tabla" required>
+                <div class="row" id="tabla-guias">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Destino designado</th>
+                                <th>url imagen</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?= $contador = 1 ?>
+                            <?php foreach ($guias as $guia) : ?>
+                                <tr>
+                                    <td><?= $contador++ ?></td>
+                                    <td id="nombre_guia_<?= $guia['guia_id'] ?>"><?= $guia['nombre_guia'] ?></td>
+                                    <td id="designacion_<?= $guia['guia_id'] ?>">
+                                        <?php
+                                        $sql = "SELECT nombre_destino FROM destinos WHERE id_destino = '$guia[designacion]'";
+                                        $result = $conexion->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            $destino = $result->fetch_assoc();
+                                        }
+
+                                        echo $destino['nombre_destino'];
+                                        ?>
+                                    </td>
+                                    <td id="url_perfil_<?= $guia['guia_id'] ?>"><?= $guia['url_perfil'] ?></td>
+                                    <td>
+                                        <a href="#" id="<?= $guia['guia_id'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
+                                        <a href="#" aria-label="<?= $guia['guia_id'] ?>" id="btn-borrar-guia" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Eliminar</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- HTML Oculto para cargar el modal de Guias -->
+        <div class="contenedor-modal">
+            <div class="modal-content col-md-6">
+                <div class="modal-header text-center">
+                    <h3 id="modal-titulo"></h3>
+                </div>
+                <div class="modal-body">
+                    <form action="controller/guia_crud.php" method="post" class="form-group" id="nuevo_guia">
+                        <div class="form-group row">
+                            <div class="hidden">
+                                <input type="hidden" id="idGuia" name="id_guia" value="">
                             </div>
 
-                            <div class="form-group col-md-3">
-                                <label for="agregarTabla">Agregar</label>
-
-                                <div class="row">
-                                    <div class="form-group col-md-5">
-                                        <input type="number" class="form-control" id="agregarCantidad" name="agregarTabla" value="1">
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <input type="button" id="agregarCampos" class="btn btn-primary btn-block <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>" value="Agregar">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-md-4">
-                                <label for="nombre_campo">Nombre del campo</label>
-                                <input type="text" class="form-control" id="nombre_campo" name="nombre_campo[]" placeholder="Nombre del campo" required>
+                            <div class="form-group col-md-6">
+                                <label for="nombre_guia">Nombre de la guia</label>
+                                <input type="text" class="form-control" id="nombreGuia" name="nombre_guia" placeholder="Nombre de la guia" required>
                             </div>
 
-                            <div class="form-group col-md-3">
-                                <label for="tipo_dato">Tipo de dato</label><br>
-                                <select name="tipo_dato[]" class="custom-select px-5" required="required">
-                                    <option value="varchar">varchar</option>
-                                    <option value="int">int</option>
-                                    <option value="float">float</option>
-                                    <option value="date">date</option>
-                                    <option value="datetime">text</option>
+                            <div class="form-group col-md-6">
+                                <label for="designacion">Destino designado</label>
+                                <select name="id_designacion" id="designacion" class="custom-select px-5">
+                                    <?php foreach ($destinos as $destino) : ?>
+                                        <option value="<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-3">
-                                <label for="tamaño_dato">Tamaño de dato</label>
-                                <div class="col-md-6">
-                                    <input type="number" class="form-control" id="tamaño_dato" name="tamaño_dato[]" placeholder="1">
-                                </div>
-                            </div>
-
-                            <div class="form-group col-md-1 text-center">
-                                <label for="nullo">Nullo</label>
-                                <input type="checkbox" class="form-control" id="nullo" name="nullo[]">
+                            <div class="form-group col-md-12">
+                                <label for="url_perfil">URL de la imagen</label>
+                                <input type="url" class="form-control" id="urlPerfil" name="url_perfil" placeholder="URL de la imagen" required>
                             </div>
                         </div>
                     </form>
-
-                    <div class="form-group">
-                        <input type="submit" name="submit_nueva_tabla" class="btn btn-primary btn-block w-100 <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>" form="formNuevaTabla" value="Crear Tabla" />
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-danger btn-block w-100" id="btn-cerrar-modal">Cerrar</a>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary btn-block w-100" id="btn-guardar-guia-modal" form="nuevo_guia" name="submit_nuevo_guia" value="">
+                        </div>
                     </div>
                 </div>
             </div>
