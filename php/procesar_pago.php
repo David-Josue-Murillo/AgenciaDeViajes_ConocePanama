@@ -28,9 +28,18 @@ if(isset($_POST['submit_pago'])){
     if ($conexion->affected_rows > 0) {
         $_SESSION['completado'] = "Pago exitoso";
 
-        // Enviar correo de confirmación
-        $mail = new MailController();
-        //$mail->sendMailUser($id_usuario, "Pago exitoso", "Se ha procesado tu pago con éxito");
+        // Obteniendo correo de usuario
+        $sql = "SELECT nombre, apellido, email FROM usuarios WHERE id_usuario = '$id_usuario'";
+        $resultado = $conexion->query($sql);
+        if ($resultado->num_rows > 0) {
+            $email = $resultado->fetch_assoc();
+            
+            // Enviar correo de confirmación
+            $mail = new MailController();
+            $mail->sendMailConfirmation($email['email'], $email['nombre'] . ' ' . $email['apellido'], "Pago exitoso", "Se ha procesado tu pago con éxito");
+        }
+        
+    
     } else {
         $_SESSION['error'] = "Error al procesar el pago";
     }
