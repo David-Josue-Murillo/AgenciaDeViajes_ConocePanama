@@ -76,7 +76,7 @@ if ($result->num_rows > 0) {
                                 } else {
                                     echo 'btn_comprar_paquete';
                                 }
-                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="1">Comprar</button>
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="1">Reservar</button>
                                 <h5 class="m-0">$<span id="precio_paquete_1">140</span></h5>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ if ($result->num_rows > 0) {
                                 } else {
                                     echo 'btn_comprar_paquete';
                                 }
-                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="2">Comprar</button>
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="2">Reservar</button>
                                 <h5 class="m-0">$<span id="precio_paquete_2">175</span></h5>
                             </div>
                         </div>
@@ -142,7 +142,7 @@ if ($result->num_rows > 0) {
                                 } else {
                                     echo 'btn_comprar_paquete';
                                 }
-                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="3">Comprar</button>
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="3">Reservar</button>
                                 <h5 class="m-0">$<span id="precio_paquete_3">140</span></h5>
                             </div>
                         </div>
@@ -175,7 +175,7 @@ if ($result->num_rows > 0) {
                                 } else {
                                     echo 'btn_comprar_paquete';
                                 }
-                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="4">Comprar</button>
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="4">Reservar</button>
                                 <h5 class="m-0">$<span id="precio_paquete_4">45</span></h5>
                             </div>
                         </div>
@@ -208,7 +208,7 @@ if ($result->num_rows > 0) {
                                 } else {
                                     echo 'btn_comprar_paquete';
                                 }
-                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="5">Comprar</button>
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="5">Reservar</button>
                                 <h5 class="m-0">$<span id="precio_paquete_5">210</span></h5>
                             </div>
                         </div>
@@ -241,7 +241,7 @@ if ($result->num_rows > 0) {
                                 } else {
                                     echo 'btn_comprar_paquete';
                                 }
-                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="6">Comprar</button>
+                                ?>" accesskey="<?= $id_paquete['id_paquete'] ?>" value="6">Reservar</button>
                                 <h5 class="m-0">$<span id="precio_paquete_6">250</span></h5>
                             </div>
                         </div>
@@ -308,7 +308,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary disabled" name="submit_pago" id="btn_pagar">Pagar</button>
+                    <button type="submit" class="btn btn-primary disabled" name="submit_pago" id="btn_pagar">Reservar</button>
                 </div>
             </form>
         </div>

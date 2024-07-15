@@ -114,7 +114,7 @@ include 'admin/db/conexion.php';
                 <div class="col-lg-4 col-md-6 mb-4 pb-2">
                     <div class="blog-item">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="assets/img/blog-1.jpg" alt="">
+                            <img class="img-fluid w-100" src="assets/img/paquete_2.webp" alt="">
                             <div class="blog-date">
                                 <h6 class="font-weight-bold mb-n1">01</h6>
                                 <small class="text-white text-uppercase">Jan</small>
@@ -122,18 +122,18 @@ include 'admin/db/conexion.php';
                         </div>
                         <div class="bg-white p-4">
                             <div class="d-flex mb-2">
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
+                                <a class="text-primary text-uppercase text-decoration-none" href="">Isla</a>
                                 <span class="text-primary px-2">|</span>
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">9 Planes de Agroturismo en Boquete</a>
+                            <a class="h5 m-0 text-decoration-none" href="">Tour avistamiento de ballenas desde la Ciudad a Isla Contadora</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 pb-2">
                     <div class="blog-item">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="assets/img/blog-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="assets/img/paquete_7.jpg" alt="">
                             <div class="blog-date">
                                 <h6 class="font-weight-bold mb-n1">01</h6>
                                 <small class="text-white text-uppercase">Jan</small>
@@ -141,11 +141,11 @@ include 'admin/db/conexion.php';
                         </div>
                         <div class="bg-white p-4">
                             <div class="d-flex mb-2">
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
+                                <a class="text-primary text-uppercase text-decoration-none" href="">Parque</a>
                                 <span class="text-primary px-2">|</span>
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">9 Museos Imperdibles en Ciudad de Panamá</a>
+                            <a class="h5 m-0 text-decoration-none" href="">Parque Nacional Soberania, parques protegidos del país</a>
                         </div>
                     </div>
                 </div>
