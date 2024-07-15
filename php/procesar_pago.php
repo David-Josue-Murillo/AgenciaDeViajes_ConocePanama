@@ -1,6 +1,9 @@
 <?php
 
 include_once '../admin/db/conexion.php';
+include_once '../email/mailController.php';
+include_once '../lib/vendor/autoload.php';
+
 
 if(isset($_POST['submit_pago'])){
     // Obtener datos del formulario
@@ -24,6 +27,10 @@ if(isset($_POST['submit_pago'])){
     // Verificando si se insertó correctamente
     if ($conexion->affected_rows > 0) {
         $_SESSION['completado'] = "Pago exitoso";
+
+        // Enviar correo de confirmación
+        $mail = new MailController();
+        //$mail->sendMailUser($id_usuario, "Pago exitoso", "Se ha procesado tu pago con éxito");
     } else {
         $_SESSION['error'] = "Error al procesar el pago";
     }
