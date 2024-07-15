@@ -7,7 +7,7 @@ include '../admin/db/conexion.php';
 
 if (isset($_POST['submit_cotizacion'])) {
 
-    $destino = intval($_POST['destino']); // Obtener el id de destino
+    $destino = intval($_POST['id_destino']); // Obtener el id de destino
     $fechas = $_POST['fechaText']; // Obtener la fecha de inicio
     $cantidad_personas = intval($_POST['cantidad_personas']); // Obtener la fecha de fin
     $precio = $_POST['precio']; // Obtener la cantidad de personas

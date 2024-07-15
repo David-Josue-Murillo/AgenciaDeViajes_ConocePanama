@@ -14,7 +14,7 @@ if (!isset($_SESSION)) {
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" name="destino" id="destino" style="height: 45px;" required>
+                                    <select class="custom-select px-4" name="id_destino" id="destino" style="height: 45px;" required>
                                         <option selected disabled>Destino</option>
                                         <?php
                                         $sql = "SELECT id_paquete, nombre_paquete FROM paquetes";
@@ -55,11 +55,7 @@ if (!isset($_SESSION)) {
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <?php if (isset($_SESSION['id_usuario'])) : ?>
-                            <button class="info__btn" style="height: 47px; margin-top: -2px;" form="crear_reservar" type="submit" name="submit_cotizacion">Reservar</button>
-                        <?php else : ?>
-                            <button class="info__btn" style="height: 47px; margin-top: -2px;" form="crear_reservar" type="submit" name="submit_cotizacion">Cotizar</button>
-                        <?php endif; ?>
+                        <button class="info__btn" style="height: 47px; margin-top: -2px;" form="crear_reservar" type="submit" name="submit_cotizacion">Cotizar</button>
                     </div>
                 </form>
             </div>
