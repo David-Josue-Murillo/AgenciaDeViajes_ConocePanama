@@ -41,15 +41,7 @@ if (!isset($_SESSION)) {
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
                                     <div class="date py-1" id="date2" data-target-input="nearest">
-                                        <select name="cantidad_personas" class="custom-select px-4" style="height: 47px;" required>
-                                            <option selected>Cant. Personas</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
+                                        <input type="number" class="form-control" id="cantidad_personas" name="cantidad_personas" data-target="#cantidad_personas" data-toggle="datetimepicker" value="" required readonly />
                                     </div>
                                 </div>
                             </div>
