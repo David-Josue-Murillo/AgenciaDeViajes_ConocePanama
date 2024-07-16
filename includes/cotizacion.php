@@ -55,7 +55,7 @@ if (!isset($_SESSION)) {
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button class="info__btn" style="height: 47px; margin-top: -2px;" form="crear_reservar" type="submit" name="submit_cotizacion">Cotizar</button>
+                        <button class="info__btn" style="height: 47px; margin-top: -2px;" form="crear_reservar" id="btn_cotizacion" type="submit" name="submit_cotizacion" disabled>Cotizar</button>
                     </div>
                 </form>
             </div>

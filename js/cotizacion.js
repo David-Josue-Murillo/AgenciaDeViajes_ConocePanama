@@ -1,6 +1,8 @@
 // Obtener la id del paquete cada vez que cambien el select
-document.getElementById('destino').addEventListener('change', function() {
+document.getElementById('destino').addEventListener('change', function(e) {
+    
     let destinoId = this.value;
+    document.getElementById('btn_cotizacion').disabled = false;
 
     fetch('../php/obtener_cantidad_personas.php', {
         method: 'POST',
