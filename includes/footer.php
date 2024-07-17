@@ -31,14 +31,6 @@
                 <p><i class="fa fa-map-marker-alt mr-2"></i>Panamá, Panamá</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+507 6776 6666</p>
                 <p><i class="fa fa-envelope mr-2"></i>agenciapanama@gmail.com</p>
-                <div class="w-100">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-light" id="emailSuscribe" style="padding: 25px;" placeholder="Tu Email">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-3" id="sendEmailSuscribeBtn">Inscribirse</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

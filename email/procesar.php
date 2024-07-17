@@ -16,15 +16,6 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) 
     echo "ok";
 }
 
-if (isset($_POST['email'])){
-    $emailSuscribe = $_POST['email'];
-
-    $mail = new MailController();
-    $mail->sendMailSuscription($emailSuscribe, "Se ha suscrito un nuevo usuario");
-
-    echo "ok";
-}
-
 if(isset($_POST['send_email'])){
     
     // Obtener datos de la solicitud

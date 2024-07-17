@@ -35,30 +35,4 @@ $('#sendMessageButton').click(function(e) {
     });
 });
 
-$('#sendEmailSuscribeBtn').click(function() {
-    const emailSuscribe = $('#emailSuscribe').val();
-
-    var datosEmail = new FormData();
-    datosEmail.append("email", emailSuscribe);
-
-    $.ajax({
-        url: "/email/procesar.php",
-        method: "POST",
-        data: datosEmail,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function (respuesta) {
-            console.log("respuesta", respuesta);
-            if (respuesta === "ok") {
-                alert("Email enviado");
-                
-                // Resetea el formulario
-                $("#emailSuscribe").val("");
-            } else {
-                alert("Ocurrio un error" + respuesta);
-            }
-        }
-    });
-});
 
