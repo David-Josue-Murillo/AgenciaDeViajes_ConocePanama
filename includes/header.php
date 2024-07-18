@@ -41,28 +41,31 @@
 
     <nav class="container-fluid navbar navbar-expand-lg bg-nav">
         <div class="container-fluid">
-            <div class="d-flex align-items-center">
-                <a class="navbar-brand" href="#">
-                    <img class="nav__img img-responsive" src="../assets/img/logo.png" alt="Administrador">
-                </a>
-
-                <div class="nav__text d-flex">
-                    <p class="text-nav text-prim">Conoce Panamá</p>
-                    <p class="text-nav text-second">Agencia de viajes en Panamá</p>
+            <div class="col-lg-4 col-12">
+                <div class="d-flex align-items-center">
+                    <a class="navbar-brand" href="#">
+                        <img class="nav__img img-responsive" src="../assets/img/logo.png" alt="Administrador">
+                    </a>
+                    <div class="nav__text d-flex">
+                        <p class="text-nav text-prim">Conoce Panamá</p>
+                        <p class="text-nav text-second">Agencia de viajes en Panamá</p>
+                    </div>
                 </div>
             </div>
 
-            <button class="navbar-toggler m-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -20px;">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M4 6l16 0" />
-                    <path d="M4 12l16 0" />
-                    <path d="M4 18l16 0" />
-                </svg>
-            </button>
+            <div class="m-auto">
+                <button class="navbar-toggler m-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 6l16 0" />
+                        <path d="M4 12l16 0" />
+                        <path d="M4 18l16 0" />
+                    </svg>
+                </button>
+            </div>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <div class="col col-lg-8 collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="../index.php">Inicio</a>
                     </li>
