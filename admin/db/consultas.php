@@ -23,7 +23,7 @@ if(!$resultado->num_rows){
     telefono INT NOT NULL, 
     email VARCHAR(35) NOT NULL UNIQUE, 
     password VARCHAR(255) NOT NULL,
-    tipo_usuario VARCHAR(7) NOT NULL,
+    tipo_usuario INT NOT NULL,
     PRIMARY KEY (id_usuario)";
     
     if(!crear_tabla('usuarios', $campos_user, $conexion)) {
@@ -64,6 +64,7 @@ if(!$resultado->num_rows){
     fecha_inicio DATE NOT NULL,
     fecha_fin DATE NOT NULL,
     descripcion TEXT NOT NULL,
+    cantidad_personas INT NOT NULL,
     precio DECIMAL(10,2) NOT NULL,
     id_destino INT NOT NULL,
     PRIMARY KEY (id_paquete)";
@@ -83,10 +84,10 @@ $resultado = $conexion->query($query);
 if(!$resultado->num_rows){
     $campos_user = "id_reserva INT NOT NULL AUTO_INCREMENT,
     id_usuario INT NOT NULL,
-    id_destino INT NOT NULL,
     id_paquete INT NOT NULL,
-    fecha_reserva TEXT NOT NULL,
-    estado VARCHAR(20) NOT NULL,
+    descripcion_reserva TEXT NOT NULL,
+    precio_venta DECIMAL(10,2) NOT NULL,
+    metodo_pago VARCHAR(10) NOT NULL,
     PRIMARY KEY (id_reserva)";
     if(!crear_tabla('reservas', $campos_user, $conexion)) {
         echo "Tabla creada con éxito";
@@ -101,11 +102,11 @@ $query = "SHOW TABLES FROM `$name_db` LIKE 'guias'";
 $resultado = $conexion->query($query);
 
 if(!$resultado->num_rows){
-    $campos_user = "guias_id INT NOT NULL AUTO_INCREMENT,
+    $campos_user = "guia_id INT NOT NULL AUTO_INCREMENT,
     nombre_guia VARCHAR(50) NOT NULL,
     url_perfil VARCHAR(255) NOT NULL,
     designacion INT NOT NULL,
-    PRIMARY KEY (guias_id)";
+    PRIMARY KEY (guia_id)";
     
     if(!crear_tabla('guias', $campos_user, $conexion)) {
         echo "Tabla creada con éxito";
@@ -120,11 +121,11 @@ $query = "SHOW TABLES FROM `$name_db` LIKE 'fecha_paquetes'";
 $resultado = $conexion->query($query);
 
 if(!$resultado->num_rows){
-    $campos_user = "id_fecha_paquetes INT NOT NULL AUTO_INCREMENT,
+    $campos_user = "id_fecha_paquete INT NOT NULL AUTO_INCREMENT,
     fecha_inicio DATE NOT NULL,
     fecha_fin DATE NOT NULL,
     id_destino INT NOT NULL,
-    PRIMARY KEY (id_fecha_paquetes)";
+    PRIMARY KEY (id_fecha_paquete)";
     
     if(!crear_tabla('fecha_paquetes', $campos_user, $conexion)) {
         echo "Tabla creada con éxito";
@@ -139,9 +140,9 @@ $query = "SHOW TABLES FROM `$name_db` LIKE 'tipo_usuarios'";
 $resultado = $conexion->query($query);
 
 if(!$resultado->num_rows){
-    $campos_user = "usuarios_id INT NOT NULL AUTO_INCREMENT,
+    $campos_user = "usuario_id INT NOT NULL AUTO_INCREMENT,
     tipo_usuario VARCHAR(15) NOT NULL,
-    PRIMARY KEY (usuarios_id)";
+    PRIMARY KEY (usuario_id)";
 
     if(!crear_tabla('tipo_usuarios', $campos_user, $conexion)) {
         echo "Tabla creada con éxito";
@@ -149,6 +150,4 @@ if(!$resultado->num_rows){
         echo "Error al crear la tabla";
     }
 }
-
-
 
