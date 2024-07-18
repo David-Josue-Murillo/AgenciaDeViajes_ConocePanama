@@ -135,6 +135,7 @@
     line-height: 10%;
     margin-top: 1rem;
     margin-right: 3rem;
+    width: 100%;
 }
 
 .text-nav {
@@ -570,4 +571,20 @@ footer {
 
 }
 
+@media (max-width: 640px) {
+    
+    .nav__text{
+        width: auto;
+    }
+
+    .text-second{
+        font-size: 0.8rem;
+    }
+
+    .text-nav{
+        height: auto;
+        line-height: 0.5;
+    }
+
+}
 

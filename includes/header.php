@@ -43,17 +43,17 @@
         <div class="container-fluid">
             <div class="d-flex align-items-center">
                 <a class="navbar-brand" href="#">
-                    <img class="nav__img" src="../assets/img/logo.png" alt="Administrador">
+                    <img class="nav__img img-responsive" src="../assets/img/logo.png" alt="Administrador">
                 </a>
 
-                <div class="nav__text d-flex w-100">
+                <div class="nav__text d-flex">
                     <p class="text-nav text-prim">Conoce Panamá</p>
                     <p class="text-nav text-second">Agencia de viajes en Panamá</p>
                 </div>
             </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <button class="navbar-toggler m-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M4 6l16 0" />
                     <path d="M4 12l16 0" />
