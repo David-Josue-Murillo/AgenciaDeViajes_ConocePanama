@@ -4,7 +4,7 @@ include_once 'conexion.php';
 include_once 'funciones.php';
 
 // Consulta la creación y verificación de la tabla (si existen)
-$name_db = 'conoce_panama';
+$name_db = 'u973323379_David';
 
 
 /* ************************************************************************** */
@@ -151,3 +151,5 @@ if(!$resultado->num_rows){
     }
 }
 
+header('Location: ../../index.php');
+exit();
