@@ -57,16 +57,6 @@ include 'admin/db/conexion.php';
                 </div>
             </div>
 
-            <div class="m-auto">
-                <button class="navbar-toggler m-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -20px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M4 6l16 0" />
-                        <path d="M4 12l16 0" />
-                        <path d="M4 18l16 0" />
-                    </svg>
-                </button>
-            </div>
 
             <div class="col col-lg-8 collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -157,12 +147,6 @@ include 'admin/db/conexion.php';
         <!-- Carousel - Fin -->
 
         <!-- Reserva - Inicio -->
-        <?php
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-        ?>
-
         <div class="container-fluid booking mt-5 pb-5">
             <div class="container pb-5">
                 <div class="bg-light shadow" style="padding: 30px;">
@@ -485,11 +469,11 @@ include 'admin/db/conexion.php';
     <!-- Footer - Fin -->
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/cotizacion.js"></script>
     <script src="js/envio-email.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/buy_paquete.js"></script>
-    <script src="js/cotizacion.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Scripts -->
 
 </body>

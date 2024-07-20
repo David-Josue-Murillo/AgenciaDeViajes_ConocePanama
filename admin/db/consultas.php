@@ -4,8 +4,8 @@ include_once 'conexion.php';
 include_once 'funciones.php';
 
 // Consulta la creación y verificación de la tabla (si existen)
-$name_db = 'u973323379_David';
-
+//$name_db = 'u973323379_David';
+$name_db = 'conoce_panama';
 
 /* ************************************************************************** */
                             /* Creación de tablas */

@@ -32,8 +32,8 @@ include '../admin/db/conexion.php';
     <link rel="stylesheet" href="../assets/css/style.css">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <title>Conoce Panamá</title>
 </head>
 
@@ -149,17 +149,11 @@ if (!isset($_SESSION)) {
     <!-- Header End -->
 
     <!-- Reserva - Inicio -->
-    <?php
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-    ?>.
-
     <div class="container-fluid booking mt-5 pb-5">
         <div class="container pb-5">
             <div class="bg-light shadow" style="padding: 30px;">
                 <div class="row align-items-center" style="min-height: 60px;">
-                    <form action="php/cotizacion.php" method="post" class="d-md-flex" id="crear_reservar">
+                    <form action="../php/cotizacion.php" method="post" class="d-md-flex" id="crear_reservar">
                         <div class="col-md-10">
                             <div class="row">
                                 <div class="col-md-3">

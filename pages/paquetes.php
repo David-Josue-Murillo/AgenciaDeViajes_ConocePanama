@@ -183,7 +183,7 @@ if (!isset($_SESSION)) {
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="<?php echo $destinos[0]['url_imagen']; ?>" alt="">
+                    <img class="img-fluid" src="<?php echo $destinos[0]['ulr_imagen']; ?>" alt="">
                     <div class="p-4">
                         <div class="d-flex justify-content-between mb-3">
                             <small class="m-0" id="nombre_paquete_1"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Pearl Islands</small>
@@ -216,7 +216,7 @@ if (!isset($_SESSION)) {
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="<?php echo $destinos[1]['url_imagen']; ?>" alt="">
+                    <img class="img-fluid" src="<?php echo $destinos[1]['ulr_imagen']; ?>" alt="">
                     <div class="p-4">
                         <div class="d-flex justify-content-between mb-3">
                             <small class="m-0" id="nombre_paquete_2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Contadora</small>
@@ -249,7 +249,7 @@ if (!isset($_SESSION)) {
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="<?php echo $destinos[2]['url_imagen']; ?>" alt="">
+                    <img class="img-fluid" src="<?php echo $destinos[2]['ulr_imagen']; ?>" alt="">
                     <div class="p-4">
                         <div class="d-flex justify-content-between mb-3">
                             <small class="m-0" id="nombre_paquete_3"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Isla Taboga</small>
@@ -282,7 +282,7 @@ if (!isset($_SESSION)) {
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="<?php echo $destinos[3]['url_imagen']; ?>" alt="">
+                    <img class="img-fluid" src="<?php echo $destinos[3]['ulr_imagen']; ?>" alt="">
                     <div class="p-4">
                         <div class="d-flex justify-content-between mb-3">
                             <small class="m-0" id="nombre_paquete_4"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Parque Soberania</small>
@@ -315,7 +315,7 @@ if (!isset($_SESSION)) {
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="<?php echo $destinos[4]['url_imagen']; ?>" alt="">
+                    <img class="img-fluid" src="<?php echo $destinos[4]['ulr_imagen']; ?>" alt="">
                     <div class="p-4">
                         <div class="d-flex justify-content-between mb-3">
                             <small class="m-0" id="nombre_paquete_5"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Playa Blanca</small>
@@ -348,7 +348,7 @@ if (!isset($_SESSION)) {
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="<?php echo $destinos[5]['url_imagen']; ?>" alt="">
+                    <img class="img-fluid" src="<?php echo $destinos[5]['ulr_imagen']; ?>" alt="">
                     <div class="p-4">
                         <div class="d-flex justify-content-between mb-3">
                             <small class="m-0" id="nombre_paquete_6"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Azul Paradise</small>

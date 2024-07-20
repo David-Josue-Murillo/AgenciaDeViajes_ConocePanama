@@ -1,8 +1,8 @@
 <?php
 
 define('FPDF_FONTPATH', '../lib/fpdf/font/');
-require('../lib/fpdf/fpdf.php');
-include '../admin/db/conexion.php';
+include_once '../lib/fpdf/fpdf.php';
+include_once '../admin/db/conexion.php';
 
 
 if (isset($_POST['submit_cotizacion'])) {

@@ -1,9 +1,16 @@
 <?php
 
-$host = 'localhost';
+//Servidor FilleZilaa
+/*$host = 'localhost';
 $user = 'u973323379_David';
 $pass = 'Lucha533.';
-$db = 'u973323379_David';
+$db = 'u973323379_David';*/
+
+//Servidor Local
+$host = 'localhost';
+$user = 'root';
+$pass = 'root';
+$db = 'conoce_panama';
 
 $conexion = new mysqli($host, $user, $pass, $db);
 if($conexion->connect_error){

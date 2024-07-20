@@ -6,7 +6,7 @@ $('#sendMessageButton').click(function(e) {
     const message = $('#message').val();
 
     var datos = new FormData();
-    datos.append('name', name);
+    datos.append("name", name);
     datos.append("email", email);
     datos.append("subject", subject);
     datos.append("message", message);

@@ -1,5 +1,6 @@
 <?php
 
+echo "Pruebaa 1<br>";
 // Verificar si los datos del formulario llegan por POST
 if(isset($_POST['submit_register'])) {
     // Conexion a la base de datos y funciones de consultas
@@ -18,9 +19,10 @@ if(isset($_POST['submit_register'])) {
         die();
     } 
 
+    echo "Pruebaa 2<br>";
     $name = $_POST['name'] ? mysqli_real_escape_string($conexion, $_POST['name']) : false;
     $lastname = $_POST['lastname'] ? mysqli_real_escape_string($conexion, $_POST['lastname']) : false;
-    $phone = $_POST['phone'] ? mysqli_real_escape_string($conexion, $_POST['phone']) : false;
+    $phone = $_POST['phone'] ? intval($_POST['phone']) : false;
     $email = $_POST['email'] ? mysqli_real_escape_string($conexion, trim($_POST['email'])) : false;
     $password = $_POST['password'] ? mysqli_real_escape_string($conexion, $_POST['password']) : false;
     $confirmpassword = $_POST['confirmpassword'] ? mysqli_real_escape_string($conexion, $_POST['confirmpassword']) : false;
@@ -73,6 +75,7 @@ if(isset($_POST['submit_register'])) {
         $errores['password'] = 'La contraseña no es válida';
     }
 
+    echo "Pruebaa 3<br>";
     $guardarUsuario = false;
     if(count($errores) == 0){
         $guardarUsuario = true;
@@ -81,18 +84,19 @@ if(isset($_POST['submit_register'])) {
         $passwordSegura = password_hash($password, PASSWORD_BCRYPT, ['cost' => 4]);
 
         // Insertar usuario en la tabla usuarios en la base de datos
-        $sql = "INSERT INTO usuarios VALUES (null, '$name', '$lastname', '$phone', '$email', '$passwordSegura', 0);";
-
-        if($conexion->query($sql) === TRUE) {
+        $sql = "INSERT INTO usuarios (nombre, apellido, telefono, email, password, tipo_usuario) VALUES ('$name', '$lastname', $phone, '$email', '$passwordSegura', 3);";
+        if($conexion->query($sql)) {
+            echo "Pruebaa 4<br>";
             // Redireccionar al formulario de login
             $_SESSION['completado'] = "Registro completado exitosamente";    
-            header('Location: ../index.php');
+            header('Location: ../pages/login.php');
             exit();
         } else {
             $_SESSION['errores']['general'] = "Fallo al guardar el usuario";
         }
     }    
 
+    echo "Pruebaa 5<br>";
     $_SESSION['errores'] = $errores;
     $_SESSION['incompleto'] = "Registro fallido";   
     header('Location: ../pages/login.php');

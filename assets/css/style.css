@@ -104,7 +104,7 @@
 
 .bg-nav {
     background-image: linear-gradient(to right, #1a5fb4, #b9b6b6, #81cfe3);
-    max-height: 140px;
+    min-height: 140px;
 }
 
 .nav__img {
@@ -500,9 +500,6 @@ footer {
         font-size: 1.5rem;
     }
 
-    .bg-nav{
-        height: 120px;
-    }
 
     .section__main__info {
         width: 100%;
@@ -572,7 +569,6 @@ footer {
 }
 
 @media (max-width: 640px) {
-    
     .nav__text{
         width: auto;
     }

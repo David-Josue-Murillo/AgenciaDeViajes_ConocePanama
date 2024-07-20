@@ -123,10 +123,10 @@ if ($result->num_rows > 0) {
         </div>
     <?php endif; ?>
 
-    <?php if (isset($_SESSION['login'])) : ?>
+    <?php if (isset($_SESSION['login']) && $_SESSION['tipo_usuario'] != 3) : ?>
         <?php
         $rol = '';
-        if ($_SESSION['tipo_usuario'] == 2) {
+        if ($_SESSION['tipo_usuario'] == 1) {
             $rol = 'ROOT';
         } else {
             $rol = 'Admin';
