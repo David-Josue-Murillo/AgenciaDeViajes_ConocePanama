@@ -405,7 +405,7 @@ if ($result->num_rows > 0) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?= $contador = 1 ?>
+                            <?php $contador = 1 ?>
                             <?php foreach ($destinos as $destino) : ?>
                                 <tr>
                                     <td id="<?= $destino['id_destino'] ?>"><?= $contador++ ?></td>
@@ -494,7 +494,7 @@ if ($result->num_rows > 0) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?= $contador = 1 ?>
+                            <?php $contador = 1 ?>
                             <?php foreach ($paquetes as $paquete) : ?>
                                 <tr>
                                     <td><?= $contador++ ?></td>
@@ -645,7 +645,7 @@ if ($result->num_rows > 0) {
                                         echo $paquete['nombre_paquete'];
                                         ?>
                                     </td>
-                                    <td id="descripcionReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['descripcion'] ?></td>
+                                    <td id="descripcionReserva_<?= $reserva['id_reserva'] ?>"><?= $reserva['descripcion_reserva'] ?></td>
                                     <td id="precio_<?= $reserva['id_reserva'] ?>"><?= $reserva['precio_venta'] ?></td>
                                     <td id="metodo_<?= $reserva['id_reserva'] ?>"><?= $reserva['metodo_pago'] ?></td>
                                     <td>
@@ -737,7 +737,7 @@ if ($result->num_rows > 0) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?= $contador = 1 ?>
+                            <?php $contador = 1 ?>
                             <?php foreach ($guias as $guia) : ?>
                                 <tr>
                                     <td><?= $contador++ ?></td>

@@ -104,7 +104,6 @@
 
 .bg-nav {
     background-image: linear-gradient(to right, #1a5fb4, #b9b6b6, #81cfe3);
-    min-height: 140px;
 }
 
 .nav__img {
@@ -574,7 +573,7 @@ footer {
     }
 
     .text-second{
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .text-nav{

@@ -13,7 +13,6 @@ if(isset($_POST['submit_pago'])){
     $precio = isset($_POST['precio']) ?  $_POST['precio'] : false;
     $metodo_pago = isset($_POST['metodo_pago']) ? mysqli_real_escape_string($conexion, $_POST['metodo_pago']) : false;
 
-    echo $precio;
 
     // Validar datos
     if(!$id_usuario || !$id_paquete || !$descripcion || !$precio || !$metodo_pago){
@@ -21,8 +20,11 @@ if(isset($_POST['submit_pago'])){
         exit();
     }
 
-    $sql = "INSERT INTO reservas (id_usuario, id_paquete, descripcion, precio_venta, metodo_pago) VALUES ( '$id_usuario', '$id_paquete', '$descripcion', '$precio', '$metodo_pago')";
+
+    $sql = "INSERT INTO reservas (id_usuario, id_paquete, descripcion_reserva, precio_venta, metodo_pago) VALUES ( $id_usuario, $id_paquete, '$descripcion', '$precio', '$metodo_pago')";
     $resultado = $conexion->query($sql);    // Ejecutando la consulta SQL
+
+    echo $precio;
     
     // Verificando si se insertó correctamente
     if ($conexion->affected_rows > 0) {

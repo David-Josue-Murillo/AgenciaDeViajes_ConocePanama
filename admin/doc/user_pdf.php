@@ -114,5 +114,5 @@ foreach ($usuarios as $usuario) {
 }
 
 // Salida del PDF
-$pdf->Output();
+$pdf->Output('Reporte_Usuarios_Conoce_Panama.pdf', 'D');
 ?>

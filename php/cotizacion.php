@@ -80,5 +80,5 @@ if (isset($_POST['submit_cotizacion'])) {
     $pdf = new PDF();
     $pdf->AddPage();
     $pdf->Table($header, $data);
-    $pdf->Output();
+    $pdf->Output('Cotizacion_reserva.pdf', 'D');
 }

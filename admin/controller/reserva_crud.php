@@ -48,8 +48,9 @@ if (isset($_POST['submit_modificar_reserva'])) {
     // Variable en donde se almacena el id del usuario y el id del paquete
     $id_usuario = $id_usuario['id_usuario'];
     $id_paquete = $id_paquete['id_paquete'];
+    
 
-    $sql = "UPDATE reservas SET id_usuario = '$id_usuario', id_paquete = '$id_paquete', descripcion = '$descripcion', precio_venta = '$precio_reserva', metodo_pago = '$metodo_pago' WHERE id_reserva = '$id_reserva'";
+    $sql = "UPDATE reservas SET id_usuario = '$id_usuario', id_paquete = '$id_paquete', descripcion_reserva = '$descripcion', precio_venta = '$precio_reserva', metodo_pago = '$metodo_pago' WHERE id_reserva = '$id_reserva'";
     $resultado = $conexion->query($sql);
 
     if ($conexion->query($sql) === TRUE) {
