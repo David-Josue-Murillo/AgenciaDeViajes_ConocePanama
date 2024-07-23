@@ -359,9 +359,9 @@ if ($result->num_rows > 0) {
                             <div class="form-group col-md-6">
                                 <label for="tipo_usuario">Tipo de usuario</label>
                                 <select name="tipo_usuario" class="custom-select px-5" required="required">
-                                    <option value="0">Usuario</option>
-                                    <option value="1">Administrador</option>
-                                    <option value="2">ROOT</option>
+                                    <option value="3">Usuario</option>
+                                    <option value="2">Administrador</option>
+                                    <option value="1">ROOT</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6 campo_password_delete">
@@ -412,7 +412,7 @@ if ($result->num_rows > 0) {
                                     <td id="destino_<?= $destino['id_destino'] ?>"><?= $destino['nombre_destino'] ?></td>
                                     <td id="direccion_<?= $destino['id_destino'] ?>"><?= $destino['direccion'] ?></td>
                                     <td id="descripcion_<?= $destino['id_destino'] ?>"><?= $destino['descripcion'] ?></td>
-                                    <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['url_imagen'] ?></td>
+                                    <td id="url_imagen_<?= $destino['id_destino'] ?>"><?= $destino['ulr_imagen'] ?></td>
                                     <td>
                                         <a href="#" id="<?= $destino['id_destino'] ?>" class="btn btn-primary btn-editar <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Editar</a>
                                         <a href="#" aria-label="<?= $destino['id_destino'] ?>" id="btn-borrar-destino" class="btn btn-danger <?php if ($_SESSION['tipo_usuario'] == 1) : ?> disabled <?php endif; ?>">Eliminar</a>
