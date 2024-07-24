@@ -4,7 +4,7 @@ document.getElementById('destino').addEventListener('change', function(e) {
 
     // Realizamos las tres solicitudes al mismo tiempo.
     Promise.all([
-        fetch('David/php/obtener_cantidad_personas.php', {
+        fetch('php/obtener_cantidad_personas.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ document.getElementById('destino').addEventListener('change', function(e) {
             body: JSON.stringify({ id_paquete: destinoId })
         }).then(response => response.json()),
 
-        fetch('David/php/obtener_precio.php', {
+        fetch('php/obtener_precio.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
